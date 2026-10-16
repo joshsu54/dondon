@@ -5,8 +5,9 @@ the shape never resamples per frame. v001 stays untouched. Blender CLI: blender 
 import bpy,math,json,sys,random,os
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent))
-sys.argv=[a for a in sys.argv if a!='--']+['--','none']  # import helpers without running v001 builds
-import build_scenes07 as base
+_argv=sys.argv;sys.argv=[a for a in sys.argv if a!='--']+['--','none']  # import helpers without running v001 builds
+try:import build_scenes07 as base
+finally:sys.argv=_argv  # callers that import solid_cloud keep their own arguments
 ROOT=base.ROOT
 
 def cloud_material():

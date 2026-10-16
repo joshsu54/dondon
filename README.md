@@ -2,7 +2,7 @@
 
 宗門、山景、登山步道與生活道具的 Blender 素材專案。模型、圖片、影片與 ZIP 交付包使用 Git LFS 管理。
 
-目前素材庫有 **60 組模型、600 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
+目前素材庫有 **66 組模型、660 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
 - 最新登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
 - 山頂宗門與登山步道：`Models/MountainSanctuary/v002/`。
@@ -110,3 +110,11 @@ Esc 不會暫停世界時間。切換到其他視窗後也會釋放游標，回�
 
 - [Unity CharacterController.Move 官方文件](https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/charactercontroller/move)：移動與碰撞由 CharacterController 處理；程式另外計算重力。
 - [Unity Input System 安裝與輸入後端文件](https://github.com/Unity-Technologies/InputSystem/blob/develop/Packages/com.unity.inputsystem/Documentation~/Installation.md)：依輸入後端的編譯符號選擇輸入路徑。
+
+## 山水環境 09（2026-10-16）
+
+新增山崖瀑布、彎曲山溪、靈泉水潭，共 3 組模型及 30 張同模型角度圖。可編輯 Blender、靜態 FBX、十視圖與驗證紀錄位於 ArtLibrary/ExpansionBatches/MountainWaters09。目前索引共 66 組、660 張基本角度圖；本批水流為靜態幾何，未製作流體動畫或引擎水材質。
+
+## 山路設施 10（2026-10-16）
+
+新增六角休憩亭、拱形石橋、獨立石欄杆，共 3 組模型及 30 張同模型角度圖。可編輯 Blender、靜態 FBX、十視圖與驗證紀錄位於 ArtLibrary/ExpansionBatches/MountainWayside10。目前索引共 66 組、660 張基本角度圖；新增模型為外觀原型，尚待場景安裝、引擎碰撞與導航驗證。

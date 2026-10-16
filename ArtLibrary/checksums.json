@@ -1170,6 +1170,541 @@
     "sha256": "cff1e5bd0246be0f2350566ca3bac20be676c4c44c7d13e26191bf6cad45f5ec"
   },
   {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/01_front.png",
+    "bytes": 1014619,
+    "sha256": "b25a1b3fddc5c2d4a3623332cfb30c3066cdfe31a22474aabefeba6b9aefd882"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/02_right.png",
+    "bytes": 1019537,
+    "sha256": "785f8a1398dea7c63518fa3fbd7e1c76c76a16ef1b2eb760cd2b2af5b9d971ea"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/03_rear.png",
+    "bytes": 1015939,
+    "sha256": "4debee0bd23335c0e0d41a4a33d107e67233b10707cbabdb792d164a6baff8c4"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/04_left.png",
+    "bytes": 1024804,
+    "sha256": "5d5e7ac433ab8655d9a490d503d28f8e79a876d2253b70a403f6126a3ae57b57"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/05_front_right.png",
+    "bytes": 1087746,
+    "sha256": "a02766cd10f3bc54fae3189800c2deaa97a5d3dfaba284fa971e3c9f8736187a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/06_rear_right.png",
+    "bytes": 1095688,
+    "sha256": "49b2a175557b7538dc1aa8c3b3431f7ea172df963b60ac1ed48f7c58b300a8a7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/07_rear_left.png",
+    "bytes": 1101756,
+    "sha256": "b07d790c1c8e683ade36a658315be0f721e494d7d9f01f6973e6166537557bf5"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/08_front_left.png",
+    "bytes": 1100841,
+    "sha256": "8333ab85cf1f0c8e71d3896d6ddd0c78279f51e1451e731cf4e65a01f6bb0d1f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/09_top.png",
+    "bytes": 1135144,
+    "sha256": "c8ddaf035d184bec608662e1d4888c1e6dae856ed514e9ce2c0a2f5b0536a279"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/10_high_front.png",
+    "bytes": 1117111,
+    "sha256": "31f3a0e6bcfe1503ee15dba4fbf583a2c4779219869903d456e629d080192031"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/MountainStreamBend_v001/views.json",
+    "bytes": 2990,
+    "sha256": "5b05e84884540577b2adf8a5b5b737ee55b1829891d57bbe25cc4cbb5729c4a1"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/01_front.png",
+    "bytes": 1039381,
+    "sha256": "a2d1836ee4afc287ea94723facfdfddd1602b6c4f59c29398606514bfa7b1f9d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/02_right.png",
+    "bytes": 1029315,
+    "sha256": "25c275d1f57a370d4914ba8187d4e6da5e0ef0bc22e8e6c9718fbfa7e8502add"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/03_rear.png",
+    "bytes": 1039396,
+    "sha256": "1e5cb1866c5ee6d85feac80565b43e15462842efe9ccbc97f212ce87c59d1d9b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/04_left.png",
+    "bytes": 1038827,
+    "sha256": "1c33e78204edbd020965b9cf841aef92443a1ac2f46d34f4437e0fa0e9ff6455"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/05_front_right.png",
+    "bytes": 1087697,
+    "sha256": "9349f827dbd8f9f62eacf84a647334901773677e72b0625e9b790ef65a862b35"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/06_rear_right.png",
+    "bytes": 1078759,
+    "sha256": "2edaa153e0d2d89a3871b67cfbfa04cbeb434fc90ff39db14b1e78b0ec251c27"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/07_rear_left.png",
+    "bytes": 1088426,
+    "sha256": "fd957ede75ea1764adbc73be4a343dd99a046e6d5e9996f2d52d14dd27115704"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/08_front_left.png",
+    "bytes": 1098697,
+    "sha256": "fd8d3fe12539940fbf953e4d5acf5d1bdcbd45907f2eb02bd79e2d4750785d4a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/09_top.png",
+    "bytes": 1118142,
+    "sha256": "d5b33476ee55b5a62894b77d77a5b14e352a9d5c3dfcf46ed85738cc9e062480"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/10_high_front.png",
+    "bytes": 1116887,
+    "sha256": "66e7ab4402e40f224e1094aa009cab4e9de41a45341239527cdda328197b5835"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/SpiritSpringPool_v001/views.json",
+    "bytes": 2985,
+    "sha256": "c86c62f820b2d1192ce409d289abc5676dd0be1d1ab733cef0d127c22b80f35e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/01_front.png",
+    "bytes": 1066742,
+    "sha256": "08696b65a42a4e58753dd262c64e542e59a2bfaaedd115e557715e864cc9ebe0"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/02_right.png",
+    "bytes": 1033809,
+    "sha256": "714d6ddfc04587603d36f80e5504ed20b66806fd9e7068a3fa4665bba75f69e0"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/03_rear.png",
+    "bytes": 1035404,
+    "sha256": "ca0b860de3005ce8248ff2b12e148645b2786da3516e85c537237cbbc3db847d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/04_left.png",
+    "bytes": 1044294,
+    "sha256": "ff7bfcd91befce2dd1fb4f6f0bd16ae862bce4fdd983ba54ac9c44ef89f54dfc"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/05_front_right.png",
+    "bytes": 1115163,
+    "sha256": "7f054d2e1930ebccb14ce03882251145be0915b29c7b5d80d06008729507c246"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/06_rear_right.png",
+    "bytes": 1063400,
+    "sha256": "8575ee24801ba3268aeb4fc8a94b63829cbe60a44c01b45389f668f44f42d307"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/07_rear_left.png",
+    "bytes": 1073413,
+    "sha256": "4c2df65b15c6454270e7b0bb0c547805f93c5339c3594f28c8abd445eede4863"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/08_front_left.png",
+    "bytes": 1116942,
+    "sha256": "b775a7f807ee2ffda7c7cf34139457fffce860524cd4c1c3d7211368e425168c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/09_top.png",
+    "bytes": 1099637,
+    "sha256": "4637befcf309ddbc4324d683e8197a11445ec95883b772ab024ed42d77e61741"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/10_high_front.png",
+    "bytes": 1117441,
+    "sha256": "1cea25741a80027c0e962a71b06014c6e8a7509faca4036c21216e29afe90bc2"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/ArtLibrary/Turnarounds/WaterfallCliff_v001/views.json",
+    "bytes": 2962,
+    "sha256": "b02aafa77e3e26e7924b4f4962a3678f922ca74f8c4bdcadf18a0c7e5e0e4fe3"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/BlenderSource/build_waters09.py",
+    "bytes": 13671,
+    "sha256": "a5a520ac85050e8722c6157385e47c56c730c3e3988a86c2019fac176eaa9ec9"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/BlenderSource/verify_waters09.py",
+    "bytes": 2894,
+    "sha256": "12e194a9706b8e19ca5bf8639b3453028abd3342573629a596c4791386e939b8"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/MountainStreamBend/v001/MountainStreamBend_v001.blend",
+    "bytes": 190143,
+    "sha256": "0b001c4120e7970c6bed316e0ed1521a90b1b23ce0bc64bde6f603428768ff8b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/MountainStreamBend/v001/MountainStreamBend_v001.fbx",
+    "bytes": 416284,
+    "sha256": "95898b94fcb91ab32d6ff01c85899d718ab09d94aec17c6b46065e1d38b6405c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/MountainStreamBend/v001/model_info.json",
+    "bytes": 587,
+    "sha256": "5ec3c88c655e9b6e15302d65534ec8406b22274f215a60514063e5cd59ed0fe7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/SpiritSpringPool/v001/SpiritSpringPool_v001.blend",
+    "bytes": 159507,
+    "sha256": "d34ed82e4a35a2d4eb887d2635069485cada28eb6898fbc2adb18f71b919d569"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/SpiritSpringPool/v001/SpiritSpringPool_v001.fbx",
+    "bytes": 259964,
+    "sha256": "7a3aee3701396eb949b0868af021b3deae9c580319701650578448ac71fba0ad"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/SpiritSpringPool/v001/model_info.json",
+    "bytes": 371,
+    "sha256": "7ea92a15a34e4b7ab899797ace3479b70fa3eec2376704dd12ef97a54abc597f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/WaterfallCliff/v001/WaterfallCliff_v001.blend",
+    "bytes": 225904,
+    "sha256": "d5a99bd5d5e8303920da77c7f4055d1b4da53cb6afbae970a302c8b5ad731943"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/WaterfallCliff/v001/WaterfallCliff_v001.fbx",
+    "bytes": 513276,
+    "sha256": "6f2c66ad0ab61761f05e485867f852c16321be9fe4090d7b30bc51ff7d6fb362"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/Models/WaterfallCliff/v001/model_info.json",
+    "bytes": 372,
+    "sha256": "a58a608706209e810d6bd18ba96607c4335b3d98290a8e43ffac2258f6e81283"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/MountainStreamBend_10views.jpg",
+    "bytes": 117850,
+    "sha256": "42c26ea7025090306709f53ab485c95ea092b606592b092e8e4f9300ccad63a5"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/README.md",
+    "bytes": 1505,
+    "sha256": "d304a0a468686e589183ce2786f6b308cdb64b6235ff418efc5374c500daab56"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/SpiritSpringPool_10views.jpg",
+    "bytes": 123408,
+    "sha256": "f12466c8aa6cc8fc8406e7a611d0d377f71b28925d81b050189db965bb9e0075"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/WaterfallCliff_10views.jpg",
+    "bytes": 131790,
+    "sha256": "fc9f477cac407c8202f9eba906ae3603f67d434ff0ed9833346016984f104170"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/index.html",
+    "bytes": 7528,
+    "sha256": "c0eb42be06b5c3e7d9e587450dac5f60604c970e2d77ffea77f75fc1f37488d4"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/installation.json",
+    "bytes": 1452,
+    "sha256": "362f5843c7c381d4dfb5e626fcd0b1745f49b84d64ce5f21bf75c74090bf5f40"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/inventory.json",
+    "bytes": 801,
+    "sha256": "5171358b1e28f8c0e7e8fa403d758231112990580d197669dd730e8739ac47dd"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/overview.jpg",
+    "bytes": 87869,
+    "sha256": "dec1707f90b003e5d2070975574da8aedf61802ebe7cc9faeb637716978b96b6"
+  },
+  {
+    "file": "ExpansionBatches/MountainWaters09/validation.json",
+    "bytes": 1595,
+    "sha256": "6f58b871264bbb1f130410f3713830001e177c7fe9130f3958846b0ab942d61b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/01_front.png",
+    "bytes": 1026365,
+    "sha256": "512bd571d3333fed819a7105e887688c5052c1b7bee4b869766bd6717116772d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/02_right.png",
+    "bytes": 1022174,
+    "sha256": "fd7564b8c5d175dc2b31197342f829848bbc5b899f0fa2af52eee67320bf485b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/03_rear.png",
+    "bytes": 1020559,
+    "sha256": "47939a91111d6ca69c48cab4bedbd14fd747351439e6bd49773c80834915d198"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/04_left.png",
+    "bytes": 1018012,
+    "sha256": "89b49edad3848b34b31bc965f9af0b74afcad520665e036b000943bd27cc0875"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/05_front_right.png",
+    "bytes": 1161576,
+    "sha256": "89b81259dddf1024611ac2db17bfb15bc0ee04b4836e433436b8983846c01250"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/06_rear_right.png",
+    "bytes": 1161390,
+    "sha256": "fc3efc441f176a8cc04818107abb641a69b6eb74f06ec36a56cbe0f45b4842bc"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/07_rear_left.png",
+    "bytes": 1179347,
+    "sha256": "b537197212cdc2a2f0c1df1b1ba4ec15bda1156bedfd407f4bc3fbbbebc8f086"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/08_front_left.png",
+    "bytes": 1166164,
+    "sha256": "ad1d6e9c620c8c98b5091a45c572a24c54fffc7726a941a8cdf13c852c72f68f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/09_top.png",
+    "bytes": 1211322,
+    "sha256": "f90d1fe2ca88f7e83db710e939fe8dc7c76ce313ce29929c42aafce9caf61fbb"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/10_high_front.png",
+    "bytes": 1226757,
+    "sha256": "5e33e45ce67a0e625f80c128a623fb57d5f86688b9e546910720330acd78220c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/MountainRestPavilion_v001/views.json",
+    "bytes": 2996,
+    "sha256": "56fe58ed97cfecf74bf0f220cb88652fcce5aa0c2ffb8e17e7b63e992433ceb0"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/01_front.png",
+    "bytes": 963048,
+    "sha256": "7ad41d70730affc27b469f3e28b2ba7af685aa9728ad2f8ad11d24d9df31e682"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/02_right.png",
+    "bytes": 1011214,
+    "sha256": "2576c5b2e8c235a8633052790b9089ceccad06f98def73047e362cc68472fef9"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/03_rear.png",
+    "bytes": 962342,
+    "sha256": "bc0ae61e1970d71c4189fbc3bd078a4bc1dc2306f3b41c2abaa1bca5cf4dbb27"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/04_left.png",
+    "bytes": 1011170,
+    "sha256": "c30179fc5ccfab8745330c23d903209027a1653442ee622863a3f269f1e0b885"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/05_front_right.png",
+    "bytes": 1092171,
+    "sha256": "e872ca92ae0eb3866f8ae7a55a36e19772962620bfb3ea0e1dd72ed718a7846b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/06_rear_right.png",
+    "bytes": 1088161,
+    "sha256": "1841df05dd10ce58b038085b1665e15af685d673ce48d5db0b06167b0b523fc5"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/07_rear_left.png",
+    "bytes": 1108440,
+    "sha256": "7161ce81d95b8502a8d830ac829f22f1609c8160657ae8c41b7a75b17d150b46"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/08_front_left.png",
+    "bytes": 1094495,
+    "sha256": "9c74a28bec1b0d04b5240341c50cfdf4653ba7f5feca516da79254ee960c678c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/09_top.png",
+    "bytes": 998688,
+    "sha256": "16219722a5389bb54642b742ad4e89351757a37b28f0fb45fb3abcf3d2957476"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/10_high_front.png",
+    "bytes": 1000620,
+    "sha256": "4f83cd3004a6084dc3ac62b46f81b360991359e492cf5dc4aade6629e257db02"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/StoneArchBridge_v001/views.json",
+    "bytes": 2973,
+    "sha256": "27493992efa2d235dd40873cd9220f1bb931aa41a699e9ed723ca3dd7d9e997b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/01_front.png",
+    "bytes": 1023788,
+    "sha256": "60fcb4e2d4d53f26c2dfdbd4581cd123dbc89f5425f2cb496acbbbb4adb1b68e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/02_right.png",
+    "bytes": 944585,
+    "sha256": "fd86ca8429760ede2505543c036671fcb8dfbe23df34b1f941c922e4aaa4b6d6"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/03_rear.png",
+    "bytes": 1013639,
+    "sha256": "e398c474032e851bb9feca8260a180ec127cdef2a750b76cc9b750c9d112bf6b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/04_left.png",
+    "bytes": 956143,
+    "sha256": "f9e7887255bb31e5434ba5e6a3063819d9796fb71afd8a27bdc5b742b7c76825"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/05_front_right.png",
+    "bytes": 1066309,
+    "sha256": "ad5c9ecc7b6fae1c26272217119d1e1ab5a577b87ef6288dc953b42b2de5d135"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/06_rear_right.png",
+    "bytes": 1079330,
+    "sha256": "4f9849e7c145ad4ad96daf5dbf5da9cd667d5724404d2b55d3958f5fe65fbfc7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/07_rear_left.png",
+    "bytes": 1083839,
+    "sha256": "16e3a55b4615b4018f118e7e3e3b2c0c1a2e0f16cdf05b40137d41b04c4aed16"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/08_front_left.png",
+    "bytes": 1092419,
+    "sha256": "3359e3bb677eabcf55e02cf82557c9a44e52048cd546151ba0887810af87484d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/09_top.png",
+    "bytes": 954108,
+    "sha256": "d3063b5d006e39a15dba0d034f795e33560f187d945f71e47510c0a63fb7c84f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/10_high_front.png",
+    "bytes": 1005435,
+    "sha256": "f1637c41db4fc058c73b139101d2fd3834389bc2a1b5fbe6ebcbaf93f2329fef"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/ArtLibrary/Turnarounds/TrailStoneRailing_v001/views.json",
+    "bytes": 2968,
+    "sha256": "a4d065b5dfaff4571114aeb03eb76d0ed05a142fcaf88db162aad758465854f7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/BlenderSource/build_wayside10.py",
+    "bytes": 15840,
+    "sha256": "4db9977aea6e5b067a24cf53cfad3b5ce04c7814adb47cb8ef79ad217a0ebbed"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/BlenderSource/verify_wayside10.py",
+    "bytes": 6777,
+    "sha256": "192931a4d431b2931265c28a7462cbf6b1171c29f1b3d66b208866f99f38c0b8"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/MountainRestPavilion/v001/11_interior_roof_hidden.png",
+    "bytes": 1055753,
+    "sha256": "f9d80ab5c7445ddc868babe4c46d50736a5fed3bdf1a4773e8be12387e4f9613"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/MountainRestPavilion/v001/MountainRestPavilion_v001.blend",
+    "bytes": 265689,
+    "sha256": "c7fcf39ce36f68b7621f074207efe04aa95f484c944bae4eea2f406fd89317a2"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/MountainRestPavilion/v001/MountainRestPavilion_v001.fbx",
+    "bytes": 1040156,
+    "sha256": "f994cde67e25c182f551e6b095d40b26245e3e45b703e3f05bf2945d31830c4c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/MountainRestPavilion/v001/model_info.json",
+    "bytes": 811,
+    "sha256": "5568c19c6adf359969c42152caafc98e9601f97c888fea2841d4e4f5ed7ed93a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/StoneArchBridge/v001/StoneArchBridge_v001.blend",
+    "bytes": 215405,
+    "sha256": "a3ec75550c137f71ee3f05aa72ebaba7f3634ac8d611199f4031e035f4085903"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/StoneArchBridge/v001/StoneArchBridge_v001.fbx",
+    "bytes": 865852,
+    "sha256": "a512fe941b85581e6cb7251a6534e16bfb16178a6f9101e0226ad30986e71124"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/StoneArchBridge/v001/model_info.json",
+    "bytes": 671,
+    "sha256": "3319a914684143e0c3a41ecce7ca9a32f56d38a8ed801ee1740d7b4eef52ea80"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/TrailStoneRailing/v001/TrailStoneRailing_v001.blend",
+    "bytes": 107159,
+    "sha256": "7ed9674ba27ee7d03a53e763d416e0ece8967eb56966add9ef5a4ecd93edec9e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/TrailStoneRailing/v001/TrailStoneRailing_v001.fbx",
+    "bytes": 134732,
+    "sha256": "2e537adbbf13407ab8dd14d582ef159dcd52891f453298f07419859d6420fbda"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/Models/TrailStoneRailing/v001/model_info.json",
+    "bytes": 725,
+    "sha256": "ac654bc29db4136b049dd0d812f5711912aad31fc61e5cf805845e9eeb3de5bb"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/MountainRestPavilion_10views.jpg",
+    "bytes": 154660,
+    "sha256": "50155353e084ff25c4737782d381b53d2433e0839330fbfc3f7c48d5a851db6e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/README.md",
+    "bytes": 1749,
+    "sha256": "c36f268e7dba577e2765671c561495a9f8b9e23473fe3bac094f8152c83bf9f7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/StoneArchBridge_10views.jpg",
+    "bytes": 134421,
+    "sha256": "ba97191921a514558390d7bb4a3371c8b216c432d865c35ab535dabfb48c5812"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/TrailStoneRailing_10views.jpg",
+    "bytes": 130570,
+    "sha256": "973353dab6a541a220bf2250ef2644d6dea2b96b3941c83e70a683fbbabff030"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/index.html",
+    "bytes": 7798,
+    "sha256": "359d698611a29802cd39f68a0e40f8501fb91bc3ce167fc463668a75fcdadc56"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/installation.json",
+    "bytes": 1574,
+    "sha256": "92f5e3f96d5adda7db76fe7e4ce0d93a766f053b8c3e379ee984dcc8469dae63"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/inventory.json",
+    "bytes": 803,
+    "sha256": "e0c7baad73e45785ec1ce26635d3821f005d068c0c414045f6756c6ed2bf3ff5"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/overview.jpg",
+    "bytes": 108107,
+    "sha256": "d47d9cdf8347ddd2dfb45a9c4564c5608d81587fa281fe837a3524d996449e56"
+  },
+  {
+    "file": "ExpansionBatches/MountainWayside10/validation.json",
+    "bytes": 2205,
+    "sha256": "0f3b093cdceb96b8a78b7e01a72f32660ad6a197c7469dc4ad8c8e1e167b6b84"
+  },
+  {
     "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v001/01_front.png",
     "bytes": 982228,
     "sha256": "8a40ae6ecf834c63ec2049469d154ba2e419aa5864223c375c7bc0f283315a7b"
@@ -1223,6 +1758,61 @@
     "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v001/views.json",
     "bytes": 2933,
     "sha256": "c70e7f1161b30274211ea2d12505890bc0d0a20640ccc31e7ee2640413bd8fae"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/01_front.png",
+    "bytes": 1084347,
+    "sha256": "4cdf6e4c9c6ac1aa15578e50cd47d6df7e6f7c9484035bc27187dc2680b09f71"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/02_right.png",
+    "bytes": 1042739,
+    "sha256": "bf897ad1919ab176f463475ba960d70090d848a754107a0888685545bdbc6b63"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/03_rear.png",
+    "bytes": 1087651,
+    "sha256": "c433bc1092c466560d287fe76dfd035a6f45f974c3ea20cb6cabf3ebf9bc5102"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/04_left.png",
+    "bytes": 1065084,
+    "sha256": "d9999a7a928193658d429b10136ef119a8ed0aa55f8989ed315a0821dd11c095"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/05_front_right.png",
+    "bytes": 1085414,
+    "sha256": "23b72f4922729fe42bd64055b7b5091d61f392f22b640bed32e030e99f0c4a25"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/06_rear_right.png",
+    "bytes": 1091302,
+    "sha256": "8d0484b1ca3f9cfda0b1cd1d8aea6209647236408f1f82f6e3a911160be5807f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/07_rear_left.png",
+    "bytes": 1106795,
+    "sha256": "908ca8dde4e17e61521f7214fde6be0ffae6ea8e79a2e28c587e4d973a4bcc75"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/08_front_left.png",
+    "bytes": 1086286,
+    "sha256": "932b461e90f3189cfdfdd35998442417e9114526da8d6cea6b2a3eec6843d802"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/09_top.png",
+    "bytes": 1046317,
+    "sha256": "fe0f5559886302701e86aa7b59b77d705978971f181085b63633cbf7df7be164"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/10_high_front.png",
+    "bytes": 1102006,
+    "sha256": "5297a29f68017cd1f834ff59a627562ec871c432b4a26a99dae5c17e22315e90"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/CloudpiercerPeak_v002/views.json",
+    "bytes": 2987,
+    "sha256": "86ae18b997bf08d3c93dc241695b5f4543f7da4ec2e32604e91b39031b5352f2"
   },
   {
     "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/LayeredCliff_v001/01_front.png",
@@ -1333,6 +1923,61 @@
     "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v001/views.json",
     "bytes": 2920,
     "sha256": "de1bd94bb9ae7e04229da7f5fb03a24797630dd224c569fe9ea52153e6655345"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/01_front.png",
+    "bytes": 1072037,
+    "sha256": "53249570059d187366d028b4f5db4d740ed29cd72198f2c5228cb17335908ace"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/02_right.png",
+    "bytes": 980832,
+    "sha256": "b417127b8ecbf6dd7aaacba9a880d375b1b8c51c2251d0e7784fd154b001850d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/03_rear.png",
+    "bytes": 1077069,
+    "sha256": "000290eb4b1876d4ba698d0dc6104b59b6606a641c19e6961f2fb0e2a9bf5827"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/04_left.png",
+    "bytes": 997247,
+    "sha256": "4520c5dcb12209ff567c23977dc1011b0446843039b601e224889216e1e0d919"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/05_front_right.png",
+    "bytes": 1074569,
+    "sha256": "4c366398f647e9c0ba6cd0eeb9d4ec82fca5830a3d54a2a3b4164262ac294f2b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/06_rear_right.png",
+    "bytes": 1067117,
+    "sha256": "6b70f006b7b694354cc79346141ad4119e04e23fe0bfabdb6ac6d8d6f3dabe8c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/07_rear_left.png",
+    "bytes": 1083745,
+    "sha256": "5047aabf8b835f464639734ed7d90a880b0e6d1f5ae1a01ed5f887f7bb6f4399"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/08_front_left.png",
+    "bytes": 1071060,
+    "sha256": "e917646fa397b4016eaae890a0168cf9d8f7c5934c0c1d4476835016283e461b"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/09_top.png",
+    "bytes": 1061359,
+    "sha256": "93bf4d6efaa6b2ebc1da7ad16caac977a43bce0446a4f193a2a2f4f762e10801"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/10_high_front.png",
+    "bytes": 1096581,
+    "sha256": "21819c8da14021701f3de2ce0f087b7f38b2884dd4df4368a65ca872ffce4533"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/MountainRidge_v002/views.json",
+    "bytes": 2975,
+    "sha256": "39610abc28dc8fbd96ce3ff0a3380fbe514977767544ce71a7e2d80c67440013"
   },
   {
     "file": "ExpansionBatches/MountainWind07/ArtLibrary/Turnarounds/SectSummitPlateau_v001/01_front.png",
@@ -1500,9 +2145,34 @@
     "sha256": "72b5dd304838dfb605d7cc0400630619ee6a405090c475dfe188dc7ed3a10de3"
   },
   {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/__pycache__/build_scenes07.cpython-313.pyc",
+    "bytes": 21514,
+    "sha256": "31af0b1ddfb287db24429fd6cc2431ff0178c71aa613f0ff9bc85f6f5bc52e0a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/__pycache__/build_solid_clouds_v002.cpython-313.pyc",
+    "bytes": 13351,
+    "sha256": "582970acaa3ec3d86d93c8d9db19329938f20a6095e9b264e7b7fd037d363fe5"
+  },
+  {
     "file": "ExpansionBatches/MountainWind07/BlenderSource/build_mountain07.py",
     "bytes": 14471,
     "sha256": "8f7b4bfb0549748562cf409919fedaaee6abe382de8b6ed161499cc1b6cfe853"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/build_peaks_v002.py",
+    "bytes": 14533,
+    "sha256": "af7dc30cc49cff8923d89894f48177e201a5f491b1eb0134f7dd1fa4980a09b7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/build_sanctuary_v003.py",
+    "bytes": 4578,
+    "sha256": "a96b2b37c3fe8ef769abd084f85e69c98215334ac31d9bc6f56c28fbe9836c94"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/build_sanctuary_v004.py",
+    "bytes": 3439,
+    "sha256": "6355fce6e85b091bfc52916ce6ccec42c03e496a7a43f33de6034b83c386b092"
   },
   {
     "file": "ExpansionBatches/MountainWind07/BlenderSource/build_scenes07.py",
@@ -1510,14 +2180,24 @@
     "sha256": "f9e85ed9fe9d082dd2a7207f5e1ff9486fd285011bd008a9e71b389dbbac86e8"
   },
   {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/build_solid_clouds_v002.py",
+    "bytes": 6155,
+    "sha256": "9fc6cd4e91b86aafd921b4b6d569f78c6aa1a53aa5faf4aec9cd1e467af30166"
+  },
+  {
     "file": "ExpansionBatches/MountainWind07/BlenderSource/encode_preview07.py",
-    "bytes": 1655,
-    "sha256": "b87d4907c83fe07a3b01d0b1655afbefeb9ae35db69520bae9cb0c933fb0a02a"
+    "bytes": 1735,
+    "sha256": "224c4b76203dc0f515bc790d4e3f9e30abea3cbd9954b10ae8a77dc141d0d35e"
   },
   {
     "file": "ExpansionBatches/MountainWind07/BlenderSource/verify_assets07.py",
     "bytes": 3863,
     "sha256": "af2d5d7da3ce025cdb3d535de749f4015fdbc19726c9285a8a501411a6cbc96c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/BlenderSource/verify_sanctuary.py",
+    "bytes": 2403,
+    "sha256": "c92202e52acb3922355be30b6fa08d7a14b9e60bba4ea24d84818e44d7112c85"
   },
   {
     "file": "ExpansionBatches/MountainWind07/BlenderSource/verify_scenes07.py",
@@ -1810,6 +2490,271 @@
     "sha256": "3af0fc7e2034422b8f3e94ca05758b1ff78560d8e21068c34c3bdf129c55a942"
   },
   {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/01_wind_fog_preview.png",
+    "bytes": 1157494,
+    "sha256": "4880ada9497fef3582e488f4d9bc0e340938de49d7070891977e04493d7c58fa"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/WindFog_v002.blend",
+    "bytes": 4489741,
+    "sha256": "9a4a60c35bf4932ebc4c4fd795df62caa2277789a8ab9a20a8d80b0a47744426"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/effect_info.json",
+    "bytes": 768,
+    "sha256": "8ba9942eeccc2bb7e9e47d6a33729050cf38da99f86640b1561788d73ac001ce"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0001.png",
+    "bytes": 434743,
+    "sha256": "1de628ffa8b2425af238e17f3eb3c3d27ae130fbc6906ed6543e378e64e31662"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0003.png",
+    "bytes": 435122,
+    "sha256": "47668a3fc10fd8b18700bbf57ebceb4b0d67e16828994235787ff34b4c3436ff"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0005.png",
+    "bytes": 434514,
+    "sha256": "3ca67c390ed08dda282f407169b36cceae0eeb0d90310913d16c4317028fe6e1"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0007.png",
+    "bytes": 435157,
+    "sha256": "d9beb70743b0ef924c49255290d6ea595359f7d172834bb417ed8f6e10e0c5b4"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0009.png",
+    "bytes": 434018,
+    "sha256": "d01678da8c0e931b6250bacea69967afdf58804c37336c2806064ed70f122970"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0011.png",
+    "bytes": 433758,
+    "sha256": "58415452df15622ed2f43cf06f830a032e6fd5d21c01d10b17f511f9c79aafe1"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0013.png",
+    "bytes": 435085,
+    "sha256": "64380d4d4fcfe4e077424b8dd9b46fedd87f3792cfd6844063bbd0b593381a77"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0015.png",
+    "bytes": 434946,
+    "sha256": "5c0fc637f425c60338417e18926e2764f451651c88c49b57f749be157fcb21cf"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0017.png",
+    "bytes": 435261,
+    "sha256": "d9f35b2ca65646eae5b359c0d8bfaad84dba69d51a4c4f08e2e057e711cd7318"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0019.png",
+    "bytes": 435052,
+    "sha256": "9e56176c9df444e37fc709954ab4e01b7f77d4a9394f4b6cc84232a69e7f419a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0021.png",
+    "bytes": 434830,
+    "sha256": "72e7bb40adf5cfcf575ceba4db07568625b74e76ec1d14ac667f1be232426e7c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0023.png",
+    "bytes": 434710,
+    "sha256": "8c0c071781c8495ec1d49d24e862dc488aba9b9f8ade71f6145f1ac4bb1c5133"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0025.png",
+    "bytes": 435050,
+    "sha256": "6daf83fc1600d57ec88e9ac8d5cd45dd03491595bde66e6f5c85d19c3a736e01"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0027.png",
+    "bytes": 435673,
+    "sha256": "73acdfa49aa9930677c17ab4b962c1a3e000b37529aeced93ad9da05e62faabc"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0029.png",
+    "bytes": 435209,
+    "sha256": "12d752cfa4450b85e430753fd2d1057b0de20061e3ac260f72f33d58a41e8818"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0031.png",
+    "bytes": 434581,
+    "sha256": "51e1f6378d8a9e726b9485c5b8b8fb8d2836e8d710f9259291f8fbdd04aae8cd"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0033.png",
+    "bytes": 434765,
+    "sha256": "2484c3fc95501818862eb9276b158b0557d001554fa49a91bfa672cf52865b22"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0035.png",
+    "bytes": 434399,
+    "sha256": "1a8e553a584c9d03d2529029e295ade1d488faada15b75610ad76f8a15935796"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0037.png",
+    "bytes": 435009,
+    "sha256": "861e1fafc00169cb28e12a837db5b5825cc5a50e0d109310d386fccd4c165cd6"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0039.png",
+    "bytes": 433998,
+    "sha256": "2333b1a45f5d4f2e5a3a26b2d108f873d99ee23877307cfed1bd33e6925722ee"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0041.png",
+    "bytes": 434413,
+    "sha256": "0772a6b13bae2a7ee2ef442c41fc43830d51c372b60ad700c6bb6ea80e470d35"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0043.png",
+    "bytes": 435000,
+    "sha256": "8a2c23097c5fee0938e60dffb81fd941f2fc8c37acc6b059234632f9599c0248"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0045.png",
+    "bytes": 434197,
+    "sha256": "208f3a7d789440dfe8952a4599739fbbd7da591e7aedc68fc2633bc385b2bb59"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0047.png",
+    "bytes": 433632,
+    "sha256": "54a6dffae1a927c84e928867dde35b6222c85e78cc3705d80decd2de69bae0f7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0049.png",
+    "bytes": 433949,
+    "sha256": "bcc945870af8da81ca4dd6559c423c71ccd8fc62a8b4196b7ee34fe9326a3523"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0051.png",
+    "bytes": 434226,
+    "sha256": "628caa27c3b77118bcd29c4840a57edc0425b7aaa99f8565879d0d40bae415ff"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0053.png",
+    "bytes": 434339,
+    "sha256": "7f55bedd64e995e382a489684a8beebde1b898799ade308b9ead782e59f9ace8"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0055.png",
+    "bytes": 434776,
+    "sha256": "f3a343e9332f8caef9a00cc07529b4534998ba073f0a457042dc08278dd17115"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0057.png",
+    "bytes": 435205,
+    "sha256": "dfa7759e50f1c5b3984fde6298a6ce36444c8952e2e599e1e3a54a574472fc94"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0059.png",
+    "bytes": 434864,
+    "sha256": "6b0cd1f859a2588b89bd973bd6ae2de40dda32f55300be66e6906b569622086e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0061.png",
+    "bytes": 434539,
+    "sha256": "78e9c678b1abee7aabbb5eac82ca0044e45f0a51e804d7915ef6de1ec7e05491"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0063.png",
+    "bytes": 434674,
+    "sha256": "b896cbd55bc37773e346a2f7326b7ad035c5d67c18b5ea2d927122861b1cfbd0"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0065.png",
+    "bytes": 434524,
+    "sha256": "aa53d9af2133024772afd544b46f7111334d16a1202e42886e6b3534e1d18342"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0067.png",
+    "bytes": 434697,
+    "sha256": "5da67667107fc49e6727612ec9721ea2f693d744754646c455538a7858d5d659"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0069.png",
+    "bytes": 434965,
+    "sha256": "3a4263ebf713e4afa36050a8d0fb2df6c43188f817630bad06422c9194f18152"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0071.png",
+    "bytes": 435003,
+    "sha256": "49a986faaf00d58548188f955e5240f93513bebf29b77bff3483666001a51019"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0073.png",
+    "bytes": 435305,
+    "sha256": "d8f77329e844fbb39601c839ebe3dad5cac57c0c2bbe7618c27e7ed3d3f8727f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0075.png",
+    "bytes": 434877,
+    "sha256": "e7883debcb9485a28909f2aed91c17aaa67bf36288782d34ce17b66aa3ddc077"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0077.png",
+    "bytes": 435124,
+    "sha256": "68bec82a1b62cbe650b4e8cabad9eed43b42de10adc09e258f5a045be8c7a636"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0079.png",
+    "bytes": 434666,
+    "sha256": "8426e91896c72dec07cfb735dcdb92de92e17d3974bf3289bfe5f2fd963ffc65"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0081.png",
+    "bytes": 435701,
+    "sha256": "19e89d90dd838a29fbe3ab45244ef922c551f9a7cca9e8501af20a4a6609f091"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0083.png",
+    "bytes": 435765,
+    "sha256": "113f3e82b2afb08fd03fc6a73277aa7fee2e729f9ac5dc0ad6f8b9b852b79cc4"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0085.png",
+    "bytes": 434667,
+    "sha256": "040c933f3ac60ae4d0ef20e4b6452cbb546d45e2842b8f3e512c8c68937d6135"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0087.png",
+    "bytes": 435305,
+    "sha256": "15654fb07fe032e12c55fcd8ce432827508b91e9dc67030f287271ec3023a5f7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0089.png",
+    "bytes": 435277,
+    "sha256": "a8143bf34c771fb047ffcd75fa659aaec22ed22f109b537fab514f695d004bed"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0091.png",
+    "bytes": 434661,
+    "sha256": "e99284465bd4953dc95a360e2528ac06f6a19a9c3dc9628d067c5af1995d75d7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0093.png",
+    "bytes": 434583,
+    "sha256": "44275372c86f529e9dce8dc8a348c76a476672f66101c2486834281c2da57945"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/frames/0095.png",
+    "bytes": 434963,
+    "sha256": "ebb7b9dff9948679ccb3381bafbff153a5f18279a143b82ecbb8c555e19e58f8"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/video_validation.json",
+    "bytes": 112,
+    "sha256": "172eabb605346610148c02863597199795f3fb89d6cc04f2cd698fa4c967857e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Effects/WindFog/v002/wind_fog_preview.mp4",
+    "bytes": 298522,
+    "sha256": "952b76efe65b4bd190a2139b5079aec136765486b25d07ae7ebb79bdd9f76f06"
+  },
+  {
     "file": "ExpansionBatches/MountainWind07/LayeredCliff_10views.jpg",
     "bytes": 132061,
     "sha256": "5098f296497cb3baa24e11834cb46324a4b878858ea3caa1657b484faffbc4b3"
@@ -1828,6 +2773,21 @@
     "file": "ExpansionBatches/MountainWind07/Models/CloudpiercerPeak/v001/model_info.json",
     "bytes": 625,
     "sha256": "396e16133dfc18306f4ee5ac4bacbe2e6f11dbfa2e361b85af0a517311c00f06"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/CloudpiercerPeak/v002/CloudpiercerPeak_v002.blend",
+    "bytes": 1482776,
+    "sha256": "381956f046ba15c7689888902ca445b69fab0d2caaf501a7f02f595e63bcd934"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/CloudpiercerPeak/v002/CloudpiercerPeak_v002.fbx",
+    "bytes": 1956076,
+    "sha256": "c73b8e2ba41593cdab3dd36789fecffcb5992bcf51f4764e721d9ffd26df9368"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/CloudpiercerPeak/v002/model_info.json",
+    "bytes": 844,
+    "sha256": "773876b21dfec55fe63378ed09ee3b1cad08458429561537dd54a08b64382462"
   },
   {
     "file": "ExpansionBatches/MountainWind07/Models/LayeredCliff/v001/LayeredCliff_v001.blend",
@@ -1858,6 +2818,21 @@
     "file": "ExpansionBatches/MountainWind07/Models/MountainRidge/v001/model_info.json",
     "bytes": 620,
     "sha256": "d0f9ec865a0bf7ea16bf97e4fd1c894d30958b7a0755c60b606c55c5a96a455c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainRidge/v002/MountainRidge_v002.blend",
+    "bytes": 2261256,
+    "sha256": "1fcaa85158f63d4f5f07c1c5ed2ff023a3e5249615de8d111e42f606650c8e5a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainRidge/v002/MountainRidge_v002.fbx",
+    "bytes": 3348716,
+    "sha256": "ae50c58f1f79d37b533d90dcaeca5c47de7b4bb93e02127d0452e92e5ea40f0c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainRidge/v002/model_info.json",
+    "bytes": 834,
+    "sha256": "f1d21c49fa88f5099074ce3e9633558a7529f9c7d03f149f8f988392064436fe"
   },
   {
     "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v001/01_mountain_overview.png",
@@ -1893,6 +2868,96 @@
     "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v001/validation.json",
     "bytes": 255,
     "sha256": "0dd7670a0ef7c24ebe70dbcc0d98e76bca1eee14a25f7f31adb5b8cdd07ad48e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/01_ascent_overview.png",
+    "bytes": 1793947,
+    "sha256": "2e8f3421ce4a64b321513a2b9c24e4d37427aa5a65e608e24fabdd9ea0537c3c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/02_bridge_and_gate.png",
+    "bytes": 2004827,
+    "sha256": "612e345929e5bc22b2f32835ee52dd89bfa715d4fc97e3202f40b4a25da4d43e"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/03_mountain_overview.png",
+    "bytes": 1840367,
+    "sha256": "43cb85bceb2f516e6a5f50e9b66aba8fe4308cfbe789097db602446bb9a647b4"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/04_summit_approach.png",
+    "bytes": 1980419,
+    "sha256": "35c16060d5d569c4b28c23e6cd9bd420059be608079e8ce14e129e35b3fd5aa6"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/MountainSanctuary_v003.blend",
+    "bytes": 15551027,
+    "sha256": "3e35749044677df758d3e713e593485e54c2b0c597f02291021c19ca484c619c"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/MountainSanctuary_v003.fbx",
+    "bytes": 122556220,
+    "sha256": "48aa2d5fadda47ecb102fd37812d72582b23900e032886526cc0e6ccd4703fd7"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/SolidClouds_v003.fbx",
+    "bytes": 922620,
+    "sha256": "01732aa1322c43ea543b8243913d6189f9b851366fc5e370a89c58e87c2cd59f"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/scene_info.json",
+    "bytes": 978,
+    "sha256": "0d13f0644fc5c93b205f8007ee0bb53a767d2240e11e2d7ba830dbbc70baf687"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v003/validation.json",
+    "bytes": 305,
+    "sha256": "f1ef2e675ae1ffbe2d8170b98a0c410bd9456d15abbe0341dd09ba5eaf1fac1d"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/01_ascent_overview.png",
+    "bytes": 1814786,
+    "sha256": "aa7c3a6c399826df20622f7a140409370ab28f48c1780dac15a87c12dad17220"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/02_bridge_and_gate.png",
+    "bytes": 2008262,
+    "sha256": "b52456a88a71c5313b04415458816f6928d4949c214a4a57c495a21136e2bb25"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/03_mountain_overview.png",
+    "bytes": 1863695,
+    "sha256": "69a2299e9887fc2f01b616381c727cc964038895ff4c66b9e582be34ccf5753a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/04_summit_approach.png",
+    "bytes": 2007926,
+    "sha256": "13fe62141514d45dbd0d3dc7b327dc3ad753b5f24fda71d66cd67e31305446b1"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/MountainSanctuary_v004.blend",
+    "bytes": 19295881,
+    "sha256": "9d81377df8e0c0c1fd7afc8acf29d1cb0070c668ed8475c6609c4baaf864ccc3"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/MountainSanctuary_v004.fbx",
+    "bytes": 128169052,
+    "sha256": "5b7cd085c3c5cbaa10cedc2386a69629cc4b3a52013e5caf95aa44573a127ff3"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/SolidClouds_v004.fbx",
+    "bytes": 922620,
+    "sha256": "58dea56bce42ad7935c39d1dd5c188a785fcd7f793148d91effb9009de3a895a"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/scene_info.json",
+    "bytes": 1459,
+    "sha256": "aa366eb1cbbc6c56aba4970fe708b20d4af579a47b0b638c701c53f7844e02c8"
+  },
+  {
+    "file": "ExpansionBatches/MountainWind07/Models/MountainSanctuary/v004/validation.json",
+    "bytes": 305,
+    "sha256": "f7f1bee99c0b94c1c8e38c1bfa9f7577b5d9ecd66ee5b05a33fa5eda05ac1e51"
   },
   {
     "file": "ExpansionBatches/MountainWind07/Models/SectSummitPlateau/v001/SectSummitPlateau_v001.blend",
@@ -5230,6 +6295,76 @@
     "sha256": "da7a7c83f58135e65b7f0809aed788ebfd1a2e680cda171084a309d6504b947e"
   },
   {
+    "file": "History/BeforeMountainWaters09/README.md",
+    "bytes": 5757,
+    "sha256": "ba49a42cedb7b6e02c1ff5501017ab50efddb6c1d81fe2c80460dbcd3ebd3697"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/asset_catalog.json",
+    "bytes": 76600,
+    "sha256": "a926b74721cdd831557d4bf82a56287c6cecc20d4beb10b0c2f5b71758400d5c"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/checksums.json",
+    "bytes": 343624,
+    "sha256": "e897f0d698e0e3d863bcd75cbe7102a1bb8253d98f266606d2fb0579bd460162"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/index.html",
+    "bytes": 120591,
+    "sha256": "67856d3429134c94fa278f9d9a8b9811e44b79167446fe15a542355a81ca342c"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/library_validation.json",
+    "bytes": 1239,
+    "sha256": "a0255d61ca2285834726dd9e10dd6b8b831f1c9bc990319aa2c7701f1fda4a10"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/project_README.md",
+    "bytes": 7237,
+    "sha256": "ae5d92167aa473f2917f0e52829e222be97c06907488913b7cdacc6b4c577968"
+  },
+  {
+    "file": "History/BeforeMountainWaters09/\u5b8c\u6574\u5efa\u6a21\u6e05\u55ae.md",
+    "bytes": 8631,
+    "sha256": "177d24fc1ee04144328877125f14103dd6984ed9b4fb80c43d08bc6e1e3089c1"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/README.md",
+    "bytes": 6128,
+    "sha256": "cb5fd402c03ac3b1cc72fc1ef0b7f9e10e97e217a9edb4846154ded429e6babb"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/asset_catalog.json",
+    "bytes": 80495,
+    "sha256": "45d9dfe31e0d9a715d40abf683e848d3ca9f73b3864ae7a2508427e8f146cf47"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/checksums.json",
+    "bytes": 387193,
+    "sha256": "9657d096fa058a9eee6841988250c824f5bfe5c1e9009698e0dd06e802161d1b"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/index.html",
+    "bytes": 121010,
+    "sha256": "49f343b47a6e98a0e900f3429050515450249269628fa3c27bd84843f5040ca1"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/library_validation.json",
+    "bytes": 1359,
+    "sha256": "3d029058880d436f6d90727b0168f50f474cecdf1c5b3082d09da279e845f7af"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/project_README.md",
+    "bytes": 7605,
+    "sha256": "7af8c9b1cf83df11da5fea78d2f634a0096829c8527548544edf02a2c0725671"
+  },
+  {
+    "file": "History/BeforeMountainWayside10/\u5b8c\u6574\u5efa\u6a21\u6e05\u55ae.md",
+    "bytes": 8784,
+    "sha256": "a273e787d39a854edc1a504e33450b69c9cae9d2b9e3820edc45979ff6788107"
+  },
+  {
     "file": "History/BeforeMountainWind07/README.md",
     "bytes": 4934,
     "sha256": "948b1f76e25d62e401f4c33d793e40ae7128cc1fe3dbf4fbd542b7a4b3ed6ae5"
@@ -5411,8 +6546,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 5757,
-    "sha256": "ba49a42cedb7b6e02c1ff5501017ab50efddb6c1d81fe2c80460dbcd3ebd3697"
+    "bytes": 6512,
+    "sha256": "923c0a3859b4dbb9c2e126d887c4ae04057b0e3190a69f8739e021516a2c90b7"
   },
   {
     "file": "References/Current_Xianxia/SectRoad/01_sect_road_concept.png",
@@ -5953,6 +7088,61 @@
     "file": "Turnarounds/CloudpiercerPeak_v001/views.json",
     "bytes": 2933,
     "sha256": "c70e7f1161b30274211ea2d12505890bc0d0a20640ccc31e7ee2640413bd8fae"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/01_front.png",
+    "bytes": 1084347,
+    "sha256": "4cdf6e4c9c6ac1aa15578e50cd47d6df7e6f7c9484035bc27187dc2680b09f71"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/02_right.png",
+    "bytes": 1042739,
+    "sha256": "bf897ad1919ab176f463475ba960d70090d848a754107a0888685545bdbc6b63"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/03_rear.png",
+    "bytes": 1087651,
+    "sha256": "c433bc1092c466560d287fe76dfd035a6f45f974c3ea20cb6cabf3ebf9bc5102"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/04_left.png",
+    "bytes": 1065084,
+    "sha256": "d9999a7a928193658d429b10136ef119a8ed0aa55f8989ed315a0821dd11c095"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/05_front_right.png",
+    "bytes": 1085414,
+    "sha256": "23b72f4922729fe42bd64055b7b5091d61f392f22b640bed32e030e99f0c4a25"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/06_rear_right.png",
+    "bytes": 1091302,
+    "sha256": "8d0484b1ca3f9cfda0b1cd1d8aea6209647236408f1f82f6e3a911160be5807f"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/07_rear_left.png",
+    "bytes": 1106795,
+    "sha256": "908ca8dde4e17e61521f7214fde6be0ffae6ea8e79a2e28c587e4d973a4bcc75"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/08_front_left.png",
+    "bytes": 1086286,
+    "sha256": "932b461e90f3189cfdfdd35998442417e9114526da8d6cea6b2a3eec6843d802"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/09_top.png",
+    "bytes": 1046317,
+    "sha256": "fe0f5559886302701e86aa7b59b77d705978971f181085b63633cbf7df7be164"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/10_high_front.png",
+    "bytes": 1102006,
+    "sha256": "5297a29f68017cd1f834ff59a627562ec871c432b4a26a99dae5c17e22315e90"
+  },
+  {
+    "file": "Turnarounds/CloudpiercerPeak_v002/views.json",
+    "bytes": 2987,
+    "sha256": "86ae18b997bf08d3c93dc241695b5f4543f7da4ec2e32604e91b39031b5352f2"
   },
   {
     "file": "Turnarounds/CourtyardGate_v001/01_front.png",
@@ -6890,6 +8080,61 @@
     "sha256": "ef6d0028780626b97e0faf93b44a0aa221417749b94874e193d9504597a684ac"
   },
   {
+    "file": "Turnarounds/MountainRestPavilion_v001/01_front.png",
+    "bytes": 1026365,
+    "sha256": "512bd571d3333fed819a7105e887688c5052c1b7bee4b869766bd6717116772d"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/02_right.png",
+    "bytes": 1022174,
+    "sha256": "fd7564b8c5d175dc2b31197342f829848bbc5b899f0fa2af52eee67320bf485b"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/03_rear.png",
+    "bytes": 1020559,
+    "sha256": "47939a91111d6ca69c48cab4bedbd14fd747351439e6bd49773c80834915d198"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/04_left.png",
+    "bytes": 1018012,
+    "sha256": "89b49edad3848b34b31bc965f9af0b74afcad520665e036b000943bd27cc0875"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/05_front_right.png",
+    "bytes": 1161576,
+    "sha256": "89b81259dddf1024611ac2db17bfb15bc0ee04b4836e433436b8983846c01250"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/06_rear_right.png",
+    "bytes": 1161390,
+    "sha256": "fc3efc441f176a8cc04818107abb641a69b6eb74f06ec36a56cbe0f45b4842bc"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/07_rear_left.png",
+    "bytes": 1179347,
+    "sha256": "b537197212cdc2a2f0c1df1b1ba4ec15bda1156bedfd407f4bc3fbbbebc8f086"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/08_front_left.png",
+    "bytes": 1166164,
+    "sha256": "ad1d6e9c620c8c98b5091a45c572a24c54fffc7726a941a8cdf13c852c72f68f"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/09_top.png",
+    "bytes": 1211322,
+    "sha256": "f90d1fe2ca88f7e83db710e939fe8dc7c76ce313ce29929c42aafce9caf61fbb"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/10_high_front.png",
+    "bytes": 1226757,
+    "sha256": "5e33e45ce67a0e625f80c128a623fb57d5f86688b9e546910720330acd78220c"
+  },
+  {
+    "file": "Turnarounds/MountainRestPavilion_v001/views.json",
+    "bytes": 2996,
+    "sha256": "56fe58ed97cfecf74bf0f220cb88652fcce5aa0c2ffb8e17e7b63e992433ceb0"
+  },
+  {
     "file": "Turnarounds/MountainRidge_v001/01_front.png",
     "bytes": 997849,
     "sha256": "38e3b3b69ef867ecdd6b1540cc66857c9197864139ad37ff23c1d6571955a89f"
@@ -6943,6 +8188,61 @@
     "file": "Turnarounds/MountainRidge_v001/views.json",
     "bytes": 2920,
     "sha256": "de1bd94bb9ae7e04229da7f5fb03a24797630dd224c569fe9ea52153e6655345"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/01_front.png",
+    "bytes": 1072037,
+    "sha256": "53249570059d187366d028b4f5db4d740ed29cd72198f2c5228cb17335908ace"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/02_right.png",
+    "bytes": 980832,
+    "sha256": "b417127b8ecbf6dd7aaacba9a880d375b1b8c51c2251d0e7784fd154b001850d"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/03_rear.png",
+    "bytes": 1077069,
+    "sha256": "000290eb4b1876d4ba698d0dc6104b59b6606a641c19e6961f2fb0e2a9bf5827"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/04_left.png",
+    "bytes": 997247,
+    "sha256": "4520c5dcb12209ff567c23977dc1011b0446843039b601e224889216e1e0d919"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/05_front_right.png",
+    "bytes": 1074569,
+    "sha256": "4c366398f647e9c0ba6cd0eeb9d4ec82fca5830a3d54a2a3b4164262ac294f2b"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/06_rear_right.png",
+    "bytes": 1067117,
+    "sha256": "6b70f006b7b694354cc79346141ad4119e04e23fe0bfabdb6ac6d8d6f3dabe8c"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/07_rear_left.png",
+    "bytes": 1083745,
+    "sha256": "5047aabf8b835f464639734ed7d90a880b0e6d1f5ae1a01ed5f887f7bb6f4399"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/08_front_left.png",
+    "bytes": 1071060,
+    "sha256": "e917646fa397b4016eaae890a0168cf9d8f7c5934c0c1d4476835016283e461b"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/09_top.png",
+    "bytes": 1061359,
+    "sha256": "93bf4d6efaa6b2ebc1da7ad16caac977a43bce0446a4f193a2a2f4f762e10801"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/10_high_front.png",
+    "bytes": 1096581,
+    "sha256": "21819c8da14021701f3de2ce0f087b7f38b2884dd4df4368a65ca872ffce4533"
+  },
+  {
+    "file": "Turnarounds/MountainRidge_v002/views.json",
+    "bytes": 2975,
+    "sha256": "39610abc28dc8fbd96ce3ff0a3380fbe514977767544ce71a7e2d80c67440013"
   },
   {
     "file": "Turnarounds/MountainStonePath_v001/01_front.png",
@@ -7053,6 +8353,61 @@
     "file": "Turnarounds/MountainStoneStairs_v001/views.json",
     "bytes": 2977,
     "sha256": "9a065f09ca1b3c895720430ccf83d33fa3a80e09ec6abc5363f31ef31717a992"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/01_front.png",
+    "bytes": 1014619,
+    "sha256": "b25a1b3fddc5c2d4a3623332cfb30c3066cdfe31a22474aabefeba6b9aefd882"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/02_right.png",
+    "bytes": 1019537,
+    "sha256": "785f8a1398dea7c63518fa3fbd7e1c76c76a16ef1b2eb760cd2b2af5b9d971ea"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/03_rear.png",
+    "bytes": 1015939,
+    "sha256": "4debee0bd23335c0e0d41a4a33d107e67233b10707cbabdb792d164a6baff8c4"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/04_left.png",
+    "bytes": 1024804,
+    "sha256": "5d5e7ac433ab8655d9a490d503d28f8e79a876d2253b70a403f6126a3ae57b57"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/05_front_right.png",
+    "bytes": 1087746,
+    "sha256": "a02766cd10f3bc54fae3189800c2deaa97a5d3dfaba284fa971e3c9f8736187a"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/06_rear_right.png",
+    "bytes": 1095688,
+    "sha256": "49b2a175557b7538dc1aa8c3b3431f7ea172df963b60ac1ed48f7c58b300a8a7"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/07_rear_left.png",
+    "bytes": 1101756,
+    "sha256": "b07d790c1c8e683ade36a658315be0f721e494d7d9f01f6973e6166537557bf5"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/08_front_left.png",
+    "bytes": 1100841,
+    "sha256": "8333ab85cf1f0c8e71d3896d6ddd0c78279f51e1451e731cf4e65a01f6bb0d1f"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/09_top.png",
+    "bytes": 1135144,
+    "sha256": "c8ddaf035d184bec608662e1d4888c1e6dae856ed514e9ce2c0a2f5b0536a279"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/10_high_front.png",
+    "bytes": 1117111,
+    "sha256": "31f3a0e6bcfe1503ee15dba4fbf583a2c4779219869903d456e629d080192031"
+  },
+  {
+    "file": "Turnarounds/MountainStreamBend_v001/views.json",
+    "bytes": 2990,
+    "sha256": "5b05e84884540577b2adf8a5b5b737ee55b1829891d57bbe25cc4cbb5729c4a1"
   },
   {
     "file": "Turnarounds/MountainTurnLanding_v001/01_front.png",
@@ -8210,6 +9565,61 @@
     "sha256": "7285c8824b53a2a672a97288ecfeee65cbbe40078acc5f75889122259a9dba8a"
   },
   {
+    "file": "Turnarounds/SpiritSpringPool_v001/01_front.png",
+    "bytes": 1039381,
+    "sha256": "a2d1836ee4afc287ea94723facfdfddd1602b6c4f59c29398606514bfa7b1f9d"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/02_right.png",
+    "bytes": 1029315,
+    "sha256": "25c275d1f57a370d4914ba8187d4e6da5e0ef0bc22e8e6c9718fbfa7e8502add"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/03_rear.png",
+    "bytes": 1039396,
+    "sha256": "1e5cb1866c5ee6d85feac80565b43e15462842efe9ccbc97f212ce87c59d1d9b"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/04_left.png",
+    "bytes": 1038827,
+    "sha256": "1c33e78204edbd020965b9cf841aef92443a1ac2f46d34f4437e0fa0e9ff6455"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/05_front_right.png",
+    "bytes": 1087697,
+    "sha256": "9349f827dbd8f9f62eacf84a647334901773677e72b0625e9b790ef65a862b35"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/06_rear_right.png",
+    "bytes": 1078759,
+    "sha256": "2edaa153e0d2d89a3871b67cfbfa04cbeb434fc90ff39db14b1e78b0ec251c27"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/07_rear_left.png",
+    "bytes": 1088426,
+    "sha256": "fd957ede75ea1764adbc73be4a343dd99a046e6d5e9996f2d52d14dd27115704"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/08_front_left.png",
+    "bytes": 1098697,
+    "sha256": "fd8d3fe12539940fbf953e4d5acf5d1bdcbd45907f2eb02bd79e2d4750785d4a"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/09_top.png",
+    "bytes": 1118142,
+    "sha256": "d5b33476ee55b5a62894b77d77a5b14e352a9d5c3dfcf46ed85738cc9e062480"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/10_high_front.png",
+    "bytes": 1116887,
+    "sha256": "66e7ab4402e40f224e1094aa009cab4e9de41a45341239527cdda328197b5835"
+  },
+  {
+    "file": "Turnarounds/SpiritSpringPool_v001/views.json",
+    "bytes": 2985,
+    "sha256": "c86c62f820b2d1192ce409d289abc5676dd0be1d1ab733cef0d127c22b80f35e"
+  },
+  {
     "file": "Turnarounds/StarterHouse_v004/01_front.png",
     "bytes": 1141625,
     "sha256": "c80fcaa9e660dff6af65e8aa1d95bbf1cfbabf51f95eabd4740c76ede1a017f0"
@@ -8263,6 +9673,61 @@
     "file": "Turnarounds/StarterHouse_v004/views.json",
     "bytes": 753,
     "sha256": "069898fa1e69356ec0497331fb0edfcb076ed8ffecb9444490fd1da7b9b79b47"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/01_front.png",
+    "bytes": 963048,
+    "sha256": "7ad41d70730affc27b469f3e28b2ba7af685aa9728ad2f8ad11d24d9df31e682"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/02_right.png",
+    "bytes": 1011214,
+    "sha256": "2576c5b2e8c235a8633052790b9089ceccad06f98def73047e362cc68472fef9"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/03_rear.png",
+    "bytes": 962342,
+    "sha256": "bc0ae61e1970d71c4189fbc3bd078a4bc1dc2306f3b41c2abaa1bca5cf4dbb27"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/04_left.png",
+    "bytes": 1011170,
+    "sha256": "c30179fc5ccfab8745330c23d903209027a1653442ee622863a3f269f1e0b885"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/05_front_right.png",
+    "bytes": 1092171,
+    "sha256": "e872ca92ae0eb3866f8ae7a55a36e19772962620bfb3ea0e1dd72ed718a7846b"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/06_rear_right.png",
+    "bytes": 1088161,
+    "sha256": "1841df05dd10ce58b038085b1665e15af685d673ce48d5db0b06167b0b523fc5"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/07_rear_left.png",
+    "bytes": 1108440,
+    "sha256": "7161ce81d95b8502a8d830ac829f22f1609c8160657ae8c41b7a75b17d150b46"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/08_front_left.png",
+    "bytes": 1094495,
+    "sha256": "9c74a28bec1b0d04b5240341c50cfdf4653ba7f5feca516da79254ee960c678c"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/09_top.png",
+    "bytes": 998688,
+    "sha256": "16219722a5389bb54642b742ad4e89351757a37b28f0fb45fb3abcf3d2957476"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/10_high_front.png",
+    "bytes": 1000620,
+    "sha256": "4f83cd3004a6084dc3ac62b46f81b360991359e492cf5dc4aade6629e257db02"
+  },
+  {
+    "file": "Turnarounds/StoneArchBridge_v001/views.json",
+    "bytes": 2973,
+    "sha256": "27493992efa2d235dd40873cd9220f1bb931aa41a699e9ed723ca3dd7d9e997b"
   },
   {
     "file": "Turnarounds/StoneLantern_v001/01_front.png",
@@ -8595,6 +10060,61 @@
     "sha256": "489acf142aa5faaebd9f2a310fd750d7b110c76074f5362d76dc74df28811b78"
   },
   {
+    "file": "Turnarounds/TrailStoneRailing_v001/01_front.png",
+    "bytes": 1023788,
+    "sha256": "60fcb4e2d4d53f26c2dfdbd4581cd123dbc89f5425f2cb496acbbbb4adb1b68e"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/02_right.png",
+    "bytes": 944585,
+    "sha256": "fd86ca8429760ede2505543c036671fcb8dfbe23df34b1f941c922e4aaa4b6d6"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/03_rear.png",
+    "bytes": 1013639,
+    "sha256": "e398c474032e851bb9feca8260a180ec127cdef2a750b76cc9b750c9d112bf6b"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/04_left.png",
+    "bytes": 956143,
+    "sha256": "f9e7887255bb31e5434ba5e6a3063819d9796fb71afd8a27bdc5b742b7c76825"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/05_front_right.png",
+    "bytes": 1066309,
+    "sha256": "ad5c9ecc7b6fae1c26272217119d1e1ab5a577b87ef6288dc953b42b2de5d135"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/06_rear_right.png",
+    "bytes": 1079330,
+    "sha256": "4f9849e7c145ad4ad96daf5dbf5da9cd667d5724404d2b55d3958f5fe65fbfc7"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/07_rear_left.png",
+    "bytes": 1083839,
+    "sha256": "16e3a55b4615b4018f118e7e3e3b2c0c1a2e0f16cdf05b40137d41b04c4aed16"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/08_front_left.png",
+    "bytes": 1092419,
+    "sha256": "3359e3bb677eabcf55e02cf82557c9a44e52048cd546151ba0887810af87484d"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/09_top.png",
+    "bytes": 954108,
+    "sha256": "d3063b5d006e39a15dba0d034f795e33560f187d945f71e47510c0a63fb7c84f"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/10_high_front.png",
+    "bytes": 1005435,
+    "sha256": "f1637c41db4fc058c73b139101d2fd3834389bc2a1b5fbe6ebcbaf93f2329fef"
+  },
+  {
+    "file": "Turnarounds/TrailStoneRailing_v001/views.json",
+    "bytes": 2968,
+    "sha256": "a4d065b5dfaff4571114aeb03eb76d0ed05a142fcaf88db162aad758465854f7"
+  },
+  {
     "file": "Turnarounds/TrainingDummy_v001/01_front.png",
     "bytes": 1065738,
     "sha256": "7c34c11c511614090c85386bf6f09ced7434a6340aafd8ff1012753f73811e12"
@@ -8703,6 +10223,61 @@
     "file": "Turnarounds/TrainingGround_v001/views.json",
     "bytes": 2978,
     "sha256": "1917f1a56999b9164c0486377f0e03c608971e79cfc4866f43273894476285e3"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/01_front.png",
+    "bytes": 1066742,
+    "sha256": "08696b65a42a4e58753dd262c64e542e59a2bfaaedd115e557715e864cc9ebe0"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/02_right.png",
+    "bytes": 1033809,
+    "sha256": "714d6ddfc04587603d36f80e5504ed20b66806fd9e7068a3fa4665bba75f69e0"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/03_rear.png",
+    "bytes": 1035404,
+    "sha256": "ca0b860de3005ce8248ff2b12e148645b2786da3516e85c537237cbbc3db847d"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/04_left.png",
+    "bytes": 1044294,
+    "sha256": "ff7bfcd91befce2dd1fb4f6f0bd16ae862bce4fdd983ba54ac9c44ef89f54dfc"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/05_front_right.png",
+    "bytes": 1115163,
+    "sha256": "7f054d2e1930ebccb14ce03882251145be0915b29c7b5d80d06008729507c246"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/06_rear_right.png",
+    "bytes": 1063400,
+    "sha256": "8575ee24801ba3268aeb4fc8a94b63829cbe60a44c01b45389f668f44f42d307"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/07_rear_left.png",
+    "bytes": 1073413,
+    "sha256": "4c2df65b15c6454270e7b0bb0c547805f93c5339c3594f28c8abd445eede4863"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/08_front_left.png",
+    "bytes": 1116942,
+    "sha256": "b775a7f807ee2ffda7c7cf34139457fffce860524cd4c1c3d7211368e425168c"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/09_top.png",
+    "bytes": 1099637,
+    "sha256": "4637befcf309ddbc4324d683e8197a11445ec95883b772ab024ed42d77e61741"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/10_high_front.png",
+    "bytes": 1117441,
+    "sha256": "1cea25741a80027c0e962a71b06014c6e8a7509faca4036c21216e29afe90bc2"
+  },
+  {
+    "file": "Turnarounds/WaterfallCliff_v001/views.json",
+    "bytes": 2962,
+    "sha256": "b02aafa77e3e26e7924b4f4962a3678f922ca74f8c4bdcadf18a0c7e5e0e4fe3"
   },
   {
     "file": "Turnarounds/WeaponDisplayRack_v001/01_front.png",
@@ -8931,22 +10506,22 @@
   },
   {
     "file": "asset_catalog.json",
-    "bytes": 76600,
-    "sha256": "a926b74721cdd831557d4bf82a56287c6cecc20d4beb10b0c2f5b71758400d5c"
+    "bytes": 84486,
+    "sha256": "2722a57190d3eead54a05caff6ae9dced305aef91ce1e7d5e036ba9c49474c32"
   },
   {
     "file": "index.html",
-    "bytes": 120591,
-    "sha256": "67856d3429134c94fa278f9d9a8b9811e44b79167446fe15a542355a81ca342c"
+    "bytes": 121420,
+    "sha256": "19e5541219401cec5450e627adc18711b3fd6b1ed1b3c71091b06b27e32def0e"
   },
   {
     "file": "library_validation.json",
-    "bytes": 1239,
-    "sha256": "a0255d61ca2285834726dd9e10dd6b8b831f1c9bc990319aa2c7701f1fda4a10"
+    "bytes": 1480,
+    "sha256": "f64e52118adfaf507dc8ad938a40646c0b765043c5f6dd1eca47952555f91843"
   },
   {
     "file": "\u5b8c\u6574\u5efa\u6a21\u6e05\u55ae.md",
-    "bytes": 8631,
-    "sha256": "177d24fc1ee04144328877125f14103dd6984ed9b4fb80c43d08bc6e1e3089c1"
+    "bytes": 9055,
+    "sha256": "2685295ae8738655ebd8f96f17e670f36c2ee17e87b4d60dabdf1455c9374541"
   }
 ]

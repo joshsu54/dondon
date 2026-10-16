@@ -98,12 +98,14 @@ def pillar(name,cx,cy,rx,ry,h,seed,lean=(0,0),taper=.30,cap=.18,flare=.35,talus=
         for i in range(n):
             a=i*math.tau/n;f=radius(a,z,t);verts.append((c[0]+rx*f*math.cos(a),c[1]+ry*f*math.sin(a),z))
     if not talus:  # rounded, lumpy cap: rings shrink toward the summit
-        zt=h*body/rings;capn=8
+        zt=h*body/rings;capn=8;lump=min(.6,(h-zt)*.25);prev=[zt]*n;gap=(h-zt)/(capn*20)
         for k in range(1,capn+1):
             u=k/(capn+1);t=zt/h;c=centre(t)
             for i in range(n):
                 a=i*math.tau/n;f=radius(a,zt,t)*math.cos(u*math.pi/2)**.7
-                z=zt+(h-zt)*math.sin(u*math.pi/2)+.6*noise.noise(Vector((math.cos(a),math.sin(a),u))*2+off)
+                z=zt+(h-zt)*math.sin(u*math.pi/2)+lump*noise.noise(Vector((math.cos(a),math.sin(a),u))*2+off)
+                # Each column must keep rising and stay under the summit vertex, or the cap folds inward.
+                z=min(max(z,prev[i]+gap),h-(capn-k)*gap);prev[i]=z
                 verts.append((c[0]+rx*f*math.cos(a),c[1]+ry*f*math.sin(a),z))
     rows=len(verts)//n
     faces=[(j*n+i,j*n+(i+1)%n,(j+1)*n+(i+1)%n,(j+1)*n+i) for j in range(rows-1) for i in range(n)]
