@@ -1,0 +1,164 @@
+[
+  {
+    "asset": "TownWell",
+    "blend_reopened": true,
+    "meshes": 68,
+    "dimensions_m": [
+      3.271,
+      2.606,
+      3.391
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "NoticeBoard",
+    "blend_reopened": true,
+    "meshes": 62,
+    "dimensions_m": [
+      3.196,
+      1.087,
+      3.015
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "BambooBasket",
+    "blend_reopened": true,
+    "meshes": 47,
+    "dimensions_m": [
+      0.57,
+      0.602,
+      0.67
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "WoodenCrate",
+    "blend_reopened": true,
+    "meshes": 33,
+    "dimensions_m": [
+      0.73,
+      0.753,
+      0.74
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "ClayJar",
+    "blend_reopened": true,
+    "meshes": 6,
+    "dimensions_m": [
+      0.584,
+      0.584,
+      0.74
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "FirewoodStack",
+    "blend_reopened": true,
+    "meshes": 111,
+    "dimensions_m": [
+      1.905,
+      0.962,
+      1.1
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "BambooFence",
+    "blend_reopened": true,
+    "meshes": 44,
+    "dimensions_m": [
+      2.147,
+      0.194,
+      1.3
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 2.9802322387695312e-08,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "FenceGate",
+    "blend_reopened": true,
+    "meshes": 66,
+    "dimensions_m": [
+      3.196,
+      1.036,
+      2.815
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "TownInn",
+    "blend_reopened": true,
+    "meshes": 386,
+    "dimensions_m": [
+      14.72,
+      14.38,
+      10.461
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  }
+]

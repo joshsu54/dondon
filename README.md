@@ -2,9 +2,10 @@
 
 宗門、山景、登山步道與生活道具的 Blender 素材專案。模型、圖片、影片與 ZIP 交付包使用 Git LFS 管理。
 
-目前素材庫有 **60 組模型、600 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
+目前素材庫有 **69 組模型、690 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
-- 最新登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
+- 最新小鎮生活批次（水井、公告板、竹簍、木箱、陶罐、柴堆、籬笆、院門、食肆客棧）：`ArtLibrary/ExpansionBatches/TownLife09/`。每件建模前先產生 10 張概念圖，規則見 `CLAUDE.md`。
+- 登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
 - 山頂宗門與登山步道：`Models/MountainSanctuary/v002/`。
 - 山風與雲霧：`Effects/WindFog/v001/`。
 - 模型屬於可編輯外觀原型；引擎碰撞、導航、UV 烘焙與 LOD 尚未完成。
