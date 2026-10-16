@@ -85,7 +85,7 @@ def batch_files():
                      'concept_images_before_modelling': 10, 'concept_folder': f'ArtReferences/{aid}_10Views',
                      'dimensions_m': [round(x, 3) for x in i['dimensions_m']], 'mesh_objects': i['mesh_objects']})
     (BATCH / 'inventory.json').write_text(json.dumps({'batch': 'TownLife09', 'created': DATE, 'workflow': [
-        '1. 撰寫提示詞與設計規格（town09_shapes.py）', '2. 繪製 10 張建模前概念圖（concept_sketch09.py）',
+        '1. 撰寫提示詞與設計規格（town09_shapes.py）', '2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）',
         '3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）',
         '4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）'], 'new_assets': rows}, ensure_ascii=False, indent=2),
         encoding='utf-8')
@@ -101,8 +101,8 @@ def batch_files():
 ## 製作流程
 
 1. 每件素材先寫提示詞（含 10 個角度的描述）與設計規格：`BlenderSource/TownLife09/town09_shapes.py`。
-2. **建模前**先依規格繪製十個角度的墨線上色概念圖，存放在 `ArtReferences/<素材>_10Views/`，提示詞記錄在同資料夾的 `prompts.json`。
-   雲端環境沒有 AI 生圖模型，這些是程式繪製的概念草圖（不是 AI 繪圖、也不是模型渲染），提示詞可在之後交給生圖工具重新產生。
+2. **建模前**先依規格在暫存場景排出草模，以接近 Codex image_gen 概念圖的柔光棚拍風格（淺灰背景、暖色主光、接地陰影、透視鏡頭）渲染十個角度，存放在 `ArtReferences/<素材>_10Views/`，提示詞記錄在同資料夾的 `prompts.json`。
+   雲端環境沒有 AI 生圖模型，這些不是 AI 繪圖；提示詞可在之後交給生圖工具重新產生。屋頂改為藍灰起翹曲面瓦頂、木色偏暖，對齊既有 Codex 素材。
 3. Blender 開新檔，把十張概念圖放進 `80_Concept_References` 集合當參考圖（不渲染、不匯出），再完整建模：倒角、材質、瓦壟、編織帶、格柵等細節零件都在這一步加入。
 4. 匯出 FBX，並從同一模型渲染 10 張 1024 × 1024 固定角度圖到 `ArtLibrary/Turnarounds/<素材>_v001/`。
 5. 重新開檔、FBX 回匯核對尺寸與物件數；結果記錄在 `validation.json`。

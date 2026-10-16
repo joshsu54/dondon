@@ -12,22 +12,22 @@ import numpy as np
 
 # name -> (linear RGB for Blender, sRGB-ish for sketches)
 PALETTE = {
-    'stone':   ((.20, .23, .22), (118, 128, 124)),
-    'pale':    ((.42, .43, .39), (176, 176, 164)),
-    'plaster': ((.62, .58, .50), (214, 205, 186)),
-    'timber':  ((.12, .055, .025), (92, 58, 38)),
-    'board':   ((.30, .16, .075), (150, 102, 66)),
-    'lacquer': ((.30, .045, .03), (150, 48, 38)),
-    'tile':    ((.07, .08, .09), (66, 72, 80)),
-    'bamboo':  ((.42, .36, .16), (184, 166, 104)),
-    'straw':   ((.50, .40, .19), (198, 172, 110)),
-    'clay':    ((.36, .15, .07), (166, 104, 70)),
-    'glaze':   ((.10, .14, .12), (82, 100, 92)),
-    'paper':   ((.72, .68, .56), (232, 222, 196)),
-    'rope':    ((.38, .30, .17), (170, 148, 108)),
+    'stone':   ((0.3, 0.33, 0.33), (118, 128, 124)),
+    'pale':    ((0.52, 0.53, 0.5), (176, 176, 164)),
+    'plaster': ((0.76, 0.73, 0.66), (214, 205, 186)),
+    'timber':  ((0.2, 0.085, 0.035), (92, 58, 38)),
+    'board':   ((0.42, 0.22, 0.09), (150, 102, 66)),
+    'lacquer': ((0.4, 0.06, 0.035), (150, 48, 38)),
+    'tile':    ((0.17, 0.22, 0.25), (66, 72, 80)),
+    'bamboo':  ((0.5, 0.42, 0.18), (184, 166, 104)),
+    'straw':   ((0.6, 0.47, 0.22), (198, 172, 110)),
+    'clay':    ((0.45, 0.18, 0.07), (166, 104, 70)),
+    'glaze':   ((0.1, 0.2, 0.17), (82, 100, 92)),
+    'paper':   ((0.8, 0.76, 0.64), (232, 222, 196)),
+    'rope':    ((0.45, 0.34, 0.18), (170, 148, 108)),
     'iron':    ((.06, .06, .06), (60, 60, 62)),
     'brass':   ((.45, .32, .10), (196, 160, 84)),
-    'cloth':   ((.12, .22, .17), (90, 128, 108)),
+    'cloth':   ((0.2, 0.32, 0.24), (90, 128, 108)),
     'lantern': ((.62, .08, .04), (210, 66, 48)),
     'water':   ((.05, .10, .12), (60, 88, 98)),
 }
@@ -142,39 +142,70 @@ class Asset:
         v, f = geo
         self.parts.append(Part(name, v, f, color, **kw))
 
-    def gable_roof(self, name, c, w, d, h, th=.12, color='tile', ribs=.28, ridge_cap=True, curl=0.0):
-        """Two sloped slabs, ridge along x, eaves at c.z (outer bottom)."""
-        cx, cy, cz = c
+    def gable_roof(self, name, c, w, d, h, th=.12, color='tile', ribs=.28, ridge_cap=True, curl=0.0, lift=None):
+        """Curved two-slope tile roof, ridge along x, eaves at c.z.
+
+        Slopes are concave (steeper at the ridge, flatter at the eave) and the
+        four eave corners turn up, like the existing dondon town buildings.
+        """
+        c = np.asarray(c, float)
+        lift = d * .07 if lift is None else lift
+        nx, nt = max(10, int(w / .3)), 9
+
+        def surf(x, t, sgn):
+            z = h * t - .14 * h * math.sin(math.pi * t) + lift * (abs(x) / (w / 2)) ** 3 * (1 - t) ** 2
+            return np.array([x, sgn * d / 2 * (1 - t), z]) + c
+
         for sgn in (-1, 1):
-            e0, e1 = np.array([0, sgn * d / 2, 0.]), np.array([0, 0, h])
-            n = np.array([0, sgn * h, d / 2])
-            n /= np.linalg.norm(n)
-            t = n * th
-            bot = [(-w / 2, *(e0[1:])), (w / 2, *(e0[1:])), (w / 2, *(e1[1:])), (-w / 2, *(e1[1:]))]
-            bot = np.array(bot)
-            top = bot + t
-            if sgn > 0:
-                bot, top = bot[[1, 0, 3, 2]], top[[1, 0, 3, 2]]
-            self.add(f'{name}_Slope_{"N" if sgn > 0 else "S"}',
-                     hexa(np.vstack([bot, top]) + c), color)
+            xs = np.linspace(-w / 2, w / 2, nx + 1)
+            ts = np.linspace(0, 1, nt + 1)
+            top = [surf(x, t, sgn) + (0, 0, th) for t in ts for x in xs]
+            bot = [surf(x, t, sgn) for t in ts for x in xs]
+            V = np.array(top + bot)
+            off = len(top)
+            idx = lambda a, b: a * (nx + 1) + b  # noqa: E731
+            F = []
+            for a in range(nt):
+                for b in range(nx):
+                    q = (idx(a, b), idx(a, b + 1), idx(a + 1, b + 1), idx(a + 1, b))
+                    F.append(q if sgn < 0 else q[::-1])
+                    F.append(tuple(off + k for k in (q[::-1] if sgn < 0 else q)))
+            for b in range(nx):      # eave and ridge edges
+                for a in (0, nt):
+                    F.append((idx(a, b), idx(a, b + 1), off + idx(a, b + 1), off + idx(a, b)))
+            for a in range(nt):      # gable edges
+                for b in (0, nx):
+                    F.append((idx(a, b), idx(a + 1, b), off + idx(a + 1, b), off + idx(a, b)))
+            self.add(f'{name}_Slope_{"N" if sgn > 0 else "S"}', (V, F), color, smooth=True, bevel=False)
             if ribs:
                 k = int(w / ribs)
                 for i in range(k + 1):
-                    x = -w / 2 + .1 + i * (w - .2) / k
-                    a = np.array([x, e0[1], e0[2]]) + t * 1.4 + c
-                    b = np.array([x, e1[1], e1[2]]) + t * 1.4 + c
-                    self.add(f'{name}_TileRow', rod(a, b, .045, 6), color, smooth=True, detail=True, bevel=False)
-            # fascia board along eave
-            self.add(f'{name}_Fascia', beam(np.array([-w / 2, e0[1], e0[2] + th / 2]) + c,
-                                            np.array([w / 2, e0[1], e0[2] + th / 2]) + c, th * 1.1, th * 1.4),
-                     'timber', detail=True)
+                    x = -w / 2 + .08 + i * (w - .16) / k
+                    pts = [surf(x, t, sgn) + (0, 0, th * 1.05) for t in np.linspace(0, .97, 7)]
+                    self.add(f'{name}_TileRow', merge(rod(pts[m], pts[m + 1], th * .42, 6) for m in range(6)),
+                             color, smooth=True, detail=True, bevel=False)
+            ex = np.linspace(-w / 2, w / 2, 9)
+            eave = [surf(x, 0, sgn) + (0, 0, th * .3) for x in ex]
+            self.add(f'{name}_Eave_Board', merge(beam(eave[m], eave[m + 1], th * 1.1, th * 1.3) for m in range(8)),
+                     'timber', detail=True, bevel=False)
         if ridge_cap:
-            rc = np.array([0, 0, h + th * 1.3]) + c
-            self.add(f'{name}_Ridge', beam(rc - (w / 2 + .05, 0, 0), rc + (w / 2 + .05, 0, 0), th * 2.2, th * 1.6), color)
+            rc = c + (0, 0, h + th * 1.15)
+            self.add(f'{name}_Ridge', beam(rc - (w / 2 + .05, 0, 0), rc + (w / 2 + .05, 0, 0), th * 2.4, th * 1.8), color)
             if curl:
                 for sx in (-1, 1):
                     p = rc + (sx * (w / 2 + .05), 0, 0)
-                    self.add(f'{name}_Ridge_Ornament', beam(p, p + (sx * curl * .5, 0, curl), th * 1.8, th * 1.6), color)
+                    self.add(f'{name}_Ridge_Ornament', merge([beam(p, p + (sx * curl * .45, 0, curl * .55), th * 2, th * 1.8),
+                                                              beam(p + (sx * curl * .45, 0, curl * .55), p + (sx * curl * .55, 0, curl), th * 1.6, th * 1.5)]), color)
+
+
+def merge(geos):
+    V, F = [], []
+    n = 0
+    for v, f in geos:
+        V.append(np.asarray(v, float))
+        F += [[i + n for i in face] for face in f]
+        n += len(v)
+    return np.vstack(V), F
 
 
 # ----------------------------------------------------------------- assets

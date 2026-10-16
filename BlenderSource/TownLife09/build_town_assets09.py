@@ -1,6 +1,6 @@
 """Step 2 of TownLife09: model each asset in Blender from its concept references.
 
-Requires the ten concept sketches from concept_sketch09.py to exist first; they
+Requires the ten concept sketches from concept_render09.py to exist first; they
 are loaded into each .blend as reference images (collection 80_Concept_References,
 never rendered or exported). Every part of the design spec is then modelled with
 bevels and materials, exported to FBX, and ten views are rendered from the same
@@ -98,7 +98,7 @@ def add_concept_refs(aid, scene, extent, centre):
     files = [refs / f'{v}.png' for v, _, _ in S.VIEWS]
     missing = [f.name for f in files if not f.exists()]
     if missing:
-        raise SystemExit(f'{aid}: concept references missing {missing}; run concept_sketch09.py first')
+        raise SystemExit(f'{aid}: concept references missing {missing}; run concept_render09.py first')
     coll = bpy.data.collections.new('80_Concept_References')
     scene.collection.children.link(coll)
     size = max(extent.x, extent.z) * 1.1
@@ -163,7 +163,7 @@ def build(aid):
     ls = max(extent) * .65
     for name, direction, power in [('Key', (-.8, -1.1, 1.5), 1100), ('Fill', (1.2, -.4, .9), 650), ('Rim', (.2, 1.1, 1.3), 950)]:
         d = bpy.data.lights.new(name, 'AREA')
-        d.energy = power * ls * ls / 7 * .45
+        d.energy = power * ls * ls / 7 * .8
         d.shape, d.size = 'DISK', ls
         o = studio_obj(name, d)
         o.location = centre + Vector(direction) * ls
@@ -181,6 +181,8 @@ def build(aid):
     scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format = 'PNG'
     scene.view_settings.view_transform = 'AgX'
+    scene.view_settings.look = 'AgX - Medium High Contrast'
+    scene.view_settings.exposure = -.6
 
     def position(direction):
         cam.location = centre + Vector(direction).normalized() * cam.data.ortho_scale * 2.3
