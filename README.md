@@ -5,9 +5,13 @@
 目前素材庫有 **66 組模型、660 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
 - 最新登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
-- 山頂宗門與登山步道：`Models/MountainSanctuary/v002/`。
-- 山風與雲霧：`Effects/WindFog/v001/`。
+- 最新山頂宗門場景：`Models/MountainSanctuary/v004/`（實體雲與新版山峰）；v002 登山步道版本保留。
+- 最新山風與雲霧：`Effects/WindFog/v002/`（實體雲漂移）；v001 體積霧版本保留。
 - 模型屬於可編輯外觀原型；引擎碰撞、導航、UV 烘焙與 LOD 尚未完成。
+
+## Claude Code 交接
+
+先讀 `CLAUDE.md`、`HANDOFF.md`，再執行 `python3 Tools/Handoff/verify_project.py`。最新內容在 `solid-clouds-karst-peaks` 分支；GitHub 預設 `main` 尚未合併這些更新。完整分卷交接包與還原方法請看 GitHub Releases；打包規格在 `Tools/Handoff/README.md`。
 
 ## 下載完整模型與圖片
 
@@ -15,7 +19,7 @@
 
 ```sh
 git lfs install
-git clone https://github.com/joshsu54/dondon.git
+git clone --branch solid-clouds-karst-peaks https://github.com/joshsu54/dondon.git
 cd dondon
 git lfs pull
 ```
