@@ -3,7 +3,7 @@
   "created": "2026-10-16",
   "workflow": [
     "1. 撰寫提示詞與設計規格（town09_shapes.py）",
-    "2. 繪製 10 張建模前概念圖（concept_sketch09.py）",
+    "2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）",
     "3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）",
     "4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）"
   ],
@@ -16,9 +16,9 @@
       "concept_images_before_modelling": 10,
       "concept_folder": "ArtReferences/TownWell_10Views",
       "dimensions_m": [
-        3.271,
+        3.295,
         2.606,
-        3.391
+        3.369
       ],
       "mesh_objects": 68
     },
@@ -30,9 +30,9 @@
       "concept_images_before_modelling": 10,
       "concept_folder": "ArtReferences/NoticeBoard_10Views",
       "dimensions_m": [
-        3.196,
-        1.087,
-        3.015
+        3.215,
+        1.016,
+        2.996
       ],
       "mesh_objects": 62
     },
@@ -114,9 +114,9 @@
       "concept_images_before_modelling": 10,
       "concept_folder": "ArtReferences/FenceGate_10Views",
       "dimensions_m": [
-        3.196,
-        1.036,
-        2.815
+        3.215,
+        0.966,
+        2.796
       ],
       "mesh_objects": 66
     },
@@ -128,9 +128,9 @@
       "concept_images_before_modelling": 10,
       "concept_folder": "ArtReferences/TownInn_10Views",
       "dimensions_m": [
-        14.72,
+        14.789,
         14.38,
-        10.461
+        10.407
       ],
       "mesh_objects": 386
     }

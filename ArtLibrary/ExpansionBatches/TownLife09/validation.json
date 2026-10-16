@@ -4,9 +4,9 @@
     "blend_reopened": true,
     "meshes": 68,
     "dimensions_m": [
-      3.271,
+      3.295,
       2.606,
-      3.391
+      3.369
     ],
     "vertices_finite": true,
     "bottom_center_pivot_checked": true,
@@ -14,7 +14,7 @@
     "concept_refs_in_blend": true,
     "fbx_reimported": true,
     "fbx_no_studio_or_reference_objects": true,
-    "fbx_dimension_error_m": 0.0,
+    "fbx_dimension_error_m": 2.384185791015625e-07,
     "ten_view_files_present": true
   },
   {
@@ -22,9 +22,9 @@
     "blend_reopened": true,
     "meshes": 62,
     "dimensions_m": [
-      3.196,
-      1.087,
-      3.015
+      3.215,
+      1.016,
+      2.996
     ],
     "vertices_finite": true,
     "bottom_center_pivot_checked": true,
@@ -130,9 +130,9 @@
     "blend_reopened": true,
     "meshes": 66,
     "dimensions_m": [
-      3.196,
-      1.036,
-      2.815
+      3.215,
+      0.966,
+      2.796
     ],
     "vertices_finite": true,
     "bottom_center_pivot_checked": true,
@@ -148,9 +148,9 @@
     "blend_reopened": true,
     "meshes": 386,
     "dimensions_m": [
-      14.72,
+      14.789,
       14.38,
-      10.461
+      10.407
     ],
     "vertices_finite": true,
     "bottom_center_pivot_checked": true,

@@ -8,9 +8,9 @@
   "units": "meters",
   "front": "-Y",
   "dimensions_m": [
-    3.270745038986206,
+    3.2952933311462402,
     2.6064343452453613,
-    3.3913285732269287
+    3.3692855834960938
   ],
   "mesh_objects": 68,
   "bounds_method": "evaluated mesh vertices",
