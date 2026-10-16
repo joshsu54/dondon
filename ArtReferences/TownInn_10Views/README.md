@@ -1,10 +1,10 @@
 # 食肆客棧（TownInn）：10 張建模前概念參考圖
 
-建模前先產生。依提示詞寫成設計規格，再以程式繪製十個角度的墨線上色草圖；雲端環境沒有 AI 生圖模型，所以這些是程式繪製的概念草圖，不是模型渲染，也不是 AI 繪圖。提示詞保留在 `prompts.json`，之後可改用生圖工具重新產生。
+建模前先產生。依提示詞寫成設計規格，在暫存場景排出草模，以接近 Codex image_gen 概念圖的柔光棚拍風格（淺灰無縫背景、暖色主光、接地陰影、透視鏡頭）渲染十個角度。雲端環境沒有 AI 生圖模型，所以這些不是 AI 繪圖；提示詞保留在 `prompts.json`，之後可改用生圖工具重新產生。
 
 - 設計：Two-storey 12 x 9 m inn: red lacquered columns, open lattice front, dining hall with five tables, counter and wine shelf, straight stair, three upstairs guest rooms with beds, front balcony, blank signboard, two red lanterns, tiled gable roof and a rear kitchen annex with stove, woks and chimney.
 - 尺寸：Approx. 13.8 x 13 x 9.6 m; floor-to-floor 3.4 m; stair 17 risers of 0.2 m.
-- 正面＝Blender -Y；主造型依據為 05 右前斜角。草圖省略細節零件（瓦壟、編織帶、格柵條等），細節以 Blender 模型為準。
+- 正面＝Blender -Y；主造型依據為 05 右前斜角。風格參考：`ArtReferences/HerbalStall/concept.png`、`ArtReferences/Blacksmith_10Views/`。
 
 ## 圖片索引
 

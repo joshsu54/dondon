@@ -2,10 +2,11 @@
   "asset": "NoticeBoard",
   "name_zh": "小鎮公告板",
   "stage": "pre-modelling concept reference",
-  "method": "Claude-written prompt -> design spec (BlenderSource/TownLife09/town09_shapes.py) -> cel-shaded ink sketch by BlenderSource/TownLife09/concept_sketch09.py. No AI image model was available in the cloud session; the prompts can be re-run with an image model.",
+  "method": "Claude-written prompt -> design spec (BlenderSource/TownLife09/town09_shapes.py) -> Codex-style soft studio concept render of a throwaway blockout by BlenderSource/TownLife09/concept_render09.py. No AI image model was available in the cloud session; the prompts can be re-run with an image model.",
+  "style_reference": "ArtReferences/HerbalStall/concept.png and ArtReferences/Blacksmith_10Views (Codex image_gen)",
   "master": "05_front_right.png",
   "front": "Blender -Y",
-  "projection": "orthographic",
+  "projection": "perspective 50 mm",
   "images": [
     {
       "name": "01_front.png",

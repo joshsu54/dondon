@@ -24,6 +24,15 @@ sys.path.insert(0, str(HERE))
 import town09_shapes as S  # noqa: E402
 
 ROOT = HERE.parents[1]
+LIGHT_SCALE, WORLD_STRENGTH, EXPOSURE = .5, .45, 0.0
+BACKDROP = (98, 102, 104)   # flat studio grey of the earlier Codex turnarounds
+
+
+def flatten_backdrop(path):
+    from PIL import Image
+    fg = Image.open(path).convert('RGBA')
+    bg = Image.new('RGBA', fg.size, BACKDROP + (255,))
+    Image.alpha_composite(bg, fg).convert('RGB').save(path)
 
 
 def make_materials():
@@ -163,7 +172,7 @@ def build(aid):
     ls = max(extent) * .65
     for name, direction, power in [('Key', (-.8, -1.1, 1.5), 1100), ('Fill', (1.2, -.4, .9), 650), ('Rim', (.2, 1.1, 1.3), 950)]:
         d = bpy.data.lights.new(name, 'AREA')
-        d.energy = power * ls * ls / 7 * .8
+        d.energy = power * ls * ls / 7 * LIGHT_SCALE
         d.shape, d.size = 'DISK', ls
         o = studio_obj(name, d)
         o.location = centre + Vector(direction) * ls
@@ -172,7 +181,8 @@ def build(aid):
     scene.world.use_nodes = True
     bg = scene.world.node_tree.nodes['Background']
     bg.inputs[0].default_value = (.19, .21, .22, 1)
-    bg.inputs[1].default_value = .65
+    bg.inputs[1].default_value = WORLD_STRENGTH
+    scene.render.film_transparent = True
     scene.render.engine = 'CYCLES'
     scene.cycles.device = 'CPU'
     scene.cycles.samples = 12
@@ -182,7 +192,7 @@ def build(aid):
     scene.render.image_settings.file_format = 'PNG'
     scene.view_settings.view_transform = 'AgX'
     scene.view_settings.look = 'AgX - Medium High Contrast'
-    scene.view_settings.exposure = -.6
+    scene.view_settings.exposure = EXPOSURE
 
     def position(direction):
         cam.location = centre + Vector(direction).normalized() * cam.data.ortho_scale * 2.3
@@ -215,6 +225,7 @@ def build(aid):
         assert all(.005 < p.x < .995 and .005 < p.y < .995 and p.z > 0 for p in projected), (aid, name, 'cropped')
         scene.render.filepath = str(turn / f'{name}.png')
         bpy.ops.render.render(write_still=True)
+        flatten_backdrop(turn / f'{name}.png')
         records.append({'file': f'{name}.png', 'direction': list(direction), 'camera_location': list(cam.location),
                         'projection': 'orthographic', 'framing_checked': True})
         print('VIEW_COMPLETE', aid, name, flush=True)
