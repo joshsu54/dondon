@@ -1,7 +1,7 @@
 """Encode the 48 rendered PNGs as a 4-second H.264 MP4 using Blender's own encoder."""
-import bpy,json
+import bpy,json,sys
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1];out=ROOT/'Effects/WindFog/v001'
+ROOT=Path(__file__).resolve().parents[1];VERSION=sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else 'v001';out=ROOT/'Effects/WindFog'/VERSION
 frames=sorted((out/'frames').glob('*.png'));assert len(frames)==48
 bpy.ops.wm.read_factory_settings(use_empty=True);s=bpy.context.scene
 s.render.resolution_x=720;s.render.resolution_y=480;s.render.resolution_percentage=100;s.render.fps=12
