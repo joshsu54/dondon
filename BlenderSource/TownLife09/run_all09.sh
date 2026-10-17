@@ -1,5 +1,6 @@
 #!/bin/sh
 # Full TownLife09 pipeline: concepts first, then Blender models, checks, sheets, library registration.
+# Batch spec: TL_SPEC=town10_shapes ./run_all09.sh (default town09_shapes).
 set -e
 cd "$(dirname "$0")"
 python3 concept_render09.py "$@"

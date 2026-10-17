@@ -19,7 +19,7 @@ from mathutils import Vector
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import town09_shapes as S  # noqa: E402
+from spec import S  # noqa: E402
 from build_town_assets09 import actual_bounds, make_materials, part_object  # noqa: E402
 
 ROOT = HERE.parents[1]
@@ -123,7 +123,7 @@ def main(ids):
         a = S.ASSETS[aid]
         (out / 'prompts.json').write_text(json.dumps({
             'asset': aid, 'name_zh': a['name_zh'], 'stage': 'pre-modelling concept reference',
-            'method': 'Claude-written prompt -> design spec (BlenderSource/TownLife09/town09_shapes.py) -> '
+            'method': f'Claude-written prompt -> design spec (BlenderSource/TownLife09/{S.__name__}.py) -> '
                       'Codex-style soft studio concept render of a throwaway blockout by BlenderSource/TownLife09/concept_render09.py. '
                       'No AI image model was available in the cloud session; the prompts can be re-run with an image model.',
             'style_reference': 'ArtReferences/HerbalStall/concept.png and ArtReferences/Blacksmith_10Views (Codex image_gen)',

@@ -5,18 +5,19 @@ batch folder's README.md, inventory.json and index.html.
 """
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import town09_shapes as S  # noqa: E402
+from spec import S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 LIB = ROOT / 'ArtLibrary'
-BATCH = LIB / 'ExpansionBatches/TownLife09'
-DATE = '2026-10-16'
+BATCH = LIB / 'ExpansionBatches' / S.BATCH_ID
+DATE = S.BATCH_DATE
 VIEWS = [v for v, _, _ in S.VIEWS]
-STATUS = {'TownInn': '可編輯建築原型；室內可見，未完成碰撞、門窗開合與引擎驗證'}
+STATUS = getattr(S, 'STATUS', {})
 
 
 def info(aid):
@@ -37,15 +38,16 @@ def catalog():
             'fbx': f'../Models/{aid}/v001/{aid}_v001.fbx', 'preview': f'Turnarounds/{aid}_v001/05_front_right.png',
             'views': [f'Turnarounds/{aid}_v001/{v}.png' for v in VIEWS],
             'concept_references': [f'../ArtReferences/{aid}_10Views/{v}.png' for v in VIEWS],
-            'status': STATUS.get(aid, '可編輯道具原型；未完成碰撞與引擎驗證'), 'batch': 'TownLife09',
+            'status': STATUS.get(aid, '可編輯道具原型；未完成碰撞與引擎驗證'), 'batch': S.BATCH_ID,
             'unreal_import_verified': False, 'uv_baked': False, 'collision_ready': False, 'lod_ready': False})
         added += 1
     if added:
         data['model_asset_sets'] += added
         data['consistent_turnaround_images'] += added * 10
         data['concept_reference_images'] += added * 10
-    if 'ExpansionBatches/TownLife09/index.html' not in data['supplemental_batches']:
-        data['supplemental_batches'].append('ExpansionBatches/TownLife09/index.html')
+    page = f'ExpansionBatches/{S.BATCH_ID}/index.html'
+    if page not in data['supplemental_batches']:
+        data['supplemental_batches'].append(page)
     data['updated'] = DATE
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     return data
@@ -66,11 +68,11 @@ def section(aid, prefix=''):
 def library_index(data):
     path = LIB / 'index.html'
     s = path.read_text()
-    s = s.replace('<p>60 組素材各有 10 張參考圖，共 600 張；',
-                  f'<p>{data["model_asset_sets"]} 組素材各有 10 張參考圖，共 {data["consistent_turnaround_images"]} 張；')
-    link = ' · <a href="ExpansionBatches/TownLife09/index.html">小鎮生活 09</a>'
+    s = re.sub(r'<p>\d+ 組素材各有 10 張參考圖，共 \d+ 張；',
+               f'<p>{data["model_asset_sets"]} 組素材各有 10 張參考圖，共 {data["consistent_turnaround_images"]} 張；', s, count=1)
+    link = f' · <a href="ExpansionBatches/{S.BATCH_ID}/index.html">{S.BATCH_TITLE}</a>'
     if link not in s:
-        s = s.replace('登山路線 08</a></nav>', '登山路線 08</a>' + link + '</nav>')
+        s = s.replace('</nav>', link + '</nav>', 1)
     for aid in S.ASSETS:
         if f'Turnarounds/{aid}_v001/05_front_right.png' not in s:
             s = s.replace('</main></html>', section(aid) + '</main></html>')
@@ -84,15 +86,15 @@ def batch_files():
         rows.append({'asset': aid, 'name_zh': a['name_zh'], 'category': a['category'], 'views': 10,
                      'concept_images_before_modelling': 10, 'concept_folder': f'ArtReferences/{aid}_10Views',
                      'dimensions_m': [round(x, 3) for x in i['dimensions_m']], 'mesh_objects': i['mesh_objects']})
-    (BATCH / 'inventory.json').write_text(json.dumps({'batch': 'TownLife09', 'created': DATE, 'workflow': [
+    (BATCH / 'inventory.json').write_text(json.dumps({'batch': S.BATCH_ID, 'created': DATE, 'workflow': [
         '1. 撰寫提示詞與設計規格（town09_shapes.py）', '2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）',
         '3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）',
         '4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）'], 'new_assets': rows}, ensure_ascii=False, indent=2),
         encoding='utf-8')
     table = '\n'.join(f'| {a["name_zh"]}／{aid} | {a["size"]} |' for aid, a in S.ASSETS.items())
-    (BATCH / 'README.md').write_text(f'''# 小鎮生活 09
+    (BATCH / 'README.md').write_text(f'''# {S.BATCH_TITLE}
 
-小鎮待辦的第一批：八件生活道具與一棟食肆客棧，共 9 組。**每件都先產生 10 張不同角度的概念圖，再進 Blender 建模**。
+{S.BATCH_INTRO}**每件都先產生 10 張不同角度的概念圖，再進 Blender 建模**。
 
 | 模型 | 規格 |
 | --- | --- |
@@ -100,25 +102,19 @@ def batch_files():
 
 ## 製作流程
 
-1. 每件素材先寫提示詞（含 10 個角度的描述）與設計規格：`BlenderSource/TownLife09/town09_shapes.py`。
+1. 每件素材先寫提示詞（含 10 個角度的描述）與設計規格：`BlenderSource/TownLife09/{S.__name__}.py`。
 2. **建模前**先依規格在暫存場景排出草模，以接近 Codex image_gen 概念圖的柔光棚拍風格（淺灰背景、暖色主光、接地陰影、透視鏡頭）渲染十個角度，存放在 `ArtReferences/<素材>_10Views/`，提示詞記錄在同資料夾的 `prompts.json`。
-   雲端環境沒有 AI 生圖模型，這些不是 AI 繪圖；提示詞可在之後交給生圖工具重新產生。屋頂改為藍灰起翹曲面瓦頂、木色偏暖，對齊既有 Codex 素材。
-3. Blender 開新檔，把十張概念圖放進 `80_Concept_References` 集合當參考圖（不渲染、不匯出），再完整建模：倒角、材質、瓦壟、編織帶、格柵等細節零件都在這一步加入。
+   雲端環境沒有 AI 生圖模型，這些不是 AI 繪圖；提示詞可在之後交給生圖工具重新產生。
+3. Blender 開新檔，把十張概念圖放進 `80_Concept_References` 集合當參考圖（不渲染、不匯出），再完整建模：倒角、材質與細節零件都在這一步加入。
 4. 匯出 FBX，並從同一模型渲染 10 張 1024 × 1024 固定角度圖到 `ArtLibrary/Turnarounds/<素材>_v001/`。
 5. 重新開檔、FBX 回匯核對尺寸與物件數；結果記錄在 `validation.json`。
 
-總覽：`concepts/*_concept_10views.jpg` 是建模前概念圖，`*_10views.jpg` 是建模後的同模型十視圖。模型在專案 `Models/<素材>/v001/`，不另複製到本資料夾。
+總覽：`concepts/*_concept_10views.jpg` 是建模前概念圖，`*_10views.jpg` 是建模後的同模型十視圖。模型在專案 `Models/<素材>/v001/`，不另複製到本資料夾。重跑：`TL_SPEC={S.__name__} BlenderSource/TownLife09/run_all09.sh`。
 
-## 客棧內容
-
-一樓前半部是食堂（五張方桌、十張長凳），右後方是櫃台與酒架，左後方是 17 級直跑樓梯（每級高 0.2 m），通往二樓開口。二樓有前方走廊、陽台，以及後方三間客房（兩間單床、一間小床）。後方加建單坡廚房，內有雙灶爐、兩口鐵鍋、煙囪、砧板桌與水缸。招牌為空白牌匾，不含文字。
-
-## 尚未完成
-
-UV／貼圖烘焙、碰撞、LOD 與 Unreal 匯入驗證都還沒做。客棧門窗不能開合，水井轆轤、院門門扇也沒有動畫；食肆的鍋碗、食材等料理道具仍待下一批。
+{S.BATCH_NOTES}
 ''', encoding='utf-8')
     cards = ''.join(section(aid, '../../') for aid in S.ASSETS)
-    (BATCH / 'index.html').write_text(f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小鎮生活 09</title><style>body{{margin:0;background:#edf0e9;color:#243d34;font:16px/1.65 system-ui}}main{{max-width:1100px;margin:auto;padding:32px 16px}}section{{background:white;padding:24px;border-radius:16px;margin:24px 0}}a{{color:#366c59}}.hero{{max-width:440px;width:100%;border-radius:12px}}.views{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}}.views img{{width:100%}}summary{{cursor:pointer}}</style><main><h1>小鎮生活 09</h1><p>9 組素材：每件先畫 10 張建模前概念圖，再用 Blender 建模並渲染 10 張同模型角度圖。</p><p><a href="README.md">批次說明</a> · <a href="../../index.html">回素材庫</a></p>{cards}</main></html>''',
+    (BATCH / 'index.html').write_text(f'''<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{S.BATCH_TITLE}</title><style>body{{margin:0;background:#edf0e9;color:#243d34;font:16px/1.65 system-ui}}main{{max-width:1100px;margin:auto;padding:32px 16px}}section{{background:white;padding:24px;border-radius:16px;margin:24px 0}}a{{color:#366c59}}.hero{{max-width:440px;width:100%;border-radius:12px}}.views{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}}.views img{{width:100%}}summary{{cursor:pointer}}</style><main><h1>{S.BATCH_TITLE}</h1><p>{len(S.ASSETS)} 組素材：每件先畫 10 張建模前概念圖，再用 Blender 建模並渲染 10 張同模型角度圖。</p><p><a href="README.md">批次說明</a> · <a href="../../index.html">回素材庫</a></p>{cards}</main></html>''',
         encoding='utf-8')
 
 

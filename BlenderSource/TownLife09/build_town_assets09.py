@@ -21,7 +21,7 @@ from mathutils import Matrix, Vector
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import town09_shapes as S  # noqa: E402
+from spec import S  # noqa: E402
 
 ROOT = HERE.parents[1]
 LIGHT_SCALE, WORLD_STRENGTH, EXPOSURE = .5, .45, 0.0

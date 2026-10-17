@@ -11,7 +11,7 @@ from mathutils import Vector
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import town09_shapes as S  # noqa: E402
+from spec import S  # noqa: E402
 
 ROOT = HERE.parents[1]
 
@@ -68,7 +68,7 @@ for aid in S.ASSETS:
                     'fbx_reimported': True, 'fbx_no_studio_or_reference_objects': True, 'fbx_dimension_error_m': delta,
                     'ten_view_files_present': True})
     print('VERIFIED', aid, flush=True)
-out = ROOT / 'ArtLibrary/ExpansionBatches/TownLife09/validation.json'
+out = ROOT / 'ArtLibrary/ExpansionBatches' / S.BATCH_ID / 'validation.json'
 out.write_text(json.dumps(results, indent=2), encoding='utf-8')
 assert len(results) == len(S.ASSETS)
 print('ALL_VERIFIED', len(results), flush=True)

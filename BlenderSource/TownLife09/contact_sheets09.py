@@ -3,10 +3,10 @@ import sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import town09_shapes as S  # noqa: E402
+from spec import S  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
-BATCH = ROOT / 'ArtLibrary/ExpansionBatches/TownLife09'
+BATCH = ROOT / 'ArtLibrary/ExpansionBatches' / S.BATCH_ID
 FONT = ImageFont.truetype('/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc', 22)
 
 
