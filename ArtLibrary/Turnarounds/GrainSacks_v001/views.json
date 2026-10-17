@@ -1,0 +1,158 @@
+{
+  "asset": "GrainSacks",
+  "source": "Models/GrainSacks/v001/GrainSacks_v001.blend",
+  "same_geometry": true,
+  "concept_references": "ArtReferences/GrainSacks_10Views",
+  "views": [
+    {
+      "file": "01_front.png",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "camera_location": [
+        -2.9802322387695312e-08,
+        -4.444025993347168,
+        0.35439354181289673
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        4.444025993347168,
+        0.0,
+        0.35439354181289673
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "camera_location": [
+        -2.9802322387695312e-08,
+        4.444025993347168,
+        0.35439354181289673
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "camera_location": [
+        -4.444025993347168,
+        0.0,
+        0.35439354181289673
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        2.9944605827331543,
+        -2.9944605827331543,
+        1.7019007205963135
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        2.9944605827331543,
+        2.9944605827331543,
+        1.7019007205963135
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        -2.9944605827331543,
+        2.9944605827331543,
+        1.7019007205963135
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        -2.9944605827331543,
+        -2.9944605827331543,
+        1.7019007205963135
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "camera_location": [
+        -2.9802322387695312e-08,
+        0.0,
+        4.79841947555542
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "camera_location": [
+        -2.9802322387695312e-08,
+        -3.1424007415771484,
+        3.4967942237854004
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ]
+}

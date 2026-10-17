@@ -1,0 +1,158 @@
+{
+  "asset": "IngredientCrate",
+  "source": "Models/IngredientCrate/v001/IngredientCrate_v001.blend",
+  "same_geometry": true,
+  "concept_references": "ArtReferences/IngredientCrate_10Views",
+  "views": [
+    {
+      "file": "01_front.png",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        -2.895071268081665,
+        0.17857883870601654
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        2.895071268081665,
+        0.0,
+        0.17857883870601654
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        2.895071268081665,
+        0.17857883870601654
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "camera_location": [
+        -2.895071268081665,
+        0.0,
+        0.17857883870601654
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        1.9507485628128052,
+        -1.9507485628128052,
+        1.0564156770706177
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        1.9507485628128052,
+        1.9507485628128052,
+        1.0564156770706177
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        -1.9507485628128052,
+        1.9507485628128052,
+        1.0564156770706177
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        -1.9507485628128052,
+        -1.9507485628128052,
+        1.0564156770706177
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        0.0,
+        3.0736501216888428
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        -2.0471246242523193,
+        2.225703477859497
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ]
+}

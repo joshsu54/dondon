@@ -1,0 +1,24 @@
+{
+  "asset": "BambooSteamer",
+  "name_zh": "蒸籠",
+  "category": "料理道具",
+  "stage": "editable_town_prototype",
+  "description": "Three stacked round bamboo steamer tiers with slatted bases and wooden bands, woven domed lid with knot, and a small plate of two steamed buns beside it.",
+  "size_note": "Steamer 0.43 m across, 0.37 m tall; set approx. 0.6 x 0.45 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.6959999799728394,
+    0.4959999918937683,
+    0.3919999897480011
+  ],
+  "mesh_objects": 45,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/BambooSteamer_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

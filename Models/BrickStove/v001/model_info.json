@@ -1,0 +1,24 @@
+{
+  "asset": "BrickStove",
+  "name_zh": "雙灶爐台",
+  "category": "料理道具",
+  "stage": "editable_town_prototype",
+  "description": "Kitchen stove of red brick with lime-plastered top, two arched fire mouths with ember glow, two embedded woks (one with wooden lid), rear chimney, back ledge with seasoning jars and firewood in front.",
+  "size_note": "1.7 x 0.95 m body, 0.86 m working height, chimney to 2.2 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.7999999523162842,
+    1.3535692691802979,
+    2.1600000858306885
+  ],
+  "mesh_objects": 30,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/BrickStove_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

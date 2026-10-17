@@ -1,0 +1,24 @@
+{
+  "asset": "CookingWok",
+  "name_zh": "鐵鍋",
+  "category": "料理道具",
+  "stage": "editable_town_prototype",
+  "description": "Round-bottom cast-iron wok with two ear handles on a vented iron ring stand, an iron spatula inside and a domed wooden lid resting beside it.",
+  "size_note": "Wok 0.72 m across; set approx. 0.9 x 1.0 x 0.45 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    1.000999927520752,
+    1.2880001068115234,
+    0.44804802536964417
+  ],
+  "mesh_objects": 15,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/CookingWok_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

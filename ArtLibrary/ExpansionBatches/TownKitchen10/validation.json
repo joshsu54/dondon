@@ -1,0 +1,164 @@
+[
+  {
+    "asset": "CookingWok",
+    "blend_reopened": true,
+    "meshes": 15,
+    "dimensions_m": [
+      1.001,
+      1.288,
+      0.448
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "BambooSteamer",
+    "blend_reopened": true,
+    "meshes": 45,
+    "dimensions_m": [
+      0.696,
+      0.496,
+      0.392
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "BrickStove",
+    "blend_reopened": true,
+    "meshes": 30,
+    "dimensions_m": [
+      1.8,
+      1.354,
+      2.16
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "ChoppingBlock",
+    "blend_reopened": true,
+    "meshes": 15,
+    "dimensions_m": [
+      0.607,
+      0.606,
+      0.887
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "TablewareSet",
+    "blend_reopened": true,
+    "meshes": 18,
+    "dimensions_m": [
+      0.62,
+      0.42,
+      0.173
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 1.4901161193847656e-08,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "GrainSacks",
+    "blend_reopened": true,
+    "meshes": 9,
+    "dimensions_m": [
+      1.384,
+      0.885,
+      0.709
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "BambooFenceCorner",
+    "blend_reopened": true,
+    "meshes": 51,
+    "dimensions_m": [
+      1.207,
+      1.194,
+      1.35
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "FoodPlatter",
+    "blend_reopened": true,
+    "meshes": 27,
+    "dimensions_m": [
+      0.76,
+      0.76,
+      0.122
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 1.4901161193847656e-08,
+    "ten_view_files_present": true
+  },
+  {
+    "asset": "IngredientCrate",
+    "blend_reopened": true,
+    "meshes": 40,
+    "dimensions_m": [
+      0.92,
+      0.62,
+      0.357
+    ],
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "concept_images_before_modelling": 10,
+    "concept_refs_in_blend": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_or_reference_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true
+  }
+]

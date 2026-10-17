@@ -69,6 +69,7 @@ for aid in S.ASSETS:
                     'ten_view_files_present': True})
     print('VERIFIED', aid, flush=True)
 out = ROOT / 'ArtLibrary/ExpansionBatches' / S.BATCH_ID / 'validation.json'
+out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(json.dumps(results, indent=2), encoding='utf-8')
 assert len(results) == len(S.ASSETS)
 print('ALL_VERIFIED', len(results), flush=True)
