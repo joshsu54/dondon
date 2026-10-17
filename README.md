@@ -4,7 +4,8 @@
 
 目前素材庫有 **88 組模型、880 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
-- 最新小鎮道路庭院批次（T 字路、十字路、彎道、坡路、石拱橋、木／石欄杆、荷花池、出生石台、小鎮牌樓）：`ArtLibrary/ExpansionBatches/TownRoads11/`。
+- 最新小鎮配置：`Models/TownLayout/v003/`，v002 原封不動，往北接出新街區（客棧、十字路口、牌樓、水井廣場、圍籬荷花池、出生石台）。
+- 小鎮道路庭院批次（T 字路、十字路、彎道、坡路、石拱橋、木／石欄杆、荷花池、出生石台、小鎮牌樓）：`ArtLibrary/ExpansionBatches/TownRoads11/`。
 - 小鎮廚房批次（鐵鍋、蒸籠、雙灶爐台、砧板台、碗盤茶具、米糧麻袋、料理成品、食材木箱、籬笆轉角）：`ArtLibrary/ExpansionBatches/TownKitchen10/`。
 - 小鎮生活批次（水井、公告板、竹簍、木箱、陶罐、柴堆、籬笆、院門、食肆客棧）：`ArtLibrary/ExpansionBatches/TownLife09/`。每件建模前先產生 10 張概念圖，規則見 `CLAUDE.md`。
 - 登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
@@ -47,7 +48,7 @@ git lfs pull
 - `Models/WelcomingPine/v002`：迎客松 Blender 檔、FBX 與渲染圖。
 - `Models/SpawnTown`：版本化出生廣場，包含青石路、階梯、出生石台、石燈、木構牌樓、指路碑、長凳與迎客松。
 - `Models/StarterHouse`：版本化新手民宅，包含木構灰牆、青瓦屋頂、格窗、雙扇門、前廊與石階。
-- `Models/TownLayout`：出生廣場、東側民宅與連接步道組合成的第一段小鎮街道。
+- `Models/TownLayout`：出生廣場、東側民宅與連接步道組合成的第一段小鎮街道。v003 在北側加高地台上新增第二段街區，使用 TownLife09～11 的素材。
 - `Models/Blacksmith`：半開放鐵匠鋪與爐灶、鐵砧、工作台、武器架、水桶等可編輯道具；新版 `Models/TownLayout` 已加入鐵匠鋪與環形步行路線的空間配置。
 - `BlenderSource/Blacksmith/README.md`：鐵匠鋪分件、生成方式與目前限制。
 - `BlenderSource/SpawnTown/小鎮街道配置.md`：組合場景的位置、編輯方式與驗證範圍。

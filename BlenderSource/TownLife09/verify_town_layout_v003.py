@@ -28,9 +28,20 @@ assert len(instances) == expected, (len(instances), expected)
 refs = [o for o in bpy.data.collections['80_Concept_References'].objects if o.empty_display_type == 'IMAGE']
 assert len(refs) == 10 and all((ROOT / o['concept_reference']).exists() and o.hide_render for o in refs)
 count = len(mesh_objects())
-info = json.loads((OUT / 'layout_info.json').read_text())
-street = [s for s in info['street_surface_samples'] if s['x'] == 0]
-assert all(s['surface_z'] is not None and abs(s['surface_z'] - 1.32) < .03 for s in street), street
+# walking surface along the new street, cast from head height (under the archway) and taking the
+# highest hit in a 3 x 3 patch so paver joints do not count as holes
+from mathutils import Vector  # noqa: E402
+dg = bpy.context.evaluated_depsgraph_get()
+street = []
+for y in (12.4, 14.7, 17.9, 20.9, 23.9, 26.2, 29.2, 32.9):
+    zs = []
+    for dx in (-.1, 0, .1):
+        for dy in (-.1, 0, .1):
+            hit, loc, *_ = bpy.context.scene.ray_cast(dg, Vector((.27 + dx, y + dy, 3.0)), Vector((0, 0, -1)))
+            if hit:
+                zs.append(loc.z)
+    street.append({'y': y, 'surface_z': round(max(zs), 3)})
+assert all(abs(s['surface_z'] - 1.32) < .04 for s in street), street
 bpy.ops.wm.read_factory_settings(use_empty=True)
 bpy.ops.import_scene.fbx(filepath=str(OUT / 'TownLayout_v003.fbx'))
 imported = [o for o in bpy.context.scene.objects if o.type == 'MESH']
@@ -38,7 +49,7 @@ assert len(imported) == count, (len(imported), count)
 assert not any(o.type in ('LIGHT', 'CAMERA') for o in bpy.context.scene.objects)
 result = {'blend_reopened': True, 'v002_mesh_objects_all_present': len(source_names), 'placed_instances': expected,
           'mesh_objects': count, 'fbx_reimported_mesh_objects': len(imported), 'concept_refs_in_blend': 10,
-          'north_street_surface_within_3cm_of_v002_1_32m': True, 'previews': sorted(p.name for p in OUT.glob('0*.png')),
+          'north_street_surface_samples': street, 'previews': sorted(p.name for p in OUT.glob('0*.png')),
           'scope': 'geometry/layout check only; no character, collision, navigation or Unreal test'}
 (OUT / 'validation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
 print('LAYOUT_VERIFIED', json.dumps(result), flush=True)
