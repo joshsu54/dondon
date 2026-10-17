@@ -17,7 +17,7 @@
       "concept_folder": "ArtReferences/TownRoadTJunction_10Views",
       "dimensions_m": [
         6.0,
-        6.0,
+        5.99,
         0.23
       ],
       "mesh_objects": 9
@@ -34,7 +34,7 @@
         6.0,
         0.23
       ],
-      "mesh_objects": 13
+      "mesh_objects": 14
     },
     {
       "asset": "TownRoadCurve",
@@ -44,8 +44,8 @@
       "concept_images_before_modelling": 10,
       "concept_folder": "ArtReferences/TownRoadCurve_10Views",
       "dimensions_m": [
-        6.01,
-        6.01,
+        6.0,
+        6.0,
         0.23
       ],
       "mesh_objects": 5

@@ -1,0 +1,158 @@
+{
+  "asset": "TownRoadTJunction",
+  "source": "Models/TownRoadTJunction/v001/TownRoadTJunction_v001.blend",
+  "same_geometry": true,
+  "concept_references": "ArtReferences/TownRoadTJunction_10Views",
+  "views": [
+    {
+      "file": "01_front.png",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        -21.067628860473633,
+        0.11500000208616257
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        21.067628860473633,
+        0.0,
+        0.11500000208616257
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        21.067628860473633,
+        0.11500000208616257
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "camera_location": [
+        -21.067628860473633,
+        0.0,
+        0.11500000208616257
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        14.195728302001953,
+        -14.195728302001953,
+        6.503077030181885
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        14.195728302001953,
+        14.195728302001953,
+        6.503077030181885
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        -14.195728302001953,
+        14.195728302001953,
+        6.503077030181885
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        -14.195728302001953,
+        -14.195728302001953,
+        6.503077030181885
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        0.0,
+        21.182628631591797
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        -14.897063255310059,
+        15.012063026428223
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ]
+}
