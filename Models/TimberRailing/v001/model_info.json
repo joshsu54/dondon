@@ -1,0 +1,24 @@
+{
+  "asset": "TimberRailing",
+  "name_zh": "木欄杆段",
+  "category": "橋樑與欄杆",
+  "stage": "editable_town_prototype",
+  "description": "2 m red-lacquered timber railing segment: two capped posts on stone bases, top, middle and bottom rails, balusters and diagonal lattice.",
+  "size_note": "2.1 x 0.2 x 1.23 m; posts at x = +/-1.0 m for tiling.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    2.200000047683716,
+    0.20000000298023224,
+    1.2300000190734863
+  ],
+  "mesh_objects": 24,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/TimberRailing_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -50,7 +50,8 @@ def _grid(inside, step=.5):
 
 
 def _verge(A):
-    A.add('Road_Verge_Ground', box((0, 0, .075), (TILE, TILE, .15)), 'soil', bevel=False)
+    # inset 1 cm so its sides never share a plane with the road bed (avoids z-fighting)
+    A.add('Road_Verge_Ground', box((0, 0, .075), (TILE - .02, TILE - .02, .15)), 'soil', bevel=False)
 
 
 def _kerb(A, a, b, z=TOP):
@@ -80,7 +81,8 @@ def road_cross():
     _verge(A)
     h = ROAD / 2
     _arm_bed(A, 'Road_Bed_EW', (0, 0, .09), (TILE, ROAD, .18))
-    _arm_bed(A, 'Road_Bed_NS', (0, 0, .09), (ROAD, TILE, .18))
+    for sy in (-1, 1):
+        _arm_bed(A, 'Road_Bed_NS', (0, sy * (TILE / 2 + ROAD / 2) / 2, .09), (ROAD, TILE / 2 - ROAD / 2, .18))
     _stones(A, _grid(lambda x, y: abs(y) < h - .05 or abs(x) < h - .05), lambda x, y: TOP)
     for sx in (-1, 1):
         for sy in (-1, 1):
@@ -127,7 +129,7 @@ def road_slope():
     zf = lambda x, y: TOP + (y + L / 2) * k  # noqa: E731
     V = []
     for y in (-L / 2, L / 2):
-        for x in (-ROAD / 2 - KERB, ROAD / 2 + KERB):
+        for x in (-ROAD / 2 - KERB + .02, ROAD / 2 + KERB - .02):
             V += [(x, y, 0), (x, y, zf(0, y) - .02)]
     V = np.array(V)
     F = [(0, 2, 6, 4), (1, 5, 7, 3), (0, 1, 3, 2), (4, 6, 7, 5), (0, 4, 5, 1), (2, 3, 7, 6)]
