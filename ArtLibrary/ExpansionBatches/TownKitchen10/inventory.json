@@ -1,0 +1,138 @@
+{
+  "batch": "TownKitchen10",
+  "created": "2026-10-17",
+  "workflow": [
+    "1. 撰寫提示詞與設計規格（town09_shapes.py）",
+    "2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）",
+    "3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）",
+    "4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）"
+  ],
+  "new_assets": [
+    {
+      "asset": "CookingWok",
+      "name_zh": "鐵鍋",
+      "category": "料理道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/CookingWok_10Views",
+      "dimensions_m": [
+        1.001,
+        1.288,
+        0.448
+      ],
+      "mesh_objects": 15
+    },
+    {
+      "asset": "BambooSteamer",
+      "name_zh": "蒸籠",
+      "category": "料理道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/BambooSteamer_10Views",
+      "dimensions_m": [
+        0.696,
+        0.496,
+        0.392
+      ],
+      "mesh_objects": 45
+    },
+    {
+      "asset": "BrickStove",
+      "name_zh": "雙灶爐台",
+      "category": "料理道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/BrickStove_10Views",
+      "dimensions_m": [
+        1.8,
+        1.354,
+        2.16
+      ],
+      "mesh_objects": 30
+    },
+    {
+      "asset": "ChoppingBlock",
+      "name_zh": "砧板台",
+      "category": "料理道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/ChoppingBlock_10Views",
+      "dimensions_m": [
+        0.607,
+        0.606,
+        0.887
+      ],
+      "mesh_objects": 15
+    },
+    {
+      "asset": "TablewareSet",
+      "name_zh": "碗盤茶具組",
+      "category": "料理道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TablewareSet_10Views",
+      "dimensions_m": [
+        0.62,
+        0.42,
+        0.173
+      ],
+      "mesh_objects": 18
+    },
+    {
+      "asset": "GrainSacks",
+      "name_zh": "米糧麻袋",
+      "category": "通用道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/GrainSacks_10Views",
+      "dimensions_m": [
+        1.384,
+        0.885,
+        0.709
+      ],
+      "mesh_objects": 9
+    },
+    {
+      "asset": "BambooFenceCorner",
+      "name_zh": "竹籬笆轉角段",
+      "category": "庭院與圍欄",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/BambooFenceCorner_10Views",
+      "dimensions_m": [
+        1.207,
+        1.194,
+        1.35
+      ],
+      "mesh_objects": 51
+    },
+    {
+      "asset": "FoodPlatter",
+      "name_zh": "料理成品拼盤",
+      "category": "料理成品",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/FoodPlatter_10Views",
+      "dimensions_m": [
+        0.76,
+        0.76,
+        0.122
+      ],
+      "mesh_objects": 27
+    },
+    {
+      "asset": "IngredientCrate",
+      "name_zh": "食材木箱",
+      "category": "食材",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/IngredientCrate_10Views",
+      "dimensions_m": [
+        0.92,
+        0.62,
+        0.357
+      ],
+      "mesh_objects": 40
+    }
+  ]
+}

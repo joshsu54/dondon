@@ -1,0 +1,36 @@
+{
+  "asset": "StoneArchBridge",
+  "name_zh": "石拱橋",
+  "category": "橋樑與欄杆",
+  "stage": "editable_town_prototype",
+  "description": "Single-span humpback stone bridge, 8 m span and 2.4 m wide, with a semicircular arch, voussoir ring, paved deck and parapets with lotus-capped posts.",
+  "size_note": "Approx. 9.6 x 2.8 x 2.6 m; deck crown 1.45 m above the ends.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    9.600000381469727,
+    2.799999952316284,
+    2.5
+  ],
+  "mesh_objects": 117,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/StoneArchBridge_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "west": [
+      -4.0,
+      0.0,
+      0.28
+    ],
+    "east": [
+      4.0,
+      0.0,
+      0.28
+    ]
+  }
+}

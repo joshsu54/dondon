@@ -1,0 +1,24 @@
+{
+  "asset": "ChoppingBlock",
+  "name_zh": "砧板台",
+  "category": "料理道具",
+  "stage": "editable_town_prototype",
+  "description": "Thick round end-grain chopping block on a three-legged braced stand, with a cleaver, sliced scallions and a white radish on top.",
+  "size_note": "0.52 m across, 0.8 m working height.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.6068234443664551,
+    0.6058787107467651,
+    0.8867850303649902
+  ],
+  "mesh_objects": 15,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/ChoppingBlock_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

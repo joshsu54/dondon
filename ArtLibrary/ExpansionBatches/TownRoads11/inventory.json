@@ -1,0 +1,152 @@
+{
+  "batch": "TownRoads11",
+  "created": "2026-10-17",
+  "workflow": [
+    "1. 撰寫提示詞與設計規格（town09_shapes.py）",
+    "2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）",
+    "3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）",
+    "4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）"
+  ],
+  "new_assets": [
+    {
+      "asset": "TownRoadTJunction",
+      "name_zh": "青石路 T 字路口",
+      "category": "小鎮道路",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownRoadTJunction_10Views",
+      "dimensions_m": [
+        6.0,
+        5.99,
+        0.23
+      ],
+      "mesh_objects": 9
+    },
+    {
+      "asset": "TownRoadCrossroad",
+      "name_zh": "青石路十字路口",
+      "category": "小鎮道路",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownRoadCrossroad_10Views",
+      "dimensions_m": [
+        6.0,
+        6.0,
+        0.23
+      ],
+      "mesh_objects": 14
+    },
+    {
+      "asset": "TownRoadCurve",
+      "name_zh": "青石路彎道",
+      "category": "小鎮道路",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownRoadCurve_10Views",
+      "dimensions_m": [
+        6.0,
+        6.0,
+        0.23
+      ],
+      "mesh_objects": 5
+    },
+    {
+      "asset": "TownRoadSlope",
+      "name_zh": "青石坡路",
+      "category": "小鎮道路",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownRoadSlope_10Views",
+      "dimensions_m": [
+        3.5,
+        6.02,
+        0.858
+      ],
+      "mesh_objects": 8
+    },
+    {
+      "asset": "StoneArchBridge",
+      "name_zh": "石拱橋",
+      "category": "橋樑與欄杆",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/StoneArchBridge_10Views",
+      "dimensions_m": [
+        9.6,
+        2.8,
+        2.5
+      ],
+      "mesh_objects": 117
+    },
+    {
+      "asset": "TimberRailing",
+      "name_zh": "木欄杆段",
+      "category": "橋樑與欄杆",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TimberRailing_10Views",
+      "dimensions_m": [
+        2.2,
+        0.2,
+        1.23
+      ],
+      "mesh_objects": 24
+    },
+    {
+      "asset": "StoneRailing",
+      "name_zh": "石欄杆段",
+      "category": "橋樑與欄杆",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/StoneRailing_10Views",
+      "dimensions_m": [
+        2.314,
+        0.314,
+        1.3
+      ],
+      "mesh_objects": 10
+    },
+    {
+      "asset": "PondEdge",
+      "name_zh": "荷花池",
+      "category": "庭院",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/PondEdge_10Views",
+      "dimensions_m": [
+        5.238,
+        3.981,
+        1.24
+      ],
+      "mesh_objects": 46
+    },
+    {
+      "asset": "SpawnAltar",
+      "name_zh": "出生石台",
+      "category": "出生點",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/SpawnAltar_10Views",
+      "dimensions_m": [
+        3.234,
+        3.767,
+        1.92
+      ],
+      "mesh_objects": 29
+    },
+    {
+      "asset": "TownPaifang",
+      "name_zh": "小鎮牌樓",
+      "category": "小鎮建築",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownPaifang_10Views",
+      "dimensions_m": [
+        7.702,
+        2.14,
+        6.064
+      ],
+      "mesh_objects": 146
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "asset": "WoodenCrate",
+  "source": "Models/WoodenCrate/v001/WoodenCrate_v001.blend",
+  "same_geometry": true,
+  "concept_references": "ArtReferences/WoodenCrate_10Views",
+  "views": [
+    {
+      "file": "01_front.png",
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        -3.1883323192596436,
+        0.3700000047683716
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "camera_location": [
+        3.1883323192596436,
+        -1.4901161193847656e-08,
+        0.3700000047683716
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "camera_location": [
+        0.0,
+        3.1883323192596436,
+        0.3700000047683716
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "camera_location": [
+        -3.1883323192596436,
+        -1.4901161193847656e-08,
+        0.3700000047683716
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        2.14835262298584,
+        -2.14835262298584,
+        1.3367586135864258
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        2.14835262298584,
+        2.14835262298584,
+        1.3367586135864258
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "camera_location": [
+        -2.14835262298584,
+        2.14835262298584,
+        1.3367586135864258
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "camera_location": [
+        -2.14835262298584,
+        -2.14835262298584,
+        1.3367586135864258
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        -1.4901161193847656e-08,
+        3.5583324432373047
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "camera_location": [
+        0.0,
+        -2.2544913291931152,
+        2.6244912147521973
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ]
+}

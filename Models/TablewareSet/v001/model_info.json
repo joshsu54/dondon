@@ -1,0 +1,24 @@
+{
+  "asset": "TablewareSet",
+  "name_zh": "碗盤茶具組",
+  "category": "料理道具",
+  "stage": "editable_town_prototype",
+  "description": "Red lacquer tray with celadon rice bowl, empty bowl, plate, chopsticks on a rest, small green-glazed teapot and two cups.",
+  "size_note": "Tray 0.62 x 0.42 m; teapot 0.14 m tall.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.6200000047683716,
+    0.41999998688697815,
+    0.17299999296665192
+  ],
+  "mesh_objects": 18,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/TablewareSet_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,36 @@
+{
+  "asset": "TownRoadCurve",
+  "name_zh": "青石路彎道",
+  "category": "小鎮道路",
+  "stage": "editable_town_prototype",
+  "description": "6 x 6 m tile with a 90 degree stone-paved bend (3 m centreline radius) from the south edge to the east edge, curved kerbs and verges.",
+  "size_note": "6 x 6 x 0.2 m; open edges at south and east.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    5.999807357788086,
+    5.999807357788086,
+    0.23000000417232513
+  ],
+  "mesh_objects": 5,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/TownRoadCurve_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false,
+  "connectors": {
+    "south": [
+      -0.0099,
+      -2.9901,
+      0.2
+    ],
+    "east": [
+      2.9901,
+      0.0099,
+      0.2
+    ]
+  }
+}

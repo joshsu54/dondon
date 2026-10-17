@@ -1,0 +1,138 @@
+{
+  "batch": "TownLife09",
+  "created": "2026-10-16",
+  "workflow": [
+    "1. 撰寫提示詞與設計規格（town09_shapes.py）",
+    "2. 渲染 10 張建模前概念圖（concept_render09.py，Codex 概念圖風格）",
+    "3. 概念圖載入 Blender 作參考後建模、匯出 FBX、渲染同模型十視圖（build_town_assets09.py）",
+    "4. 重新開檔與 FBX 回匯驗證（verify_town_assets09.py）"
+  ],
+  "new_assets": [
+    {
+      "asset": "TownWell",
+      "name_zh": "小鎮水井",
+      "category": "小鎮生活道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownWell_10Views",
+      "dimensions_m": [
+        3.295,
+        2.606,
+        3.369
+      ],
+      "mesh_objects": 68
+    },
+    {
+      "asset": "NoticeBoard",
+      "name_zh": "小鎮公告板",
+      "category": "小鎮生活道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/NoticeBoard_10Views",
+      "dimensions_m": [
+        3.215,
+        1.016,
+        2.996
+      ],
+      "mesh_objects": 62
+    },
+    {
+      "asset": "BambooBasket",
+      "name_zh": "竹簍",
+      "category": "通用道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/BambooBasket_10Views",
+      "dimensions_m": [
+        0.57,
+        0.602,
+        0.67
+      ],
+      "mesh_objects": 47
+    },
+    {
+      "asset": "WoodenCrate",
+      "name_zh": "木箱",
+      "category": "通用道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/WoodenCrate_10Views",
+      "dimensions_m": [
+        0.73,
+        0.753,
+        0.74
+      ],
+      "mesh_objects": 33
+    },
+    {
+      "asset": "ClayJar",
+      "name_zh": "陶罐",
+      "category": "通用道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/ClayJar_10Views",
+      "dimensions_m": [
+        0.584,
+        0.584,
+        0.74
+      ],
+      "mesh_objects": 6
+    },
+    {
+      "asset": "FirewoodStack",
+      "name_zh": "柴堆",
+      "category": "通用道具",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/FirewoodStack_10Views",
+      "dimensions_m": [
+        1.905,
+        0.962,
+        1.1
+      ],
+      "mesh_objects": 111
+    },
+    {
+      "asset": "BambooFence",
+      "name_zh": "竹籬笆段",
+      "category": "庭院與圍欄",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/BambooFence_10Views",
+      "dimensions_m": [
+        2.147,
+        0.194,
+        1.3
+      ],
+      "mesh_objects": 44
+    },
+    {
+      "asset": "FenceGate",
+      "name_zh": "籬笆院門",
+      "category": "庭院與圍欄",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/FenceGate_10Views",
+      "dimensions_m": [
+        3.215,
+        0.966,
+        2.796
+      ],
+      "mesh_objects": 66
+    },
+    {
+      "asset": "TownInn",
+      "name_zh": "食肆客棧",
+      "category": "小鎮建築",
+      "views": 10,
+      "concept_images_before_modelling": 10,
+      "concept_folder": "ArtReferences/TownInn_10Views",
+      "dimensions_m": [
+        14.789,
+        14.38,
+        10.407
+      ],
+      "mesh_objects": 386
+    }
+  ]
+}

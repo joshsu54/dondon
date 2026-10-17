@@ -1,0 +1,24 @@
+{
+  "asset": "FoodPlatter",
+  "name_zh": "料理成品拼盤",
+  "category": "料理成品",
+  "stage": "editable_town_prototype",
+  "description": "Round lacquer serving tray with steamed fish on an oval plate in sauce, a bowl of rice, a plate of three steamed buns, a dish of greens and a bowl of soup with spoon.",
+  "size_note": "Tray 0.76 m across; tallest item 0.13 m.",
+  "units": "meters",
+  "front": "-Y",
+  "dimensions_m": [
+    0.7599999904632568,
+    0.7599999904632568,
+    0.12196152657270432
+  ],
+  "mesh_objects": 27,
+  "bounds_method": "evaluated mesh vertices",
+  "concept_references": "ArtReferences/FoodPlatter_10Views",
+  "concept_reference_images": 10,
+  "modeling_method": "ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}
