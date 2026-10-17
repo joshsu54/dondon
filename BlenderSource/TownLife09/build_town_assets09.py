@@ -215,6 +215,8 @@ def build(aid):
             'concept_references': f'ArtReferences/{aid}_10Views', 'concept_reference_images': n_refs,
             'modeling_method': 'ten concept sketches drawn first, loaded as reference images, then modelled from the shared design spec; ten views rendered from the same model',
             'uv_baked': False, 'collision': False, 'lod': False, 'unreal_import_verified': False}
+    if 'connectors' in spec:
+        info['connectors'] = {k: [round(c, 4) for c in (Vector(v) - shift)] for k, v in spec['connectors'].items()}
     (out / 'model_info.json').write_text(json.dumps(info, ensure_ascii=False, indent=2), encoding='utf-8')
     records = []
     dg = bpy.context.evaluated_depsgraph_get()
