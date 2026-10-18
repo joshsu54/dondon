@@ -2,6 +2,7 @@
 
 這是修仙開放世界的 Blender 美術素材專案，使用繁體中文溝通。先閱讀 HANDOFF.md；README.md 下半部的 Unity 原型不是目前開發主線。
 
+- 使用者已指定沿用過去畫風：以 SectCore04 的青綠瓦、暖木、淺石、淡玉及柔光為基準；TownRefinement12 已將小鎮 18 項素材另存 v002，最新小鎮場景為 TownLayout v004。閱讀該批次 README 與 validation 後接續。
 - 目前主線：Blender 建模與參考圖，後續交接 Unreal；先完成素材，不要擅自擴充 Unity 遊戲系統。
 - 每個獨立交付物件至少 10 個不同方位／角度。以同一模型渲染正前、右、後、左、四斜角、頂視、高前視；組合圖及動畫影格不能取代單項十視圖。
 - 交付可編輯 .blend、FBX、1024×1024 PNG、views.json、model_info.json、validation.json、圖庫頁面。1 單位 = 1 公尺，正面 -Y，底部中心原點。

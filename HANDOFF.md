@@ -1,11 +1,25 @@
+# 最新交接狀態｜2026-10-18
+
+本機已完成 **TownRefinement12**：把 Claude 分支 `70d3fa4` 小鎮使用的 18 項素材修整為既有宗門畫風，逐件另存 v002、產出 180 張角度圖；TownLayout v004 另有 10 張場景圖與 4 張預覽。11 件保留原幾何，7 件另外修正入口尺寸、路緣、荷葉／紙張／草束／木框共面問題。原檔與 FBX 回匯驗證見 `ArtLibrary/ExpansionBatches/TownRefinement12/validation.json`。
+
+- 目前本機索引：84 組獨立素材、840 張基本角度圖、3 個配置場景；額外場景圖不灌入獨立素材計數。
+- 最新小鎮：`Models/TownLayout/v004/TownLayout_v004.blend`；完整新版圖庫：`ArtLibrary/ExpansionBatches/TownRefinement12/index.html`。
+- 原 Claude 素材與十張概念圖逐檔保存在該批次 `SourceSnapshot`，`provenance.json` 記錄來源與雜湊。Claude 的其餘廚房／道路素材並未全部合併到本機索引。
+- 本輪修整與本文件一併納入 `solid-clouds-karst-peaks` 分支提交；交接時請拉取此分支並執行 `git lfs pull`，不要使用仍為舊版的 `main`。
+- 先前完整分卷交接包仍在本機 `work/handoff/claude-handoff-2026-10-17`，對應 `d4579bf`，**不含本輪修整**；GitHub Release 尚未發布。需要最新完整交接包時應驗證、提交後重新建包。
+- 畫風依據：`SectCore04` 的青綠瓦、暖木、淺石、淡玉與柔光；不要再切回飽和紅柱、亮金或不同風格。
+- 本輪未做角色碰撞、UV 烘焙、LOD、全鎮導航及 Unreal 匯入。舊交接中的山景與實體雲待辦仍有效。
+
+以下為 2026-10-17 的歷史盤點，涉及數量、最新小鎮與下載狀態時以上方為準。
+
 # Claude Code 交接｜2026-10-17
 
 ## 專案與下載
 
 - GitHub：<https://github.com/joshsu54/dondon>
-- 最新分支：`solid-clouds-karst-peaks`。交接前素材提交為 `44cb796`；本次交接文件另有提交，Release tag 鎖定完整交接快照。
+- 最新分支：`solid-clouds-karst-peaks`。交接前素材提交為 `44cb796`，2026-10-17 交接文件提交為 `d4579bf`；其後修整請以分支最新提交為準。尚未發布交接 Release tag。
 - 複製版本庫：安裝 Git LFS，執行 `git clone --branch solid-clouds-karst-peaks https://github.com/joshsu54/dondon.git`，進入目錄後 `git lfs pull`、`git lfs fsck`。
-- 也可下載 Release 全部分卷、`handoff-manifest.json`、`restore_handoff.py`，依 `DOWNLOAD.md` 還原。這種方式含實際二進位檔，但不含 .git 歷史；需要後續推送時優先使用 Git clone。
+- 分卷封裝與還原工具已備妥，但 GitHub Release 尚未發布，目前請使用 Git clone 與 Git LFS；歷史本機分卷包不含 2026-10-18 修整。
 
 ## 已完成內容
 

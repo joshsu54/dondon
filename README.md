@@ -1,8 +1,13 @@
 # dondon｜修仙開放世界美術素材
 
+## 2026-10-18 畫風修整
+
+[小鎮畫風修整圖庫](ArtLibrary/ExpansionBatches/TownRefinement12/index.html)：18 項 Claude 素材沿用既有宗門畫風，各有 10 張新角度圖；小鎮另存 [TownLayout v004](Models/TownLayout/v004/TownLayout_v004.blend)。目前 84 組素材／840 張基本角度圖。本輪模型、圖片、來源與驗證報告納入 `solid-clouds-karst-peaks` 分支；請用下方 Git LFS 指令取得完整檔案。舊的交接壓縮包不含本輪成果，詳見 [HANDOFF.md](HANDOFF.md)。
+
+
 宗門、山景、登山步道與生活道具的 Blender 素材專案。模型、圖片、影片與 ZIP 交付包使用 Git LFS 管理。
 
-目前素材庫有 **66 組模型、660 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
+目前素材庫有 **84 組模型、840 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
 - 最新登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
 - 最新山頂宗門場景：`Models/MountainSanctuary/v004/`（實體雲與新版山峰）；v002 登山步道版本保留。
@@ -11,7 +16,7 @@
 
 ## Claude Code 交接
 
-先讀 `CLAUDE.md`、`HANDOFF.md`，再執行 `python3 Tools/Handoff/verify_project.py`。最新內容在 `solid-clouds-karst-peaks` 分支；GitHub 預設 `main` 尚未合併這些更新。完整分卷交接包與還原方法請看 GitHub Releases；打包規格在 `Tools/Handoff/README.md`。
+先讀 `CLAUDE.md`、`HANDOFF.md`，再執行 `python3 Tools/Handoff/verify_project.py`。最新內容在 `solid-clouds-karst-peaks` 分支；GitHub 預設 `main` 尚未合併這些更新。目前請透過 Git clone 與 Git LFS 取得完整專案；新版 GitHub Release 分卷包尚未發布。打包規格在 `Tools/Handoff/README.md`。
 
 ## 下載完整模型與圖片
 
