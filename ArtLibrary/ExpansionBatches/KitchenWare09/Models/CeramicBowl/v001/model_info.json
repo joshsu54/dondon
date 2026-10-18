@@ -1,0 +1,27 @@
+{
+  "asset": "CeramicBowl",
+  "name_zh": "粗陶碗",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Coarse stoneware bowl with separate inner and outer walls and a foot ring. Empty base for food variants.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.16,
+    0.16,
+    0.0725
+  ],
+  "mesh_objects": 2,
+  "design_sheet": "DesignSheets/CeramicBowl_design.png",
+  "spec": {
+    "mouth_d": 0.16,
+    "h": 0.0725,
+    "foot_d": 0.076
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

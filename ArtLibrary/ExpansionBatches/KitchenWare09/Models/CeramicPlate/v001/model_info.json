@@ -1,0 +1,27 @@
+{
+  "asset": "CeramicPlate",
+  "name_zh": "粗陶盤",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Coarse stoneware plate with a shallow well and foot ring.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.24,
+    0.24,
+    0.0308
+  ],
+  "mesh_objects": 2,
+  "design_sheet": "DesignSheets/CeramicPlate_design.png",
+  "spec": {
+    "d": 0.24,
+    "h": 0.0305,
+    "foot_d": 0.12
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

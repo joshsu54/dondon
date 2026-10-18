@@ -1,0 +1,31 @@
+{
+  "asset": "RoundStool",
+  "name_zh": "木圓凳",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Round wooden stool with four splayed legs and a ring stretcher.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.32,
+    0.32,
+    0.45
+  ],
+  "mesh_objects": 11,
+  "design_sheet": "DesignSheets/RoundStool_design.png",
+  "spec": {
+    "h": 0.45,
+    "seat_d": 0.32,
+    "seat_t": 0.04,
+    "leg_r": 0.018,
+    "leg_top": 0.1,
+    "leg_foot": 0.145,
+    "ring_z": 0.14
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

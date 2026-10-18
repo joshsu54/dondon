@@ -1,0 +1,34 @@
+{
+  "asset": "DiningTable",
+  "name_zh": "食肆方桌",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Square eatery table: four-plank top, aprons, legs and low stretchers.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.996,
+    1.0,
+    0.75
+  ],
+  "mesh_objects": 18,
+  "design_sheet": "DesignSheets/DiningTable_design.png",
+  "spec": {
+    "size": [
+      1.0,
+      1.0,
+      0.75
+    ],
+    "top_t": 0.05,
+    "leg": 0.07,
+    "leg_inset": 0.06,
+    "apron_h": 0.08,
+    "stretcher_z": 0.15
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

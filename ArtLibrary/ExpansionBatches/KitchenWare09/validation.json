@@ -1,0 +1,176 @@
+[
+  {
+    "asset": "CookingHearth",
+    "name_zh": "柴火爐灶",
+    "blend_reopened": true,
+    "meshes": 17,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      1.24,
+      0.9839,
+      0.824
+    ],
+    "spec_size_checked": true,
+    "wok_rests_on_seat_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "IronWok",
+    "name_zh": "雙耳鐵鍋",
+    "blend_reopened": true,
+    "meshes": 6,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.6698,
+      0.554,
+      0.165
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 1.4901161193847656e-08,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_interior.png",
+      "12_underside.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "BambooSteamer",
+    "name_zh": "竹蒸籠",
+    "blend_reopened": true,
+    "meshes": 47,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.424,
+      0.424,
+      0.275
+    ],
+    "spec_size_checked": true,
+    "tiers_and_lid_separate": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_lid_open.png",
+      "12_underside.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "PrepBoard",
+    "name_zh": "料理砧板",
+    "blend_reopened": true,
+    "meshes": 8,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.45,
+      0.3,
+      0.049
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 3.725290298461914e-09,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "CeramicBowl",
+    "name_zh": "粗陶碗",
+    "blend_reopened": true,
+    "meshes": 2,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.16,
+      0.16,
+      0.0725
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_interior.png",
+      "12_underside.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "CeramicPlate",
+    "name_zh": "粗陶盤",
+    "blend_reopened": true,
+    "meshes": 2,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.24,
+      0.24,
+      0.0308
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 7.450580596923828e-09,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_interior.png",
+      "12_underside.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "DiningTable",
+    "name_zh": "食肆方桌",
+    "blend_reopened": true,
+    "meshes": 18,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.996,
+      1.0,
+      0.75
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 1.1920928955078125e-07,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "RoundStool",
+    "name_zh": "木圓凳",
+    "blend_reopened": true,
+    "meshes": 11,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.32,
+      0.32,
+      0.45
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  }
+]

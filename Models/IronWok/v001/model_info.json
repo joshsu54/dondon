@@ -1,0 +1,28 @@
+{
+  "asset": "IronWok",
+  "name_zh": "雙耳鐵鍋",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Spherical-cap iron wok with 6 mm wall, rolled rim and two loop ears. Rests in the CookingHearth opening.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.6698,
+    0.554,
+    0.165
+  ],
+  "mesh_objects": 6,
+  "design_sheet": "DesignSheets/IronWok_design.png",
+  "spec": {
+    "mouth_d": 0.55,
+    "depth": 0.16,
+    "wall": 0.006,
+    "ear_r": 0.045
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

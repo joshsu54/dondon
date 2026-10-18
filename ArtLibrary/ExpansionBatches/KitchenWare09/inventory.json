@@ -1,0 +1,110 @@
+{
+  "batch": "KitchenWare09",
+  "created": "2026-10-18",
+  "new_asset_sets": 8,
+  "new_views": 80,
+  "extra_detail_views": 8,
+  "design_sheets": 8,
+  "new_assets": [
+    {
+      "asset": "CookingHearth",
+      "name_zh": "柴火爐灶",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        1.24,
+        0.9839,
+        0.824
+      ]
+    },
+    {
+      "asset": "IronWok",
+      "name_zh": "雙耳鐵鍋",
+      "views": 10,
+      "extra_views": [
+        "11_interior.png",
+        "12_underside.png"
+      ],
+      "dimensions_m": [
+        0.6698,
+        0.554,
+        0.165
+      ]
+    },
+    {
+      "asset": "BambooSteamer",
+      "name_zh": "竹蒸籠",
+      "views": 10,
+      "extra_views": [
+        "11_lid_open.png",
+        "12_underside.png"
+      ],
+      "dimensions_m": [
+        0.424,
+        0.424,
+        0.275
+      ]
+    },
+    {
+      "asset": "PrepBoard",
+      "name_zh": "料理砧板",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.45,
+        0.3,
+        0.049
+      ]
+    },
+    {
+      "asset": "CeramicBowl",
+      "name_zh": "粗陶碗",
+      "views": 10,
+      "extra_views": [
+        "11_interior.png",
+        "12_underside.png"
+      ],
+      "dimensions_m": [
+        0.16,
+        0.16,
+        0.0725
+      ]
+    },
+    {
+      "asset": "CeramicPlate",
+      "name_zh": "粗陶盤",
+      "views": 10,
+      "extra_views": [
+        "11_interior.png",
+        "12_underside.png"
+      ],
+      "dimensions_m": [
+        0.24,
+        0.24,
+        0.0308
+      ]
+    },
+    {
+      "asset": "DiningTable",
+      "name_zh": "食肆方桌",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.996,
+        1.0,
+        0.75
+      ]
+    },
+    {
+      "asset": "RoundStool",
+      "name_zh": "木圓凳",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.32,
+        0.32,
+        0.45
+      ]
+    }
+  ]
+}

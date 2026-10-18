@@ -1,0 +1,29 @@
+{
+  "asset": "BambooSteamer",
+  "name_zh": "竹蒸籠",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Two stacking bamboo tiers with slatted floors and a woven domed lid; tiers and lid are separate objects.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.424,
+    0.424,
+    0.275
+  ],
+  "mesh_objects": 47,
+  "design_sheet": "DesignSheets/BambooSteamer_design.png",
+  "spec": {
+    "d": 0.4,
+    "tier_h": 0.09,
+    "tiers": 2,
+    "lid_ring_h": 0.03,
+    "lid_dome_h": 0.045
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

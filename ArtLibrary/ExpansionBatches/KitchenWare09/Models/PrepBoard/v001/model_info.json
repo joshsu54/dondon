@@ -1,0 +1,32 @@
+{
+  "asset": "PrepBoard",
+  "name_zh": "料理砧板",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Thick end-grain chopping board with rounded corners and a hanging hole.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.45,
+    0.3,
+    0.049
+  ],
+  "mesh_objects": 8,
+  "design_sheet": "DesignSheets/PrepBoard_design.png",
+  "spec": {
+    "size": [
+      0.45,
+      0.3,
+      0.04
+    ],
+    "corner_r": 0.03,
+    "hole_r": 0.014,
+    "hole_x": 0.185
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

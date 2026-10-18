@@ -1,9 +1,9 @@
 {
   "target_engine": "Unreal Engine",
   "workflow": "Art preparation first; game-system implementation paused",
-  "model_asset_sets": 60,
+  "model_asset_sets": 68,
   "assembled_scenes": 3,
-  "consistent_turnaround_images": 600,
+  "consistent_turnaround_images": 680,
   "concept_reference_images": 33,
   "entries": [
     {
@@ -1731,6 +1731,258 @@
       "uv_baked": false,
       "collision_ready": false,
       "lod_ready": false
+    },
+    {
+      "id": "CookingHearth",
+      "name": "柴火爐灶",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/CookingHearth/v001",
+      "blend": "../Models/CookingHearth/v001/CookingHearth_v001.blend",
+      "fbx": "../Models/CookingHearth/v001/CookingHearth_v001.fbx",
+      "preview": "Turnarounds/CookingHearth_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/CookingHearth_v001/01_front.png",
+        "Turnarounds/CookingHearth_v001/02_right.png",
+        "Turnarounds/CookingHearth_v001/03_rear.png",
+        "Turnarounds/CookingHearth_v001/04_left.png",
+        "Turnarounds/CookingHearth_v001/05_front_right.png",
+        "Turnarounds/CookingHearth_v001/06_rear_right.png",
+        "Turnarounds/CookingHearth_v001/07_rear_left.png",
+        "Turnarounds/CookingHearth_v001/08_front_left.png",
+        "Turnarounds/CookingHearth_v001/09_top.png",
+        "Turnarounds/CookingHearth_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/KitchenWare09/CookingHearth_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "IronWok",
+      "name": "雙耳鐵鍋",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/IronWok/v001",
+      "blend": "../Models/IronWok/v001/IronWok_v001.blend",
+      "fbx": "../Models/IronWok/v001/IronWok_v001.fbx",
+      "preview": "Turnarounds/IronWok_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/IronWok_v001/01_front.png",
+        "Turnarounds/IronWok_v001/02_right.png",
+        "Turnarounds/IronWok_v001/03_rear.png",
+        "Turnarounds/IronWok_v001/04_left.png",
+        "Turnarounds/IronWok_v001/05_front_right.png",
+        "Turnarounds/IronWok_v001/06_rear_right.png",
+        "Turnarounds/IronWok_v001/07_rear_left.png",
+        "Turnarounds/IronWok_v001/08_front_left.png",
+        "Turnarounds/IronWok_v001/09_top.png",
+        "Turnarounds/IronWok_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/IronWok_v001/11_interior.png",
+        "Turnarounds/IronWok_v001/12_underside.png"
+      ],
+      "design_sheet": "../ArtReferences/KitchenWare09/IronWok_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "BambooSteamer",
+      "name": "竹蒸籠",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/BambooSteamer/v001",
+      "blend": "../Models/BambooSteamer/v001/BambooSteamer_v001.blend",
+      "fbx": "../Models/BambooSteamer/v001/BambooSteamer_v001.fbx",
+      "preview": "Turnarounds/BambooSteamer_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/BambooSteamer_v001/01_front.png",
+        "Turnarounds/BambooSteamer_v001/02_right.png",
+        "Turnarounds/BambooSteamer_v001/03_rear.png",
+        "Turnarounds/BambooSteamer_v001/04_left.png",
+        "Turnarounds/BambooSteamer_v001/05_front_right.png",
+        "Turnarounds/BambooSteamer_v001/06_rear_right.png",
+        "Turnarounds/BambooSteamer_v001/07_rear_left.png",
+        "Turnarounds/BambooSteamer_v001/08_front_left.png",
+        "Turnarounds/BambooSteamer_v001/09_top.png",
+        "Turnarounds/BambooSteamer_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/BambooSteamer_v001/11_lid_open.png",
+        "Turnarounds/BambooSteamer_v001/12_underside.png"
+      ],
+      "design_sheet": "../ArtReferences/KitchenWare09/BambooSteamer_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "PrepBoard",
+      "name": "料理砧板",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/PrepBoard/v001",
+      "blend": "../Models/PrepBoard/v001/PrepBoard_v001.blend",
+      "fbx": "../Models/PrepBoard/v001/PrepBoard_v001.fbx",
+      "preview": "Turnarounds/PrepBoard_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/PrepBoard_v001/01_front.png",
+        "Turnarounds/PrepBoard_v001/02_right.png",
+        "Turnarounds/PrepBoard_v001/03_rear.png",
+        "Turnarounds/PrepBoard_v001/04_left.png",
+        "Turnarounds/PrepBoard_v001/05_front_right.png",
+        "Turnarounds/PrepBoard_v001/06_rear_right.png",
+        "Turnarounds/PrepBoard_v001/07_rear_left.png",
+        "Turnarounds/PrepBoard_v001/08_front_left.png",
+        "Turnarounds/PrepBoard_v001/09_top.png",
+        "Turnarounds/PrepBoard_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/KitchenWare09/PrepBoard_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "CeramicBowl",
+      "name": "粗陶碗",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/CeramicBowl/v001",
+      "blend": "../Models/CeramicBowl/v001/CeramicBowl_v001.blend",
+      "fbx": "../Models/CeramicBowl/v001/CeramicBowl_v001.fbx",
+      "preview": "Turnarounds/CeramicBowl_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/CeramicBowl_v001/01_front.png",
+        "Turnarounds/CeramicBowl_v001/02_right.png",
+        "Turnarounds/CeramicBowl_v001/03_rear.png",
+        "Turnarounds/CeramicBowl_v001/04_left.png",
+        "Turnarounds/CeramicBowl_v001/05_front_right.png",
+        "Turnarounds/CeramicBowl_v001/06_rear_right.png",
+        "Turnarounds/CeramicBowl_v001/07_rear_left.png",
+        "Turnarounds/CeramicBowl_v001/08_front_left.png",
+        "Turnarounds/CeramicBowl_v001/09_top.png",
+        "Turnarounds/CeramicBowl_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/CeramicBowl_v001/11_interior.png",
+        "Turnarounds/CeramicBowl_v001/12_underside.png"
+      ],
+      "design_sheet": "../ArtReferences/KitchenWare09/CeramicBowl_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "CeramicPlate",
+      "name": "粗陶盤",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/CeramicPlate/v001",
+      "blend": "../Models/CeramicPlate/v001/CeramicPlate_v001.blend",
+      "fbx": "../Models/CeramicPlate/v001/CeramicPlate_v001.fbx",
+      "preview": "Turnarounds/CeramicPlate_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/CeramicPlate_v001/01_front.png",
+        "Turnarounds/CeramicPlate_v001/02_right.png",
+        "Turnarounds/CeramicPlate_v001/03_rear.png",
+        "Turnarounds/CeramicPlate_v001/04_left.png",
+        "Turnarounds/CeramicPlate_v001/05_front_right.png",
+        "Turnarounds/CeramicPlate_v001/06_rear_right.png",
+        "Turnarounds/CeramicPlate_v001/07_rear_left.png",
+        "Turnarounds/CeramicPlate_v001/08_front_left.png",
+        "Turnarounds/CeramicPlate_v001/09_top.png",
+        "Turnarounds/CeramicPlate_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/CeramicPlate_v001/11_interior.png",
+        "Turnarounds/CeramicPlate_v001/12_underside.png"
+      ],
+      "design_sheet": "../ArtReferences/KitchenWare09/CeramicPlate_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "DiningTable",
+      "name": "食肆方桌",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/DiningTable/v001",
+      "blend": "../Models/DiningTable/v001/DiningTable_v001.blend",
+      "fbx": "../Models/DiningTable/v001/DiningTable_v001.fbx",
+      "preview": "Turnarounds/DiningTable_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/DiningTable_v001/01_front.png",
+        "Turnarounds/DiningTable_v001/02_right.png",
+        "Turnarounds/DiningTable_v001/03_rear.png",
+        "Turnarounds/DiningTable_v001/04_left.png",
+        "Turnarounds/DiningTable_v001/05_front_right.png",
+        "Turnarounds/DiningTable_v001/06_rear_right.png",
+        "Turnarounds/DiningTable_v001/07_rear_left.png",
+        "Turnarounds/DiningTable_v001/08_front_left.png",
+        "Turnarounds/DiningTable_v001/09_top.png",
+        "Turnarounds/DiningTable_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/KitchenWare09/DiningTable_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "RoundStool",
+      "name": "木圓凳",
+      "category": "食肆與料理用具",
+      "source_version": "v001",
+      "source_path": "Models/RoundStool/v001",
+      "blend": "../Models/RoundStool/v001/RoundStool_v001.blend",
+      "fbx": "../Models/RoundStool/v001/RoundStool_v001.fbx",
+      "preview": "Turnarounds/RoundStool_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/RoundStool_v001/01_front.png",
+        "Turnarounds/RoundStool_v001/02_right.png",
+        "Turnarounds/RoundStool_v001/03_rear.png",
+        "Turnarounds/RoundStool_v001/04_left.png",
+        "Turnarounds/RoundStool_v001/05_front_right.png",
+        "Turnarounds/RoundStool_v001/06_rear_right.png",
+        "Turnarounds/RoundStool_v001/07_rear_left.png",
+        "Turnarounds/RoundStool_v001/08_front_left.png",
+        "Turnarounds/RoundStool_v001/09_top.png",
+        "Turnarounds/RoundStool_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/KitchenWare09/RoundStool_design.png",
+      "status": "可編輯食肆道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "KitchenWare09",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
     }
   ],
   "note": "Concept references are not models. Town scene does not yet include the new materials shop.",
@@ -1742,9 +1994,10 @@
     "ExpansionBatches/SectFacilities05/index.html",
     "ExpansionBatches/SectModules06/index.html",
     "ExpansionBatches/MountainWind07/index.html",
-    "ExpansionBatches/MountainRoute08/index.html"
+    "ExpansionBatches/MountainRoute08/index.html",
+    "ExpansionBatches/KitchenWare09/index.html"
   ],
-  "updated": "2026-10-16",
+  "updated": "2026-10-18",
   "counting_note": "Asset sets include assembled originals and independently extracted components; their counts do not imply every component is complete.",
   "effects": [
     {
@@ -1755,5 +2008,6 @@
       "duration_seconds": 4,
       "engine_effect_verified": false
     }
-  ]
+  ],
+  "design_sheets": 8
 }

@@ -1,0 +1,189 @@
+{
+  "asset": "CeramicPlate",
+  "source": "Models/CeramicPlate/v001/CeramicPlate_v001.blend",
+  "same_geometry": true,
+  "views": [
+    {
+      "file": "01_front.png",
+      "camera_location": [
+        0.0,
+        -1.0224,
+        0.0154
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "camera_location": [
+        1.0224,
+        0.0,
+        0.0154
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "camera_location": [
+        0.0,
+        1.0224,
+        0.0154
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "camera_location": [
+        -1.0224,
+        0.0,
+        0.0154
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "camera_location": [
+        0.6889,
+        -0.6889,
+        0.3254
+      ],
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "camera_location": [
+        0.6889,
+        0.6889,
+        0.3254
+      ],
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "camera_location": [
+        -0.6889,
+        0.6889,
+        0.3254
+      ],
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "camera_location": [
+        -0.6889,
+        -0.6889,
+        0.3254
+      ],
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "camera_location": [
+        0.0,
+        0.0,
+        1.0378
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "camera_location": [
+        0.0,
+        -0.723,
+        0.7384
+      ],
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ],
+  "extra_views": [
+    {
+      "file": "11_interior.png",
+      "camera_location": [
+        0.0,
+        -0.3378,
+        0.9804
+      ],
+      "direction": [
+        0,
+        -0.35,
+        1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "12_underside.png",
+      "camera_location": [
+        0.2143,
+        -0.5143,
+        -0.8418
+      ],
+      "direction": [
+        0.25,
+        -0.6,
+        -1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ]
+}

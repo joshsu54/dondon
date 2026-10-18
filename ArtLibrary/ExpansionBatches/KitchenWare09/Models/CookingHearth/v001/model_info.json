@@ -1,0 +1,43 @@
+{
+  "asset": "CookingHearth",
+  "name_zh": "柴火爐灶",
+  "batch": "KitchenWare09",
+  "stage": "appearance_prototype",
+  "description": "Plastered brick stove on a stone plinth. One wok opening sized for IronWok, front arched fire mouth with firewood, rear smoke vent.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.24,
+    0.9839,
+    0.824
+  ],
+  "mesh_objects": 17,
+  "design_sheet": "DesignSheets/CookingHearth_design.png",
+  "spec": {
+    "size": [
+      1.2,
+      0.8,
+      0.8
+    ],
+    "plinth_h": 0.1,
+    "top_h": 0.06,
+    "wok_hole_r": 0.25,
+    "wok_hole_x": -0.18,
+    "fire_mouth": {
+      "w": 0.34,
+      "h": 0.28,
+      "z": 0.14
+    },
+    "vent": {
+      "w": 0.16,
+      "h": 0.12,
+      "z": 0.52
+    }
+  },
+  "modeling_method": "procedural editable mesh built from kitchen_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}
