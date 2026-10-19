@@ -1,0 +1,27 @@
+{
+  "asset": "StirFryGreens",
+  "name_zh": "炒青菜",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Heap of stir-fried bok choy leaves and stems with garlic on the stoneware plate.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.24,
+    0.24,
+    0.0621
+  ],
+  "mesh_objects": 41,
+  "design_sheet": "DesignSheets/StirFryGreens_design.png",
+  "spec": {
+    "leaves": 14,
+    "heap_h": 0.06
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

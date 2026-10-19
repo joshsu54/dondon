@@ -1,0 +1,170 @@
+[
+  {
+    "asset": "RiceBowl",
+    "name_zh": "白米飯",
+    "container": "CeramicBowl",
+    "container_scale": [
+      1,
+      1,
+      1
+    ],
+    "container_meshes": 2,
+    "food_meshes": 1,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.16,
+      0.16,
+      0.098
+    ],
+    "food_top_m": 0.098,
+    "meshes": 3,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "NoodleSoup",
+    "name_zh": "湯麵",
+    "container": "CeramicBowl",
+    "container_scale": [
+      1.35,
+      1.35,
+      1.25
+    ],
+    "container_meshes": 2,
+    "food_meshes": 30,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.2403,
+      0.216,
+      0.0981
+    ],
+    "food_top_m": 0.064,
+    "meshes": 32,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "SteamedBuns",
+    "name_zh": "蒸籠包子",
+    "container": "BambooSteamer",
+    "container_scale": [
+      1,
+      1,
+      1
+    ],
+    "container_meshes": 18,
+    "food_meshes": 84,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.412,
+      0.412,
+      0.09
+    ],
+    "food_top_m": 0.0719,
+    "meshes": 102,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 1.4901161193847656e-08,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "SteamedFish",
+    "name_zh": "清蒸魚",
+    "container": "CeramicPlate",
+    "container_scale": [
+      1.6,
+      1.05,
+      1
+    ],
+    "container_meshes": 2,
+    "food_meshes": 29,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.384,
+      0.252,
+      0.083
+    ],
+    "food_top_m": 0.083,
+    "meshes": 31,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "StirFryGreens",
+    "name_zh": "炒青菜",
+    "container": "CeramicPlate",
+    "container_scale": [
+      1,
+      1,
+      1
+    ],
+    "container_meshes": 2,
+    "food_meshes": 39,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.24,
+      0.24,
+      0.0621
+    ],
+    "food_top_m": 0.0621,
+    "meshes": 41,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "BraisedPork",
+    "name_zh": "紅燒肉",
+    "container": "CeramicBowl",
+    "container_scale": [
+      1,
+      1,
+      1
+    ],
+    "container_meshes": 2,
+    "food_meshes": 34,
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "food_inside_container_checked": true,
+    "dimensions_m": [
+      0.16,
+      0.16,
+      0.0935
+    ],
+    "food_top_m": 0.0935,
+    "meshes": 36,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  }
+]

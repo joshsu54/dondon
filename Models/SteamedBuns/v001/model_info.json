@@ -1,0 +1,29 @@
+{
+  "asset": "SteamedBuns",
+  "name_zh": "蒸籠包子",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Bottom tier of the KitchenWare09 bamboo steamer holding seven pleated steamed buns.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.412,
+    0.412,
+    0.09
+  ],
+  "mesh_objects": 102,
+  "design_sheet": "DesignSheets/SteamedBuns_design.png",
+  "spec": {
+    "bun_r": 0.046,
+    "bun_h": 0.045,
+    "ring_r": 0.112,
+    "count": 7
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,29 @@
+{
+  "asset": "NoodleSoup",
+  "name_zh": "湯麵",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Large noodle bowl (bowl scaled 1.35x): broth, swirled noodles, two pork slices, half egg, greens, scallion rings and resting chopsticks.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.2403,
+    0.216,
+    0.0981
+  ],
+  "mesh_objects": 32,
+  "design_sheet": "DesignSheets/NoodleSoup_design.png",
+  "spec": {
+    "broth_z": 0.052,
+    "noodle_r": 0.0028,
+    "egg_r": 0.022,
+    "chopstick_len": 0.24
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

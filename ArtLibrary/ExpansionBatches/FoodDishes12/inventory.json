@@ -1,0 +1,76 @@
+{
+  "batch": "FoodDishes12",
+  "created": "2026-10-19",
+  "new_asset_sets": 6,
+  "new_views": 60,
+  "extra_detail_views": 0,
+  "design_sheets": 6,
+  "new_assets": [
+    {
+      "asset": "RiceBowl",
+      "name_zh": "白米飯",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.16,
+        0.16,
+        0.098
+      ]
+    },
+    {
+      "asset": "NoodleSoup",
+      "name_zh": "湯麵",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.2403,
+        0.216,
+        0.0981
+      ]
+    },
+    {
+      "asset": "SteamedBuns",
+      "name_zh": "蒸籠包子",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.412,
+        0.412,
+        0.09
+      ]
+    },
+    {
+      "asset": "SteamedFish",
+      "name_zh": "清蒸魚",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.384,
+        0.252,
+        0.083
+      ]
+    },
+    {
+      "asset": "StirFryGreens",
+      "name_zh": "炒青菜",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.24,
+        0.24,
+        0.0621
+      ]
+    },
+    {
+      "asset": "BraisedPork",
+      "name_zh": "紅燒肉",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.16,
+        0.16,
+        0.0935
+      ]
+    }
+  ]
+}

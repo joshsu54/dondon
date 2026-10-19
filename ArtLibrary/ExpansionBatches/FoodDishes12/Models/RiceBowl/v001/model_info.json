@@ -1,0 +1,27 @@
+{
+  "asset": "RiceBowl",
+  "name_zh": "白米飯",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Domed mound of white rice in the KitchenWare09 stoneware bowl.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.16,
+    0.16,
+    0.098
+  ],
+  "mesh_objects": 3,
+  "design_sheet": "DesignSheets/RiceBowl_design.png",
+  "spec": {
+    "mound_top": 0.098,
+    "mound_base_z": 0.06
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

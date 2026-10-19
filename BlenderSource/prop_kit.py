@@ -124,7 +124,9 @@ def build_all(ROOT, BUILDERS, NAMES, DETAILS, SPECS, batch, materials, ids=None,
             return Vector([min(p[i] for p in pts) for i in range(3)]), Vector([max(p[i] for p in pts) for i in range(3)])
 
         lo, hi = bounds(); shift = Vector(((lo.x + hi.x) / 2, (lo.y + hi.y) / 2, lo.z))
-        for o in objects: o.location -= shift
+        # Move only the root's direct children, so nested (possibly scaled) groups shift by the same world offset.
+        for o in assets.objects:
+            if o.parent == root: o.location -= shift
         bpy.context.view_layer.update(); lo, hi = bounds(); centre = (lo + hi) / 2; extent = hi - lo
         studio = bpy.data.collections.new('90_Studio_Not_Exported'); scene.collection.children.link(studio)
         cam = bpy.data.objects.new('Reference_Camera', bpy.data.cameras.new('Reference_Camera')); studio.objects.link(cam); scene.camera = cam

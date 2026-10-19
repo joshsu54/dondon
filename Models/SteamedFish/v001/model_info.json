@@ -1,0 +1,32 @@
+{
+  "asset": "SteamedFish",
+  "name_zh": "清蒸魚",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Whole steamed fish on an oval plate (plate scaled 1.6 x 1.05) in light soy sauce with scallion and ginger shreds.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.384,
+    0.252,
+    0.083
+  ],
+  "mesh_objects": 31,
+  "design_sheet": "DesignSheets/SteamedFish_design.png",
+  "spec": {
+    "length": 0.3,
+    "height": 0.055,
+    "width": 0.085,
+    "sauce_r": [
+      0.15,
+      0.095
+    ]
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

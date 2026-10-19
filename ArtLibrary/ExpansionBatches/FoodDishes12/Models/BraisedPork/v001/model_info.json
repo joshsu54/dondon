@@ -1,0 +1,28 @@
+{
+  "asset": "BraisedPork",
+  "name_zh": "紅燒肉",
+  "batch": "FoodDishes12",
+  "stage": "appearance_prototype",
+  "description": "Glossy braised pork belly cubes in sauce, stacked in the stoneware bowl, with scallion.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.16,
+    0.16,
+    0.0935
+  ],
+  "mesh_objects": 36,
+  "design_sheet": "DesignSheets/BraisedPork_design.png",
+  "spec": {
+    "cube": 0.03,
+    "count": 9,
+    "sauce_z": 0.046
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}
