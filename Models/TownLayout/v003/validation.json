@@ -1,0 +1,27 @@
+{
+  "blend_reopened": true,
+  "placements_verified": [
+    "Eatery",
+    "HerbalStall",
+    "MaterialShop"
+  ],
+  "curbs_removed_verified": [
+    "Plaza_Edge_-1_2",
+    "Plaza_Edge_-1_3",
+    "Plaza_Edge_-1_4"
+  ],
+  "v002_content_kept": true,
+  "terrain_west_edge_m": -25.0,
+  "walk_samples_clear_0_to_2_2m": 36,
+  "source_mesh_objects": 3976,
+  "fbx_mesh_objects": 3976,
+  "fbx_bounds_error_m": 0.0,
+  "studio_excluded": true,
+  "scene_size_m": [
+    43.0,
+    27.0,
+    10.04
+  ],
+  "unity_verified": false,
+  "unreal_verified": false
+}

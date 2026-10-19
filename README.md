@@ -4,6 +4,7 @@
 
 目前素材庫有 **69 組模型、690 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
+- 最新小鎮配置：`Models/TownLayout/v003/`，西街加入食肆客棧、材料鋪與藥草攤。
 - 最新建築：兩層食肆客棧（含一樓家具配置與剖視圖）`ArtLibrary/ExpansionBatches/Eatery10/`。
 - 食肆用具（爐灶、鐵鍋、蒸籠、砧板、碗盤、桌凳）：`ArtLibrary/ExpansionBatches/KitchenWare09/`，含建模設計圖。
 - 登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。

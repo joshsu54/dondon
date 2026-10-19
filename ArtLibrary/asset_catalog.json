@@ -143,19 +143,27 @@
     },
     {
       "id": "TownLayout",
-      "name": "出生小鎮配置（民宅＋鐵匠鋪）",
+      "name": "出生小鎮配置（民宅＋鐵匠鋪＋西街）",
       "category": "場景組合",
-      "source_version": "v002",
-      "source_path": "Models/TownLayout/v002",
-      "blend": "Current/TownLayout/TownLayout_v002.blend",
-      "fbx": "Current/TownLayout/TownLayout_v002.fbx",
-      "preview": "Current/TownLayout/01_town_with_smithy.png",
+      "source_version": "v003",
+      "source_path": "Models/TownLayout/v003",
+      "blend": "../Models/TownLayout/v003/TownLayout_v003.blend",
+      "fbx": "../Models/TownLayout/v003/TownLayout_v003.fbx",
+      "preview": "../Models/TownLayout/v003/01_town_west_street.png",
       "views": [],
-      "status": "外觀原型；待遊戲資產整理",
+      "status": "v003：西街加入食肆客棧、材料鋪與藥草攤；外觀與配置原型，未驗證碰撞或導航",
       "unreal_import_verified": false,
       "uv_baked": false,
       "collision_ready": false,
-      "lod_ready": false
+      "lod_ready": false,
+      "scene_previews": [
+        "../Models/TownLayout/v003/01_town_west_street.png",
+        "../Models/TownLayout/v003/02_town_top_plan.png",
+        "../Models/TownLayout/v003/03_west_street_view.png",
+        "../Models/TownLayout/v003/04_eatery_frontage.png"
+      ],
+      "layout_plan": "../ArtReferences/TownLayout_v003/TownLayout_v003_plan.png",
+      "previous_version": "Current/TownLayout/TownLayout_v002.blend"
     },
     {
       "id": "HerbalStall",
