@@ -1,13 +1,13 @@
 {
   "updated": "2026-10-19",
-  "model_asset_sets": 69,
-  "consistent_turnaround_images": 690,
+  "model_asset_sets": 75,
+  "consistent_turnaround_images": 750,
   "assembled_scenes": 3,
   "effect_previews": 1,
   "link_checks": [
     {
       "page": "index.html",
-      "local_links": 1657,
+      "local_links": 1815,
       "missing": []
     },
     {
@@ -58,6 +58,11 @@
     {
       "page": "ExpansionBatches/Eatery10/index.html",
       "local_links": 34,
+      "missing": []
+    },
+    {
+      "page": "ExpansionBatches/StreetProps11/index.html",
+      "local_links": 161,
       "missing": []
     }
   ],

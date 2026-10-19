@@ -5450,6 +5450,576 @@
     "sha256": "e140f0eb2ab57d83e5edc22012f0d4e29f94c123c31d32b27dc83028499e9a90"
   },
   {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/01_front.png",
+    "bytes": 1027133,
+    "sha256": "b3b654042a9ce329b49f132e97bd493ae4da702fc6266af38b644bd32112ed7b"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/02_right.png",
+    "bytes": 1039663,
+    "sha256": "c218891599365c88843efdadbe45e58e8fc0ebced1c2eef36655f5544b3d0160"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/03_rear.png",
+    "bytes": 1026176,
+    "sha256": "b4514dae6677d481f18264a36d4344576ee80624467274c810111f8d507bf8ed"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/04_left.png",
+    "bytes": 1037827,
+    "sha256": "f0de4ab9f0a20c7b2fae48746b3c17f19451a52f6e27645d3ae4d0421e606ae4"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/05_front_right.png",
+    "bytes": 1090426,
+    "sha256": "43b032c0315fb0750618e745c88bb68a405a49d9b9c599e21ba9f852274c67ae"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/06_rear_right.png",
+    "bytes": 1088130,
+    "sha256": "63f09e6f127df9b0af859a66980eb958dd1e2d2a8b2e36b80a5df4670fc98fe3"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/07_rear_left.png",
+    "bytes": 1091841,
+    "sha256": "b95edac0748bbc8dfd41c3bc0aa761bc98e25225ce975d146a946737d8d7ce19"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/08_front_left.png",
+    "bytes": 1090817,
+    "sha256": "2be855a52c0482eec9a1342e6bda5a386091f981f5d96017d7f6123c88bb0cf8"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/09_top.png",
+    "bytes": 932153,
+    "sha256": "2542115bbdf90dde48aec3b03e06e2a71864c2be5e5a4633cf971a6105ba7858"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/10_high_front.png",
+    "bytes": 1055104,
+    "sha256": "76d304aee28bd1739a3b35423e15fb454d1f27b5f63474b52363795e58a8c486"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/11_interior.png",
+    "bytes": 986770,
+    "sha256": "9f1d4cce3c4dfac28303a971dda57b71d7c1adcdce961024f66e2af6e452a0e5"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/12_back_straps.png",
+    "bytes": 1075895,
+    "sha256": "54a646015b6ede440e5967fd21230183c5897fefc6cceec63cc7fc75888b95eb"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/BambooBasket_v001/views.json",
+    "bytes": 3250,
+    "sha256": "fb9c0558ecf3eca52d50ef536318415e0e2c6f160bde07861769f016c1aa9057"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/01_front.png",
+    "bytes": 1027499,
+    "sha256": "cb352ce40d76b98cddb12d41d2ddadf375d86c70d658cd2f316a6c6219d1eba6"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/02_right.png",
+    "bytes": 913497,
+    "sha256": "3aa45e33d3cd4e7a1a857f7c0840cb07469d14da4a8bea2a35cfdc2ca31dc0ef"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/03_rear.png",
+    "bytes": 1029950,
+    "sha256": "a0cbc60519e994363413f30ad126fa0797bf1336242358c326ab43378b7fd9cc"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/04_left.png",
+    "bytes": 907661,
+    "sha256": "4dafbba5adf8c5a7dc2148837f818fc0305d50b718af0109c37f8cbdd2842915"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/05_front_right.png",
+    "bytes": 1083513,
+    "sha256": "fc9e7e788abfb6e9406090c096a9566b06b2b52da8ae0eb970767898778f9a45"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/06_rear_right.png",
+    "bytes": 1083105,
+    "sha256": "fa5bfdb6ccc60554bc235d62faee399270780d2cf23b71d040e36e194d9cbe29"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/07_rear_left.png",
+    "bytes": 1072259,
+    "sha256": "28d5998a0c7db71549826423ba89aa2f9f52ba55d2dffc2a4e03c5e45c344a05"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/08_front_left.png",
+    "bytes": 1077819,
+    "sha256": "9b494c9ef121778eb23c76aec22e98e77ed7c989438d1b7f5805187a3f32e662"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/09_top.png",
+    "bytes": 893003,
+    "sha256": "ffa9eadfa93e7bf1999c616a1b5637998b63bc6b62ffbfca0b247e4dfe3173ac"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/10_high_front.png",
+    "bytes": 1027464,
+    "sha256": "59a0db2567ebe6b5e59a35f0b5335b5d0a0d2d6f8e0d5d0be7cc9fec7d6a45ae"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/FirewoodStack_v001/views.json",
+    "bytes": 2716,
+    "sha256": "406123705aea90782405f8b4f6068d940e4b81b54e3bcec33f85f065a57d2410"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/01_front.png",
+    "bytes": 954554,
+    "sha256": "c3b369bde6668b80969e600f60d7f2a2184518e6f7b4c6f60c04b76beed35b02"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/02_right.png",
+    "bytes": 864009,
+    "sha256": "c0fc4dd41c402f24ccf30110cad315b648c7eb8144c47ee5213383be3b5270d9"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/03_rear.png",
+    "bytes": 944070,
+    "sha256": "b3148ef185435438dc78d02378e2e50235dd0d56473de16f76fa9783716495e4"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/04_left.png",
+    "bytes": 867404,
+    "sha256": "9086f763f980678bec1aa7a41c2862113550bf4a9b5b5297b42a5f6468846ca1"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/05_front_right.png",
+    "bytes": 996168,
+    "sha256": "102328e3ae38b7d30fd341e4d37b4787fdaadf53a1c251f1248c2fc3738c8ddb"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/06_rear_right.png",
+    "bytes": 982319,
+    "sha256": "2b0f13177686207f071a742656bfbfeb437dbb470b9f9934b610616839d7805b"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/07_rear_left.png",
+    "bytes": 986670,
+    "sha256": "5c9bb99352a44d0c487bf4ece002794edb77515773ba6c2567d416addbe043f4"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/08_front_left.png",
+    "bytes": 993646,
+    "sha256": "4c169e389e1c0857d033f74197613546e6f9978c03260e4cf0d4d37dafa6d254"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/09_top.png",
+    "bytes": 881015,
+    "sha256": "f5bcd6f86586e6d43eba9228931856548f0c9ea8c42da9eec4c9efc99022af01"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/10_high_front.png",
+    "bytes": 935587,
+    "sha256": "47b1f186aff1eaefb60849be14f787605e72cfb852abb1f93e9ebade29074c8a"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/NoticeBoard_v001/views.json",
+    "bytes": 2716,
+    "sha256": "f26cc59042ca69ce3d075191f86bbc98ed51e24926e681d3fde8b84fb04e33e1"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/01_front.png",
+    "bytes": 974550,
+    "sha256": "cb29d6a84b747d45ee9c9d99ddc4862a69b572d54dad0a286b5fd8e9025780ae"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/02_right.png",
+    "bytes": 930533,
+    "sha256": "95668e6578d025575cbe6ffd941a2479ca166c6c4462a7199803fe8b1738963e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/03_rear.png",
+    "bytes": 970315,
+    "sha256": "161dac3b506816dce43364a2049580060704ec99b7f7ded59f1fd6e4e74d0525"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/04_left.png",
+    "bytes": 930563,
+    "sha256": "c2aa10c02346534e4c171b5f00a4f8dcabc94915647e5c00dd48a6bdecd9be8a"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/05_front_right.png",
+    "bytes": 1039133,
+    "sha256": "a9a6deca89fb4101a9ccd72f4ab0803522e3e7098b153e2f6f32f42cc90f84cb"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/06_rear_right.png",
+    "bytes": 1035190,
+    "sha256": "c970c0131b98d76d60f7aa8ba70924de1fde4a17669df2751184b363782bc450"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/07_rear_left.png",
+    "bytes": 1044462,
+    "sha256": "6b7e7cdc80df77bbca7bdaac4975236c6966ed671e11f690f5c8a5b2832e9811"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/08_front_left.png",
+    "bytes": 1038601,
+    "sha256": "9c6cb1ca8a10fdfa003b5103557f1bee927fd65a0faf19fd658445a674aeef6e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/09_top.png",
+    "bytes": 906064,
+    "sha256": "195b75ffa8975138fd3cf6f8f3175616752efa696f8fa3508578d4881ee2111b"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/10_high_front.png",
+    "bytes": 994425,
+    "sha256": "e3aac6befe34fd88be4190513d972f7a30e54a8251f5da421c1baf8cf4a4c7ee"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/11_into_well.png",
+    "bytes": 932293,
+    "sha256": "981ddda9cb30615b6e039575aed99bed5a4664a24422ae9ff9447fbc9e6691e0"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/StoneWell_v001/views.json",
+    "bytes": 2973,
+    "sha256": "4f5d576148f6dedc5592c678402f509da9fa4cae8b8172a94360f4b142bc5f9b"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/01_front.png",
+    "bytes": 972211,
+    "sha256": "a6f915f93d6e3614927018476067b83a3e2be05c38632976a77c9f7bbf98da94"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/02_right.png",
+    "bytes": 952538,
+    "sha256": "76fb6fbfb8b955f7dfd98d5b1685ca23d52395b360e89f528e5c1b7ded09bb1c"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/03_rear.png",
+    "bytes": 975768,
+    "sha256": "3c9a472bc2914a6acb115971af1624db432215a26d04dbdf933ed33838fd19cf"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/04_left.png",
+    "bytes": 950433,
+    "sha256": "5fea6fbcae67f2924608041b5cd8e9b4e68f0fb7778880cb02f7883dea11d80e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/05_front_right.png",
+    "bytes": 996515,
+    "sha256": "57769477ae2b57ec2049632697a3bed16eb79e4c6b2b799989f66f283bf7f36c"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/06_rear_right.png",
+    "bytes": 993417,
+    "sha256": "deb99d5c2a62a53312366a7fb052833773a9ae98fb36ea620afe569094142349"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/07_rear_left.png",
+    "bytes": 995802,
+    "sha256": "fbeee80a384cff1b4f7c28705f3ae49ea23622312b1e9c0c6e1f06d2c1c68c32"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/08_front_left.png",
+    "bytes": 997469,
+    "sha256": "11d81ffca769e6d596ab17dd0509350847d34639555b72e97e93db0f6b1bb6e6"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/09_top.png",
+    "bytes": 919431,
+    "sha256": "1edbbfac812cebb27778844574798ccab56a0de4425a16b606d9369ac48db777"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/10_high_front.png",
+    "bytes": 989510,
+    "sha256": "e62ca6f01c5828ce8270c680cfd8706c84ff4fbde593f27b64089fd9471d9ce0"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/11_interior.png",
+    "bytes": 962689,
+    "sha256": "2dd845fb03d1be21fa87d2cbba8586621c794fdee9d574d09b0002ce05dd415f"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/12_underside.png",
+    "bytes": 981289,
+    "sha256": "ef703d6c5fbe918aba409a107f1ae8a83c2886a8273db40c03d283f02e557c45"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WellBucket_v001/views.json",
+    "bytes": 3240,
+    "sha256": "9cc7d7376171be49b4a93441642bad76ea364a24aad5edc5a51bb8400a1e8598"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/01_front.png",
+    "bytes": 996925,
+    "sha256": "91c75835d7fcbab711ec7d0b3a612f5a4b8290785869fdf42f8a8c04745054a1"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/02_right.png",
+    "bytes": 968620,
+    "sha256": "b15885d8cbd714f8e00cc95fe5d7c64673f61d588154b01886c1cc4cdc7bd753"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/03_rear.png",
+    "bytes": 1001332,
+    "sha256": "99e38640727dcf7aa957a454a5b8fd2668d0ca0431f8dad9340f47bab35a0996"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/04_left.png",
+    "bytes": 997300,
+    "sha256": "bd7f46869891b30d3e457519bdb0ebf873c16e0319e6db51f13cd4341b5d13db"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/05_front_right.png",
+    "bytes": 1120843,
+    "sha256": "c2eac470fb7cede2689bf9a90e709464d22dc725f31d5aa42028d3c6e7c41414"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/06_rear_right.png",
+    "bytes": 1109612,
+    "sha256": "b07f4a8a2fa0b9824a9db6593468ed01e62bdf3568aea125d42cce3f1ae9ec52"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/07_rear_left.png",
+    "bytes": 1131262,
+    "sha256": "cfe9872758eaff824c2323f4be211658b007f520f7cf1c5edd625bca4a3ab78c"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/08_front_left.png",
+    "bytes": 1122304,
+    "sha256": "535e21c43a50054a03218402a7de6bb0089df3ddae451d597d15e26c4a772672"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/09_top.png",
+    "bytes": 936443,
+    "sha256": "6ff34c68c15e0c8d2e094cb4b909f92bec977bf115e431df27b887f292467344"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/10_high_front.png",
+    "bytes": 990962,
+    "sha256": "3bb7949c7b34d8cdf73052306ec52cba00999995cb80ca35a6eeecb88a7d2376"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/ArtLibrary/Turnarounds/WoodenCrate_v001/views.json",
+    "bytes": 2711,
+    "sha256": "1c1059b3798f5d6d1aab5199e705629e4534f38908c9c0a2a4384ebdc2dc584e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BambooBasket_10views.jpg",
+    "bytes": 147730,
+    "sha256": "2ce330fbce479de27256fd19e91bc023feaa2a3c0b06a6c8b0b7937971b434f9"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/build_street_props11.py",
+    "bytes": 11534,
+    "sha256": "0a24f92e6b0b994c54321c246d174f1fe167ae0b7d86114c2c67ef097969f64e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/contact_sheet.py",
+    "bytes": 983,
+    "sha256": "ee910b318bac1e9c2b4b5d4e7e57931b5044ff861bb1c4fe86db75486c321d76"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/draw_street_sheets.py",
+    "bytes": 9786,
+    "sha256": "fb85ec0e2cf13b30364adca0b27b3d577ee755c387a607455854b0e2ee7dfbde"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/prop_kit.py",
+    "bytes": 11658,
+    "sha256": "1e88e4f4f23e6979e6aa9bc6b72e0f5e553d43e514c34b9a4e26113e38905fd1"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/publish_street11.py",
+    "bytes": 10681,
+    "sha256": "d53210e7bdbe5fc987358eb8a24cd1b47b3dcb443ee120a45f5379841ad58ee4"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/sheet_kit.py",
+    "bytes": 4139,
+    "sha256": "456aa4fd14f9d81b19e2a68cd6828094872981bdbc6d6dd59d221cc3b855f97e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/street_specs.py",
+    "bytes": 1884,
+    "sha256": "b2d7b5dde3bc28c8c544c7cce3d6628e3e311c7379fbad73cc41e68c93d6eddb"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/BlenderSource/verify_street11.py",
+    "bytes": 5219,
+    "sha256": "312293ed21cee82cedf7ab1c802b330a12615dfaac94a86939e298de8b56633c"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/BambooBasket_design.png",
+    "bytes": 95979,
+    "sha256": "fcc59f8cf0d9c6d1d81929d5ef9c232eeb0f92697cb58006704e4a8fe8ff98cc"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/FirewoodStack_design.png",
+    "bytes": 99160,
+    "sha256": "f15954e35c1a006b05ac613b449afc69cca78fbd05568a07afa784b1a5be57f2"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/NoticeBoard_design.png",
+    "bytes": 94289,
+    "sha256": "63eb69fe5f0ab949156fe17797eec534cd0d860050879487dc703e1d2f555922"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/StoneWell_design.png",
+    "bytes": 102309,
+    "sha256": "11ac51ae583aa0031f3f5546b0600f92b23b34b31562f660c988e095285ce61e"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/WellBucket_design.png",
+    "bytes": 88936,
+    "sha256": "2dd1d7437206d54883e4e99cb9e154acc10f0a4a1af6ad97b5296baf76cd5631"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/DesignSheets/WoodenCrate_design.png",
+    "bytes": 88338,
+    "sha256": "c05fb0d3d5dedb48c68e6a87a83fb4458d20c1f20949bec368412c2d075115cd"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/FirewoodStack_10views.jpg",
+    "bytes": 154104,
+    "sha256": "6d54a21906668c58427a60d496e774ec8e78a589723d190c361ac6746bc288ce"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/BambooBasket/v001/BambooBasket_v001.blend",
+    "bytes": 150621,
+    "sha256": "82aadfe0a7257a00659ed1fd44b8ec389bd3e702dd3258a55061bd55d3155cbf"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/BambooBasket/v001/BambooBasket_v001.fbx",
+    "bytes": 280172,
+    "sha256": "f9431e8f38ec96990215a5266c6f5b572ffa3df2afc18a38540b15bcb86d0d70"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/BambooBasket/v001/model_info.json",
+    "bytes": 793,
+    "sha256": "64a7af65813a04c35e41b7078a942620aa535f232e009291884fe1877711dda1"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/FirewoodStack/v001/FirewoodStack_v001.blend",
+    "bytes": 199901,
+    "sha256": "290989c74f8901fdb58a08280db3f271963e637227d026b6cb17045748cec966"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/FirewoodStack/v001/FirewoodStack_v001.fbx",
+    "bytes": 1195420,
+    "sha256": "b5788fc98bf1aa070bfa4b4eff13be36fdffb9948df48c5b41d6935fd14f81a3"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/FirewoodStack/v001/model_info.json",
+    "bytes": 856,
+    "sha256": "0e1a87a0f11519754f3ffd2745ec542cf4576b04326a6a59e0b0f413445b81bf"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/NoticeBoard/v001/NoticeBoard_v001.blend",
+    "bytes": 124000,
+    "sha256": "92a32341cddc1c18b08aef93fe09c19d7cb4f8cb26613bbe64fb6c5d4c81dd51"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/NoticeBoard/v001/NoticeBoard_v001.fbx",
+    "bytes": 227964,
+    "sha256": "567f93422f69a69763b2d15440c7861429076e601c7020053e7bb8fe0c9eae8f"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/NoticeBoard/v001/model_info.json",
+    "bytes": 909,
+    "sha256": "874c4cb0e493a7b378415916c73ebf5c6f1ac9408e32057b74573ff07ffe7559"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/StoneWell/v001/StoneWell_v001.blend",
+    "bytes": 205338,
+    "sha256": "1074e75a7974f673e0426748b16f1bbe4126d1b62a6c48ff53b82a3a41003534"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/StoneWell/v001/StoneWell_v001.fbx",
+    "bytes": 670508,
+    "sha256": "70f8658c16177724592e76e8fdf2fca9ffe38093071e20eb1dd1ec11f01b3bf0"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/StoneWell/v001/model_info.json",
+    "bytes": 1009,
+    "sha256": "927c8afe972772769d7f9ebd3ae8743241dfefc84786b78a5e7a4090ad1f6a18"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WellBucket/v001/WellBucket_v001.blend",
+    "bytes": 129119,
+    "sha256": "6da881146b78893c4cd7b6c1701730188ccf83c3d21e553698243249dca703c9"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WellBucket/v001/WellBucket_v001.fbx",
+    "bytes": 125052,
+    "sha256": "11ec129abb120a20568a0ef29eeae33e0ad149ae46f304fcc1038c40bdd62574"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WellBucket/v001/model_info.json",
+    "bytes": 780,
+    "sha256": "1c5292369e844692edec1f1464a524089f3b52c0b212cf402d45f1042f601722"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WoodenCrate/v001/WoodenCrate_v001.blend",
+    "bytes": 103420,
+    "sha256": "72ddbfe4ebc3f33793de0583d98b4f507812966b164eaad74f90eb110b7f3560"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WoodenCrate/v001/WoodenCrate_v001.fbx",
+    "bytes": 144284,
+    "sha256": "73b6fb395153f1232d4f73fb2aa2b0f76eb6da64c3e0a079cbd9e3f0c044c9d4"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/Models/WoodenCrate/v001/model_info.json",
+    "bytes": 753,
+    "sha256": "dbe702113ea6ecf12c3f0f6ebd2c83b9597b0fe4256aef381637b285939823f7"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/NoticeBoard_10views.jpg",
+    "bytes": 106138,
+    "sha256": "c94abf7a8990f387cf73b3a558b74400ed9899e3e14d3f2e0d4a3ecec13b5ac9"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/README.md",
+    "bytes": 3414,
+    "sha256": "2dc0b91a6ac9eebf31b947c5c157d6414cc5e235bb4847b7676cb69b6f20ef8b"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/StoneWell_10views.jpg",
+    "bytes": 128926,
+    "sha256": "4e4b7a598a6d7679d0f422d277109741804a07f0398696621ce9dcd60af428fb"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/WellBucket_10views.jpg",
+    "bytes": 111877,
+    "sha256": "c49477ad9981fc4455619d5c1bb585dee1b4ada4e5fc8c10b2f8ed7b0dd72e81"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/WoodenCrate_10views.jpg",
+    "bytes": 124627,
+    "sha256": "8b843aced98df248aa35ce6334365506b27090eaa52b8579042aefa0923e2cdd"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/index.html",
+    "bytes": 16243,
+    "sha256": "a93b6b5e81e1e6756fd744a1d24828865878f0fa46346526c429cd26e60104b2"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/inventory.json",
+    "bytes": 1471,
+    "sha256": "1ba6fb1ccd049431cbcaaa7d33c5fc3ba89421bc87c5e16216285d057f604676"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/overview.jpg",
+    "bytes": 125425,
+    "sha256": "2f4c789b3a3cb78de0e4e19921eddff2bd45e4541ff60e1a66a4ccebbfaf3d7d"
+  },
+  {
+    "file": "ExpansionBatches/StreetProps11/validation.json",
+    "bytes": 3095,
+    "sha256": "79634b8c9674d8b5d2ca3ecf5b45b888afbbeb23d42b080dc4243ecc37e160dd"
+  },
+  {
     "file": "ExpansionBatches/TownProps02/ArtLibrary/Turnarounds/QuenchBarrel_v001/01_front.png",
     "bytes": 916662,
     "sha256": "5e56514769f890511d8608a89a7b0364ff23ebac701373fc7949331d1a4e5135"
@@ -6330,6 +6900,36 @@
     "sha256": "28d09ce040536453ae962f97ccb138bb686e750312de4c877af035a81bf81ea6"
   },
   {
+    "file": "History/BeforeStreetProps11/README.md",
+    "bytes": 7316,
+    "sha256": "cad03fefe73e2231d4973aaf95c97588366ee9072a46caf91045696d3ae84221"
+  },
+  {
+    "file": "History/BeforeStreetProps11/asset_catalog.json",
+    "bytes": 89775,
+    "sha256": "074440f4ec0fa1a782b2277b906b94cc7798c96b14d9000c5c0fdaaac11d73f7"
+  },
+  {
+    "file": "History/BeforeStreetProps11/checksums.json",
+    "bytes": 401250,
+    "sha256": "58df898d8a81918248466f006a4f57357f3219f5accc17c24544286580c8b21c"
+  },
+  {
+    "file": "History/BeforeStreetProps11/index.html",
+    "bytes": 141896,
+    "sha256": "4d20421e78294662273dc5c4e3551e705bbaa865730d38893fc68792f19b68c6"
+  },
+  {
+    "file": "History/BeforeStreetProps11/library_validation.json",
+    "bytes": 1469,
+    "sha256": "7bbdf451e652abc1e7949082db496ebc2e4763c032cef40360242931cda06704"
+  },
+  {
+    "file": "History/BeforeStreetProps11/完整建模清單.md",
+    "bytes": 9473,
+    "sha256": "480183f65134b08ff20a747e975e104529bc142b843df245a5f427e5f51e0eba"
+  },
+  {
     "file": "History/BeforeTownLayout003/README.md",
     "bytes": 6769,
     "sha256": "93b2503d1a74d8ca48757ee01528305ccdeee64dc6231a09a1763e1901959e32"
@@ -6391,8 +6991,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 7316,
-    "sha256": "cad03fefe73e2231d4973aaf95c97588366ee9072a46caf91045696d3ae84221"
+    "bytes": 7817,
+    "sha256": "c7717deb36cbe51a05d53617ff381bd81174c84fd6fa7bf718ab75eb250a11a5"
   },
   {
     "file": "References/Current_Xianxia/SectRoad/01_sect_road_concept.png",
@@ -6713,6 +7313,71 @@
     "file": "Turnarounds/AlchemyHall_v001/views.json",
     "bytes": 2952,
     "sha256": "a835e357f9c2529f24530a694098c9f1d395051ebe83ab65b70574d0cd3e36f5"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/01_front.png",
+    "bytes": 1027133,
+    "sha256": "b3b654042a9ce329b49f132e97bd493ae4da702fc6266af38b644bd32112ed7b"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/02_right.png",
+    "bytes": 1039663,
+    "sha256": "c218891599365c88843efdadbe45e58e8fc0ebced1c2eef36655f5544b3d0160"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/03_rear.png",
+    "bytes": 1026176,
+    "sha256": "b4514dae6677d481f18264a36d4344576ee80624467274c810111f8d507bf8ed"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/04_left.png",
+    "bytes": 1037827,
+    "sha256": "f0de4ab9f0a20c7b2fae48746b3c17f19451a52f6e27645d3ae4d0421e606ae4"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/05_front_right.png",
+    "bytes": 1090426,
+    "sha256": "43b032c0315fb0750618e745c88bb68a405a49d9b9c599e21ba9f852274c67ae"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/06_rear_right.png",
+    "bytes": 1088130,
+    "sha256": "63f09e6f127df9b0af859a66980eb958dd1e2d2a8b2e36b80a5df4670fc98fe3"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/07_rear_left.png",
+    "bytes": 1091841,
+    "sha256": "b95edac0748bbc8dfd41c3bc0aa761bc98e25225ce975d146a946737d8d7ce19"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/08_front_left.png",
+    "bytes": 1090817,
+    "sha256": "2be855a52c0482eec9a1342e6bda5a386091f981f5d96017d7f6123c88bb0cf8"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/09_top.png",
+    "bytes": 932153,
+    "sha256": "2542115bbdf90dde48aec3b03e06e2a71864c2be5e5a4633cf971a6105ba7858"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/10_high_front.png",
+    "bytes": 1055104,
+    "sha256": "76d304aee28bd1739a3b35423e15fb454d1f27b5f63474b52363795e58a8c486"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/11_interior.png",
+    "bytes": 986770,
+    "sha256": "9f1d4cce3c4dfac28303a971dda57b71d7c1adcdce961024f66e2af6e452a0e5"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/12_back_straps.png",
+    "bytes": 1075895,
+    "sha256": "54a646015b6ede440e5967fd21230183c5897fefc6cceec63cc7fc75888b95eb"
+  },
+  {
+    "file": "Turnarounds/BambooBasket_v001/views.json",
+    "bytes": 3250,
+    "sha256": "fb9c0558ecf3eca52d50ef536318415e0e2c6f160bde07861769f016c1aa9057"
   },
   {
     "file": "Turnarounds/BambooSteamer_v001/01_front.png",
@@ -7588,6 +8253,61 @@
     "file": "Turnarounds/Eatery_v001/views.json",
     "bytes": 4121,
     "sha256": "d820fe9452e3c6c865f7b2ad0d27ba39bb74aa006afb1780da7b661f0a3cb488"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/01_front.png",
+    "bytes": 1027499,
+    "sha256": "cb352ce40d76b98cddb12d41d2ddadf375d86c70d658cd2f316a6c6219d1eba6"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/02_right.png",
+    "bytes": 913497,
+    "sha256": "3aa45e33d3cd4e7a1a857f7c0840cb07469d14da4a8bea2a35cfdc2ca31dc0ef"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/03_rear.png",
+    "bytes": 1029950,
+    "sha256": "a0cbc60519e994363413f30ad126fa0797bf1336242358c326ab43378b7fd9cc"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/04_left.png",
+    "bytes": 907661,
+    "sha256": "4dafbba5adf8c5a7dc2148837f818fc0305d50b718af0109c37f8cbdd2842915"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/05_front_right.png",
+    "bytes": 1083513,
+    "sha256": "fc9e7e788abfb6e9406090c096a9566b06b2b52da8ae0eb970767898778f9a45"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/06_rear_right.png",
+    "bytes": 1083105,
+    "sha256": "fa5bfdb6ccc60554bc235d62faee399270780d2cf23b71d040e36e194d9cbe29"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/07_rear_left.png",
+    "bytes": 1072259,
+    "sha256": "28d5998a0c7db71549826423ba89aa2f9f52ba55d2dffc2a4e03c5e45c344a05"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/08_front_left.png",
+    "bytes": 1077819,
+    "sha256": "9b494c9ef121778eb23c76aec22e98e77ed7c989438d1b7f5805187a3f32e662"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/09_top.png",
+    "bytes": 893003,
+    "sha256": "ffa9eadfa93e7bf1999c616a1b5637998b63bc6b62ffbfca0b247e4dfe3173ac"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/10_high_front.png",
+    "bytes": 1027464,
+    "sha256": "59a0db2567ebe6b5e59a35f0b5335b5d0a0d2d6f8e0d5d0be7cc9fec7d6a45ae"
+  },
+  {
+    "file": "Turnarounds/FirewoodStack_v001/views.json",
+    "bytes": 2716,
+    "sha256": "406123705aea90782405f8b4f6068d940e4b81b54e3bcec33f85f065a57d2410"
   },
   {
     "file": "Turnarounds/GoodsShelf_v001/01_front.png",
@@ -8533,6 +9253,61 @@
     "file": "Turnarounds/MountainTurnLanding_v001/views.json",
     "bytes": 2985,
     "sha256": "5402c15adc1d9db33474241457e0892ac7d04eb15fef04db2fa22cf35b053e5b"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/01_front.png",
+    "bytes": 954554,
+    "sha256": "c3b369bde6668b80969e600f60d7f2a2184518e6f7b4c6f60c04b76beed35b02"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/02_right.png",
+    "bytes": 864009,
+    "sha256": "c0fc4dd41c402f24ccf30110cad315b648c7eb8144c47ee5213383be3b5270d9"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/03_rear.png",
+    "bytes": 944070,
+    "sha256": "b3148ef185435438dc78d02378e2e50235dd0d56473de16f76fa9783716495e4"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/04_left.png",
+    "bytes": 867404,
+    "sha256": "9086f763f980678bec1aa7a41c2862113550bf4a9b5b5297b42a5f6468846ca1"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/05_front_right.png",
+    "bytes": 996168,
+    "sha256": "102328e3ae38b7d30fd341e4d37b4787fdaadf53a1c251f1248c2fc3738c8ddb"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/06_rear_right.png",
+    "bytes": 982319,
+    "sha256": "2b0f13177686207f071a742656bfbfeb437dbb470b9f9934b610616839d7805b"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/07_rear_left.png",
+    "bytes": 986670,
+    "sha256": "5c9bb99352a44d0c487bf4ece002794edb77515773ba6c2567d416addbe043f4"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/08_front_left.png",
+    "bytes": 993646,
+    "sha256": "4c169e389e1c0857d033f74197613546e6f9978c03260e4cf0d4d37dafa6d254"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/09_top.png",
+    "bytes": 881015,
+    "sha256": "f5bcd6f86586e6d43eba9228931856548f0c9ea8c42da9eec4c9efc99022af01"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/10_high_front.png",
+    "bytes": 935587,
+    "sha256": "47b1f186aff1eaefb60849be14f787605e72cfb852abb1f93e9ebade29074c8a"
+  },
+  {
+    "file": "Turnarounds/NoticeBoard_v001/views.json",
+    "bytes": 2716,
+    "sha256": "f26cc59042ca69ce3d075191f86bbc98ed51e24926e681d3fde8b84fb04e33e1"
   },
   {
     "file": "Turnarounds/PrepBoard_v001/01_front.png",
@@ -9855,6 +10630,66 @@
     "sha256": "b2184a660d4918e7700b1678bedd50221dc57d594ec2181856380fa788a4cca3"
   },
   {
+    "file": "Turnarounds/StoneWell_v001/01_front.png",
+    "bytes": 974550,
+    "sha256": "cb29d6a84b747d45ee9c9d99ddc4862a69b572d54dad0a286b5fd8e9025780ae"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/02_right.png",
+    "bytes": 930533,
+    "sha256": "95668e6578d025575cbe6ffd941a2479ca166c6c4462a7199803fe8b1738963e"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/03_rear.png",
+    "bytes": 970315,
+    "sha256": "161dac3b506816dce43364a2049580060704ec99b7f7ded59f1fd6e4e74d0525"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/04_left.png",
+    "bytes": 930563,
+    "sha256": "c2aa10c02346534e4c171b5f00a4f8dcabc94915647e5c00dd48a6bdecd9be8a"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/05_front_right.png",
+    "bytes": 1039133,
+    "sha256": "a9a6deca89fb4101a9ccd72f4ab0803522e3e7098b153e2f6f32f42cc90f84cb"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/06_rear_right.png",
+    "bytes": 1035190,
+    "sha256": "c970c0131b98d76d60f7aa8ba70924de1fde4a17669df2751184b363782bc450"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/07_rear_left.png",
+    "bytes": 1044462,
+    "sha256": "6b7e7cdc80df77bbca7bdaac4975236c6966ed671e11f690f5c8a5b2832e9811"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/08_front_left.png",
+    "bytes": 1038601,
+    "sha256": "9c6cb1ca8a10fdfa003b5103557f1bee927fd65a0faf19fd658445a674aeef6e"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/09_top.png",
+    "bytes": 906064,
+    "sha256": "195b75ffa8975138fd3cf6f8f3175616752efa696f8fa3508578d4881ee2111b"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/10_high_front.png",
+    "bytes": 994425,
+    "sha256": "e3aac6befe34fd88be4190513d972f7a30e54a8251f5da421c1baf8cf4a4c7ee"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/11_into_well.png",
+    "bytes": 932293,
+    "sha256": "981ddda9cb30615b6e039575aed99bed5a4664a24422ae9ff9447fbc9e6691e0"
+  },
+  {
+    "file": "Turnarounds/StoneWell_v001/views.json",
+    "bytes": 2973,
+    "sha256": "4f5d576148f6dedc5592c678402f509da9fa4cae8b8172a94360f4b142bc5f9b"
+  },
+  {
     "file": "Turnarounds/StorageChest_v001/01_front.png",
     "bytes": 1124830,
     "sha256": "338bcbbc1ec30978e01ff2513d2cd3361c12bfabbeb35ccc302e392431ca32b1"
@@ -10350,6 +11185,71 @@
     "sha256": "1f4ef1bf1540374588ddfecf87482cfe52cb894bee5733d6190f1fd4b4487ed6"
   },
   {
+    "file": "Turnarounds/WellBucket_v001/01_front.png",
+    "bytes": 972211,
+    "sha256": "a6f915f93d6e3614927018476067b83a3e2be05c38632976a77c9f7bbf98da94"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/02_right.png",
+    "bytes": 952538,
+    "sha256": "76fb6fbfb8b955f7dfd98d5b1685ca23d52395b360e89f528e5c1b7ded09bb1c"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/03_rear.png",
+    "bytes": 975768,
+    "sha256": "3c9a472bc2914a6acb115971af1624db432215a26d04dbdf933ed33838fd19cf"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/04_left.png",
+    "bytes": 950433,
+    "sha256": "5fea6fbcae67f2924608041b5cd8e9b4e68f0fb7778880cb02f7883dea11d80e"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/05_front_right.png",
+    "bytes": 996515,
+    "sha256": "57769477ae2b57ec2049632697a3bed16eb79e4c6b2b799989f66f283bf7f36c"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/06_rear_right.png",
+    "bytes": 993417,
+    "sha256": "deb99d5c2a62a53312366a7fb052833773a9ae98fb36ea620afe569094142349"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/07_rear_left.png",
+    "bytes": 995802,
+    "sha256": "fbeee80a384cff1b4f7c28705f3ae49ea23622312b1e9c0c6e1f06d2c1c68c32"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/08_front_left.png",
+    "bytes": 997469,
+    "sha256": "11d81ffca769e6d596ab17dd0509350847d34639555b72e97e93db0f6b1bb6e6"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/09_top.png",
+    "bytes": 919431,
+    "sha256": "1edbbfac812cebb27778844574798ccab56a0de4425a16b606d9369ac48db777"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/10_high_front.png",
+    "bytes": 989510,
+    "sha256": "e62ca6f01c5828ce8270c680cfd8706c84ff4fbde593f27b64089fd9471d9ce0"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/11_interior.png",
+    "bytes": 962689,
+    "sha256": "2dd845fb03d1be21fa87d2cbba8586621c794fdee9d574d09b0002ce05dd415f"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/12_underside.png",
+    "bytes": 981289,
+    "sha256": "ef703d6c5fbe918aba409a107f1ae8a83c2886a8273db40c03d283f02e557c45"
+  },
+  {
+    "file": "Turnarounds/WellBucket_v001/views.json",
+    "bytes": 3240,
+    "sha256": "9cc7d7376171be49b4a93441642bad76ea364a24aad5edc5a51bb8400a1e8598"
+  },
+  {
     "file": "Turnarounds/WindGrass_v001/01_front.png",
     "bytes": 1085333,
     "sha256": "58ee3f28df54291956fb4f3786c5e50659d4e5ff878dee962ac45a951da649ed"
@@ -10460,28 +11360,83 @@
     "sha256": "72b5dd304838dfb605d7cc0400630619ee6a405090c475dfe188dc7ed3a10de3"
   },
   {
+    "file": "Turnarounds/WoodenCrate_v001/01_front.png",
+    "bytes": 996925,
+    "sha256": "91c75835d7fcbab711ec7d0b3a612f5a4b8290785869fdf42f8a8c04745054a1"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/02_right.png",
+    "bytes": 968620,
+    "sha256": "b15885d8cbd714f8e00cc95fe5d7c64673f61d588154b01886c1cc4cdc7bd753"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/03_rear.png",
+    "bytes": 1001332,
+    "sha256": "99e38640727dcf7aa957a454a5b8fd2668d0ca0431f8dad9340f47bab35a0996"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/04_left.png",
+    "bytes": 997300,
+    "sha256": "bd7f46869891b30d3e457519bdb0ebf873c16e0319e6db51f13cd4341b5d13db"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/05_front_right.png",
+    "bytes": 1120843,
+    "sha256": "c2eac470fb7cede2689bf9a90e709464d22dc725f31d5aa42028d3c6e7c41414"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/06_rear_right.png",
+    "bytes": 1109612,
+    "sha256": "b07f4a8a2fa0b9824a9db6593468ed01e62bdf3568aea125d42cce3f1ae9ec52"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/07_rear_left.png",
+    "bytes": 1131262,
+    "sha256": "cfe9872758eaff824c2323f4be211658b007f520f7cf1c5edd625bca4a3ab78c"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/08_front_left.png",
+    "bytes": 1122304,
+    "sha256": "535e21c43a50054a03218402a7de6bb0089df3ddae451d597d15e26c4a772672"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/09_top.png",
+    "bytes": 936443,
+    "sha256": "6ff34c68c15e0c8d2e094cb4b909f92bec977bf115e431df27b887f292467344"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/10_high_front.png",
+    "bytes": 990962,
+    "sha256": "3bb7949c7b34d8cdf73052306ec52cba00999995cb80ca35a6eeecb88a7d2376"
+  },
+  {
+    "file": "Turnarounds/WoodenCrate_v001/views.json",
+    "bytes": 2711,
+    "sha256": "1c1059b3798f5d6d1aab5199e705629e4534f38908c9c0a2a4384ebdc2dc584e"
+  },
+  {
     "file": "Unreal交接規格.md",
     "bytes": 2763,
     "sha256": "cfa68b0f6583a7f127d2f85c43b419774fa4c0d8b90a6f8ccf98d835032533c9"
   },
   {
     "file": "asset_catalog.json",
-    "bytes": 89775,
-    "sha256": "074440f4ec0fa1a782b2277b906b94cc7798c96b14d9000c5c0fdaaac11d73f7"
+    "bytes": 98184,
+    "sha256": "360af31144e89c8efd18cc35c7f9cb8f48ebf7c54e664395d3ffe6e81b8778b6"
   },
   {
     "file": "index.html",
-    "bytes": 141896,
-    "sha256": "4d20421e78294662273dc5c4e3551e705bbaa865730d38893fc68792f19b68c6"
+    "bytes": 155269,
+    "sha256": "2bea15921cf716c5f7c967a3c228f4a6e51cb0da6b50d261b2c426f19a239deb"
   },
   {
     "file": "library_validation.json",
-    "bytes": 1469,
-    "sha256": "7bbdf451e652abc1e7949082db496ebc2e4763c032cef40360242931cda06704"
+    "bytes": 1587,
+    "sha256": "92091c2ec6c701bc3aa381a86685dbebcd0d8a072f04ae9c8020bd344fb33dd8"
   },
   {
     "file": "完整建模清單.md",
-    "bytes": 9473,
-    "sha256": "480183f65134b08ff20a747e975e104529bc142b843df245a5f427e5f51e0eba"
+    "bytes": 9789,
+    "sha256": "e53d0624bbca3c01a479bc372ee06dc372585dc15169fd581fe9e0d2ae4e37ee"
   }
 ]

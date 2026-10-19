@@ -1,9 +1,9 @@
 {
   "target_engine": "Unreal Engine",
   "workflow": "Art preparation first; game-system implementation paused",
-  "model_asset_sets": 69,
+  "model_asset_sets": 75,
   "assembled_scenes": 3,
-  "consistent_turnaround_images": 690,
+  "consistent_turnaround_images": 750,
   "concept_reference_images": 33,
   "entries": [
     {
@@ -143,27 +143,31 @@
     },
     {
       "id": "TownLayout",
-      "name": "出生小鎮配置（民宅＋鐵匠鋪＋西街）",
+      "name": "出生小鎮配置（民宅＋鐵匠鋪＋西街＋街道道具）",
       "category": "場景組合",
-      "source_version": "v003",
-      "source_path": "Models/TownLayout/v003",
-      "blend": "../Models/TownLayout/v003/TownLayout_v003.blend",
-      "fbx": "../Models/TownLayout/v003/TownLayout_v003.fbx",
-      "preview": "../Models/TownLayout/v003/01_town_west_street.png",
+      "source_version": "v004",
+      "source_path": "Models/TownLayout/v004",
+      "blend": "../Models/TownLayout/v004/TownLayout_v004.blend",
+      "fbx": "../Models/TownLayout/v004/TownLayout_v004.fbx",
+      "preview": "../Models/TownLayout/v004/01_town_overview.png",
       "views": [],
-      "status": "v003：西街加入食肆客棧、材料鋪與藥草攤；外觀與配置原型，未驗證碰撞或導航",
+      "status": "v004：西街有食肆客棧、材料鋪、藥草攤與石井、公告板、木箱、竹簍、柴堆；外觀與配置原型，未驗證碰撞或導航",
       "unreal_import_verified": false,
       "uv_baked": false,
       "collision_ready": false,
       "lod_ready": false,
       "scene_previews": [
-        "../Models/TownLayout/v003/01_town_west_street.png",
-        "../Models/TownLayout/v003/02_town_top_plan.png",
-        "../Models/TownLayout/v003/03_west_street_view.png",
-        "../Models/TownLayout/v003/04_eatery_frontage.png"
+        "../Models/TownLayout/v004/01_town_overview.png",
+        "../Models/TownLayout/v004/02_town_top_plan.png",
+        "../Models/TownLayout/v004/03_well_and_notice.png",
+        "../Models/TownLayout/v004/04_stall_corner.png",
+        "../Models/TownLayout/v004/05_eatery_back_firewood.png"
       ],
       "layout_plan": "../ArtReferences/TownLayout_v003/TownLayout_v003_plan.png",
-      "previous_version": "Current/TownLayout/TownLayout_v002.blend"
+      "previous_versions": [
+        "../Models/TownLayout/v003/TownLayout_v003.blend",
+        "Current/TownLayout/TownLayout_v002.blend"
+      ]
     },
     {
       "id": "HerbalStall",
@@ -2029,6 +2033,194 @@
       "uv_baked": false,
       "collision_ready": false,
       "lod_ready": false
+    },
+    {
+      "id": "StoneWell",
+      "name": "石井",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/StoneWell/v001",
+      "blend": "../Models/StoneWell/v001/StoneWell_v001.blend",
+      "fbx": "../Models/StoneWell/v001/StoneWell_v001.fbx",
+      "preview": "Turnarounds/StoneWell_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/StoneWell_v001/01_front.png",
+        "Turnarounds/StoneWell_v001/02_right.png",
+        "Turnarounds/StoneWell_v001/03_rear.png",
+        "Turnarounds/StoneWell_v001/04_left.png",
+        "Turnarounds/StoneWell_v001/05_front_right.png",
+        "Turnarounds/StoneWell_v001/06_rear_right.png",
+        "Turnarounds/StoneWell_v001/07_rear_left.png",
+        "Turnarounds/StoneWell_v001/08_front_left.png",
+        "Turnarounds/StoneWell_v001/09_top.png",
+        "Turnarounds/StoneWell_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/StoneWell_v001/11_into_well.png"
+      ],
+      "design_sheet": "../ArtReferences/StreetProps11/StoneWell_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "WellBucket",
+      "name": "木水桶",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/WellBucket/v001",
+      "blend": "../Models/WellBucket/v001/WellBucket_v001.blend",
+      "fbx": "../Models/WellBucket/v001/WellBucket_v001.fbx",
+      "preview": "Turnarounds/WellBucket_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/WellBucket_v001/01_front.png",
+        "Turnarounds/WellBucket_v001/02_right.png",
+        "Turnarounds/WellBucket_v001/03_rear.png",
+        "Turnarounds/WellBucket_v001/04_left.png",
+        "Turnarounds/WellBucket_v001/05_front_right.png",
+        "Turnarounds/WellBucket_v001/06_rear_right.png",
+        "Turnarounds/WellBucket_v001/07_rear_left.png",
+        "Turnarounds/WellBucket_v001/08_front_left.png",
+        "Turnarounds/WellBucket_v001/09_top.png",
+        "Turnarounds/WellBucket_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/WellBucket_v001/11_interior.png",
+        "Turnarounds/WellBucket_v001/12_underside.png"
+      ],
+      "design_sheet": "../ArtReferences/StreetProps11/WellBucket_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "NoticeBoard",
+      "name": "公告板",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/NoticeBoard/v001",
+      "blend": "../Models/NoticeBoard/v001/NoticeBoard_v001.blend",
+      "fbx": "../Models/NoticeBoard/v001/NoticeBoard_v001.fbx",
+      "preview": "Turnarounds/NoticeBoard_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/NoticeBoard_v001/01_front.png",
+        "Turnarounds/NoticeBoard_v001/02_right.png",
+        "Turnarounds/NoticeBoard_v001/03_rear.png",
+        "Turnarounds/NoticeBoard_v001/04_left.png",
+        "Turnarounds/NoticeBoard_v001/05_front_right.png",
+        "Turnarounds/NoticeBoard_v001/06_rear_right.png",
+        "Turnarounds/NoticeBoard_v001/07_rear_left.png",
+        "Turnarounds/NoticeBoard_v001/08_front_left.png",
+        "Turnarounds/NoticeBoard_v001/09_top.png",
+        "Turnarounds/NoticeBoard_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/StreetProps11/NoticeBoard_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "WoodenCrate",
+      "name": "木箱",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/WoodenCrate/v001",
+      "blend": "../Models/WoodenCrate/v001/WoodenCrate_v001.blend",
+      "fbx": "../Models/WoodenCrate/v001/WoodenCrate_v001.fbx",
+      "preview": "Turnarounds/WoodenCrate_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/WoodenCrate_v001/01_front.png",
+        "Turnarounds/WoodenCrate_v001/02_right.png",
+        "Turnarounds/WoodenCrate_v001/03_rear.png",
+        "Turnarounds/WoodenCrate_v001/04_left.png",
+        "Turnarounds/WoodenCrate_v001/05_front_right.png",
+        "Turnarounds/WoodenCrate_v001/06_rear_right.png",
+        "Turnarounds/WoodenCrate_v001/07_rear_left.png",
+        "Turnarounds/WoodenCrate_v001/08_front_left.png",
+        "Turnarounds/WoodenCrate_v001/09_top.png",
+        "Turnarounds/WoodenCrate_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/StreetProps11/WoodenCrate_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "BambooBasket",
+      "name": "竹簍",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/BambooBasket/v001",
+      "blend": "../Models/BambooBasket/v001/BambooBasket_v001.blend",
+      "fbx": "../Models/BambooBasket/v001/BambooBasket_v001.fbx",
+      "preview": "Turnarounds/BambooBasket_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/BambooBasket_v001/01_front.png",
+        "Turnarounds/BambooBasket_v001/02_right.png",
+        "Turnarounds/BambooBasket_v001/03_rear.png",
+        "Turnarounds/BambooBasket_v001/04_left.png",
+        "Turnarounds/BambooBasket_v001/05_front_right.png",
+        "Turnarounds/BambooBasket_v001/06_rear_right.png",
+        "Turnarounds/BambooBasket_v001/07_rear_left.png",
+        "Turnarounds/BambooBasket_v001/08_front_left.png",
+        "Turnarounds/BambooBasket_v001/09_top.png",
+        "Turnarounds/BambooBasket_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/BambooBasket_v001/11_interior.png",
+        "Turnarounds/BambooBasket_v001/12_back_straps.png"
+      ],
+      "design_sheet": "../ArtReferences/StreetProps11/BambooBasket_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
+    },
+    {
+      "id": "FirewoodStack",
+      "name": "柴堆",
+      "category": "街道生活道具",
+      "source_version": "v001",
+      "source_path": "Models/FirewoodStack/v001",
+      "blend": "../Models/FirewoodStack/v001/FirewoodStack_v001.blend",
+      "fbx": "../Models/FirewoodStack/v001/FirewoodStack_v001.fbx",
+      "preview": "Turnarounds/FirewoodStack_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/FirewoodStack_v001/01_front.png",
+        "Turnarounds/FirewoodStack_v001/02_right.png",
+        "Turnarounds/FirewoodStack_v001/03_rear.png",
+        "Turnarounds/FirewoodStack_v001/04_left.png",
+        "Turnarounds/FirewoodStack_v001/05_front_right.png",
+        "Turnarounds/FirewoodStack_v001/06_rear_right.png",
+        "Turnarounds/FirewoodStack_v001/07_rear_left.png",
+        "Turnarounds/FirewoodStack_v001/08_front_left.png",
+        "Turnarounds/FirewoodStack_v001/09_top.png",
+        "Turnarounds/FirewoodStack_v001/10_high_front.png"
+      ],
+      "extra_views": [],
+      "design_sheet": "../ArtReferences/StreetProps11/FirewoodStack_design.png",
+      "status": "可編輯街道道具原型；未完成 UV 烘焙、碰撞與引擎驗證",
+      "batch": "StreetProps11",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
     }
   ],
   "note": "Concept references are not models. Town scene does not yet include the new materials shop.",
@@ -2042,7 +2234,8 @@
     "ExpansionBatches/MountainWind07/index.html",
     "ExpansionBatches/MountainRoute08/index.html",
     "ExpansionBatches/KitchenWare09/index.html",
-    "ExpansionBatches/Eatery10/index.html"
+    "ExpansionBatches/Eatery10/index.html",
+    "ExpansionBatches/StreetProps11/index.html"
   ],
   "updated": "2026-10-19",
   "counting_note": "Asset sets include assembled originals and independently extracted components; their counts do not imply every component is complete.",
@@ -2056,5 +2249,5 @@
       "engine_effect_verified": false
     }
   ],
-  "design_sheets": 10
+  "design_sheets": 16
 }

@@ -1,0 +1,32 @@
+{
+  "asset": "WoodenCrate",
+  "name_zh": "木箱",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Planked storage crate with corner battens and a separate lid.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.62,
+    0.45,
+    0.5
+  ],
+  "mesh_objects": 23,
+  "design_sheet": "DesignSheets/WoodenCrate_design.png",
+  "spec": {
+    "size": [
+      0.6,
+      0.45,
+      0.45
+    ],
+    "plank_gap": 0.012,
+    "lid_t": 0.03
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

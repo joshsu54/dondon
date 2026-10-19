@@ -1,0 +1,523 @@
+{
+  "stage": "v003 west street plus StreetProps11 dressing (well, bucket, notice board, crates, baskets, firewood)",
+  "sources": [
+    "Models/SpawnTown/v001/SpawnTown_v001.blend",
+    "Models/StarterHouse/v004/StarterHouse_v004.blend"
+  ],
+  "house_location_blender_m": [
+    12,
+    -2,
+    0.24
+  ],
+  "house_rotation_z_degrees": -90,
+  "side_lane_width_m": 2.6,
+  "house_step_height_m": 0.18,
+  "mesh_objects": 4614,
+  "removed_curb_sections": [
+    "Plaza_Edge_1_3",
+    "Plaza_Edge_1_4",
+    "Plaza_Edge_1_5",
+    "Plaza_Edge_1_6"
+  ],
+  "unity_verified": false,
+  "limitations": [
+    "Exterior and interior layout only; no collision meshes, navmesh or gameplay",
+    "North elevated street end and west street ends are placeholder boundaries",
+    "FBX procedural materials need baking/rebuilding; no LOD optimisation",
+    "Saved with Blender 5.2.2 from a v002 file written by Blender 5.3"
+  ],
+  "blacksmith": {
+    "source": "Models/Blacksmith/v001/Blacksmith_v001.blend",
+    "location": [
+      12,
+      8,
+      0.24
+    ],
+    "rotation_z_degrees": -90
+  },
+  "return_stair_heights_m": [
+    1.14,
+    0.96,
+    0.78,
+    0.6,
+    0.42,
+    0.24
+  ],
+  "base_scene": "Models/TownLayout/v003/TownLayout_v003.blend",
+  "layout_plan": "ArtReferences/TownLayout_v003/TownLayout_v003_plan.png",
+  "west_street": {
+    "paving": {
+      "West_Lane": [
+        -9.0,
+        -4.59,
+        -4.39,
+        -2.02
+      ],
+      "West_Street": [
+        -12.0,
+        -9.0,
+        -10.5,
+        12.5
+      ],
+      "Stall_Pad": [
+        -9.0,
+        -6.6,
+        2.4,
+        8.4
+      ],
+      "Shop_Apron": [
+        -20.4,
+        -12.0,
+        3.3,
+        12.9
+      ]
+    },
+    "walk_z_m": 0.24,
+    "curbs_removed": [
+      "Plaza_Edge_-1_2",
+      "Plaza_Edge_-1_3",
+      "Plaza_Edge_-1_4"
+    ],
+    "terrain_extended_x": [
+      -11.0,
+      -25.0
+    ],
+    "bench_moved": {
+      "from_centre": [
+        -3.65,
+        -3.1
+      ],
+      "to_centre": [
+        -8.4,
+        7.4
+      ]
+    }
+  },
+  "placements": {
+    "Eatery": {
+      "source": "Models/Eatery/v001/Eatery_v001.blend",
+      "location": [
+        -17.1,
+        -3.2,
+        0.09
+      ],
+      "rotation_z_degrees": 90,
+      "objects": 1444
+    },
+    "MaterialShop": {
+      "source": "Models/MaterialShop/v001/MaterialShop_v001.blend",
+      "location": [
+        -16.72,
+        8.0,
+        0.24
+      ],
+      "rotation_z_degrees": 90,
+      "objects": 567
+    },
+    "HerbalStall": {
+      "source": "Models/HerbalStall/v001/HerbalStall_v001.blend",
+      "location": [
+        -7.9,
+        4.5,
+        0.24
+      ],
+      "rotation_z_degrees": -90,
+      "objects": 107
+    }
+  },
+  "entry_heights_m": {
+    "eatery_lower_step": 0.24,
+    "eatery_upper_step": 0.39,
+    "eatery_veranda": 0.54,
+    "eatery_dining_floor": 0.54,
+    "materialshop_steps": [
+      0.42,
+      0.6,
+      0.78,
+      0.72
+    ]
+  },
+  "blender_version": "5.2.2 LTS",
+  "unreal_verified": false,
+  "street_props": [
+    {
+      "prop": "StoneWell",
+      "location": [
+        -7.6,
+        -7.1,
+        0.24
+      ],
+      "rotation_z_degrees": 0,
+      "note": "well on its own pad, crank side away from the street"
+    },
+    {
+      "prop": "WellBucket",
+      "location": [
+        -6.6,
+        -5.85,
+        0.24
+      ],
+      "rotation_z_degrees": 0,
+      "note": "spare bucket beside the well"
+    },
+    {
+      "prop": "NoticeBoard",
+      "location": [
+        -8.62,
+        -0.9,
+        0.24
+      ],
+      "rotation_z_degrees": -90,
+      "note": "board faces the street (west)"
+    },
+    {
+      "prop": "WoodenCrate",
+      "location": [
+        -7.05,
+        7.6,
+        0.24
+      ],
+      "rotation_z_degrees": 0,
+      "note": "crates behind the herbal stall bench"
+    },
+    {
+      "prop": "WoodenCrate",
+      "location": [
+        -7.05,
+        7.6,
+        0.74
+      ],
+      "rotation_z_degrees": 12,
+      "note": "stacked on the first crate"
+    },
+    {
+      "prop": "WoodenCrate",
+      "location": [
+        -7.0,
+        8.1,
+        0.24
+      ],
+      "rotation_z_degrees": 0,
+      "note": ""
+    },
+    {
+      "prop": "BambooBasket",
+      "location": [
+        -7.4,
+        6.45,
+        0.24
+      ],
+      "rotation_z_degrees": 0,
+      "note": "between the stall and the bench"
+    },
+    {
+      "prop": "BambooBasket",
+      "location": [
+        -13.6,
+        0.7,
+        0.54
+      ],
+      "rotation_z_degrees": 90,
+      "note": "on the eatery veranda (veranda paving at 0.54)"
+    },
+    {
+      "prop": "FirewoodStack",
+      "location": [
+        -22.07,
+        -3.3,
+        0.0
+      ],
+      "rotation_z_degrees": -90,
+      "note": "against the eatery rear wall, south of the back door, on the ground"
+    }
+  ],
+  "prop_pads": {
+    "Well_Pad": [
+      -9.0,
+      -6.2,
+      -8.8,
+      -5.4
+    ],
+    "Notice_Pad": [
+      -9.0,
+      -8.25,
+      -2.02,
+      0.2
+    ]
+  },
+  "walk_ray_samples": [
+    [
+      -4.3,
+      -3.9,
+      0.2415
+    ],
+    [
+      -4.3,
+      -3.2,
+      0.2433
+    ],
+    [
+      -4.3,
+      -2.5,
+      0.239
+    ],
+    [
+      -5.5,
+      -3.9,
+      0.24
+    ],
+    [
+      -5.5,
+      -3.2,
+      0.24
+    ],
+    [
+      -5.5,
+      -2.5,
+      0.24
+    ],
+    [
+      -6.7,
+      -3.9,
+      0.24
+    ],
+    [
+      -6.7,
+      -3.2,
+      0.24
+    ],
+    [
+      -6.7,
+      -2.5,
+      0.24
+    ],
+    [
+      -7.9,
+      -3.9,
+      0.24
+    ],
+    [
+      -7.9,
+      -3.2,
+      0.24
+    ],
+    [
+      -7.9,
+      -2.5,
+      0.24
+    ],
+    [
+      -8.7,
+      -3.9,
+      0.24
+    ],
+    [
+      -8.7,
+      -3.2,
+      0.24
+    ],
+    [
+      -8.7,
+      -2.5,
+      0.24
+    ],
+    [
+      -11.4,
+      -10,
+      0.24
+    ],
+    [
+      -11.4,
+      -6,
+      0.24
+    ],
+    [
+      -11.4,
+      -3.2,
+      0.24
+    ],
+    [
+      -11.4,
+      0,
+      0.24
+    ],
+    [
+      -11.4,
+      4.5,
+      0.24
+    ],
+    [
+      -11.4,
+      8,
+      0.24
+    ],
+    [
+      -11.4,
+      12,
+      0.24
+    ],
+    [
+      -10.5,
+      -10,
+      0.19
+    ],
+    [
+      -10.5,
+      -6,
+      0.19
+    ],
+    [
+      -10.5,
+      -3.2,
+      0.19
+    ],
+    [
+      -10.5,
+      0,
+      0.19
+    ],
+    [
+      -10.5,
+      4.5,
+      0.19
+    ],
+    [
+      -10.5,
+      8,
+      0.19
+    ],
+    [
+      -10.5,
+      12,
+      0.19
+    ],
+    [
+      -9.6,
+      -10,
+      0.24
+    ],
+    [
+      -9.6,
+      -6,
+      0.24
+    ],
+    [
+      -9.6,
+      -3.2,
+      0.24
+    ],
+    [
+      -9.6,
+      0,
+      0.24
+    ],
+    [
+      -9.6,
+      4.5,
+      0.24
+    ],
+    [
+      -9.6,
+      8,
+      0.24
+    ],
+    [
+      -9.6,
+      12,
+      0.24
+    ]
+  ],
+  "prop_support": [
+    {
+      "prop": "StoneWell",
+      "instance": 0,
+      "base_z": 0.24,
+      "support": "Well_Pad_1_2",
+      "footprint_x": [
+        -8.62,
+        -6.58
+      ]
+    },
+    {
+      "prop": "WellBucket",
+      "instance": 1,
+      "base_z": 0.24,
+      "support": "Well_Pad_2_3",
+      "footprint_x": [
+        -6.77,
+        -6.43
+      ]
+    },
+    {
+      "prop": "NoticeBoard",
+      "instance": 2,
+      "base_z": 0.24,
+      "support": "Notice_Pad_0_1",
+      "footprint_x": [
+        -8.94,
+        -8.3
+      ]
+    },
+    {
+      "prop": "WoodenCrate",
+      "instance": 3,
+      "base_z": 0.24,
+      "support": "Stall_Pad_2_6",
+      "footprint_x": [
+        -7.36,
+        -6.74
+      ]
+    },
+    {
+      "prop": "WoodenCrate",
+      "instance": 4,
+      "base_z": 0.74,
+      "support": "Lid_Plank.002",
+      "footprint_x": [
+        -7.4,
+        -6.7
+      ]
+    },
+    {
+      "prop": "WoodenCrate",
+      "instance": 5,
+      "base_z": 0.24,
+      "support": "Stall_Pad_2_7",
+      "footprint_x": [
+        -7.31,
+        -6.69
+      ]
+    },
+    {
+      "prop": "BambooBasket",
+      "instance": 6,
+      "base_z": 0.24,
+      "support": "Stall_Pad_2_5",
+      "footprint_x": [
+        -7.62,
+        -7.18
+      ]
+    },
+    {
+      "prop": "BambooBasket",
+      "instance": 7,
+      "base_z": 0.54,
+      "support": "Veranda_Paving.025",
+      "footprint_x": [
+        -13.85,
+        -13.35
+      ]
+    },
+    {
+      "prop": "FirewoodStack",
+      "instance": 8,
+      "base_z": 0.0,
+      "support": "Terrain_Display_Island",
+      "footprint_x": [
+        -22.47,
+        -21.67
+      ]
+    }
+  ],
+  "building_bbox_overlaps_reported": []
+}

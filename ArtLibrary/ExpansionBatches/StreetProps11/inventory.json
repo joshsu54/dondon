@@ -1,0 +1,84 @@
+{
+  "batch": "StreetProps11",
+  "created": "2026-10-19",
+  "new_asset_sets": 6,
+  "new_views": 60,
+  "extra_detail_views": 5,
+  "design_sheets": 6,
+  "new_assets": [
+    {
+      "asset": "StoneWell",
+      "name_zh": "石井",
+      "views": 10,
+      "extra_views": [
+        "11_into_well.png"
+      ],
+      "dimensions_m": [
+        2.04,
+        1.8,
+        2.495
+      ]
+    },
+    {
+      "asset": "WellBucket",
+      "name_zh": "木水桶",
+      "views": 10,
+      "extra_views": [
+        "11_interior.png",
+        "12_underside.png"
+      ],
+      "dimensions_m": [
+        0.3319,
+        0.33,
+        0.4659
+      ]
+    },
+    {
+      "asset": "NoticeBoard",
+      "name_zh": "公告板",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        1.99,
+        0.6319,
+        2.545
+      ]
+    },
+    {
+      "asset": "WoodenCrate",
+      "name_zh": "木箱",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.62,
+        0.45,
+        0.5
+      ]
+    },
+    {
+      "asset": "BambooBasket",
+      "name_zh": "竹簍",
+      "views": 10,
+      "extra_views": [
+        "11_interior.png",
+        "12_back_straps.png"
+      ],
+      "dimensions_m": [
+        0.4336,
+        0.4946,
+        0.5586
+      ]
+    },
+    {
+      "asset": "FirewoodStack",
+      "name_zh": "柴堆",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        1.79,
+        0.799,
+        1.2919
+      ]
+    }
+  ]
+}

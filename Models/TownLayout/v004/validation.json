@@ -1,0 +1,17 @@
+{
+  "blend_reopened": true,
+  "prop_placements_verified": 9,
+  "v003_content_kept": true,
+  "walk_samples_clear_0_to_2_2m": 36,
+  "source_mesh_objects": 4614,
+  "fbx_mesh_objects": 4614,
+  "fbx_bounds_error_m": 0.0,
+  "studio_excluded": true,
+  "scene_size_m": [
+    43.0,
+    27.0,
+    10.04
+  ],
+  "unity_verified": false,
+  "unreal_verified": false
+}

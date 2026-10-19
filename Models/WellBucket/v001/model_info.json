@@ -1,0 +1,30 @@
+{
+  "asset": "WellBucket",
+  "name_zh": "木水桶",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Wooden stave bucket with two iron hoops and a rope bail; same bucket hangs in the well.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.3319,
+    0.33,
+    0.4659
+  ],
+  "mesh_objects": 27,
+  "design_sheet": "DesignSheets/WellBucket_design.png",
+  "spec": {
+    "top_r": 0.16,
+    "bottom_r": 0.135,
+    "h": 0.3,
+    "wall": 0.015,
+    "staves": 14
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

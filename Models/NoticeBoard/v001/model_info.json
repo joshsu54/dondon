@@ -1,0 +1,37 @@
+{
+  "asset": "NoticeBoard",
+  "name_zh": "公告板",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Village notice board: two posts on stone feet, framed plank board with blank paper notices, small tiled cap roof.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.99,
+    0.6319,
+    2.545
+  ],
+  "mesh_objects": 57,
+  "design_sheet": "DesignSheets/NoticeBoard_design.png",
+  "spec": {
+    "post_x": 0.85,
+    "post_h": 2.3,
+    "post": 0.12,
+    "board": [
+      1.5,
+      0.06,
+      1.0
+    ],
+    "board_z": 0.95,
+    "roof_w": 1.95,
+    "roof_d": 0.62,
+    "roof_rise": 0.2
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

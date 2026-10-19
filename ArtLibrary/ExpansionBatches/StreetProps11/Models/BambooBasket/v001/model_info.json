@@ -1,0 +1,30 @@
+{
+  "asset": "BambooBasket",
+  "name_zh": "竹簍",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Woven bamboo back basket (竹簍) with ribs, rings, foot frame and two shoulder straps on the back.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.4336,
+    0.4946,
+    0.5586
+  ],
+  "mesh_objects": 38,
+  "design_sheet": "DesignSheets/BambooBasket_design.png",
+  "spec": {
+    "top_r": 0.21,
+    "bottom_r": 0.15,
+    "h": 0.55,
+    "wall": 0.012,
+    "ribs": 18
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

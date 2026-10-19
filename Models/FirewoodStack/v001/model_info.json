@@ -1,0 +1,37 @@
+{
+  "asset": "FirewoodStack",
+  "name_zh": "柴堆",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Split firewood stacked between end posts on two base rails, with a small plank rain cap.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    1.79,
+    0.799,
+    1.2919
+  ],
+  "mesh_objects": 235,
+  "design_sheet": "DesignSheets/FirewoodStack_design.png",
+  "spec": {
+    "length": 1.5,
+    "depth": 0.55,
+    "rows": 7,
+    "log_r": [
+      0.055,
+      0.075
+    ],
+    "post_h": 1.12,
+    "cap_z": [
+      1.14,
+      1.26
+    ]
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

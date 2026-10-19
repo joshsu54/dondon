@@ -1,0 +1,134 @@
+[
+  {
+    "asset": "StoneWell",
+    "name_zh": "石井",
+    "blend_reopened": true,
+    "meshes": 157,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      2.04,
+      1.8,
+      2.495
+    ],
+    "spec_size_checked": true,
+    "coping_height_m": 0.81,
+    "hanging_bucket_clearance_m": 0.05,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_into_well.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "WellBucket",
+    "name_zh": "木水桶",
+    "blend_reopened": true,
+    "meshes": 27,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.3319,
+      0.33,
+      0.4659
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_interior.png",
+      "12_underside.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "NoticeBoard",
+    "name_zh": "公告板",
+    "blend_reopened": true,
+    "meshes": 57,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      1.99,
+      0.6319,
+      2.545
+    ],
+    "spec_size_checked": true,
+    "blank_notices": 4,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "WoodenCrate",
+    "name_zh": "木箱",
+    "blend_reopened": true,
+    "meshes": 23,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.62,
+      0.45,
+      0.5
+    ],
+    "spec_size_checked": true,
+    "lid_separate": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 2.9802322387695312e-08,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "BambooBasket",
+    "name_zh": "竹簍",
+    "blend_reopened": true,
+    "meshes": 38,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.4336,
+      0.4946,
+      0.5586
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_interior.png",
+      "12_back_straps.png"
+    ],
+    "design_sheet_present": true
+  },
+  {
+    "asset": "FirewoodStack",
+    "name_zh": "柴堆",
+    "blend_reopened": true,
+    "meshes": 235,
+    "vertices_finite": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      1.79,
+      0.799,
+      1.2919
+    ],
+    "spec_size_checked": true,
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "extra_views": [],
+    "design_sheet_present": true
+  }
+]

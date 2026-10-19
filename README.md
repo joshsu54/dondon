@@ -2,9 +2,10 @@
 
 宗門、山景、登山步道與生活道具的 Blender 素材專案。模型、圖片、影片與 ZIP 交付包使用 Git LFS 管理。
 
-目前素材庫有 **69 組模型、690 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
+目前素材庫有 **75 組模型、750 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
-- 最新小鎮配置：`Models/TownLayout/v003/`，西街加入食肆客棧、材料鋪與藥草攤。
+- 最新小鎮配置：`Models/TownLayout/v004/`，西街有食肆客棧、材料鋪、藥草攤與街道道具（石井、公告板、木箱、竹簍、柴堆）。
+- 街道道具：`ArtLibrary/ExpansionBatches/StreetProps11/`。
 - 最新建築：兩層食肆客棧（含一樓家具配置與剖視圖）`ArtLibrary/ExpansionBatches/Eatery10/`。
 - 食肆用具（爐灶、鐵鍋、蒸籠、砧板、碗盤、桌凳）：`ArtLibrary/ExpansionBatches/KitchenWare09/`，含建模設計圖。
 - 登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。

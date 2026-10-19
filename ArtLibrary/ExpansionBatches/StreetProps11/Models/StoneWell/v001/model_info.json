@@ -1,0 +1,40 @@
+{
+  "asset": "StoneWell",
+  "name_zh": "石井",
+  "batch": "StreetProps11",
+  "stage": "appearance_prototype",
+  "description": "Round dry-stone well with coping, stone apron, timber windlass with crank, small tiled gable roof, rope and hanging bucket.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    2.04,
+    1.8,
+    2.495
+  ],
+  "mesh_objects": 157,
+  "design_sheet": "DesignSheets/StoneWell_design.png",
+  "spec": {
+    "outer_r": 0.6,
+    "inner_r": 0.42,
+    "wall_h": 0.75,
+    "apron_r": 0.9,
+    "apron_h": 0.08,
+    "post_x": 0.78,
+    "post_h": 2.05,
+    "roller_z": 1.55,
+    "roof": {
+      "ridge_z": 2.45,
+      "eave_z": 2.12,
+      "half_x": 0.98,
+      "half_y": 0.66
+    },
+    "water_z": 0.18
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}
