@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "Eatery",
+    "name_zh": "食肆客棧",
+    "blend_reopened": true,
+    "meshes": 1065,
+    "vertices_finite": true,
+    "plinth_bottom_centre_pivot_checked": true,
+    "dimensions_m": [
+      11.865,
+      10.089,
+      9.187
+    ],
+    "stair_17x200mm_checked": true,
+    "stair_min_headroom_m": 2.0,
+    "front_opening_clear_height_m": 2.6,
+    "chimney_top_m": 8.25,
+    "ridge_top_m": 8.91,
+    "furnishing_instances": {
+      "CookingHearth": 1,
+      "IronWok": 1,
+      "BambooSteamer": 1,
+      "PrepBoard": 1,
+      "CeramicBowl": 5,
+      "DiningTable": 4,
+      "RoundStool": 16,
+      "CeramicPlate": 4
+    },
+    "wok_seated_on_hearth_checked": true,
+    "fbx_reimported": true,
+    "fbx_building_only": true,
+    "fbx_dimension_error_m": 9.5367431640625e-07,
+    "ten_view_files_present": true,
+    "extra_views": [
+      "11_cutaway_ground.png",
+      "12_plan_ground.png",
+      "13_plan_upper.png",
+      "14_cutaway_upper.png"
+    ],
+    "design_sheets_present": true
+  }
+]

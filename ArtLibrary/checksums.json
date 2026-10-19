@@ -215,6 +215,161 @@
     "sha256": "2dddab244c220a5fa800f5790e61bff0752a66b0e45b4f5bcec9aa8e5091b09e"
   },
   {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/01_front.png",
+    "bytes": 1085465,
+    "sha256": "50c954cc0f7c4478e127500a481f5b8f6a0054eb58eb060e4a2cc4647141c997"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/02_right.png",
+    "bytes": 1055304,
+    "sha256": "67baeeed9920bd9ac3943a46b16e70ed50c73c4c4495fc1ff0890347182e1c06"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/03_rear.png",
+    "bytes": 1067329,
+    "sha256": "7adb366d831289061a0874817a3f20c132ba1c774b5d534e41539135be322d48"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/04_left.png",
+    "bytes": 1040964,
+    "sha256": "fe1c4ff8564e307cf2ddabffd8dce520bef82115b07beb97c532ee009c28bea9"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/05_front_right.png",
+    "bytes": 1234102,
+    "sha256": "9458a3f6bd2a6b110539578c4d3cb70349d2ae5044ae114e18d7d4e17403222f"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/06_rear_right.png",
+    "bytes": 1189388,
+    "sha256": "95887aefc4fff0ad1d41839e8aace8cdbfbc891eef3580b9119b4527ed218939"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/07_rear_left.png",
+    "bytes": 1207207,
+    "sha256": "9585bb4e0f00b62dfc89183fe48eda65ee4fef51322b33d0d3b730814d728a07"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/08_front_left.png",
+    "bytes": 1215434,
+    "sha256": "fb53c2127c1efb75e592b474b37993ebeaf6bcf3a8bd67c396e073cfe04e0664"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/09_top.png",
+    "bytes": 1061099,
+    "sha256": "5ba8932ea2c3c2f90a4006376c7179428051ef4b012704f05e6c58d96eeefc1b"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/10_high_front.png",
+    "bytes": 1109772,
+    "sha256": "218c8053eddcc4d49ec9c3defc72ea46e0256c3835fdec94d55b2c3ad51fc598"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/11_cutaway_ground.png",
+    "bytes": 1178838,
+    "sha256": "fff112e96b903eb55bb595594c2273befeeaec0fe837136e2a900fc7a628e4e6"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/12_plan_ground.png",
+    "bytes": 1080181,
+    "sha256": "ad4e11c1017465fc8dcf3ab55516c85f28427a7eee81c5041741c4015886d19e"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/13_plan_upper.png",
+    "bytes": 1058590,
+    "sha256": "c7547caf080eccd24a9911b98c403d47874750e55538938630f98a986bed3086"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/14_cutaway_upper.png",
+    "bytes": 1225093,
+    "sha256": "d52ffa04800a96eced690af5d74298394bf668a4d4bdaa6b963c580b6d676bab"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/ArtLibrary/Turnarounds/Eatery_v001/views.json",
+    "bytes": 4121,
+    "sha256": "d820fe9452e3c6c865f7b2ad0d27ba39bb74aa006afb1780da7b661f0a3cb488"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/build_eatery10.py",
+    "bytes": 32702,
+    "sha256": "72e2322ec41eda9c41e440f9300cb275ae57d180ba5715bcafaeab4bb9bd7610"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/contact_sheet.py",
+    "bytes": 983,
+    "sha256": "ee910b318bac1e9c2b4b5d4e7e57931b5044ff861bb1c4fe86db75486c321d76"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/draw_eatery_sheets.py",
+    "bytes": 11069,
+    "sha256": "b5606d8da649a467aaad9fbd5abcfc44f1a189ab1e371700c417de5550bcac91"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/eatery_specs.py",
+    "bytes": 2309,
+    "sha256": "517e63cdaa1d215d0eedc486848d226da03e828b857836519303e35f67ec336c"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/publish_eatery10.py",
+    "bytes": 9207,
+    "sha256": "b615f5ad62b24459796c91d534b7a03c2488b6e17dfdcfb216cd1af1cf95b446"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/BlenderSource/verify_eatery10.py",
+    "bytes": 6201,
+    "sha256": "e101e86e806fd2f1443f2d56a8d85d5085924b0d2590c355e8ff989b030090ab"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/DesignSheets/Eatery_01_elevations.png",
+    "bytes": 123726,
+    "sha256": "1dca3dc9f35e20098b5bad20e9d4b40ba671019589993461643286db2dbc241b"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/DesignSheets/Eatery_02_plans.png",
+    "bytes": 126006,
+    "sha256": "0e8eee38da765df133c597f2b1ec82571a9aac32b75b15b330e16bb49d10350e"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/Eatery_10views.jpg",
+    "bytes": 162599,
+    "sha256": "a7c1e05988eaf285bc0f983cfb1d96ebc89fa758951aeac147cdc9f13fed8834"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/Models/Eatery/v001/Eatery_v001.blend",
+    "bytes": 18173229,
+    "sha256": "3a3b6c088100ced2d091d3b8275b12393a4baa7af334ae3fb1a00cb02955fc85"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/Models/Eatery/v001/Eatery_v001.fbx",
+    "bytes": 4575292,
+    "sha256": "6f92a0d75eddb735273f6e367a4a9445cd185c3ddc5491bda35a3c8def21245c"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/Models/Eatery/v001/model_info.json",
+    "bytes": 1707,
+    "sha256": "363144614b0d01d4c7e0b9236b607b3b3e9ff9afd24956caddb4fae9d20ddddc"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/README.md",
+    "bytes": 3462,
+    "sha256": "2e3783dbe23e41b5f3e26f20042f9805dc2e4791fcd8ff8945a3eac06f869122"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/index.html",
+    "bytes": 4213,
+    "sha256": "d671a6b70d3f0097b758b1c1b762102912e02d277e6f39a9f40cb478c3afed08"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/inventory.json",
+    "bytes": 739,
+    "sha256": "506f6d570030ab1868c90a81add9fc77428b60279d0ce9466018478840be9391"
+  },
+  {
+    "file": "ExpansionBatches/Eatery10/validation.json",
+    "bytes": 1012,
+    "sha256": "c26b0c773fc9ddd3a350e892de467ee0f0dd257223f006ef1ea9afbf1fce0490"
+  },
+  {
     "file": "ExpansionBatches/HerbalExpansion01/AlchemyFurnace_10views.jpg",
     "bytes": 103851,
     "sha256": "8824ff01c1efa6936517588d28ddc6ad101c9ec9354d6c4487f4e767118ee6e1"
@@ -5935,6 +6090,36 @@
     "sha256": "01a60dfa6113e887b9da065a083acf35953bb89c07e6827fe141a4b04bb8fc93"
   },
   {
+    "file": "History/BeforeEatery10/README.md",
+    "bytes": 6285,
+    "sha256": "4c08c3750db6949a7293eb71228bc433bd44d8600ff274a6db3b28154e8a381e"
+  },
+  {
+    "file": "History/BeforeEatery10/asset_catalog.json",
+    "bytes": 87649,
+    "sha256": "40c3ac4afb7b6bc8947cba2826c2db34f6fc980ff07494fb362d5d08177031e2"
+  },
+  {
+    "file": "History/BeforeEatery10/checksums.json",
+    "bytes": 390823,
+    "sha256": "fd1e54adbddc3fd9ad29a94bed8e6cae0b4da5e2a035f0310c60def484b9b152"
+  },
+  {
+    "file": "History/BeforeEatery10/index.html",
+    "bytes": 138198,
+    "sha256": "f522e939d20cb392252cee6c0d31bb252f5acc14d75ac998d39c542b505b7be5"
+  },
+  {
+    "file": "History/BeforeEatery10/library_validation.json",
+    "bytes": 1357,
+    "sha256": "cc76b6a19647f355df36e7450cbbcd0258aa12e656b0c1314d32475c03d2e9df"
+  },
+  {
+    "file": "History/BeforeEatery10/完整建模清單.md",
+    "bytes": 8990,
+    "sha256": "89eaf3c567533f03e3e5ad28521075ef85f7704d92089c0105f0daefda3c0e0a"
+  },
+  {
     "file": "History/BeforeKitchenWare09/README.md",
     "bytes": 5757,
     "sha256": "ba49a42cedb7b6e02c1ff5501017ab50efddb6c1d81fe2c80460dbcd3ebd3697"
@@ -6176,8 +6361,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 6285,
-    "sha256": "4c08c3750db6949a7293eb71228bc433bd44d8600ff274a6db3b28154e8a381e"
+    "bytes": 6769,
+    "sha256": "93b2503d1a74d8ca48757ee01528305ccdeee64dc6231a09a1763e1901959e32"
   },
   {
     "file": "References/Current_Xianxia/SectRoad/01_sect_road_concept.png",
@@ -7298,6 +7483,81 @@
     "file": "Turnarounds/DryingRack_v001/views.json",
     "bytes": 2957,
     "sha256": "73675769ed25948fb61e1ec688ee791337e652473fb8ec8c0af6978cdf6b8ac4"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/01_front.png",
+    "bytes": 1085465,
+    "sha256": "50c954cc0f7c4478e127500a481f5b8f6a0054eb58eb060e4a2cc4647141c997"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/02_right.png",
+    "bytes": 1055304,
+    "sha256": "67baeeed9920bd9ac3943a46b16e70ed50c73c4c4495fc1ff0890347182e1c06"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/03_rear.png",
+    "bytes": 1067329,
+    "sha256": "7adb366d831289061a0874817a3f20c132ba1c774b5d534e41539135be322d48"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/04_left.png",
+    "bytes": 1040964,
+    "sha256": "fe1c4ff8564e307cf2ddabffd8dce520bef82115b07beb97c532ee009c28bea9"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/05_front_right.png",
+    "bytes": 1234102,
+    "sha256": "9458a3f6bd2a6b110539578c4d3cb70349d2ae5044ae114e18d7d4e17403222f"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/06_rear_right.png",
+    "bytes": 1189388,
+    "sha256": "95887aefc4fff0ad1d41839e8aace8cdbfbc891eef3580b9119b4527ed218939"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/07_rear_left.png",
+    "bytes": 1207207,
+    "sha256": "9585bb4e0f00b62dfc89183fe48eda65ee4fef51322b33d0d3b730814d728a07"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/08_front_left.png",
+    "bytes": 1215434,
+    "sha256": "fb53c2127c1efb75e592b474b37993ebeaf6bcf3a8bd67c396e073cfe04e0664"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/09_top.png",
+    "bytes": 1061099,
+    "sha256": "5ba8932ea2c3c2f90a4006376c7179428051ef4b012704f05e6c58d96eeefc1b"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/10_high_front.png",
+    "bytes": 1109772,
+    "sha256": "218c8053eddcc4d49ec9c3defc72ea46e0256c3835fdec94d55b2c3ad51fc598"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/11_cutaway_ground.png",
+    "bytes": 1178838,
+    "sha256": "fff112e96b903eb55bb595594c2273befeeaec0fe837136e2a900fc7a628e4e6"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/12_plan_ground.png",
+    "bytes": 1080181,
+    "sha256": "ad4e11c1017465fc8dcf3ab55516c85f28427a7eee81c5041741c4015886d19e"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/13_plan_upper.png",
+    "bytes": 1058590,
+    "sha256": "c7547caf080eccd24a9911b98c403d47874750e55538938630f98a986bed3086"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/14_cutaway_upper.png",
+    "bytes": 1225093,
+    "sha256": "d52ffa04800a96eced690af5d74298394bf668a4d4bdaa6b963c580b6d676bab"
+  },
+  {
+    "file": "Turnarounds/Eatery_v001/views.json",
+    "bytes": 4121,
+    "sha256": "d820fe9452e3c6c865f7b2ad0d27ba39bb74aa006afb1780da7b661f0a3cb488"
   },
   {
     "file": "Turnarounds/GoodsShelf_v001/01_front.png",
@@ -10176,22 +10436,22 @@
   },
   {
     "file": "asset_catalog.json",
-    "bytes": 87649,
-    "sha256": "40c3ac4afb7b6bc8947cba2826c2db34f6fc980ff07494fb362d5d08177031e2"
+    "bytes": 89249,
+    "sha256": "cdf6adcfd815d2c7f0406e5c324add2717ff13fa689ddce22b406bda2cefb550"
   },
   {
     "file": "index.html",
-    "bytes": 138198,
-    "sha256": "f522e939d20cb392252cee6c0d31bb252f5acc14d75ac998d39c542b505b7be5"
+    "bytes": 140968,
+    "sha256": "8574978c057d4c8bc0831e662ecd35080ec5c9d4a0766d7dedf90789abc6630a"
   },
   {
     "file": "library_validation.json",
-    "bytes": 1357,
-    "sha256": "cc76b6a19647f355df36e7450cbbcd0258aa12e656b0c1314d32475c03d2e9df"
+    "bytes": 1469,
+    "sha256": "c64390dce247df5c349f668835d685eb0b82a2947d2303f450ebd8875ae3424f"
   },
   {
     "file": "完整建模清單.md",
-    "bytes": 8990,
-    "sha256": "89eaf3c567533f03e3e5ad28521075ef85f7704d92089c0105f0daefda3c0e0a"
+    "bytes": 9255,
+    "sha256": "e7aecd0553137e9877e6f6736d58cb3a1d2cf59d6ef6fb185fa38a9e22c626a4"
   }
 ]

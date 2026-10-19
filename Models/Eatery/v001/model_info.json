@@ -1,0 +1,69 @@
+{
+  "asset": "Eatery",
+  "name_zh": "食肆客棧",
+  "batch": "Eatery10",
+  "stage": "appearance_prototype",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre of the stone plinth incl. veranda (roof eaves and steps extend beyond it)",
+  "dimensions_m": [
+    11.865,
+    10.089,
+    9.187
+  ],
+  "plinth_footprint_m": [
+    10.4,
+    8.9
+  ],
+  "mesh_objects": 1065,
+  "levels_m": {
+    "ground_floor": 0.45,
+    "upper_floor": 3.8500000000000005,
+    "wall_top": 6.65,
+    "ridge": 8.75
+  },
+  "stair": {
+    "risers": 17,
+    "riser_m": 0.2,
+    "tread_m": 0.22,
+    "width_m": 1.0
+  },
+  "door_clear_height_m": 2.6,
+  "groups": [
+    "Balcony",
+    "Counter",
+    "Doors",
+    "Floor_Upper",
+    "Foundation",
+    "Frame",
+    "Frame_Upper",
+    "Kitchen",
+    "Roof",
+    "Signage",
+    "Stair",
+    "Veranda",
+    "Walls_Ground",
+    "Walls_Upper"
+  ],
+  "design_sheets": [
+    "DesignSheets/Eatery_01_elevations.png",
+    "DesignSheets/Eatery_02_plans.png"
+  ],
+  "furnishing_in_blend_only": [
+    "Models/BambooSteamer/v001/BambooSteamer_v001.blend",
+    "Models/CeramicBowl/v001/CeramicBowl_v001.blend",
+    "Models/CeramicPlate/v001/CeramicPlate_v001.blend",
+    "Models/CookingHearth/v001/CookingHearth_v001.blend",
+    "Models/DiningTable/v001/DiningTable_v001.blend",
+    "Models/IronWok/v001/IronWok_v001.blend",
+    "Models/PrepBoard/v001/PrepBoard_v001.blend",
+    "Models/RoundStool/v001/RoundStool_v001.blend"
+  ],
+  "furnishing_instances": 33,
+  "modeling_method": "procedural editable mesh built from eatery_specs.py; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "navigation": false,
+  "unreal_import_verified": false
+}

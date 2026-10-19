@@ -1,0 +1,36 @@
+{
+  "batch": "Eatery10",
+  "created": "2026-10-19",
+  "new_asset_sets": 1,
+  "new_views": 10,
+  "extra_layout_views": 4,
+  "design_sheets": 2,
+  "new_assets": [
+    {
+      "asset": "Eatery",
+      "name_zh": "食肆客棧",
+      "views": 10,
+      "extra_views": [
+        "11_cutaway_ground.png",
+        "12_plan_ground.png",
+        "13_plan_upper.png",
+        "14_cutaway_upper.png"
+      ],
+      "dimensions_m": [
+        11.865,
+        10.089,
+        9.187
+      ],
+      "furnishing_in_blend_only": {
+        "CookingHearth": 1,
+        "IronWok": 1,
+        "BambooSteamer": 1,
+        "PrepBoard": 1,
+        "CeramicBowl": 5,
+        "DiningTable": 4,
+        "RoundStool": 16,
+        "CeramicPlate": 4
+      }
+    }
+  ]
+}

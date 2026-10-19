@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-18",
-  "model_asset_sets": 68,
-  "consistent_turnaround_images": 680,
+  "updated": "2026-10-19",
+  "model_asset_sets": 69,
+  "consistent_turnaround_images": 690,
   "assembled_scenes": 3,
   "effect_previews": 1,
   "link_checks": [
     {
       "page": "index.html",
-      "local_links": 1613,
+      "local_links": 1647,
       "missing": []
     },
     {
@@ -53,6 +53,11 @@
     {
       "page": "ExpansionBatches/KitchenWare09/index.html",
       "local_links": 217,
+      "missing": []
+    },
+    {
+      "page": "ExpansionBatches/Eatery10/index.html",
+      "local_links": 34,
       "missing": []
     }
   ],

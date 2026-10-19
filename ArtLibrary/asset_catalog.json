@@ -1,9 +1,9 @@
 {
   "target_engine": "Unreal Engine",
   "workflow": "Art preparation first; game-system implementation paused",
-  "model_asset_sets": 68,
+  "model_asset_sets": 69,
   "assembled_scenes": 3,
-  "consistent_turnaround_images": 680,
+  "consistent_turnaround_images": 690,
   "concept_reference_images": 33,
   "entries": [
     {
@@ -1983,6 +1983,44 @@
       "uv_baked": false,
       "collision_ready": false,
       "lod_ready": false
+    },
+    {
+      "id": "Eatery",
+      "name": "食肆客棧",
+      "category": "小鎮建築",
+      "source_version": "v001",
+      "source_path": "Models/Eatery/v001",
+      "blend": "../Models/Eatery/v001/Eatery_v001.blend",
+      "fbx": "../Models/Eatery/v001/Eatery_v001.fbx",
+      "preview": "Turnarounds/Eatery_v001/05_front_right.png",
+      "views": [
+        "Turnarounds/Eatery_v001/01_front.png",
+        "Turnarounds/Eatery_v001/02_right.png",
+        "Turnarounds/Eatery_v001/03_rear.png",
+        "Turnarounds/Eatery_v001/04_left.png",
+        "Turnarounds/Eatery_v001/05_front_right.png",
+        "Turnarounds/Eatery_v001/06_rear_right.png",
+        "Turnarounds/Eatery_v001/07_rear_left.png",
+        "Turnarounds/Eatery_v001/08_front_left.png",
+        "Turnarounds/Eatery_v001/09_top.png",
+        "Turnarounds/Eatery_v001/10_high_front.png"
+      ],
+      "extra_views": [
+        "Turnarounds/Eatery_v001/11_cutaway_ground.png",
+        "Turnarounds/Eatery_v001/12_plan_ground.png",
+        "Turnarounds/Eatery_v001/13_plan_upper.png",
+        "Turnarounds/Eatery_v001/14_cutaway_upper.png"
+      ],
+      "design_sheets": [
+        "../ArtReferences/Eatery10/Eatery_01_elevations.png",
+        "../ArtReferences/Eatery10/Eatery_02_plans.png"
+      ],
+      "status": "可編輯兩層建築原型（含一樓家具配置）；未完成 UV 烘焙、碰撞、導航與引擎驗證",
+      "batch": "Eatery10",
+      "unreal_import_verified": false,
+      "uv_baked": false,
+      "collision_ready": false,
+      "lod_ready": false
     }
   ],
   "note": "Concept references are not models. Town scene does not yet include the new materials shop.",
@@ -1995,9 +2033,10 @@
     "ExpansionBatches/SectModules06/index.html",
     "ExpansionBatches/MountainWind07/index.html",
     "ExpansionBatches/MountainRoute08/index.html",
-    "ExpansionBatches/KitchenWare09/index.html"
+    "ExpansionBatches/KitchenWare09/index.html",
+    "ExpansionBatches/Eatery10/index.html"
   ],
-  "updated": "2026-10-18",
+  "updated": "2026-10-19",
   "counting_note": "Asset sets include assembled originals and independently extracted components; their counts do not imply every component is complete.",
   "effects": [
     {
@@ -2009,5 +2048,5 @@
       "engine_effect_verified": false
     }
   ],
-  "design_sheets": 8
+  "design_sheets": 10
 }
