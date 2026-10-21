@@ -1,5 +1,5 @@
 {
-  "status": "runtime_and_visual_review_passed_keyboard_pending",
+  "status": "prototype_saved_runtime_visual_and_E_key_checks_passed",
   "map": "/Game/Maps/TownLayout_06",
   "saved_checks": {
     "actor_count": true,
@@ -61,7 +61,20 @@
       "Trail capture repeats the reststop viewpoint and is not counted as an independent angle",
       "Noticeboard footing across existing paving heights needs further polish"
     ],
-    "physical_keyboard": "Not rerun in 06; latest attempt interrupted by locked Mac",
-    "default_map": "TownLayout_05"
-  }
+    "physical_keyboard": "Five actual E key presses through UI passed: accept, three herbs, 10-stone reward. Setup teleported between targets; not an end-to-end manual walking test.",
+    "default_map": "TownLayout_06"
+  },
+  "keyboard_report": "expansion06_keyboard.json",
+  "keyboard_screenshots_reviewed": [
+    "Validation/expansion06_key_0.png",
+    "Validation/expansion06_key_1.png",
+    "Validation/expansion06_key_2.png",
+    "Validation/expansion06_key_3.png",
+    "Validation/expansion06_key_4.png"
+  ],
+  "keyboard_review_notes": [
+    "Chinese HUD shows 0/3, 1/3, 2/3, ready to return, and reward 10 in five captures.",
+    "Editor diagnostics includes iOS idevice_id architecture warnings; iOS support is not validated.",
+    "This is a playable prototype verification, not performance, packaging or full-world acceptance."
+  ]
 }

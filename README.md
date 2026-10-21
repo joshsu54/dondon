@@ -1,6 +1,6 @@
-## UE5 最新進度｜2026-10-21
+## UE5 最新進度｜2026-10-22
 
-專案：`Unreal/XiuXianTown/XiuXianTown.uproject`（UE 5.8）。最新製作中關卡 TownLayout_06 已整合七種沿途模型；預設維持已驗證的 TownLayout_05。06 的實際 E 鍵驗證尚未完成。下載請用 `solid-clouds-karst-peaks` 分支並執行 `git lfs pull`，首次開啟需編譯 C++ 模組。詳見 [交接紀錄](HANDOFF.md) 與 [UE5 說明](Unreal/README.md)。
+專案：`Unreal/XiuXianTown/XiuXianTown.uproject`（UE 5.8）。最新與預設關卡為 TownLayout_06，已整合七種沿途模型。39 項保存檢查、11 段連續 PIE 路線及五次實際 E 鍵任務互動通過；仍屬可測試原型，尚未完成效能與打包驗收。下載請用 `solid-clouds-karst-peaks` 分支並執行 `git lfs pull`，首次開啟需編譯 C++ 模組。詳見 [交接紀錄](HANDOFF.md) 與 [UE5 說明](Unreal/README.md)。
 
 # dondon｜修仙開放世界美術素材
 

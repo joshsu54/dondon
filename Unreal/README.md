@@ -1,3 +1,15 @@
+## 2026-10-22 最新：TownLayout_06 按鍵驗證完成
+
+最新與預設啟動／遊戲關卡為 `/Game/Maps/TownLayout_06`，舊關卡保留。七種既有模型（休憩亭、石欄杆、松樹、草叢、石燈、路標、公告板）已整合；本輪沒有新增 Blender 幾何，沿用已核對的七件來源及 70 張角度圖。
+
+06 已完成五次實際 E 鍵互動：接委託、三次採草、交付並取得 10 靈石，五張 UE 截圖的中文 HUD 與進度已檢視。按鍵測試由腳本傳送到各目標；既有 11 段連續路線使用 CharacterMovement API，並非全程手動行走。關卡 SHA-256 與前次 39 項保存檢查及 27 項執行檢查時相同。
+
+證據：`Unreal/expansion06_keyboard.json`、`Unreal/expansion06_validation.json`、`Unreal/expansion06_runtime.json`、`Unreal/Validation/expansion06_key_0.png` 至 `_4.png`。Play 後 WASD 移動、滑鼠轉向、空白鍵跳躍、E 互動；重開遊戲仍會重置任務與靈石。
+
+接續改善公告板基座與路面接合、亭內及公告板照明、植被風動；UV／貼圖烘焙、LOD、全世界導航、存檔、效能及正式打包尚未驗收。UE 的 iOS 裝置偵測工具有架構警告，未驗證 iOS 支援。本輪只完成上述原型驗證與預設關卡切換。
+
+以下為歷史紀錄，關卡預設值與驗證狀態以上述為準。
+
 ## 2026-10-21 GitHub 同步：UE5 專案與 TownLayout_06 進度
 
 本次同步包含完整 UE5 專案來源（Config、Content、Source、uproject）、關卡 01–06、驗證工具與截圖。UE 資產、關卡與關卡備份由 Git LFS 管理；編譯產物、Saved、Intermediate、DerivedDataCache、本機登入資料與快取排除。Android File Server 未用於本專案的 Mac 流程，已停用並移除自動產生的 SecurityToken。
