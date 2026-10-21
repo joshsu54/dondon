@@ -1,4 +1,42 @@
+## 2026-10-21 GitHub 同步：UE5 專案與 TownLayout_06 進度
+
+本次同步包含完整 UE5 專案來源（Config、Content、Source、uproject）、關卡 01–06、驗證工具與截圖。UE 資產、關卡與關卡備份由 Git LFS 管理；編譯產物、Saved、Intermediate、DerivedDataCache、本機登入資料與快取排除。Android File Server 未用於本專案的 Mac 流程，已停用並移除自動產生的 SecurityToken。
+
+最新製作中關卡為 `/Game/Maps/TownLayout_06`；**預設啟動仍為已完整驗證的 TownLayout_05**。06 加入七種既有模型：六角休憩亭、獨立石欄杆、松樹、草叢、石燈、路標與公告板。新增 35 個配置 Actor、替換 3 個舊任務牌部件，總數 3,945；不新增 Blender 幾何，七件來源的原檔、FBX 與 70 張既有角度圖已核對。
+
+06 已保存重載，39 項模型／放置檢查及 11 段連續 PIE 路線通過，包含進出亭子、採三株靈草及返回領取 10 靈石。測試以 CharacterMovement 與反射互動執行，**06 的實際 E 鍵複驗仍待完成**，不能沿用 05 結果當作 06 的鍵鼠驗收。公告板初版定位錯誤已修正，保留原失敗報告與關卡備份。三個不同場景視角已檢視；trail 截圖與 reststop 構圖重複，不列為額外角度。
+
+後續：執行 `Unreal/Tools/check_expansion06_keyboard.py` 完成實際 E 鍵驗證，再決定是否將預設關卡切換為 06；改善公告板基座與路面接合、亭內照明。植被目前為靜態 FBX，尚無風動材質；程序貼圖烘焙、LOD、正式效能／打包、任務存檔仍待實作。
+
+下載請使用 `solid-clouds-karst-peaks` 分支並執行 `git lfs pull`。以 UE 5.8 開啟 `Unreal/XiuXianTown/XiuXianTown.uproject`，首次需編譯 C++ 模組（Mac 需 Xcode／Metal 工具）；Binaries 刻意不納入版本庫。證據見 `Unreal/expansion06_source_audit.json`、`Unreal/expansion06_validation.json`、`Unreal/expansion06_runtime.json`。
+
+以下是歷史紀錄；其中「尚未推送」描述當時狀態，本次上傳結果以 GitHub 分支提交為準。
+
+## 2026-10-21 最新：TownLayout_05 宗門採藥原型
+
+最新與預設啟動／遊戲關卡改為 `/Game/Maps/TownLayout_05`；03、04 與既有模型均保留。新增內容為既有山峰、山脊、雲群、山門、道路、兩段石階、委託牌及三株任務靈草的 UE 整合，沒有新建 Blender 幾何或新的獨立十視圖交付。05 修正了雲群過低過大、山峰旋轉誤用 pitch 的問題。
+
+05 已保存重載，15 項放置檢查、八段連續 PIE 往返及 24 項任務／通行檢查通過。另以實際 E 鍵完成接任務、三次採集及交付 10 靈石，共五次互動；按鍵測試由腳本傳送到各目標，連續走路測試由 CharacterMovement API 驅動，兩者各自驗證，不代表全程手動行走。
+
+中文 HUD、採集進度、獎勵文字、山門配色、山峰方向及雲群不遮路均已檢視實際 UE 截圖。來源 FBX 雜湊無變動。證據：`Unreal/expansion05_validation.json`、`Unreal/expansion05_runtime.json`、`Unreal/expansion05_keyboard.json`，截圖位於 `Unreal/Validation/expansion05_*.png`。從 UE 專案資料夾看，上述路徑去掉開頭的 Unreal/。
+
+操作：Play 後 WASD 移動、滑鼠轉向、空白鍵跳躍；到小鎮北端木色委託牌旁按 E 接任務，沿青石路採三株靈草，再回牌旁按 E 領獎。重開遊戲會重置任務與靈石。
+
+這是可測試的任務原型：大片平地、方塊支撐、空白委託牌仍待美術整理，遠山無碰撞；尚未完成效能、全世界導航、存檔或打包驗收。這批 UE 變更未推送 GitHub。前一輪截圖記錄器錯誤已修正並重跑通過，保留原錯誤報告供追查。
+
+## 2026-10-20：宗門採藥原型進度（TownLayout_05，尚待最後驗證）
+
+TownLayout_04 已加入山景、漂移雲群、連接宗門的道路／兩段石階、山門、委託牌與三株靈草。C++ 任務模組編譯成功；HUD 改在 NativeOnInitialized 建立後，實際 UE 畫面可讀取中文任務及操作提示。
+
+04 的真實 PIE 連續往返路線八段與 24 項檢查通過：接任務、三株採集、返程交付 10 靈石，並阻擋遠距互動、未接任務採集、提前交付、重複採集與重複領獎。移動由 CharacterMovement API 驅動，互動由反射函式呼叫；不等於鍵鼠全流程驗收。證據：`expansion04_runtime.json`。
+
+視覺檢查發現雲群遮路及山峰旋轉軸誤用，另存 05：縮小並抬高三群雲、取消雲投影，七個山景 Actor 改為明確 yaw 旋轉，已保存重載；04 保留。05 的 E 鍵接任務已實際成功，接著測試記錄器誤呼叫未公開的 PlayerController.console_command，導致截圖記錄失敗。腳本已改用 SystemLibrary.execute_console_command，仍須重跑全部五次 E 互動及最終截圖。錯誤原始紀錄保留在 `expansion05_keyboard_initial_capture_error.json`，修正工具為 `Tools/check_expansion04_keyboard.py`（支援 04/05）。
+
+目前 Mac 鎖定，等待解鎖才能繼續操作 UE。預設關卡仍保留已驗證的 03；05 尚未標為完整完成。任務尚無存檔，遠山無碰撞，道路支撐與材質仍是原型；本輪沒有新增 Blender 幾何，也未推送 GitHub。詳見 `expansion05_progress.json`、`expansion05_revision.json`。
+
 # 最新交接狀態｜2026-10-18
+
+2026-10-19 UE 更新：最新關卡為 `TownPrototype_02`，專案 `Unreal/XiuXianTown/XiuXianTown.uproject`。首批模型已匯入，483 個民宅／長凳分件補回原檔配色，原始模型與 01 關卡保留。從磁碟重開後材質與七項真實 PIE 檢查通過：出生、移動、跳躍、落地、方塊阻擋、台階攀爬、關門阻擋。鍵鼠／鏡頭操作、完整小鎮、貼圖烘焙、效能及編輯器崩潰原因仍待處理。尚未打包或推送這批 UE 變更。詳見 `Unreal/README.md` 與最新 JSON 報告。
 
 本機已完成 **TownRefinement12**：把 Claude 分支 `70d3fa4` 小鎮使用的 18 項素材修整為既有宗門畫風，逐件另存 v002、產出 180 張角度圖；TownLayout v004 另有 10 張場景圖與 4 張預覽。11 件保留原幾何，7 件另外修正入口尺寸、路緣、荷葉／紙張／草束／木框共面問題。原檔與 FBX 回匯驗證見 `ArtLibrary/ExpansionBatches/TownRefinement12/validation.json`。
 
@@ -83,3 +121,9 @@ blender --background --python-exit-code 1 --python ArtLibrary/ExpansionBatches/M
 ## 可直接交給 Claude Code 的開場指令
 
 > 請接手這個修仙 Blender 美術專案。先讀 CLAUDE.md、HANDOFF.md 與 ArtLibrary/完整建模清單.md，執行 python3 Tools/Handoff/verify_project.py，核對 git status。用繁體中文說明盤點結果，再從新版山峰／實體雲索引差異與山景設施整合接續工作。保留既有版本；每個獨立新素材必須有可編輯 Blender、FBX 和至少十個不同角度的同模型渲染圖。不要把外觀原型標成已通過 Unreal 驗證。
+
+## UE 小鎮更新（2026-10-20，最新 03）
+
+最新與預設關卡為 `/Game/Maps/TownLayout_03`，01／02 保留。3,877 分件、87 種材質、3,882 Actor。客棧樓梯側隔間留出 159 cm 開口，第一張床移開 125 cm；已保存重載、八項真實 PIE 通行／阻擋測試通過，四張 UE 畫面已檢視。只調整四個 UE Actor，原始 Blender／FBX 不變。
+
+詳見 `Unreal/README.md`、`Unreal/town03_landing_revision.json`、`Unreal/town_routes_TownLayout_03.json`。測試使用各段獨立起點與 CharacterMovement API；連續全鎮路線、鍵鼠、室內照明、第三人稱鏡頭貼牆、地板接縫、互動、背景山景、LOD 與效能仍待處理。尚未推送 GitHub。

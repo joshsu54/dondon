@@ -1,9 +1,10 @@
 # Claude Code 接手規則
 
+
 這是修仙開放世界的 Blender 美術素材專案，使用繁體中文溝通。先閱讀 HANDOFF.md；README.md 下半部的 Unity 原型不是目前開發主線。
 
 - 使用者已指定沿用過去畫風：以 SectCore04 的青綠瓦、暖木、淺石、淡玉及柔光為基準；TownRefinement12 已將小鎮 18 項素材另存 v002，最新小鎮場景為 TownLayout v004。閱讀該批次 README 與 validation 後接續。
-- 目前主線：Blender 建模與參考圖，後續交接 Unreal；先完成素材，不要擅自擴充 Unity 遊戲系統。
+- 目前主線：UE5 第三人稱小鎮開發。最新製作中關卡 TownLayout_06，已整合七種沿途模型、通過 39 項保存檢查與 11 段 PIE 路線；實際 E 鍵複驗待完成，預設仍為已驗證的 TownLayout_05。讀 HANDOFF.md 頂部最新同步紀錄，保留舊版。
 - 每個獨立交付物件至少 10 個不同方位／角度。以同一模型渲染正前、右、後、左、四斜角、頂視、高前視；組合圖及動畫影格不能取代單項十視圖。
 - 交付可編輯 .blend、FBX、1024×1024 PNG、views.json、model_info.json、validation.json、圖庫頁面。1 單位 = 1 公尺，正面 -Y，底部中心原點。
 - 保留版本與分件。既有模型不要直接覆寫，先使用新的 vNNN 或新批次。生成腳本的跳過條件與寫入位置各不相同，執行前必須閱讀。
@@ -17,3 +18,9 @@
 - 不要提交 `.env`、登入資訊、虛擬環境、快取或本機工具下載。大檔使用現有 Git LFS 規則。GitHub CLI 的本機登入不會隨交接包移轉。
 
 先跑 `python3 Tools/Handoff/verify_project.py` 做唯讀盤點；這個檢查不啟動 Blender，不更動模型。
+
+## UE 小鎮更新（2026-10-20，最新 03）
+
+最新與預設關卡為 `/Game/Maps/TownLayout_03`，01／02 保留。3,877 分件、87 種材質、3,882 Actor。客棧樓梯側隔間留出 159 cm 開口，第一張床移開 125 cm；已保存重載、八項真實 PIE 通行／阻擋測試通過，四張 UE 畫面已檢視。只調整四個 UE Actor，原始 Blender／FBX 不變。
+
+詳見 `Unreal/README.md`、`Unreal/town03_landing_revision.json`、`Unreal/town_routes_TownLayout_03.json`。測試使用各段獨立起點與 CharacterMovement API；連續全鎮路線、鍵鼠、室內照明、第三人稱鏡頭貼牆、地板接縫、互動、背景山景、LOD 與效能仍待處理。尚未推送 GitHub。

@@ -1,4 +1,12 @@
+## UE5 最新進度｜2026-10-21
+
+專案：`Unreal/XiuXianTown/XiuXianTown.uproject`（UE 5.8）。最新製作中關卡 TownLayout_06 已整合七種沿途模型；預設維持已驗證的 TownLayout_05。06 的實際 E 鍵驗證尚未完成。下載請用 `solid-clouds-karst-peaks` 分支並執行 `git lfs pull`，首次開啟需編譯 C++ 模組。詳見 [交接紀錄](HANDOFF.md) 與 [UE5 說明](Unreal/README.md)。
+
 # dondon｜修仙開放世界美術素材
+
+## 目前開發方向｜2026-10-18
+
+開始以 **UE5 開發遊戲，Blender 製作與修整模型**。先沿用現有素材建立第三人稱小鎮行走原型，暫停擴增建模清單。第一批匯入來源與驗收步驟見 [UE5 起步清單](Unreal/README.md)。UE 5.8.3 的 TownPrototype_02 已恢復民宅配色，重新載入及基本 PIE 移動／碰撞檢查通過；鍵鼠、鏡頭、效能與完整小鎮仍待驗收；下方美術準備與 Unity 內容保留作歷史紀錄。
 
 ## 2026-10-18 畫風修整
 
