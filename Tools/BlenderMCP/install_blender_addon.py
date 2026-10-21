@@ -6,7 +6,10 @@ from pathlib import Path
 from datetime import datetime
 
 root = Path(__file__).resolve().parent
-source = root / '.venv/lib/python3.14/site-packages/blender_mcp/bundled/addon.py'
+# The add-on ships inside the pinned package; find it for whatever Python version built the .venv.
+found = sorted(root.glob('.venv/lib/python3*/site-packages/blender_mcp/bundled/addon.py')) + sorted(root.glob('.venv/Lib/site-packages/blender_mcp/bundled/addon.py'))
+assert found, 'blender_mcp add-on not found in Tools/BlenderMCP/.venv; run install_claude_code.sh first'
+source = found[-1]
 folder = Path(bpy.utils.user_resource('SCRIPTS', path='addons', create=True))
 target = folder / 'blender_mcp.py'
 stamp = datetime.now().strftime('%Y%m%d-%H%M%S')
