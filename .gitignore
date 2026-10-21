@@ -29,3 +29,11 @@ work/
 # Local editor state
 .idea/
 .vscode/
+
+# Unreal generated data; keep Config, Content, Source and .uproject
+Unreal/**/Binaries/
+Unreal/**/Intermediate/
+Unreal/**/Saved/
+Unreal/**/DerivedDataCache/
+Unreal/**/*.xcworkspace/
+Unreal/**/*.xcodeproj/

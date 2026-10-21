@@ -1,13 +1,30 @@
+## UE5 最新進度｜2026-10-22
+
+專案：`Unreal/XiuXianTown/XiuXianTown.uproject`（UE 5.8）。最新與預設關卡為 TownLayout_06，已整合七種沿途模型。39 項保存檢查、11 段連續 PIE 路線及五次實際 E 鍵任務互動通過；仍屬可測試原型，尚未完成效能與打包驗收。下載請用 `solid-clouds-karst-peaks` 分支並執行 `git lfs pull`，首次開啟需編譯 C++ 模組。詳見 [交接紀錄](HANDOFF.md) 與 [UE5 說明](Unreal/README.md)。
+
 # dondon｜修仙開放世界美術素材
+
+## 目前開發方向｜2026-10-18
+
+開始以 **UE5 開發遊戲，Blender 製作與修整模型**。先沿用現有素材建立第三人稱小鎮行走原型，暫停擴增建模清單。第一批匯入來源與驗收步驟見 [UE5 起步清單](Unreal/README.md)。UE 5.8.3 的 TownPrototype_02 已恢復民宅配色，重新載入及基本 PIE 移動／碰撞檢查通過；鍵鼠、鏡頭、效能與完整小鎮仍待驗收；下方美術準備與 Unity 內容保留作歷史紀錄。
+
+## 2026-10-18 畫風修整
+
+[小鎮畫風修整圖庫](ArtLibrary/ExpansionBatches/TownRefinement12/index.html)：18 項 Claude 素材沿用既有宗門畫風，各有 10 張新角度圖；小鎮另存 [TownLayout v004](Models/TownLayout/v004/TownLayout_v004.blend)。目前 84 組素材／840 張基本角度圖。本輪模型、圖片、來源與驗證報告納入 `solid-clouds-karst-peaks` 分支；請用下方 Git LFS 指令取得完整檔案。舊的交接壓縮包不含本輪成果，詳見 [HANDOFF.md](HANDOFF.md)。
+
 
 宗門、山景、登山步道與生活道具的 Blender 素材專案。模型、圖片、影片與 ZIP 交付包使用 Git LFS 管理。
 
-目前素材庫有 **60 組模型、600 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
+目前素材庫有 **84 組模型、840 張基本角度圖、3 個配置場景**。每組獨立素材至少有十個方位與角度；另有 4 秒山風與雲霧動態預覽。
 
 - 最新登山路線：`ArtLibrary/ExpansionBatches/MountainRoute08/`。
-- 山頂宗門與登山步道：`Models/MountainSanctuary/v002/`。
-- 山風與雲霧：`Effects/WindFog/v001/`。
+- 最新山頂宗門場景：`Models/MountainSanctuary/v004/`（實體雲與新版山峰）；v002 登山步道版本保留。
+- 最新山風與雲霧：`Effects/WindFog/v002/`（實體雲漂移）；v001 體積霧版本保留。
 - 模型屬於可編輯外觀原型；引擎碰撞、導航、UV 烘焙與 LOD 尚未完成。
+
+## Claude Code 交接
+
+先讀 `CLAUDE.md`、`HANDOFF.md`，再執行 `python3 Tools/Handoff/verify_project.py`。最新內容在 `solid-clouds-karst-peaks` 分支；GitHub 預設 `main` 尚未合併這些更新。目前請透過 Git clone 與 Git LFS 取得完整專案；新版 GitHub Release 分卷包尚未發布。打包規格在 `Tools/Handoff/README.md`。
 
 ## 下載完整模型與圖片
 
@@ -15,7 +32,7 @@
 
 ```sh
 git lfs install
-git clone https://github.com/joshsu54/dondon.git
+git clone --branch solid-clouds-karst-peaks https://github.com/joshsu54/dondon.git
 cd dondon
 git lfs pull
 ```
@@ -110,3 +127,11 @@ Esc 不會暫停世界時間。切換到其他視窗後也會釋放游標，回�
 
 - [Unity CharacterController.Move 官方文件](https://docs.unity.com/en-us/engine/6000.0/script-reference/unityengine/charactercontroller/move)：移動與碰撞由 CharacterController 處理；程式另外計算重力。
 - [Unity Input System 安裝與輸入後端文件](https://github.com/Unity-Technologies/InputSystem/blob/develop/Packages/com.unity.inputsystem/Documentation~/Installation.md)：依輸入後端的編譯符號選擇輸入路徑。
+
+## 山水環境 09（2026-10-16）
+
+新增山崖瀑布、彎曲山溪、靈泉水潭，共 3 組模型及 30 張同模型角度圖。可編輯 Blender、靜態 FBX、十視圖與驗證紀錄位於 ArtLibrary/ExpansionBatches/MountainWaters09。目前索引共 66 組、660 張基本角度圖；本批水流為靜態幾何，未製作流體動畫或引擎水材質。
+
+## 山路設施 10（2026-10-16）
+
+新增六角休憩亭、拱形石橋、獨立石欄杆，共 3 組模型及 30 張同模型角度圖。可編輯 Blender、靜態 FBX、十視圖與驗證紀錄位於 ArtLibrary/ExpansionBatches/MountainWayside10。目前索引共 66 組、660 張基本角度圖；新增模型為外觀原型，尚待場景安裝、引擎碰撞與導航驗證。

@@ -1,13 +1,13 @@
 {
   "updated": "2026-10-16",
-  "model_asset_sets": 60,
-  "consistent_turnaround_images": 600,
+  "model_asset_sets": 66,
+  "consistent_turnaround_images": 660,
   "assembled_scenes": 3,
   "effect_previews": 1,
   "link_checks": [
     {
       "page": "index.html",
-      "local_links": 1404,
+      "local_links": 1410,
       "missing": []
     },
     {
@@ -48,6 +48,16 @@
     {
       "page": "ExpansionBatches/MountainRoute08/index.html",
       "local_links": 127,
+      "missing": []
+    },
+    {
+      "page": "ExpansionBatches/MountainWaters09/index.html",
+      "local_links": 72,
+      "missing": []
+    },
+    {
+      "page": "ExpansionBatches/MountainWayside10/index.html",
+      "local_links": 73,
       "missing": []
     }
   ],
