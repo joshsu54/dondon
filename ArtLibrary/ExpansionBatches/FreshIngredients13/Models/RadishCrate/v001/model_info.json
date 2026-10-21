@@ -1,0 +1,29 @@
+{
+  "asset": "RadishCrate",
+  "name_zh": "蘿蔔木箱",
+  "batch": "FreshIngredients13",
+  "stage": "appearance_prototype",
+  "description": "StreetProps11 crate without its lid, filled with white radishes and a few carrots.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.751,
+    0.4883,
+    0.6076
+  ],
+  "mesh_objects": 76,
+  "design_sheet": "DesignSheets/RadishCrate_design.png",
+  "spec": {
+    "radishes": 10,
+    "radish_len": 0.32,
+    "radish_r": 0.035,
+    "carrots": 3
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

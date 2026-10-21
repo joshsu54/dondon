@@ -1,0 +1,148 @@
+[
+  {
+    "asset": "RiceSack",
+    "name_zh": "米袋",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.4444,
+      0.4457,
+      0.7476
+    ],
+    "spec_size_checked": true,
+    "meshes": 6,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "CuredMeatRack",
+    "name_zh": "臘肉吊架",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.98,
+      0.4431,
+      0.9591
+    ],
+    "spec_size_checked": true,
+    "meshes": 50,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 5.960464477539063e-08,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "RadishCrate",
+    "name_zh": "蘿蔔木箱",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.751,
+      0.4883,
+      0.6076
+    ],
+    "container": "WoodenCrate",
+    "container_scale": [
+      1,
+      1,
+      1
+    ],
+    "container_meshes": 17,
+    "item_meshes": 59,
+    "items_inside_container_checked": true,
+    "meshes": 76,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "VegetableBasket",
+    "name_zh": "蔬菜籃",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.4553,
+      0.4491,
+      0.2329
+    ],
+    "container": "BambooBasket",
+    "container_scale": [
+      1.05,
+      1.05,
+      0.4
+    ],
+    "container_meshes": 33,
+    "item_meshes": 43,
+    "items_inside_container_checked": true,
+    "meshes": 76,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "EggBasket",
+    "name_zh": "蛋籃",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.2688,
+      0.2652,
+      0.1651
+    ],
+    "container": "BambooBasket",
+    "container_scale": [
+      0.62,
+      0.62,
+      0.3
+    ],
+    "container_meshes": 33,
+    "item_meshes": 50,
+    "items_inside_container_checked": true,
+    "meshes": 83,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 0.0,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  },
+  {
+    "asset": "FishTub",
+    "name_zh": "鮮魚木盆",
+    "blend_reopened": true,
+    "bottom_center_pivot_checked": true,
+    "dimensions_m": [
+      0.561,
+      0.561,
+      0.195
+    ],
+    "container": "WellBucket",
+    "container_scale": [
+      1.7,
+      1.7,
+      0.65
+    ],
+    "container_meshes": 17,
+    "item_meshes": 19,
+    "items_inside_container_checked": true,
+    "meshes": 36,
+    "extra_views": [],
+    "fbx_reimported": true,
+    "fbx_no_studio_objects": true,
+    "fbx_dimension_error_m": 2.9802322387695312e-08,
+    "ten_view_files_present": true,
+    "design_sheet_present": true
+  }
+]

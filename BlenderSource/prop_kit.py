@@ -167,3 +167,61 @@ def build_all(ROOT, BUILDERS, NAMES, DETAILS, SPECS, batch, materials, ids=None,
         (refs / 'views.json').write_text(json.dumps({'asset': aid, 'source': f'Models/{aid}/v001/{aid}_v001.blend', 'same_geometry': True,
                                                      'views': records, 'extra_views': extras}, indent=2))
         print('ASSET_COMPLETE', aid, flush=True)
+
+
+# ---------------------------------------------------------------- shared helpers for container-based items (from FoodDishes12 on)
+def container(project, spec, prefix_note='StreetProps11/KitchenWare09'):
+    """Append an existing asset's meshes under a Container_<asset> empty (scaled per spec); spec = (asset, scale, skip prefixes)."""
+    from mathutils import Matrix
+    aid, scale, skip = spec
+    src = project / 'Models' / aid / 'v001' / f'{aid}_v001.blend'
+    with bpy.data.libraries.load(str(src), link=False) as (s, d):
+        d.objects = [n for n in s.objects if not n.startswith(tuple(skip) + (aid + '_ROOT', 'Reference_Camera', 'Key', 'Fill', 'Rim'))]
+    ce = bpy.data.objects.new(f'Container_{aid}', None); assets.objects.link(ce); ce.parent = root; ce.scale = scale
+    ce['source'] = str(src.relative_to(project)); ce['note'] = f'{prefix_note} container copy; edit the source asset for shared changes.'
+    for o in d.objects:
+        if o is None or o.type != 'MESH': continue
+        assets.objects.link(o); o.parent = ce; o.matrix_parent_inverse = Matrix.Identity(4)
+    for o in list(bpy.data.objects):
+        if o.name.startswith(aid + '_ROOT'): bpy.data.objects.remove(o)
+    if len({round(v, 6) for v in scale}) > 1:
+        # Non-uniform scale over rotated children is a shear FBX cannot store; bake it into the mesh data instead.
+        S = Matrix.Diagonal((*scale, 1))
+        for o in ce.children:
+            o.data = o.data.copy(); o.data.transform(S @ o.matrix_basis); o.matrix_basis = Matrix.Identity(4)
+        ce.scale = (1, 1, 1); ce['baked_scale'] = list(scale)
+    return scale
+
+
+def tube(name, pts, r, m, res=2):
+    """Polyline tube (curve with bevel, converted to mesh)."""
+    cu = bpy.data.curves.new(name, 'CURVE'); cu.dimensions = '3D'; cu.bevel_depth = r; cu.bevel_resolution = res
+    sp = cu.splines.new('POLY'); sp.points.add(len(pts) - 1)
+    for p, co in zip(sp.points, pts): p.co = (*co, 1)
+    o = bpy.data.objects.new(name, cu); bpy.context.scene.collection.objects.link(o)
+    bpy.ops.object.select_all(action='DESELECT'); bpy.context.view_layer.objects.active = o; o.select_set(True)
+    bpy.ops.object.convert(target='MESH'); o.select_set(False)
+    return place(o, name, m, smooth=True)
+
+
+def dome(name, r, h, m, p, segs=48, power=.8):
+    prof = [(r * math.cos(a), h * math.sin(a) ** power) for a in [i * math.pi / 2 / 12 for i in range(13)]]
+    return lathe(name, [(0, 0)] + prof, m, p, segs)
+
+
+def ellipsoid(name, p, radii, m, rot=(0, 0, 0), segs=24):
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=segs, ring_count=segs // 2, radius=1, location=p)
+    o = place(bpy.context.object, name, m, smooth=True); o.scale = radii; o.rotation_euler = rot; return o
+
+
+def leaf(name, p, ang, length, width, lift, m, curl=.25, pitch=0.0):
+    """Curved oval leaf from p along heading `ang`; tip lifted by `lift`, optional extra upward pitch per unit length."""
+    v = []; nu, nv = 7, 4
+    for i in range(nu + 1):
+        t = i / nu; w = width * math.sin(math.pi * t) ** .8
+        for j in range(nv + 1):
+            s = (j / nv - .5) * 2
+            x, y, z = length * t, s * w / 2, lift * t ** 1.5 + curl * w * s * s + pitch * length * t
+            v.append((p[0] + x * math.cos(ang) - y * math.sin(ang), p[1] + x * math.sin(ang) + y * math.cos(ang), p[2] + z))
+    f = [(i * (nv + 1) + j, i * (nv + 1) + j + 1, (i + 1) * (nv + 1) + j + 1, (i + 1) * (nv + 1) + j) for i in range(nu) for j in range(nv)]
+    o = mesh(name, v, f, m, smooth=True); o.modifiers.new('Leaf_Thickness', 'SOLIDIFY').thickness = .0015; return o

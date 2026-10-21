@@ -1,0 +1,28 @@
+{
+  "asset": "FishTub",
+  "name_zh": "鮮魚木盆",
+  "batch": "FreshIngredients13",
+  "stage": "appearance_prototype",
+  "description": "StreetProps11 stave bucket widened into a shallow tub (no bail) with water and three live fish.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.561,
+    0.561,
+    0.195
+  ],
+  "mesh_objects": 36,
+  "design_sheet": "DesignSheets/FishTub_design.png",
+  "spec": {
+    "water_z": 0.145,
+    "fish": 3,
+    "fish_len": 0.17
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

@@ -1,0 +1,158 @@
+{
+  "asset": "RiceSack",
+  "source": "Models/RiceSack/v001/RiceSack_v001.blend",
+  "same_geometry": true,
+  "views": [
+    {
+      "file": "01_front.png",
+      "camera_location": [
+        0.0,
+        -2.9317,
+        0.3738
+      ],
+      "direction": [
+        0,
+        -1,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "02_right.png",
+      "camera_location": [
+        2.9317,
+        0.0,
+        0.3738
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "03_rear.png",
+      "camera_location": [
+        0.0,
+        2.9317,
+        0.3738
+      ],
+      "direction": [
+        0,
+        1,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "04_left.png",
+      "camera_location": [
+        -2.9317,
+        0.0,
+        0.3738
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "05_front_right.png",
+      "camera_location": [
+        1.9755,
+        -1.9755,
+        1.2628
+      ],
+      "direction": [
+        1,
+        -1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "06_rear_right.png",
+      "camera_location": [
+        1.9755,
+        1.9755,
+        1.2628
+      ],
+      "direction": [
+        1,
+        1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "07_rear_left.png",
+      "camera_location": [
+        -1.9755,
+        1.9755,
+        1.2628
+      ],
+      "direction": [
+        -1,
+        1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "08_front_left.png",
+      "camera_location": [
+        -1.9755,
+        -1.9755,
+        1.2628
+      ],
+      "direction": [
+        -1,
+        -1,
+        0.45
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "09_top.png",
+      "camera_location": [
+        0.0,
+        0.0,
+        3.3055
+      ],
+      "direction": [
+        0,
+        0,
+        1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    },
+    {
+      "file": "10_high_front.png",
+      "camera_location": [
+        0.0,
+        -2.0731,
+        2.4469
+      ],
+      "direction": [
+        0,
+        -1,
+        1
+      ],
+      "projection": "orthographic",
+      "framing_checked": true
+    }
+  ],
+  "extra_views": []
+}

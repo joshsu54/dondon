@@ -1,0 +1,31 @@
+{
+  "asset": "RiceSack",
+  "name_zh": "米袋",
+  "batch": "FreshIngredients13",
+  "stage": "appearance_prototype",
+  "description": "Hemp rice sack with wrinkled sides, rolled-down cuff, visible rice and a wooden scoop.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.4444,
+    0.4457,
+    0.7476
+  ],
+  "mesh_objects": 6,
+  "design_sheet": "DesignSheets/RiceSack_design.png",
+  "spec": {
+    "base_r": 0.19,
+    "belly_r": 0.22,
+    "neck_r": 0.17,
+    "h": 0.55,
+    "cuff_r": 0.185,
+    "rice_top": 0.6
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

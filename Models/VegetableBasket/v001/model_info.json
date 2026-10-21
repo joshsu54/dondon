@@ -1,0 +1,28 @@
+{
+  "asset": "VegetableBasket",
+  "name_zh": "蔬菜籃",
+  "batch": "FreshIngredients13",
+  "stage": "appearance_prototype",
+  "description": "StreetProps11 bamboo basket cut down to a shallow basket (no straps) holding napa cabbage, carrots and scallions.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.4553,
+    0.4491,
+    0.2329
+  ],
+  "mesh_objects": 76,
+  "design_sheet": "DesignSheets/VegetableBasket_design.png",
+  "spec": {
+    "cabbages": 2,
+    "carrots": 4,
+    "scallion_bundle": 1
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

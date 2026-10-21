@@ -1,13 +1,13 @@
 {
-  "updated": "2026-10-19",
-  "model_asset_sets": 81,
-  "consistent_turnaround_images": 810,
+  "updated": "2026-10-21",
+  "model_asset_sets": 87,
+  "consistent_turnaround_images": 870,
   "assembled_scenes": 3,
   "effect_previews": 1,
   "link_checks": [
     {
       "page": "index.html",
-      "local_links": 1960,
+      "local_links": 2105,
       "missing": []
     },
     {
@@ -68,6 +68,11 @@
     {
       "page": "ExpansionBatches/FoodDishes12/index.html",
       "local_links": 152,
+      "missing": []
+    },
+    {
+      "page": "ExpansionBatches/FreshIngredients13/index.html",
+      "local_links": 151,
       "missing": []
     }
   ],

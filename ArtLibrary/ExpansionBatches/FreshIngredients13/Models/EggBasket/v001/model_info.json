@@ -1,0 +1,30 @@
+{
+  "asset": "EggBasket",
+  "name_zh": "蛋籃",
+  "batch": "FreshIngredients13",
+  "stage": "appearance_prototype",
+  "description": "Small shallow bamboo basket with a straw lining and a heap of eggs.",
+  "units": "meters",
+  "front": "-Y",
+  "origin": "bottom centre",
+  "dimensions_m": [
+    0.2688,
+    0.2652,
+    0.1651
+  ],
+  "mesh_objects": 83,
+  "design_sheet": "DesignSheets/EggBasket_design.png",
+  "spec": {
+    "eggs": 14,
+    "egg": [
+      0.021,
+      0.029
+    ]
+  },
+  "blender_version": "5.2.2 LTS",
+  "modeling_method": "procedural editable mesh built from the batch spec file; views rendered from the same model",
+  "uv_baked": false,
+  "collision": false,
+  "lod": false,
+  "unreal_import_verified": false
+}

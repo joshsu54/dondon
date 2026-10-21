@@ -1,0 +1,76 @@
+{
+  "batch": "FreshIngredients13",
+  "created": "2026-10-21",
+  "new_asset_sets": 6,
+  "new_views": 60,
+  "extra_detail_views": 0,
+  "design_sheets": 6,
+  "new_assets": [
+    {
+      "asset": "RiceSack",
+      "name_zh": "米袋",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.4444,
+        0.4457,
+        0.7476
+      ]
+    },
+    {
+      "asset": "CuredMeatRack",
+      "name_zh": "臘肉吊架",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.98,
+        0.4431,
+        0.9591
+      ]
+    },
+    {
+      "asset": "RadishCrate",
+      "name_zh": "蘿蔔木箱",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.751,
+        0.4883,
+        0.6076
+      ]
+    },
+    {
+      "asset": "VegetableBasket",
+      "name_zh": "蔬菜籃",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.4553,
+        0.4491,
+        0.2329
+      ]
+    },
+    {
+      "asset": "EggBasket",
+      "name_zh": "蛋籃",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.2688,
+        0.2652,
+        0.1651
+      ]
+    },
+    {
+      "asset": "FishTub",
+      "name_zh": "鮮魚木盆",
+      "views": 10,
+      "extra_views": [],
+      "dimensions_m": [
+        0.561,
+        0.561,
+        0.195
+      ]
+    }
+  ]
+}
