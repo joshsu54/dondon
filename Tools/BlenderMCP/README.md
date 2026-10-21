@@ -9,7 +9,16 @@ sh Tools/BlenderMCP/install_claude_code.sh
 # 若找不到 Blender：sh Tools/BlenderMCP/install_claude_code.sh "/Applications/Blender.app/Contents/MacOS/Blender"
 ```
 
-腳本依序完成三件事：
+**Windows 桌機**（在專案根目錄開 PowerShell）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File Tools\BlenderMCP\install_claude_code.ps1
+# 找不到 Blender 時：... -Blender "C:\Program Files\Blender Foundation\Blender 5.3\blender.exe"
+```
+
+Windows 版不經過 `start-mcp`（那是 macOS／Linux 用的 shell 腳本），會直接註冊 `.venv\Scripts\mcp-for-blender.exe`，並帶入同樣的環境變數。此版本只做過 PowerShell 7.4 語法檢查，尚未在 Windows 實機執行。
+
+兩個腳本都依序完成三件事：
 1. 在 `Tools/BlenderMCP/.venv` 建立 Python 環境，並依 `requirements.lock.txt` 安裝鎖定版本的 `mcp-for-blender==2.1.9`（有 `uv` 用 `uv`，否則用 `python3 -m venv`）。已存在的環境會直接沿用。
 2. 用 Blender 背景模式執行 `install_blender_addon.py`，安裝並啟用外掛。原有的外掛檔與 `userpref.blend` 會先備份成 `.bak`，並維持遙測關閉。
 3. 以 `claude mcp add blender --scope local` 向 Claude Code 註冊。設定只存在這台電腦的這個專案，不會寫進版本庫。
