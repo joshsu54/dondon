@@ -18,6 +18,15 @@ powershell -ExecutionPolicy Bypass -File Tools\BlenderMCP\install_claude_code.ps
 
 Windows 版不經過 `start-mcp`（那是 macOS／Linux 用的 shell 腳本），會直接註冊 `.venv\Scripts\mcp-for-blender.exe`，並帶入同樣的環境變數。此版本只做過 PowerShell 7.4 語法檢查，尚未在 Windows 實機執行。
 
+**已在 Windows 桌機驗證可用的註冊方式**（2026-10-22，Blender 5.2.2）：外掛用 Preferences → Add-ons → Install from Disk 安裝 `addon/blender_mcp.py`，再在專案資料夾執行
+
+```bat
+claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- uvx mcp-for-blender==2.1.9
+claude mcp list
+```
+
+`claude mcp list` 顯示 `blender ... √ Connected` 即完成。Windows 版腳本現在預設也用這個 uvx 指令註冊。
+
 兩個腳本都依序完成三件事：
 1. 在 `Tools/BlenderMCP/.venv` 建立 Python 環境，並依 `requirements.lock.txt` 安裝鎖定版本的 `mcp-for-blender==2.1.9`（有 `uv` 用 `uv`，否則用 `python3 -m venv`）。已存在的環境會直接沿用。
 2. 用 Blender 背景模式執行 `install_blender_addon.py`，安裝並啟用外掛。原有的外掛檔與 `userpref.blend` 會先備份成 `.bak`，並維持遙測關閉。

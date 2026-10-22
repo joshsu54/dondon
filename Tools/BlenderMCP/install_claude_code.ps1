@@ -59,13 +59,18 @@ if ($NoClaude) {
     try {
         claude mcp remove blender --scope local *> $null      # fine if it was not registered yet
         # start-mcp is a POSIX script; on Windows call the server directly with the same environment.
-        claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- $Server
+        # Prefer uvx with the pinned version (verified on a Windows desktop, 2026-10-22); fall back to the venv executable.
+        if (Get-Command uvx -ErrorAction SilentlyContinue) {
+            claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- uvx mcp-for-blender==2.1.9
+        } else {
+            claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- $Server
+        }
         if ($LASTEXITCODE -ne 0) { throw 'claude mcp add failed' }
         claude mcp list 2>$null | Select-String -Pattern blender
     } finally { Pop-Location }
 } else {
     Write-Host "claude CLI not found. Install Claude Code, then run in ${Repo}:"
-    Write-Host "  claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- `"$Server`""
+    Write-Host "  claude mcp add blender --scope local -e DISABLE_TELEMETRY=true -e BLENDER_HOST=127.0.0.1 -e BLENDER_PORT=9876 -- uvx mcp-for-blender==2.1.9"
 }
 
 Say 'Done'
