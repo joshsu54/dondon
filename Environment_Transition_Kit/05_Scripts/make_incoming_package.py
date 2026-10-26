@@ -8,7 +8,8 @@ files would break relative paths: every .blend links its textures as //../03_Tex
 folder layout inside v001/.  Copied: 00_References, 01_Blender, 02_Exports, 03_Textures, 04_Previews, 05_Scripts,
 06_Reports and README.md.  Not copied: _work/ (local scratch) and __pycache__.  By default the per-module previews
 in 04_Previews/Individual are written at 512 px (as the receiving repo's other hand-offs do) to keep Git LFS small;
---full-previews copies the 1024 px originals.  Writes SOURCE.json (source repo, commit, SHA-256 of every source
+--full-previews copies the 1024 px originals.  CSV files written with CRLF are stored with LF line endings (the receiving
+repository normalises text files), and SOURCE.json says so.  Writes SOURCE.json (source repo, commit, SHA-256 of every source
 file and whether the copy is byte-identical), package-level model_info.json and validation.json (gathered from
 the per-module records and 06_Reports/qa, no new measurements) and README.md (hand-off notes).  Run check_incoming.py with Blender
 afterwards to write handoff_check.json.  Refuses to write into an existing folder.
@@ -48,12 +49,16 @@ def main():
             if not p.is_file() or '__pycache__' in p.parts: continue
             rel = p.relative_to(KIT); out = dest / rel; out.parent.mkdir(parents=True, exist_ok=True)
             small = (not full) and rel.parts[:2] == ('04_Previews', 'Individual') and p.suffix == '.png'
+            crlf = p.suffix == '.csv' and b'\r\n' in p.read_bytes()     # receiving repo has * text=auto: store LF so hashes stay valid
             if small:
                 im = Image.open(p); im.thumbnail((512, 512), Image.LANCZOS); im.save(out, optimize=True)
+            elif crlf:
+                out.write_bytes(p.read_bytes().replace(b'\r\n', b'\n'))
             else:
                 shutil.copy2(p, out)
             files.append({'path': str(rel), 'bytes': p.stat().st_size, 'sha256': sha(p),
-                          'copy': 'resized to 512 px' if small else ('identical' if sha(out) == sha(p) else 'DIFFERENT')})
+                          'copy': 'resized to 512 px' if small else 'CRLF line endings changed to LF' if crlf else
+                                  ('identical' if sha(out) == sha(p) else 'DIFFERENT')})
     bad = [f['path'] for f in files if f['copy'] == 'DIFFERENT']
     if bad: raise SystemExit('copy mismatch: %s' % bad[:5])
     source = {'source_repository': 'https://github.com/joshsu54/dondon', 'source_branch': git('rev-parse', '--abbrev-ref', 'HEAD'),
