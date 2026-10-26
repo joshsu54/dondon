@@ -1,6 +1,6 @@
 # Environment Transition Kit v01｜半寫實仙俠環境收邊模組包
 
-這是 29 件可以重複拼接的獨立收邊模組：道路不規則收邊（A 類，11 件）、河岸自然收邊（B 類，10 件）、橋頭與地形交接收邊（C 類，8 件）。依《Claude 專用完整任務書｜半寫實仙俠環境收邊模組包》製作。
+這是 29 件可以重複拼接的獨立收邊模組：道路不規則收邊（A 類，11 件）、河岸自然收邊（B 類，10 件）、橋頭與地形交接收邊（C 類，8 件）。另依後續要求加做 **D02 木造梁橋**（以及先做的 D01 獨木橋，保留為可選件），兩者都能直接擱在兩岸橋頭石基上。依《Claude 專用完整任務書｜半寫實仙俠環境收邊模組包》製作。
 
 **受保護資產：未修改。** 本環境中沒有樹伴古樹、山兔或主世界的 `.blend`，本專案也不讀取、連結或改動它們。所有檔案只寫在本資料夾內（交付前已用唯讀方式複查，見 `06_Reports/PHASE6_ProtectedAssetRecheck.json`）。
 
@@ -11,6 +11,7 @@
 | 拼起來的樣子（有中文標註） | `04_Previews/Showcase/showcase_v01_hero_labels.png`、`_bridgehead_labels.png`、`_river_labels.png` |
 | 接縫有沒有裂縫（近距離特寫） | `04_Previews/Showcase/showcase_v01_seam_*_labels.png` |
 | 29 件一覽 | `04_Previews/Sheets/Sheet_A_RoadEdge.png`、`Sheet_B_Riverbank.png`、`Sheet_C_Bridgehead.png` |
+| 木橋 | `04_Previews/Sheets/Sheet_D_TimberBridge.png`、`04_Previews/Individual/D02_SM_Bridge_Timber_A/` |
 | 每件 11 個角度 | `04_Previews/Individual/<編號>_<ID>/`，或用瀏覽器開 `04_Previews/index.html` |
 | 檢查結果（白話＋數字） | `06_Reports/QA_Report.md` |
 | 引擎匯入 | `06_Reports/README_Integration.md` |
@@ -19,9 +20,10 @@
 
 ```
 00_References/   REF_A–F（模組總表、正交工程圖、接頭工程圖、材質）、29 張設計三視圖
-01_Blender/      road_edge_modules_v01.blend、riverbank_modules_v01.blend、bridgehead_modules_v01.blend
+01_Blender/      road_edge_modules_v01.blend、riverbank_modules_v01.blend、bridgehead_modules_v01.blend、
+                 timber_bridge_v01.blend（D02）、log_bridge_v01.blend（D01）
                  （每件一個 Collection；含 LOD0/1/2、細節、碰撞代理、測試物件 COL_TEST_Only）
-02_Exports/      RoadEdge/ 11、Riverbank/ 10、Bridgehead/ 8 個 FBX；_TestHelpers/ 尺度與拼接測試用
+02_Exports/      RoadEdge/ 11、Riverbank/ 10、Bridgehead/ 8 個 FBX；Bridge/ 木橋與獨木橋；_TestHelpers/ 尺度與拼接測試用
 03_Textures/     共用 PBR 貼圖（1024²，可無縫平鋪）、草片、混合雜訊、水面波紋法線
 04_Previews/     Individual（每件 10 正交＋1 透視、views/model_info/validation.json）、Sheets、
                  AssemblyTests（自動檢查用拼裝）、Showcase（展示場景與接縫特寫）、Materials、index.html
@@ -35,7 +37,7 @@
 - 公尺、Z 向上、模組行進方向 +X、+Y 為行進方向左側、地面 Z = 0。
 - 道路：路面 3.00 m＋兩側 0.75 m 收邊帶；直線 4 m；彎道中心線弧長 4 m（15°、30°）。
 - 河岸：陸地 1 m、岸線、往水側 2 m 到坡腳 -1.00 m；測試水位 -0.80 m；陸地在行進方向左側。
-- 橋頭：2 m 緩坡升到測試橋面 +0.15 m（寬 3 m）；不製作橋梁本體。
+- 橋頭：2 m 緩坡升到橋面 +0.15 m（寬 3 m）。任務書原本不做橋梁本體；D02 木橋是使用者後續要求加做。
 - 接頭誤差目標 ≤ 1 mm（實測見 QA 報告）。所有數值的唯一來源是 `05_Scripts/kit_spec.py`；其他假設見 `06_Reports/ASSUMPTIONS.md`。
 
 ## 重新產生

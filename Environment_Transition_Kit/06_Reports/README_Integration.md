@@ -84,6 +84,13 @@ for layer, channel in [(PathGravel, B), (WetSoil, R), (Grass, G), (Moss, A)]:
 - 大量重複時共用同一組材質，開 GPU Instancing（Unity）或使用 Instanced Static Mesh／HISM（Unreal）。
 - 手機：可隱藏 `_DET_*` 子物件；LOD2 已不含細節。
 
-## 7. 不在本套件內
+## 7. 木橋（D02，後續新增）
 
-- 正式橋梁本體、永久水面、主世界場景／Prefab／Level 的修改。本套件只交付獨立模組。
+- `02_Exports/Bridge/SM_Bridge_Timber_A.fbx`：Pivot 在入口端橋面頂中心；放進橋頭座標系時平移 (2, 0, +0.15)，跨到對岸轉 180° 的橋頭（兩橋頭座標原點相距 14 m）。
+- 物件：`_LOD0`（橋面板、主梁、欄杆、木排架）、`_LOD1`（整片橋面＋兩根主梁＋簡化欄杆與橋墩）、`_LOD2`（方塊組）、`_COL`（橋面＋兩側欄杆牆，防止角色掉落）。
+- 材質：`M_Timber`（`T_Timber_*`）、`M_Bark`（`T_Bark_*`，圓木樁）、`M_EndGrain`（`T_EndGrain_*`，鋸斷面；這組貼圖以 UV 中心為年輪中心，不可平鋪）。
+- 另有 D01 獨木橋 `SM_Bridge_Log_A.fbx`，放置方式相同，行走面寬 0.33–0.39 m。
+
+## 8. 不在本套件內
+
+- 永久水面、主世界場景／Prefab／Level 的修改。本套件只交付獨立模組。

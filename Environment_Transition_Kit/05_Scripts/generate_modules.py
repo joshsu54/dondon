@@ -313,7 +313,7 @@ def masonry(rng, final):
         KB.block(P, ((K.RAMP_L + K.BASE_FACE_X) / 2, 0.0, -0.30), (K.BASE_FACE_X - K.RAMP_L, 2 * K.DECK_HALF, 0.5), mat=0)
         return P, None
     L1 = KB.Parts(); x0, x1 = K.RAMP_L, K.BASE_FACE_X; depth = x1 - x0
-    KB.block(P, ((x0 + x1) / 2 - 0.02, 0.0, -0.30), (depth - 0.04, 2 * K.DECK_HALF - 0.04, 0.49), mat=0)   # mortar core seen in the joints
+    KB.block(P, ((x0 + x1) / 2 + 0.005, 0.0, -0.30), (depth - 0.07, 2 * K.DECK_HALF - 0.04, 0.49), mat=0)   # mortar core seen in the joints, recessed 4 cm from the back and 3 cm from the front so no face is coplanar with a stone
     for zc, hgt, widths in ((-0.175, 0.25, (0.62, 0.55, 0.70, 0.48, 0.65)), (-0.425, 0.25, (0.45, 0.66, 0.58, 0.72, 0.59))):
         y = -K.DECK_HALF
         for w in widths:

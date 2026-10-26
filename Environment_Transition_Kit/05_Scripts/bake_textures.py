@@ -261,7 +261,23 @@ def endgrain(nb):
     return col, rough, h, 0.7
 
 
-RECIPES = {'DrySoil': drysoil, 'WetSoil': wetsoil, 'Grass': grass, 'Moss': moss, 'Rock': rock, 'PathGravel': pathgravel, 'Water': water, 'Bark': bark, 'Wood': wood, 'EndGrain': endgrain}
+def timber(nb):
+    """Warm sawn timber for the D02 bridge (planks, beams, posts): grain along U, slight weathering, knots."""
+    t = nb.torus(); tg = nb.torus(ru=0.45, rv=6.0)
+    g = st(nb, nb.noise4(tg, 3.2, 6, 0.6, distortion=0.35)[0])
+    col = nb.ramp(g, [(0.0, (0.140, 0.082, 0.044)), (0.5, (0.215, 0.135, 0.075)), (1.0, (0.300, 0.200, 0.115))])
+    col = over(nb, col, nb.maprange(st(nb, nb.noise4(t, 0.9, 3, 0.5)[0]), 0.6, 1.0), (0.235, 0.205, 0.165), 0.3)    # light weathering
+    knot_d, _ = cells(nb, nb.torus(ru=1.0, rv=1.6), 2.2); knot = nb.maprange(knot_d, 0.0, 0.07, 1.0, 0.0, smooth=True)
+    col = over(nb, col, knot, (0.075, 0.042, 0.022), 0.8)
+    chk = cells(nb, tg, 5.0, 'DISTANCE_TO_EDGE')[0]
+    crack = F(nb, 'MULTIPLY', nb.maprange(chk, 0.0, 0.010, 1.0, 0.0), nb.maprange(nb.noise4(t, 2.0, 2, 0.5)[0], 0.58, 0.66))
+    col = over(nb, col, crack, (0.045, 0.028, 0.016), 0.85)
+    rough = nb.maprange(g, 0.0, 1.0, 0.62, 0.8)
+    h = F(nb, 'SUBTRACT', H(nb, (g, 0.35), (knot, 0.25)), F(nb, 'MULTIPLY', crack, 0.5))
+    return col, rough, h, 0.8
+
+
+RECIPES = {'DrySoil': drysoil, 'WetSoil': wetsoil, 'Grass': grass, 'Moss': moss, 'Rock': rock, 'PathGravel': pathgravel, 'Water': water, 'Bark': bark, 'Wood': wood, 'EndGrain': endgrain, 'Timber': timber}
 
 
 def bake_one(obj, mat, img, kind):

@@ -44,7 +44,8 @@ def sha256(p):
 def folder(m): return PREV / 'Individual' / ('%s_%s' % (m['code'], m['id']))
 
 
-EXTRA_DIR = PREV / 'Individual' / 'D01_SM_Bridge_Log_A'     # D01 log bridge, requested after the 29 modules
+EXTRA_DIR = PREV / 'Individual' / 'D02_SM_Bridge_Timber_A'  # D02 timber bridge, requested after the 29 modules
+LOG_DIR = PREV / 'Individual' / 'D01_SM_Bridge_Log_A'        # D01 single-log bridge (first, superseded attempt; kept as an option)
 
 
 def extra():
@@ -71,7 +72,7 @@ def load():
 def crop_check():
     """A view is 'cropped' if the model touches the picture edge: border pixels that differ from the background."""
     out = {}
-    mods = K.MODULES + ([{'code': 'D01', 'id': 'SM_Bridge_Log_A'}] if EXTRA_DIR.exists() else [])
+    mods = K.MODULES + [m for m, d in (({'code': 'D01', 'id': 'SM_Bridge_Log_A'}, LOG_DIR), ({'code': 'D02', 'id': 'SM_Bridge_Timber_A'}, EXTRA_DIR)) if d.exists()]
     for m in mods:
         res = {}
         for p in sorted(folder(m).glob('*.png')):
@@ -79,7 +80,8 @@ def crop_check():
             border = [px[x, y] for x in range(0, w, 2) for y in (0, 1, h - 2, h - 1)] + [px[x, y] for y in range(0, h, 2) for x in (0, 1, w - 2, w - 1)]
             ref = tuple(statistics.median(c[i] for c in border) for i in range(3))
             off = sum(1 for c in border if max(abs(c[i] - ref[i]) for i in range(3)) > 24) / len(border)
-            res[p.stem] = {'size': [w, h], 'border_pixels_off_background': round(off, 4), 'touches_edge': off > 0.002}
+            close = p.stem.startswith(('12_', '13_'))           # deliberate close-ups of the bridges: cropping is the point
+            res[p.stem] = {'size': [w, h], 'border_pixels_off_background': round(off, 4), 'touches_edge': off > 0.002 and not close, 'close_up': close}
         out[m['code']] = {'views': len(res), 'all_1024': all(v['size'] == [1024, 1024] for v in res.values()),
                           'touching_edge': [k for k, v in res.items() if v['touches_edge']], 'detail': res}
     return out
@@ -104,12 +106,12 @@ def sheets(D):
         im.save(new(PREV / 'Sheets' / name)); print('WROTE', rel(PREV / 'Sheets' / name))
     if extra():
         im = Image.new('RGB', (3 * 470 + 40, 470 + 190), (246, 244, 239)); d = ImageDraw.Draw(im)
-        d.text((24, 24), 'D01 獨木橋（29 件之外新增）　長 10 m，頂面削平可行走，兩端擱在 C05 石基上', font=font(30), fill=(25, 25, 25))
-        for i, (v, cap) in enumerate((('11_persp_45', '整根'), ('12_detail', '近看：樹皮、削平頂面、年輪、底部削口'), ('02_right', '端面'))):
+        d.text((24, 24), 'D02 木造梁橋（29 件之外新增）　跨距 10 m、橋面寬 3 m，兩端擱在 C05 石基上，河中央一座木排架', font=font(30), fill=(25, 25, 25))
+        for i, (v, cap) in enumerate((('11_persp_45', '整座'), ('12_detail', '近看：木板橋面、欄杆、端柱'), ('13_pier', '橋下：主梁、帽梁、圓木樁、斜撐'))):
             im.paste(Image.open(EXTRA_DIR / (v + '.png')).convert('RGB').resize((454, 454)), (20 + i * 470, 90))
             d.text((20 + i * 470, 552), cap, font=font(22), fill=(40, 40, 40))
-        im.save(new(PREV / 'Sheets' / 'Sheet_D_LogBridge.png')); print('WROTE', rel(PREV / 'Sheets' / 'Sheet_D_LogBridge.png'))
-    need = {k: (12 if k == 'D01' else 11) for k in crop}
+        im.save(new(PREV / 'Sheets' / 'Sheet_D_TimberBridge.png')); print('WROTE', rel(PREV / 'Sheets' / 'Sheet_D_TimberBridge.png'))
+    need = {k: {'D01': 12, 'D02': 13}.get(k, 11) for k in crop}
     bad = {k: v['touching_edge'] for k, v in crop.items() if v['touching_edge'] or v['views'] != need[k] or not v['all_1024']}
     print('CROP CHECK', 'all clear' if not bad else bad)
 
@@ -213,10 +215,11 @@ def manifest(D):
     if ex:
         mi, va = ex; g = va['geometry']
         L += ['## D 類｜後續新增（不在原 29 件內）', '', '| 編號 | 模組 ID | 名稱 | 外形 X×Y (m) | LOD0／LOD1／LOD2／COL 三角面 | 放置 | FBX |', '| --- | --- | --- | --- | --- | --- | --- |',
-              '| D01 | `%s` | %s | %.2f × %.2f | %s／%s／%s／%s | 橋頭座標系平移 (2, 0, +0.15)；接兩座相距 14 m 的橋頭 | `%s` |' % (
+              '| D02 | `%s` | %s | %.2f × %.2f | %s／%s／%s／%s | 橋頭座標系平移 (2, 0, +0.15)；接兩座相距 14 m 的橋頭 | `%s` |' % (
                   mi['id'], mi['name_zh'], mi['bounds_max_m'][0] - mi['bounds_min_m'][0], mi['bounds_max_m'][1] - mi['bounds_min_m'][1],
-                  format(g['tris']['SM_Bridge_Log_A_Log_LOD0'], ','), g['tris']['SM_Bridge_Log_A_Log_LOD1'], g['tris']['SM_Bridge_Log_A_Log_LOD2'], g['tris']['SM_Bridge_Log_A_COL'], mi['files']['fbx']),
-              '', '- **D01 獨木橋**：' + mi['purpose'] + '材質 M_Bark／M_Wood／M_EndGrain／M_Moss。檔案 `01_Blender/log_bridge_v01.blend`。', '']
+                  format(g['tris']['SM_Bridge_Timber_A_LOD0'], ','), g['tris']['SM_Bridge_Timber_A_LOD1'], g['tris']['SM_Bridge_Timber_A_LOD2'], g['tris']['SM_Bridge_Timber_A_COL'], mi['files']['fbx']),
+              '', '- **D02 木造梁橋**：' + mi['purpose'] + '材質 M_Timber／M_Bark／M_EndGrain。檔案 `01_Blender/timber_bridge_v01.blend`。',
+              '- D01 獨木橋（`01_Blender/log_bridge_v01.blend`、`02_Exports/Bridge/SM_Bridge_Log_A.fbx`）：先前做的單根原木橋，保留為可選件。', '']
     L += ['## 狀態', '', '全部 29 件：' + ('、'.join(sorted({r['status'] for r in rows}))) + '。', '',
           '## 測試輔助（不屬於 29 件，不在模組 FBX 內）', '', '- `02_Exports/_TestHelpers/TEST_RoadCore_3m.fbx`、`TEST_BridgeDeck_3m.fbx`、`TEST_ScaleCube_1m.fbx`：引擎內拼接測試與 1 m 尺度核對用。', '']
     new(REP / 'ASSET_MANIFEST.md').write_text('\n'.join(L), encoding='utf-8')
@@ -282,7 +285,7 @@ def qa_report(D, rows):
          '| 5 | C01 道路過渡到測試橋面是否平順 | C01 出口頂點高度與測試橋面頂 +0.15 m 比對 | 通過，最大 %s | pairs、`Showcase/showcase_v01_seam_deck_labels.png` |' % mm(pair('C01 exit on TEST_BridgeDeck')['max_position_error_m']),
          '| 5b | 橋頭左右細節是否互相穿插 | 每件細節不得越過自己的入口／出口面；橋頭 11 條內部接縫逐點比對 | 通過，細節最大越界 %s；內部接縫最大 %s | modules.details、pairs（C01/C02/C03/C04/C07/C08） |' % (mm(det_max), mm(max(p['max_position_error_m'] for p in q['pairs'] if p['pair'].startswith(('C0',))))),
          '| 6 | 接頭採樣點誤差 ≤ 1 mm | 29 件所有接頭：頂點數、頂點不多不少、位置、遮罩、法線 | %d/29 件通過，最大 %s | modules.connectors |' % (mods_pass, mm(con_max)),
-         '| 7 | 45° 斜視、頂視、側視檢查裂縫、Z-fighting、硬切紋理、陰影破綻 | 3 組拼裝場景各 3 視角＋展示場景 4 視角＋3 張接縫特寫，我逐張打開看過 | 未見裂縫、閃爍或接縫處光影斷開（說明見第 3 節） | `AssemblyTests/final_all29_*.png`、`Showcase/*_labels.png` |',
+         '| 7 | 45° 斜視、頂視、側視檢查裂縫、Z-fighting、硬切紋理、陰影破綻 | 3 組拼裝場景各 3 視角＋展示場景 5 視角＋3 張接縫特寫，我逐張打開看過 | 未見裂縫、閃爍或接縫處光影斷開（說明見第 3 節） | `AssemblyTests/final_all29_*.png`、`Showcase/*_labels.png` |',
          '| 8 | 拼接前後截圖與通過標記 | 單件 11 視角（拼接前）＋拼裝與特寫（拼接後），特寫圖上標出接縫位置與實測誤差 | 已產出 | `04_Previews/` |', '',
          '## 2. 每件數據', '',
          '| 編號 | 名稱 | LOD0 | LOD1 | LOD2 | COL | 預算 | 接頭 | 細節越界 | FBX 回匯 | 11 張預覽 |', '| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |']
@@ -301,7 +304,8 @@ def qa_report(D, rows):
           '- 3 個 `.blend`（每件一個 Collection；可直接開啟編輯）；生成腳本 `05_Scripts/generate_modules.py` 可重建。',
           '- 29 個模組 FBX（`02_Exports/`）：Blender 回匯檢查 %d/29 通過（`qa/fbx_reimport_v01.json`）。另有 3 個測試輔助 FBX（`02_Exports/_TestHelpers/`）。' % re_pass,
           '- 接頭、串接、配對、細節越界檢查：全部通過（`qa/final_all29.json`）。',
-          '- 6 組共用 PBR 貼圖＋混合雜訊（`03_Textures/`，1024²，2×2 平鋪檢查無接縫），材質參考 `00_References/REF_F_Materials.png`。',
+          '- 6 組共用 PBR 貼圖＋混合雜訊（`03_Textures/`，1024²，2×2 平鋪檢查無接縫），材質參考 `00_References/REF_F_Materials.png`；另有木橋用 Timber／Bark／EndGrain／Wood 與水面波紋法線。',
+          '- D02 木造梁橋（另有 D01 獨木橋）：`.blend`、FBX、預覽與自動檢查都通過，見第 6 節。',
           '- 每件 11 張 1024×1024 預覽＋`views.json`／`model_info.json`／`validation.json`（%d/29 件預覽未裁切）；分組總表 `04_Previews/Sheets/`；圖庫 `04_Previews/index.html`。' % views_ok,
           '- 拼裝場景、展示場景與接縫特寫（`04_Previews/AssemblyTests/`、`04_Previews/Showcase/`）。',
           '- 受保護資產唯讀複查：%s（`PHASE6_ProtectedAssetRecheck.json`）；本套件以外沒有任何檔案被修改。' % ('無變動' if D['protected']['unchanged'] else '有變動，需檢查'), '',
@@ -314,7 +318,7 @@ def qa_report(D, rows):
           '- 在目標引擎匯入 `_TestHelpers/TEST_ScaleCube_1m.fbx` 核對尺度，再匯入一組模組實測拼接。',
           '- 是否把本套件登錄到專案的 `ArtLibrary`／`Models/`（任務書限制只能寫入本資料夾，所以這次沒有登錄）。',
           '- 足跡、車轍等更細的路面敘事細節；手機端效能實測。', '',
-          '## 6. D01 獨木橋（後續新增，不在原 29 件內）', ''] + D01_SECTION(D) + ['',
+          '## 6. D02 木造梁橋（後續新增，不在原 29 件內）', ''] + D01_SECTION(D) + ['',
           '## 7. 證據檔案', '',
           '- `06_Reports/qa/final_all29.json`：接頭／串接／配對／細節越界／網格檢查（%d 件、%d 串、%d 對）。' % (len(q['modules']), len(q['chains']), len(q['pairs'])),
           '- `06_Reports/qa/fbx_export_*.json`、`fbx_reimport_v01.json`：FBX 匯出紀錄與回匯檢查。',
@@ -328,25 +332,29 @@ def D01_SECTION(D):
     ex = extra()
     if not ex: return ['- 未產生。']
     mi, va = ex; g = va['geometry']; ri = va['fbx_blender_reimport']; mm = lambda x: '%.4f mm' % (abs(x) * 1000)
-    return ['使用者在 29 件完成後要求新增。任務書原本不做橋梁本體，這件是依使用者後續指示加做的獨立資產。', '',
-            '| 檢查 | 結果 |', '| --- | --- |',
-            '| 行走面（削平頂面）平整度 | 最大偏差 %s；寬 %.2f–%.2f m |' % (mm(g['walk_strip_max_abs_z_m']), g['walk_strip_min_width_m'], g['walk_strip_max_width_m']),
-            '| 入口高度與 C01 坡道頂（+0.15 m） | 差 %s |' % mm(g['entry_top_in_bridgehead_frame_z_m'] - g['c01_exit_z_m']),
-            '| 兩端底部削口與 C05 石基頂（-0.05 m） | 差 %s；接觸頂點 %d 個；沒有任何頂點低於削口面（不會穿進石基） |' % (mm(g['seat_in_bridgehead_frame_z_m'] - g['c05_top_z_m']), g['seat_contact_vertices']),
-            '| 與橋頭河岸地形（C08／C02）的最小間隙 | %.3f m |' % g['min_clearance_above_c08_c02_m'],
-            '| 三角面 | LOD0 %s（預算 800–4,000）；LOD1 %s；LOD2 %s；COL %s |' % (format(g['lod0_tris'], ','), g['tris']['SM_Bridge_Log_A_Log_LOD1'], g['tris']['SM_Bridge_Log_A_Log_LOD2'], g['tris']['SM_Bridge_Log_A_COL']),
-            '| FBX Blender 回匯 | %s（尺寸差 %s） |' % ('通過' if ri['pass'] else '未通過', mm(ri['max_bounds_error_m'])),
-            '| 預覽 | 10 個正交角度（每個角度各自取景）＋45° 透視＋近景，共 12 張 |', '',
-            '- 尚未驗證：引擎內角色在圓木上行走、碰撞（`_COL` 為 0.36 m 寬的方塊，比削平面略窄）。',
-            '- 只適合兩座相距 14 m 的橋頭（兩個 C01 出口之間 10 m）；其他跨距需另做長度版本，不建議直接縮放（樹皮會拉伸）。']
+    out = ['使用者在 29 件完成後要求新增「用木頭搭造的橋」。任務書原本不做橋梁本體，這件是依使用者後續指示加做的獨立資產（D02）。', '',
+           '| 檢查 | 結果 |', '| --- | --- |',
+           '| 結構 | %d 片橋面板、4 根主梁、兩側欄杆（7 根立柱／側、扶手、中欄）、河中央木排架（3 根圓木樁、帽梁、交叉斜撐） |' % g['planks'],
+           '| 入口橋面與 C01 坡道頂（+0.15 m） | 差 %s；中段橋面板最大下陷 %s（刻意的自然高低差，≤ 3 mm；兩端各兩片完全齊平） |' % (mm(g['entry_top_in_bridgehead_frame_z_m'] - g['c01_exit_z_m']), mm(g['deck_top_min_z_m'])),
+           '| 主梁削口與 C05 石基頂（-0.05 m） | 差 %s；接觸頂點 %d 個；擱置段沒有任何頂點低於削口面或超出 |Y| = 1.5 m（不碰 C07 角石） |' % (mm(g['seat_in_bridgehead_frame_z_m'] - g['c05_top_z_m']), g['seat_contact_vertices']),
+           '| 與橋頭河岸地形（C08／C02）的最小間隙 | %.3f m |' % g['min_clearance_above_c08_c02_m'],
+           '| 欄杆 | 高 %.2f m；欄杆間可走寬度 %.2f m |' % (g['railing_height_m'], g['clear_walk_width_m']),
+           '| 三角面 | LOD0 %s（預算 800–4,000）；LOD1 %s；LOD2 %s；COL %s |' % (format(g['lod0_tris'], ','), g['tris']['SM_Bridge_Timber_A_LOD1'], g['tris']['SM_Bridge_Timber_A_LOD2'], g['tris']['SM_Bridge_Timber_A_COL']),
+           '| FBX Blender 回匯 | %s（尺寸差 %s） |' % ('通過' if ri['pass'] else '未通過', mm(ri['max_bounds_error_m'])),
+           '| 預覽 | 10 個正交角度（每個角度各自取景）＋45° 透視＋橋面近景＋橋下近景，共 13 張 |', '',
+           '- 尚未驗證：引擎內行走與欄杆碰撞（`_COL` 為橋面板＋兩側欄杆牆）。',
+           '- 只適合兩座相距 14 m 的橋頭（兩個 C01 出口之間 10 m）；橋墩木樁下到局部 Z -1.95 m，河床更深時需加長。']
+    if (LOG_DIR / 'validation.json').exists():
+        out += ['- 另有 D01 獨木橋（`01_Blender/log_bridge_v01.blend`）：先前誤解需求做的單根原木橋，檢查也通過；保留為可選件，不需要可刪除。']
+    return out
 
 
 VISUAL_NOTES = [
-    '- **D01 獨木橋**：看過 12 張預覽（含近景）：削平頂面、樹皮、年輪切面、斷枝頭、底部削口都正確；展示場景中兩端擱在石基上，行走面與坡道頂齊平。',
+    '- **D02 木造梁橋**：看過 13 張預覽（含橋面與橋下近景）：橋面板、主梁、欄杆、木排架與斜撐都正確；展示場景中兩端擱在石基上，橋面與坡道頂齊平。',
     '- **29 件 45° 成品圖**（`04_Previews/Sheets/Sheet_A/B/C_*.png`）：逐件看過。道路有斑駁乾土、路肩草叢與小石；河岸由草皮、乾土過渡到濕泥；B07 是大小混雜的圓石半埋在碎石層、兩端參差融入土坡的砌石護坡；橋頭石基有兩層倒角切石；沒有破面、飛點或貼圖拉伸。',
     '- **11 視角**：自動檢查每張圖邊緣是否有模型（裁切），並抽看 A03、B07、C05 的全部 11 張。',
     '- **拼裝場景**（`AssemblyTests/final_all29_road_bridgehead/road_chain/bank_chain_45deg.png`）：道路串、河岸串、橋頭組合都連續，沒有看到縫隙或高低差。',
-    '- **展示場景與接縫特寫**（`Showcase/*_labels.png`）：A03→A04 路面接縫、C02→B07 岸坡接縫、C01→測試橋面三處在 3–4 m 近距離都看不出接縫（圖上黃色虛線是事後標註的接縫位置）；沒有 Z-fighting 或光影斷線。',
+    '- **展示場景與接縫特寫**（`Showcase/*_labels.png`）：A03→A04 路面接縫、C02→B07 岸坡接縫、C01→D02 木橋橋面三處在 3–4 m 近距離都看不出接縫（圖上黃色虛線是事後標註的接縫位置）；沒有 Z-fighting 或光影斷線。',
     '- 展示場景的草地平面比模組低 3 cm，所以在橋頭側邊看得到一條細細的階梯陰影；那是展示用地面與模組外緣之間，不是模組接縫。',
     '- 展示用溪水：清澈見底的水體，河床中間較深（約 0.75 m），越深越偏青綠；河床鋪卵石、散放溪石，水底有細碎波光；順流細波紋；岸邊白沫依實際水深（對模組做光線投射）計算；補光燈不在水面反射，避免大片白斑。',
 ]
@@ -361,6 +369,8 @@ FIXED_NOTES = [
     '- 使用者要求石頭精緻化：石塊加入隨機剝裂面（平整斷面＋銳利稜角）與兩層雜訊，石材貼圖加大冷暖色差。',
     '- 使用者要求清澈見底、有漸層的溪水：展示水面由一片平面改為清澈的水體（吸收很低，深處才偏青綠），河床改成中間深的溪谷並鋪卵石與溪石、加水底波光；波紋法線貼圖 `T_Water_Normal.png`；天空改為漸層，水面反射藍天。',
     '- 45° 透視圖鏡頭太近，18 件模型邊緣被裁到（自動裁切檢查發現）→ 改用整個包圍球入鏡的距離重拍。',
+    '- 抽查 C05 全部視角時發現：石基背面（朝道路那面，使用時埋在坡道下）出現黑色三角破面，原因是內部灰縫填充塊與石塊背面共面 → 填充塊內縮 4 cm，重建橋頭檔並重跑全部檢查與匯出。',
+    '- 使用者要求加橋：先誤解成獨木橋做了 D01；使用者說明要木頭搭造的橋梁後改做 D02 木造梁橋。D02 端視圖發現交叉斜撐共面重疊出現黑色菱形 → 第二根斜撐外移一根木料厚度。',
     '- 預覽主視角有時太小或看到側面 → 依地形平均法線取景，C05 從河側看石基正面。',
 ]
 
@@ -398,11 +408,11 @@ def gallery(D, rows):
                              E(r['tri_budget']), E(r['fbx']), E(fo), E(fo), views))
         parts.append('</div>')
     if extra():
-        mi, va = extra(); fo = 'Individual/D01_SM_Bridge_Log_A/'
-        views = ''.join('<a href="%s%s.png">%s</a>' % (E(fo), k, img(fo + k + '.png', k)) for k in list(VIEW_ZH)[:10] + ['12_detail'])
-        parts.append('<h2>D 類｜後續新增</h2><div class="grid"><div class="card"><a href="%s12_detail.png">%s</a><h3>D01 獨木橋</h3><div class="meta">%s<br>LOD0 %s 三角面｜'
+        mi, va = extra(); fo = 'Individual/D02_SM_Bridge_Timber_A/'
+        views = ''.join('<a href="%s%s.png">%s</a>' % (E(fo), k, img(fo + k + '.png', k)) for k in list(VIEW_ZH)[:10] + ['12_detail', '13_pier'])
+        parts.append('<h2>D 類｜後續新增</h2><div class="grid"><div class="card"><a href="%s11_persp_45.png">%s</a><h3>D02 木造梁橋</h3><div class="meta">%s<br>LOD0 %s 三角面｜'
                      '<a href="../%s">FBX</a>｜<a href="%smodel_info.json">model_info</a>｜<a href="%svalidation.json">validation</a></div><div class="views">%s</div></div></div>' % (
-                         E(fo), img(fo + '12_detail.png', '獨木橋', 'hero'), E(mi['purpose']), format(va['geometry']['lod0_tris'], ','), E(mi['files']['fbx']), E(fo), E(fo), views))
+                         E(fo), img(fo + '11_persp_45.png', '木造梁橋', 'hero'), E(mi['purpose']), format(va['geometry']['lod0_tris'], ','), E(mi['files']['fbx']), E(fo), E(fo), views))
     parts.append('<h2>拼接測試（自動檢查用場景）</h2><div class="show">')
     for p in sorted((PREV / 'AssemblyTests').glob('final_all29_*.png')):
         parts.append('<a href="AssemblyTests/%s">%s</a>' % (E(p.name), img('AssemblyTests/' + p.name, p.stem)))

@@ -2,7 +2,7 @@
 # Full v01 pipeline, in order.  Every step refuses to overwrite, so move old outputs away first.
 #   BLENDER=/path/to/blender 05_Scripts/build_all.sh [--skip-textures] [--skip-models]
 # Textures -> 3 kit .blend files -> connector QA with assembly renders -> FBX export + re-import check ->
-# 11 previews per module -> showcase + labels -> material sheet (REF_F) -> group sheets + crop check ->
+# D01/D02 bridges -> 11 previews per module -> showcase + labels -> material sheet (REF_F) -> group sheets + crop check ->
 # protected-asset recheck -> final reports.
 set -euo pipefail
 B=${BLENDER:-blender}
@@ -22,6 +22,8 @@ run export_fbx.py --file 01_Blender/road_edge_modules_v01.blend --helpers
 run export_fbx.py --file 01_Blender/riverbank_modules_v01.blend
 run export_fbx.py --file 01_Blender/bridgehead_modules_v01.blend --helpers
 run export_fbx.py --verify --name fbx_reimport_v01
+run generate_log_bridge.py          # D01 (optional single-log bridge)
+run generate_timber_bridge.py       # D02 timber bridge used by the showcase
 for f in "${FILES[@]}"; do run render_previews.py --file 01_Blender/${f}_v01.blend --out 04_Previews/Individual --samples 32 --ortho-samples 12; done
 run render_showcase.py --name showcase_v01 --samples 64
 python3 "$S/annotate_showcase.py" --name showcase_v01

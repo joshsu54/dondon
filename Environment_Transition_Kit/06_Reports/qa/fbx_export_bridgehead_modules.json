@@ -1445,7 +1445,7 @@
     "SM_Bridgehead_Base_A": {
       "code": "C05",
       "fbx": "02_Exports/Bridgehead/SM_Bridgehead_Base_A.fbx",
-      "bytes": 70892,
+      "bytes": 71004,
       "objects": {
         "SM_Bridgehead_Base_A": {
           "type": "EMPTY",
@@ -1686,7 +1686,7 @@
     "SM_Bridgehead_CornerCap_A": {
       "code": "C07",
       "fbx": "02_Exports/Bridgehead/SM_Bridgehead_CornerCap_A.fbx",
-      "bytes": 148860,
+      "bytes": 148028,
       "objects": {
         "SM_Bridgehead_CornerCap_A": {
           "type": "EMPTY",
