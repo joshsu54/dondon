@@ -14,6 +14,8 @@
 
 如果 z1nnz 沒辦法安裝應用程式，也可以在你自己的電腦上執行第 3 節的指令並推送；你在《雲境》有 Write 權限。
 
+**用 Codex 上傳：** `Handoff/yunjing_upload/` 已經放好打包並檢查過的上傳包，照 `Handoff/yunjing_upload/CODEX_UPLOAD.md` 做，不需要 Blender，也不用重新打包。
+
 ---
 
 ## 1. 今天做了什麼（全部在 dondon，已推送）

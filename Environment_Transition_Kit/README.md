@@ -31,6 +31,7 @@
 06_Reports/      ASSET_MANIFEST、CONNECTOR_SPEC.json、QA_Report、ASSUMPTIONS、README_Integration、
                  PHASE0／PHASE6 安全檢查、qa/（所有檢查的原始 JSON）、history/（設計階段舊版清單）
 Handoff/         NEW_SESSION_HANDOFF.md：交給下一個對話的說明（放進《雲境》的步驟、任務 B、規定）
+                 yunjing_upload/：打包並檢查過的《雲境》上傳包、安裝腳本、PR 說明、CODEX_UPLOAD.md
 ```
 
 放進《雲境》（z1nnz/yun-jing-rpg）的交接資料夾：`05_Scripts/make_incoming_package.py` 打包，`05_Scripts/check_incoming.py` 在接收端重開 `.blend`、回匯 FBX 並寫 `handoff_check.json`。步驟見 `Handoff/NEW_SESSION_HANDOFF.md` 第 3 節。

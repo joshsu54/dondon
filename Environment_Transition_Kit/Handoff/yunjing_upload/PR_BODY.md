@@ -1,12 +1,6 @@
-標題：assets: add dondon Environment Transition Kit v001 under art/incoming/dondon
-
-分支：`assets/dondon-environment-kit-v001` → `main`
-
----
-
 ## 完成的內容
 
-把 joshsu54/dondon 分支 `claude/environment-transition-kit`（提交 `2e397a1`）的環境收邊模組包放進交接目錄 `art/incoming/dondon/EnvironmentTransitionKit/v001/`。依〈素材交接清單〉放在 incoming，先不整理進 Unity 資源目錄。
+把 joshsu54/dondon 分支 `claude/environment-transition-kit`（提交 `fa102b0`）的環境收邊模組包放進交接目錄 `art/incoming/dondon/EnvironmentTransitionKit/v001/`。依〈素材交接清單〉放在 incoming，先不整理進 Unity 資源目錄。
 
 - **A 道路收邊 11 件：** 直段、15°／30° 彎、小坡、轉草地、轉碎石、終端、破損。
 - **B 河岸收邊 10 件：** 直段兩款、內外轉角、緩坡入水、陡岸露岩、砌石護岸、草根濕岸、沖刷崩岸、終端。
@@ -31,7 +25,7 @@
 
 ## 驗證結果
 
-- [x] `npm test` 通過（本機在本分支執行：55 項全部通過）
+- [ ] `npm test` 通過（Claude 在 main `40adb20` 加上本包時跑過，55 項全過；上傳者在本分支重跑後勾選）
 - [ ] GitHub `API and persistence tests` 通過（等 CI）
 - [ ] GitHub `LFS asset integrity` 通過（等 CI）
 - [x] 涉及 Unity：**未在 Unity 匯入或驗證**
@@ -39,7 +33,7 @@
 
 測試摘要／操作步驟：
 
-- **接收端檢查（`handoff_check.json`，Blender 5.2.3，在本目錄實際執行）：**
+- **交接檢查（`handoff_check.json`，Blender 5.2.3，對本包實際執行；包內只用相對路徑，放到哪裡結果相同）：**
   - 重開 13 個 `.blend`（9 個模組檔，加上連結模組檔的拼裝測試與展示場景），缺貼圖 0、缺連結檔 0；
   - 回匯 34 個 FBX，尺寸誤差最大 3.6×10⁻⁷ m，29 件物件名稱與匯出紀錄一致。
 - **來源端（`validation.json`，記錄在 `06_Reports/qa/`）：**
@@ -47,8 +41,8 @@
   - 29 件 FBX 在 Blender 回匯一致；
   - 預覽裁切檢查通過；
   - 受保護資產複查未變更。
-- `SOURCE.json` 記錄每個來源檔的 SHA-256 與是否原樣複製。兩個 `ASSET_MANIFEST*.csv` 來源是 CRLF，本儲存庫 `* text=auto` 會轉成 LF，所以這兩個檔案的 SHA-256 會和紀錄不同，內容相同。
-- `npm test`：55 pass、0 fail（Node 22.22.0，本分支）。
+- `SOURCE.json` 記錄每個來源檔的 SHA-256 與是否原樣複製。兩個 `ASSET_MANIFEST*.csv` 來源是 CRLF，已改存 LF（本儲存庫 `* text=auto`），`SOURCE.json` 有註明。
+- `npm test`：（上傳者填入本分支結果）
 
 尚未驗證項目：
 
@@ -112,7 +106,7 @@
 
 - [x] 只包含本次修改，沒有覆蓋他人的工作（只新增 `art/incoming/dondon/EnvironmentTransitionKit/`，並在 `art/incoming/dondon/README.md` 末尾加一節）
 - [x] 沒有憑證、私鑰、真實使用者資料、快取或本機資料庫
-- [x] 已同步最新 main（`40adb20`）
+- [ ] 已同步最新 main
 - [ ] LFS 實際物件已上傳（推送後由 `LFS asset integrity` 確認）；本 PR 不含正式 Unity 資源，沒有 `.meta`
 - [x] 不把尚未編譯／實測的 Unity 或多人功能寫成已完成
 
