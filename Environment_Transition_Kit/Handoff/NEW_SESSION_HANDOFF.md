@@ -82,6 +82,8 @@
 
 ## 3. 第一件事：把今天的套件放進《雲境》
 
+> **目前狀態（2026-10-26 晚）：** 上一個對話已在自己的容器裡完成打包與檢查，並在《雲境》本機分支 `assets/dondon-environment-kit-v001` 提交了 `d48e10e`（基於 main `40adb20`），但**推送被拒（403，Claude 應用程式沒裝在 z1nnz/yun-jing-rpg）**。容器會被回收，那個提交不會留下，新對話照下面步驟重做一次即可（約 5 分鐘）。PR 說明草稿：`Handoff/PR_BODY_yunjing_EnvironmentTransitionKit_v001.md`。
+
 ### 3.1 準備
 
 ```sh

@@ -6,7 +6,7 @@
 
 ## 完成的內容
 
-把 joshsu54/dondon 分支 `claude/environment-transition-kit`（提交 `4eb6ab5`）的環境收邊模組包放進交接目錄 `art/incoming/dondon/EnvironmentTransitionKit/v001/`。依〈素材交接清單〉放在 incoming，先不整理進 Unity 資源目錄。
+把 joshsu54/dondon 分支 `claude/environment-transition-kit`（提交 `2e397a1`）的環境收邊模組包放進交接目錄 `art/incoming/dondon/EnvironmentTransitionKit/v001/`。依〈素材交接清單〉放在 incoming，先不整理進 Unity 資源目錄。
 
 - **A 道路收邊 11 件：** 直段、15°／30° 彎、小坡、轉草地、轉碎石、終端、破損。
 - **B 河岸收邊 10 件：** 直段兩款、內外轉角、緩坡入水、陡岸露岩、砌石護岸、草根濕岸、沖刷崩岸、終端。
@@ -47,7 +47,7 @@
   - 29 件 FBX 在 Blender 回匯一致；
   - 預覽裁切檢查通過；
   - 受保護資產複查未變更。
-- `SOURCE.json` 記錄每個來源檔的 SHA-256 與是否原樣複製。
+- `SOURCE.json` 記錄每個來源檔的 SHA-256 與是否原樣複製。兩個 `ASSET_MANIFEST*.csv` 來源是 CRLF，本儲存庫 `* text=auto` 會轉成 LF，所以這兩個檔案的 SHA-256 會和紀錄不同，內容相同。
 - `npm test`：55 pass、0 fail（Node 22.22.0，本分支）。
 
 尚未驗證項目：
