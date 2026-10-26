@@ -84,6 +84,60 @@ def show_pbr(name, layer):
     return m
 
 
+BED_DEPTH = 0.55     # extra depth of the showcase channel below the bank toe (-1.00) at mid-river
+
+
+def bed_z(x, y):
+    """Showcase stream bed between the two bank toes (x 5..9): 0 at the toes, deepest in the middle."""
+    from mathutils import noise as mnoise
+    t = min(1.0, max(0.0, (x - 5.0) / 4.0))
+    return K.BANK_TOE_Z - BED_DEPTH * math.sin(math.pi * t) ** 1.3 * (1.0 + 0.12 * mnoise.noise(Vector((x * 0.4, y * 0.35, 3.1))))
+
+
+def riverbed_material():
+    """Pebble bed (T_PathGravel) with sun caustics: two Voronoi edge webs brighten the bed under the water."""
+    m = bpy.data.materials.new('SHOW_Riverbed'); m.use_nodes = True; nb = KB.NB(m); p = nb.n['Principled BSDF']
+    col, rough, nrm = KB._texset(nb, 'PathGravel')
+    tc = nb.node('ShaderNodeTexCoord'); web = None
+    warp = nb.node('ShaderNodeTexNoise'); warp.inputs['Scale'].default_value = 1.6; warp.inputs['Detail'].default_value = 2.0
+    nb.link(tc.outputs['Object'], warp.inputs['Vector'])
+    for sc, off in ((6.5, 0.0), (9.5, 7.7)):
+        mp = nb.node('ShaderNodeMapping'); mp.inputs['Location'].default_value = (off, off * 0.5, 0.0); mp.inputs['Scale'].default_value = (1.0, 0.75, 1.0)
+        wv = nb.node('ShaderNodeVectorMath', operation='MULTIPLY_ADD'); nb.link(warp.outputs['Color'], wv.inputs[0])
+        wv.inputs[1].default_value = (0.12, 0.12, 0.12); nb.link(tc.outputs['Object'], wv.inputs[2]); nb.link(wv.outputs['Vector'], mp.inputs['Vector'])
+        v = nb.node('ShaderNodeTexVoronoi'); v.feature = 'DISTANCE_TO_EDGE'; v.inputs['Scale'].default_value = sc; nb.link(mp.outputs['Vector'], v.inputs['Vector'])
+        c = nb.maprange(v.outputs['Distance'], 0.0, 0.03, 1.0, 0.0, smooth=True)
+        web = c if web is None else nb.math('MAXIMUM', web, nb.math('MULTIPLY', c, 0.6))
+    patch = nb.node('ShaderNodeTexNoise'); patch.inputs['Scale'].default_value = 0.9; nb.link(tc.outputs['Object'], patch.inputs['Vector'])
+    web = nb.math('MULTIPLY', web, nb.maprange(patch.outputs['Fac'], 0.4, 0.65))          # patchy, not a uniform net
+    lit = nb.mix_rgb(nb.math('MULTIPLY', web, 0.28), col, (0.92, 0.90, 0.80))
+    nb.link(lit, p.inputs['Base Color'])
+    sep = nb.node('ShaderNodeSeparateColor'); nb.link(rough, sep.inputs['Color']); nb.link(sep.outputs['Red'], p.inputs['Roughness'])
+    nm = nb.node('ShaderNodeNormalMap', uv_map='UVMap'); nb.link(nrm, nm.inputs['Color']); nb.link(nm.outputs['Normal'], p.inputs['Normal'])
+    return m
+
+
+def build_riverbed():
+    xs = [5.0 + 4.0 * i / 40 for i in range(41)]; ys = [-Y_EDGE + 2 * Y_EDGE * j / 64 for j in range(65)]
+    verts = [(x, y, bed_z(x, y)) for x in xs for y in ys]; ny = len(ys)
+    faces = [(i * ny + j, (i + 1) * ny + j, (i + 1) * ny + j + 1, i * ny + j + 1) for i in range(len(xs) - 1) for j in range(ny - 1)]
+    me = bpy.data.meshes.new('SHOW_Riverbed'); me.from_pydata(verts, [], faces); me.update(); me.shade_smooth()
+    uv = me.uv_layers.new(name='UVMap')
+    for poly in me.polygons:
+        for li in poly.loop_indices:
+            co = me.vertices[me.loops[li].vertex_index].co; uv.data[li].uv = (co.x / K.UV_TILE_M, co.y / K.UV_TILE_M)
+    me.materials.append(riverbed_material()); ob = bpy.data.objects.new('SHOW_Riverbed', me); bpy.context.scene.collection.objects.link(ob)
+    stones = KB.Parts(); rng = random.Random(23)
+    for _ in range(110):
+        x = rng.uniform(5.1, 8.9); y = rng.uniform(-Y_EDGE + 0.4, Y_EDGE - 0.4)
+        big = rng.random() < 0.12; r = rng.uniform(0.28, 0.45) if big else rng.uniform(0.07, 0.2)
+        z = bed_z(x, y)
+        KB.chunk(stones, rng, (x, y, z - r * 0.18), (r * rng.uniform(1.1, 1.5), r, r * rng.uniform(0.55, 0.75)), (0, 0, 1), rng.uniform(0, math.tau),
+                 mat=0, roundness=(0.72, 0.92), rough=0.12, tilt=0.25, dome=0.15, facets=(0, 1))
+    stones.build('SHOW_RiverStones', [KB.pbr_material('Rock')], bpy.context.scene.collection, None, sharp_angle=55.0)
+    return ob
+
+
 def water_material():
     """Shallow stream: refractive surface with flow-stretched ripples (T_Water_Normal), tinted water volume
     (deeper = greener and darker) and a thin foam line where the water is shallower than about 5 cm."""
@@ -94,22 +148,22 @@ def water_material():
     for sc, loc in (((1.0, 1.0, 1.0), (0.0, 0.0, 0.0)), ((2.3, 1.7, 1.0), (0.31, 0.57, 0.0))):
         mp = nb.node('ShaderNodeMapping'); mp.inputs['Scale'].default_value = sc; mp.inputs['Location'].default_value = loc; nb.link(uvn.outputs['UV'], mp.inputs['Vector'])
         t = nb.node('ShaderNodeTexImage'); t.image = KB.tex_image('T_Water_Normal.png', True); nb.link(mp.outputs['Vector'], t.inputs['Vector']); cols.append(t.outputs['Color'])
-    nm = nb.node('ShaderNodeNormalMap', uv_map='UVMap'); nm.inputs['Strength'].default_value = 0.7
+    nm = nb.node('ShaderNodeNormalMap', uv_map='UVMap'); nm.inputs['Strength'].default_value = 0.35
     nb.link(nb.mix_rgb(0.5, cols[0], cols[1]), nm.inputs['Color']); nb.link(nm.outputs['Normal'], p.inputs['Normal'])
     depth = nb.node('ShaderNodeAttribute', attribute_type='GEOMETRY', attribute_name='Depth')
     fn = nb.node('ShaderNodeTexNoise'); fn.inputs['Scale'].default_value = 9.0; fn.inputs['Detail'].default_value = 3.0
     fmp = nb.node('ShaderNodeMapping'); fmp.inputs['Scale'].default_value = (3.0, 0.8, 1.0); nb.link(uvn.outputs['UV'], fmp.inputs['Vector']); nb.link(fmp.outputs['Vector'], fn.inputs['Vector'])
-    foam = nb.math('MULTIPLY', nb.maprange(depth.outputs['Fac'], 0.0, 0.035, 0.85, 0.0, smooth=True), nb.maprange(fn.outputs['Fac'], 0.5, 0.68))
+    foam = nb.math('MULTIPLY', nb.maprange(depth.outputs['Fac'], 0.0, 0.035, 0.6, 0.0, smooth=True), nb.maprange(fn.outputs['Fac'], 0.5, 0.68))
     nb.link(nb.mix_rgb(foam, (1.0, 1.0, 1.0), (0.62, 0.65, 0.62)), p.inputs['Base Color'])      # foam folded into one BSDF (closure limit)
     nb.link(nb.math('SUBTRACT', 1.0, foam), p.inputs['Transmission Weight']); nb.link(nb.mix_f(foam, 0.025, 0.7), p.inputs['Roughness'])
     nb.link(p.outputs['BSDF'], out.inputs['Surface'])
-    ab = nb.node('ShaderNodeVolumeAbsorption'); ab.inputs['Color'].default_value = (0.50, 0.78, 0.70, 1.0); ab.inputs['Density'].default_value = 5.0
-    scat = nb.node('ShaderNodeVolumeScatter'); scat.inputs['Color'].default_value = (0.62, 0.80, 0.70, 1.0); scat.inputs['Density'].default_value = 0.9
+    ab = nb.node('ShaderNodeVolumeAbsorption'); ab.inputs['Color'].default_value = (0.52, 0.86, 0.80, 1.0); ab.inputs['Density'].default_value = 1.4
+    scat = nb.node('ShaderNodeVolumeScatter'); scat.inputs['Color'].default_value = (0.70, 0.90, 0.85, 1.0); scat.inputs['Density'].default_value = 0.05
     add = nb.node('ShaderNodeAddShader'); nb.link(ab.outputs['Volume'], add.inputs[0]); nb.link(scat.outputs['Volume'], add.inputs[1]); nb.link(add.outputs['Shader'], out.inputs['Volume'])
     return m
 
 
-def build_water(scene, x0=4.2, x1=9.8, z=K.WATER_Z, bottom=-1.12):
+def build_water(scene, x0=4.2, x1=9.8, z=K.WATER_Z, bottom=-1.75):
     """Closed water body under the test water level.  Depth to the terrain below each surface vertex is found by
     casting rays at the real module geometry and stored as the 'Depth' attribute (drives the foam line)."""
     import bmesh
@@ -121,7 +175,7 @@ def build_water(scene, x0=4.2, x1=9.8, z=K.WATER_Z, bottom=-1.12):
             hit, loc, nrm, idx, ob, mtx = scene.ray_cast(dg, o, Vector((0.0, 0.0, -1.0)), distance=3.0)
             if not hit: return 0.3
             nm = ob.name if ob else ''
-            if 'Terrain' in nm or 'Masonry' in nm or nm.startswith('SHOW_Riverbed'): return max(0.0, z - loc.z)
+            if 'Terrain' in nm or 'Masonry' in nm or nm.startswith(('SHOW_Riverbed', 'SHOW_RiverStones')): return max(0.0, z - loc.z)
             o = loc + Vector((0.0, 0.0, -1e-3))
         return 0.3
     bm = bmesh.new(); dl = bm.verts.layers.float.new('Depth'); top = {}; bot = {}
@@ -187,7 +241,8 @@ def section_profile(x_min, x_max):
     near = [(K.BANK_LINE_X - v, K.bank_z(v)) for v in reversed(K.BANK_V)]          # x 2 -> 5
     far_line = 14.0 - K.BANK_LINE_X
     far = [(far_line + v, K.bank_z(v)) for v in K.BANK_V]                           # x 9 -> 12
-    return [(x_min, GROUND_Z), (near[0][0], GROUND_Z)] + near + far + [(far[-1][0], GROUND_Z), (x_max, GROUND_Z)]
+    bed = [(5.0 + 4.0 * i / 40, bed_z(5.0 + 4.0 * i / 40, Y_EDGE)) for i in range(1, 40)]
+    return [(x_min, GROUND_Z), (near[0][0], GROUND_Z)] + near + bed + far + [(far[-1][0], GROUND_Z), (x_max, GROUND_Z)]
 
 
 def road_samples(kit):
@@ -202,7 +257,7 @@ def road_samples(kit):
 
 
 def build_props(kit, near_start, far_x):
-    M = {'grass': show_pbr('SHOW_Ground_Grass', 'Grass'), 'bed': show_pbr('SHOW_Riverbed', 'WetSoil'),
+    M = {'grass': show_pbr('SHOW_Ground_Grass', 'Grass'), 
          'side': KB.flat_material('SHOW_DioramaSide', (0.055, 0.042, 0.032), 0.95),
          'deck': KB.test_material('SHOW_TEST_Deck_Placeholder', (0.26, 0.25, 0.30)), 'card': KB.grass_card_material()}
     x_min = near_start.translation.x; x_max = far_x
@@ -212,7 +267,7 @@ def build_props(kit, near_start, far_x):
         y0, y1 = sorted((sgn * 3.0, sgn * Y_EDGE))
         grid_plane('SHOW_Ground_NearBankLand_%+d' % sgn, 2.0, 2.9, y0, y1, GROUND_Z, M['grass'])
         grid_plane('SHOW_Ground_FarBankLand_%+d' % sgn, 11.1, 12.0, y0, y1, GROUND_Z, M['grass'])
-    grid_plane('SHOW_Riverbed', 5.0, 9.0, -Y_EDGE, Y_EDGE, K.BANK_TOE_Z, M['bed'])
+    build_riverbed()
     deck = KB.Parts(); KB.block(deck, (7.0, 0.0, (K.DECK_Z + K.DECK_BOTTOM) / 2), (10.0, 2 * K.DECK_HALF, K.DECK_Z - K.DECK_BOTTOM))
     deck.build('SHOW_TEST_Deck_Placeholder', [M['deck']], bpy.context.scene.collection, None)
     prof = section_profile(x_min, x_max)
@@ -297,6 +352,7 @@ def main():
         ('hero', dict(target=(cx - 1.0, 0.5, -0.6), direction=(-0.62, -1.0, 0.72), dist=60.0, lens=35)),
         ('bridgehead', dict(target=(4.0, -0.3, -0.35), direction=(-0.50, -1.0, 0.52), dist=12.5, lens=35)),
         ('river', dict(target=(7.0, 2.0, -0.6), direction=(0.05, -1.0, 0.30), dist=17.0, lens=32)),
+        ('stream', dict(target=(6.6, -7.0, -1.05), direction=(-0.55, -1.0, 0.95), dist=6.0, lens=35)),
         ('top', dict(target=(cx, 0.0, 0.0), direction=(0.0, 0.0, 1.0), dist=80.0, ortho=max(x_max - x_min, 2 * Y_EDGE * 16 / 9) * 1.04)),
         ('seam_road', dict(target=tuple(seam_road + Vector((0, 0, 0.05))), direction=(-0.35, -1.0, 0.55), dist=3.6, lens=35)),
         ('seam_bank', dict(target=(3.7, 4.0, -0.35), direction=(1.0, -0.15, 0.55), dist=4.2, lens=35)),

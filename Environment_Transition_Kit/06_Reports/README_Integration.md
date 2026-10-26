@@ -76,7 +76,7 @@ for layer, channel in [(PathGravel, B), (WetSoil, R), (Grass, G), (Moss, A)]:
 
 - 用 `_COL`，不要用 LOD0 或細節物件產生碰撞。河岸不需要每顆石頭的碰撞。
 - 路面寬 3 m、C01 緩坡 2 m 升 0.15 m（約 7.5%），C06 1.5 m 降 0.15 m。這些都在 CharacterMovement 預設可走坡度內，但**尚未在引擎內實測**。
-- 測試水位 -0.80 m；水面不在模組內，請在引擎內另放水體。可用 `03_Textures/T_Water_Normal.png`（可平鋪的順流波紋法線，V 方向沿水流，1 張＝2 m）做水面法線；展示場景的做法見 `05_Scripts/render_showcase.py` 的 `water_material()`：折射水面＋體積吸收（深處偏青綠）＋水深小於約 3.5 cm 處的白沫。
+- 測試水位 -0.80 m；水面不在模組內，請在引擎內另放水體。可用 `03_Textures/T_Water_Normal.png`（可平鋪的順流波紋法線，V 方向沿水流，1 張＝2 m）做水面法線；展示場景的做法見 `05_Scripts/render_showcase.py` 的 `water_material()`：折射水面＋很低的體積吸收（清澈見底，深處偏青綠）＋水深小於約 3.5 cm 處的白沫；河床卵石與水底波光見 `riverbed_material()`。引擎內可用深度淡化（depth fade）做同樣的近岸透明、深處上色。
 
 ## 6. 效能
 

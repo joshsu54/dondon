@@ -68,7 +68,7 @@ def make_fns(mod, stage):
             gravel += w * 0.22 * fbm(x, y, s + 37, 1.6) * (1.0 if sf.walkable(u, v) else 0.4)
             wet += w * 0.15 * fbm(x, y, s + 11, 1.1) * K.S((-0.3 - z) / 0.3)
             if mod.get('variant') == 'riprap':
-                gravel = max(gravel, w * K.S((v + 1.55) / 0.12) * K.S((0.02 - v) / 0.1))
+                gravel = max(gravel, w * K.S((v + 1.55) / 0.12) * K.S((0.02 - v) / 0.1) * (0.75 + 0.5 * fbm(x, y, s + 71, 1.8)))
             slope_or_verge = (sf.kind.startswith('bank') and v < 0.2) or (sf.kind.startswith('road') and abs(v) > 1.6) or (sf.kind == 'c_grid' and z < -0.05)
             if slope_or_verge:
                 moss += w * moss_gain * max(0.0, 0.9 * fbm(x, y, s + 51, 1.4) - 0.12)
@@ -223,17 +223,21 @@ def bank_details(mod, sf, zf, mf, rng, D):
             sz = rng.uniform(0.22, 0.4); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
             chunk(D.rocks, rng, p - n * sz * 0.35, (sz * 1.3, sz, sz * 0.8), n, rng.uniform(0, 6.3), mat=0, moss_mat=1, moss_cut=0.55,
                      roundness=(0.4, 0.6), rough=0.22, tilt=0.35, dome=0.2, cuts=2)
-    if var == 'riprap':   # dry-laid stone revetment: stones packed edge to edge over the slope, sunk into a gravel bed
+    if var == 'riprap':   # dry-laid stone revetment: mixed rounded stones sunk into a gravel bed, ragged ends that fade into the bank
         for row, vc in enumerate((-0.08, -0.39, -0.70, -1.01, -1.32)):
-            u = 0.10 + (0.15 if row % 2 else 0.0)
+            u0, u1 = rng.uniform(0.15, 0.85), L - rng.uniform(0.15, 0.85)      # each row starts and stops at a different place
+            u = rng.uniform(0.10, 0.30)
             while u < L - 0.08:
-                lx = rng.uniform(0.31, 0.40); v = vc + rng.uniform(-0.03, 0.03)
-                p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
-                for shrink in (1.0, 0.8, 0.62):   # next to a connector face the stone shrinks until it stays inside
-                    sz = (lx * shrink, rng.uniform(0.27, 0.33) * shrink, rng.uniform(0.18, 0.22))
-                    if chunk(D.rocks, rng, p - n * sz[2] * 0.28, sz, n, sf.path.heading(u) + rng.uniform(-0.15, 0.15), mat=0,
-                             roundness=(0.35, 0.55), rough=0.22, tilt=0.12, dome=0.15, facets=(1, 3)): break
-                u += lx * 0.95
+                big = rng.random() < 0.7
+                lx = rng.uniform(0.26, 0.38) if big else rng.uniform(0.14, 0.22)
+                inside = u0 <= u <= u1
+                if inside or rng.random() < 0.18:                                # a few stragglers beyond the ragged end
+                    v = vc + rng.uniform(-0.08, 0.08); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
+                    for shrink in (1.0, 0.8, 0.62):   # next to a connector face the stone shrinks until it stays inside
+                        sz = (lx * shrink, lx * rng.uniform(0.75, 0.95) * shrink, rng.uniform(0.17, 0.24) * (1.0 if big else 0.7))
+                        if chunk(D.rocks, rng, p - n * sz[2] * 0.30, sz, n, rng.uniform(0, math.tau), mat=0,
+                                 roundness=(0.55, 0.78), rough=0.25, tilt=0.18, dome=0.25, facets=(1, 3)): break
+                u += lx * rng.uniform(0.92, 1.05) if inside else lx * 1.6
     if var == 'grassy':
         sod = KB.Parts(); us = [0.5 + 0.25 * i for i in range(13)]
         for ua, ub in zip(us, us[1:]):
