@@ -1149,7 +1149,7 @@
       ],
       "stats": {
         "objects": 8,
-        "lod0_tris": 3680,
+        "lod0_tris": 3440,
         "budget": [
           800,
           4000
@@ -1162,8 +1162,8 @@
           "SM_Riverbank_RockReinforced_A_COL": 96,
           "SM_Riverbank_RockReinforced_A_DET_Stones_LOD0": 232,
           "SM_Riverbank_RockReinforced_A_DET_Grass_LOD0": 40,
-          "SM_Riverbank_RockReinforced_A_Rocks_LOD0": 2640,
-          "SM_Riverbank_RockReinforced_A_Rocks_LOD1": 1320
+          "SM_Riverbank_RockReinforced_A_Rocks_LOD0": 2400,
+          "SM_Riverbank_RockReinforced_A_Rocks_LOD1": 1200
         },
         "issues": []
       },

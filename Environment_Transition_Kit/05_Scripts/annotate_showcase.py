@@ -13,16 +13,16 @@ from PIL import Image, ImageDraw, ImageFont
 KIT = Path(__file__).resolve().parents[1]
 FONT = '/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc'
 TITLES = {
-    'hero': '環境收邊模組：拼裝示範（道路 → 橋頭 → 測試橋面 → 對岸；兩岸接河岸模組）',
-    'bridgehead': '橋頭近景：C01 坡道接測試橋面，C05 石基、C08 沖刷帶、C02 接河岸',
+    'hero': '環境收邊模組：拼裝示範（道路 → 橋頭 → 獨木橋 → 對岸；兩岸接河岸模組）',
+    'bridgehead': '橋頭近景：C01 坡道接 D01 獨木橋，C05 石基、C08 沖刷帶、C02 接河岸',
     'river': '沿河望去：兩岸河岸模組＋橋頭，測試水位 -0.80 m',
     'stream': '溪水近景：清澈見底，越深越偏青綠；河床卵石與波光是展示道具',
     'top': '頂視圖：模組位置與名稱',
     'seam_road': '接縫特寫：A03 左彎 15° 接 A04 右彎 15°',
     'seam_bank': '接縫特寫：C02 橋頭岸坡接 B07 石砌護岸',
-    'seam_deck': '接縫特寫：C01 坡道頂端接測試橋面（+0.15 m）',
+    'seam_deck': '接縫特寫：C01 坡道頂端接 D01 獨木橋行走面（+0.15 m）',
 }
-NOTE = '地面、河床、水面、側邊土層與灰紫色橋面是展示用道具，不是交付模組；正式橋梁不在本套件範圍。'
+NOTE = '地面、河床、溪石、水面與側邊土層是展示用道具，不是交付模組；D01 獨木橋是 29 件之外新增的獨立資產。'
 
 
 def cli():
@@ -37,9 +37,11 @@ def seam_errors(qa):
     def con(mid, name): return next(c for c in R['modules'][mid]['connectors'] if c['connector'] == name)
     bank = max(con('SM_Bridgehead_BankTransition_A', 'ExitConnector')['max_position_error_m'], con('SM_Riverbank_RockReinforced_A', 'EntryConnector')['max_position_error_m'])
     deck = next(p for p in R['pairs'] if p['pair'].startswith('C01 exit on TEST_BridgeDeck'))['max_position_error_m']
+    log = json.loads((KIT / '04_Previews/Individual/D01_SM_Bridge_Log_A/validation.json').read_text())['geometry']
+    deck = max(deck, abs(log['entry_top_in_bridgehead_frame_z_m'] - log['c01_exit_z_m']))
     return {'seam_road': ('兩段直接相接，實測頂點誤差 %.4f mm（目標 ≤ 1 mm）' % (step['max_position_error_m'] * 1000)),
             'seam_bank': ('兩側都是標準河岸斷面，實測頂點誤差 %.4f mm（目標 ≤ 1 mm）' % (bank * 1000)),
-            'seam_deck': ('坡道頂端高度與測試橋面誤差 %.4f mm（目標 ≤ 1 mm）' % (deck * 1000))}
+            'seam_deck': ('坡道頂端與獨木橋行走面高度差 %.4f mm（目標 ≤ 1 mm）' % (deck * 1000))}
 
 
 def font(size):

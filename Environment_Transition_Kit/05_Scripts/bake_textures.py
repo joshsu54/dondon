@@ -5,7 +5,8 @@
 Each material is designed as procedural nodes sampled on 4D torus coordinates of the UV square, so the
 baked images tile without seams.  1 texture repeat = 2 m (kit_spec.UV_TILE_M).  Outputs 03_Textures/
 T_<Layer>_BaseColor.png (sRGB), _Roughness.png and _Normal.png (Non-Color, OpenGL tangent space)
-plus T_BlendNoise.png and T_Water_Normal.png (ripples for the showcase / engine water).  Existing textures are never overwritten.
+plus T_BlendNoise.png, T_Water_Normal.png (stream ripples) and the log-bridge sets Bark, Wood (adzed top) and EndGrain
+(sawn end, centred on the UV square, the only set that does not tile).  Existing textures are never overwritten.
 """
 import sys
 from pathlib import Path
@@ -205,7 +206,62 @@ def water(nb):
     return None, None, h, 0.6
 
 
-RECIPES = {'DrySoil': drysoil, 'WetSoil': wetsoil, 'Grass': grass, 'Moss': moss, 'Rock': rock, 'PathGravel': pathgravel, 'Water': water}
+def bark(nb):
+    """Weathered bark: plates split by long fissures running along V (the log axis), grey weathering, pale lichen."""
+    t = nb.torus(); tv = nb.torus(ru=5.0, rv=0.45)
+    edge = cells(nb, tv, 1.5, 'DISTANCE_TO_EDGE')[0]; _, prnd = cells(nb, tv, 1.5)
+    fiss = nb.maprange(edge, 0.0, 0.05, 1.0, 0.0, smooth=True)
+    macro = st(nb, nb.noise4(t, 1.2, 4, 0.5)[0]); fine = nb.noise4(tv, 9.0, 4, 0.6)[0]
+    col = nb.ramp(prnd, [(0.0, (0.070, 0.058, 0.047)), (0.5, (0.110, 0.092, 0.074)), (1.0, (0.148, 0.128, 0.106))])
+    col = over(nb, col, nb.maprange(macro, 0.6, 1.0, smooth=True), (0.170, 0.163, 0.148), 0.4)
+    col = over(nb, col, nb.maprange(fine, 0.62, 0.75), (0.060, 0.050, 0.040), 0.35)
+    streak = nb.noise4(nb.torus(ru=12.0, rv=0.6), 6.0, 4, 0.6)[0]                      # fine vertical striation inside the plates
+    col = over(nb, col, nb.maprange(streak, 0.55, 0.75), (0.050, 0.042, 0.034), 0.45)
+    col = over(nb, col, fiss, (0.028, 0.022, 0.017), 0.75)
+    lich = F(nb, 'MULTIPLY', nb.maprange(st(nb, nb.noise4(t, 1.6, 5, 0.65)[0]), 0.84, 0.94, smooth=True), F(nb, 'SUBTRACT', 1.0, fiss))
+    col = over(nb, col, lich, (0.170, 0.178, 0.135), 0.35)
+    rough = F(nb, 'ADD', 0.8, F(nb, 'MULTIPLY', fiss, 0.15))
+    h = H(nb, (F(nb, 'SUBTRACT', 1.0, fiss), 0.8), (fine, 0.25), (streak, 0.2), (macro, 0.1))
+    return col, rough, h, 1.0
+
+
+def wood(nb):
+    """Adzed, weathered top of the log: grain along U (the log axis), shallow adze scallops, fine checks."""
+    t = nb.torus(); tg = nb.torus(ru=0.45, rv=6.0)
+    g = st(nb, nb.noise4(tg, 3.0, 6, 0.6, distortion=0.3)[0])
+    col = nb.ramp(g, [(0.0, (0.150, 0.112, 0.078)), (0.5, (0.215, 0.168, 0.122)), (1.0, (0.285, 0.235, 0.180))])
+    col = over(nb, col, nb.maprange(st(nb, nb.noise4(t, 1.0, 3, 0.5)[0]), 0.45, 1.0), (0.290, 0.280, 0.255), 0.55)   # silver weathering
+    uvn = nb.node('ShaderNodeTexCoord'); sep = nb.node('ShaderNodeSeparateXYZ'); nb.link(uvn.outputs['UV'], sep.inputs['Vector'])
+    wob = nb.noise4(t, 4.0, 2, 0.5)[0]
+    sc = F(nb, 'SINE', F(nb, 'MULTIPLY', F(nb, 'ADD', sep.outputs['X'], F(nb, 'MULTIPLY', wob, 0.02)), 2 * 3.14159265 * 22))   # 22 scallops per tile: tiles
+    scallop = nb.maprange(sc, -1.0, 1.0)
+    chk = cells(nb, tg, 5.0, 'DISTANCE_TO_EDGE')[0]
+    crack = F(nb, 'MULTIPLY', nb.maprange(chk, 0.0, 0.012, 1.0, 0.0), nb.maprange(nb.noise4(t, 2.0, 2, 0.5)[0], 0.55, 0.65))
+    col = over(nb, col, crack, (0.050, 0.038, 0.028), 0.85)
+    col = over(nb, col, F(nb, 'MULTIPLY', scallop, 0.25), (0.120, 0.095, 0.070))
+    rough = nb.maprange(g, 0.0, 1.0, 0.72, 0.86)
+    h = F(nb, 'SUBTRACT', H(nb, (g, 0.3), (scallop, 0.45)), F(nb, 'MULTIPLY', crack, 0.5))
+    return col, rough, h, 0.8
+
+
+def endgrain(nb):
+    """Sawn log end (not tiling; centred on the UV square): growth rings, darker sapwood rim, a few radial checks."""
+    tc = nb.node('ShaderNodeTexCoord'); sep = nb.node('ShaderNodeSeparateXYZ'); nb.link(tc.outputs['UV'], sep.inputs['Vector'])
+    x = F(nb, 'SUBTRACT', sep.outputs['X'], 0.5); y = F(nb, 'SUBTRACT', sep.outputs['Y'], 0.5)
+    r = F(nb, 'SQRT', F(nb, 'ADD', F(nb, 'MULTIPLY', x, x), F(nb, 'MULTIPLY', y, y))); ang = nb.math('ARCTAN2', y, x)
+    n = nb.node('ShaderNodeTexNoise'); n.inputs['Scale'].default_value = 5.0; nb.link(tc.outputs['UV'], n.inputs['Vector'])
+    ring = nb.maprange(F(nb, 'SINE', F(nb, 'MULTIPLY', F(nb, 'ADD', r, F(nb, 'MULTIPLY', n.outputs['Fac'], 0.025)), 2 * 3.14159265 * 34)), -1.0, 1.0)
+    col = nb.ramp(r, [(0.0, (0.300, 0.225, 0.145)), (0.30, (0.340, 0.262, 0.172)), (0.40, (0.285, 0.215, 0.140)), (0.45, (0.120, 0.095, 0.070))])
+    col = nb.mix_rgb(F(nb, 'MULTIPLY', ring, 0.35), col, (0.170, 0.118, 0.072))
+    rad = F(nb, 'ABSOLUTE', F(nb, 'SINE', F(nb, 'ADD', F(nb, 'MULTIPLY', ang, 2.5), F(nb, 'MULTIPLY', n.outputs['Fac'], 1.2))))
+    check = F(nb, 'MULTIPLY', nb.maprange(rad, 0.0, 0.025, 1.0, 0.0), F(nb, 'MULTIPLY', nb.maprange(r, 0.08, 0.16), nb.maprange(r, 0.42, 0.30)))
+    col = nb.mix_rgb(F(nb, 'MULTIPLY', check, 0.9), col, (0.045, 0.032, 0.020))
+    rough = nb.maprange(ring, 0.0, 1.0, 0.72, 0.86)
+    h = F(nb, 'SUBTRACT', F(nb, 'MULTIPLY', ring, 0.3), F(nb, 'MULTIPLY', check, 0.7))
+    return col, rough, h, 0.7
+
+
+RECIPES = {'DrySoil': drysoil, 'WetSoil': wetsoil, 'Grass': grass, 'Moss': moss, 'Rock': rock, 'PathGravel': pathgravel, 'Water': water, 'Bark': bark, 'Wood': wood, 'EndGrain': endgrain}
 
 
 def bake_one(obj, mat, img, kind):

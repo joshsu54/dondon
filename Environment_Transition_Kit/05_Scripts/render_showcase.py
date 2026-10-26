@@ -3,9 +3,9 @@
   blender -b --python-exit-code 1 --python 05_Scripts/render_showcase.py -- [--name showcase_v01] [--samples 64] [--preview]
 
 Links the three kit .blend files read-only and places module collections at connector-derived transforms:
-near road A05-A06-A03-A04 -> bridgehead C01-C05, C07, C08 -> placeholder test deck over the river -> the same
+near road A05-A06-A03-A04 -> bridgehead C01-C05, C07, C08 -> D01 log bridge (01_Blender/log_bridge_v01.blend) over the river -> the same
 bridgehead rotated 180 degrees on the far bank -> A11-A03-A04-A10.  Bank chains start and end on the C02 bank
-connectors of both bridgeheads.  Ground, riverbed, water, diorama sides, grass tufts on the ground and the deck
+connectors of both bridgeheads.  Ground, riverbed, river stones, water, diorama sides and grass tufts on the ground
 are showcase props, not kit deliverables.  Writes 04_Previews/Showcase/<name>_<view>.png, <name>_labels.json
 (2D label anchors for annotate_showcase.py) and <name>_scene.blend (links the kit files).  --preview renders
 small, noisy test frames to _work/showcase_preview/ instead.  Never overwrites.
@@ -54,6 +54,13 @@ class Kit:
             for c in dst.collections:
                 root = next(o for o in c.objects if o.type == 'EMPTY' and o.name == c.name)
                 self.coll[c.name] = c; self.slot[c.name] = Vector(root.location)
+        with bpy.data.libraries.load(str(KB.kit_path('01_Blender/log_bridge_v01.blend')), link=True) as (src, dst):   # D01, the extra log bridge
+            dst.collections = ['SM_Bridge_Log_A']
+        self.log = dst.collections[0]
+
+    def place_log(self, T):
+        e = bpy.data.objects.new('SHOW_D01_LogBridge', None); e.instance_type = 'COLLECTION'; e.instance_collection = self.log
+        e.matrix_world = T; self.scene.collection.objects.link(e)
 
     def place(self, code, T, tag):
         mid = K.BY_CODE[code]['id']
@@ -259,7 +266,7 @@ def road_samples(kit):
 def build_props(kit, near_start, far_x):
     M = {'grass': show_pbr('SHOW_Ground_Grass', 'Grass'), 
          'side': KB.flat_material('SHOW_DioramaSide', (0.055, 0.042, 0.032), 0.95),
-         'deck': KB.test_material('SHOW_TEST_Deck_Placeholder', (0.26, 0.25, 0.30)), 'card': KB.grass_card_material()}
+         'card': KB.grass_card_material()}
     x_min = near_start.translation.x; x_max = far_x
     grid_plane('SHOW_Ground_Near', x_min, 2.0, -Y_EDGE, Y_EDGE, GROUND_Z, M['grass'])
     grid_plane('SHOW_Ground_Far', 12.0, x_max, -Y_EDGE, Y_EDGE, GROUND_Z, M['grass'])
@@ -268,8 +275,7 @@ def build_props(kit, near_start, far_x):
         grid_plane('SHOW_Ground_NearBankLand_%+d' % sgn, 2.0, 2.9, y0, y1, GROUND_Z, M['grass'])
         grid_plane('SHOW_Ground_FarBankLand_%+d' % sgn, 11.1, 12.0, y0, y1, GROUND_Z, M['grass'])
     build_riverbed()
-    deck = KB.Parts(); KB.block(deck, (7.0, 0.0, (K.DECK_Z + K.DECK_BOTTOM) / 2), (10.0, 2 * K.DECK_HALF, K.DECK_Z - K.DECK_BOTTOM))
-    deck.build('SHOW_TEST_Deck_Placeholder', [M['deck']], bpy.context.scene.collection, None)
+    kit.place_log(Matrix.Translation((K.RAMP_L, 0.0, K.DECK_Z)))     # D01 log bridge from C01 exit to the far C01 exit, seated on both C05
     prof = section_profile(x_min, x_max)
     for sgn in (1, -1):
         skirt('SHOW_Side_Y%+d' % sgn, prof, -1.6, M['side'], ('y', sgn * Y_EDGE))
@@ -360,7 +366,7 @@ def main():
     ]
     seams = {'seam_road': [seam_road + Vector(p) for p in ((0, -2.25, 0.02), (0, 2.25, 0.02))],
              'seam_bank': [Vector((K.BANK_LINE_X - v, K.BH_BANK_A, K.bank_z(v))) for v in (1.0, -2.0)],
-             'seam_deck': [Vector((K.RAMP_L, -1.5, K.DECK_Z)), Vector((K.RAMP_L, 1.5, K.DECK_Z))]}
+             'seam_deck': [Vector((K.RAMP_L, -0.25, K.DECK_Z)), Vector((K.RAMP_L, 0.25, K.DECK_Z))]}
     labels = {}
     for tag, kw in views:
         set_camera(cam, **kw); bpy.context.view_layer.update()
@@ -376,7 +382,7 @@ def main():
                 q = to2d(anchor_of(code, T))
                 if 0.02 < q[0] < 0.98 and 0.02 < q[1] < 0.98 and q[2] > 0: rec['items'].append({'text': label_text(code, where), 'xy': q[:2]})
             q = to2d((7.0, 0.0, K.DECK_Z))
-            rec['items'].append({'text': '測試橋面（佔位，非正式橋梁）', 'xy': q[:2]})
+            rec['items'].append({'text': 'D01 獨木橋（新增）', 'xy': q[:2]})
             q = to2d((7.0, -9.0, K.WATER_Z))
             if 0 < q[0] < 1 and 0 < q[1] < 1: rec['items'].append({'text': '測試水位 -0.80 m', 'xy': q[:2]})
         if tag in seams:

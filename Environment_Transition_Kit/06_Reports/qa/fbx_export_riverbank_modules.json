@@ -1961,7 +1961,7 @@
     "SM_Riverbank_RockReinforced_A": {
       "code": "B07",
       "fbx": "02_Exports/Riverbank/SM_Riverbank_RockReinforced_A.fbx",
-      "bytes": 508412,
+      "bytes": 487340,
       "objects": {
         "SM_Riverbank_RockReinforced_A": {
           "type": "EMPTY",
@@ -1991,7 +1991,7 @@
         },
         "SM_Riverbank_RockReinforced_A_Rocks_LOD0": {
           "type": "MESH",
-          "tris": 2640,
+          "tris": 2400,
           "materials": [
             "M_Rock",
             "M_Moss"
@@ -1999,7 +1999,7 @@
         },
         "SM_Riverbank_RockReinforced_A_Rocks_LOD1": {
           "type": "MESH",
-          "tris": 1320,
+          "tris": 1200,
           "materials": [
             "M_Rock",
             "M_Moss"
