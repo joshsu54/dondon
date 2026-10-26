@@ -147,6 +147,10 @@ class NB:
 # ---- materials -----------------------------------------------------------------------------------
 LAYERS = ['DrySoil', 'WetSoil', 'Grass', 'Moss', 'Rock', 'PathGravel']
 MASK_ORDER = [('PathGravel', 2), ('WetSoil', 0), ('Grass', 1), ('Moss', 3)]   # (layer, mask channel)
+# Blend of each layer over the layers below it: v = mask + amp * (wR*R + wG*G + wB*B) of T_BlendNoise, then smoothstep(lo, hi, v).
+# R = 10 cm, G = 30 cm, B = 4 cm noise.  Wet soil fades softly; grass, moss and gravel get crisper, irregular edges.
+BLEND = {'PathGravel': ((0.5, 0.0, 0.5), 0.70, 0.78, 0.92), 'WetSoil': ((0.4, 0.6, 0.0), 0.55, 0.55, 0.97),
+         'Grass': ((0.5, 0.2, 0.3), 0.70, 0.78, 0.92), 'Moss': ((0.6, 0.0, 0.4), 0.70, 0.80, 0.95)}
 
 
 def tex_image(name, non_color):
@@ -199,8 +203,10 @@ def terrain_material():
         bt = nb.node('ShaderNodeTexImage'); bt.image = tex_image('T_BlendNoise.png', True); nb.link(mp.outputs['Vector'], bt.inputs['Vector'])
         h = sock(bt.outputs, 'Color')
         hsep = nb.node('ShaderNodeSeparateColor'); nb.link(h, hsep.inputs['Color'])
-        v = nb.math('MULTIPLY_ADD', hsep.outputs['Red'], 0.7, chan[ch])          # mask + 0.7 * noise
-        f = nb.maprange(v, 0.79, 0.91, smooth=True)
+        (wr, wg, wb), amp, lo, hi = BLEND[layer]
+        n = nb.math('ADD', nb.math('MULTIPLY', hsep.outputs['Red'], wr), nb.math('ADD', nb.math('MULTIPLY', hsep.outputs['Green'], wg), nb.math('MULTIPLY', hsep.outputs['Blue'], wb)))
+        v = nb.math('MULTIPLY_ADD', n, amp, chan[ch])                            # mask + amp * noise
+        f = nb.maprange(v, lo, hi, smooth=True)
         col = nb.mix_rgb(f, col, lc); rough = nb.mix_rgb(f, rough, lr); nrm = nb.mix_rgb(f, nrm, ln)
     nb.link(col, p.inputs['Base Color'])
     rs = nb.node('ShaderNodeSeparateColor'); nb.link(rough, rs.inputs['Color']); nb.link(rs.outputs['Red'], p.inputs['Roughness'])
@@ -216,8 +222,11 @@ def grass_card_material():
     m = bpy.data.materials.new(name); m.use_nodes = True; nb = NB(m); p = nb.n['Principled BSDF']
     t = nb.node('ShaderNodeTexImage'); t.image = tex_image('T_GrassCard_BaseColor.png', False)
     uvn = nb.node('ShaderNodeUVMap', uv_map='UVMap'); nb.link(uvn.outputs['UV'], t.inputs['Vector'])
-    nb.link(t.outputs['Color'], p.inputs['Base Color']); nb.link(t.outputs['Alpha'], p.inputs['Alpha'])
-    p.inputs['Roughness'].default_value = 0.8
+    dim = nb.node('ShaderNodeMix'); dim.data_type = 'RGBA'; dim.blend_type = 'MULTIPLY'
+    sock(dim.inputs, 'Factor_Float').default_value = 1.0; sock(dim.inputs, 'B_Color').default_value = (0.72, 0.74, 0.62, 1.0)
+    nb.link(t.outputs['Color'], sock(dim.inputs, 'A_Color')); nb.link(sock(dim.outputs, 'Result_Color'), p.inputs['Base Color'])
+    nb.link(t.outputs['Alpha'], p.inputs['Alpha'])
+    p.inputs['Roughness'].default_value = 0.85
     try: m.surface_render_method = 'DITHERED'
     except AttributeError: pass
     m.diffuse_color = (*SWATCH['Grass'], 1.0); m['kit_material'] = 'GrassCard (alpha cutout)'
@@ -348,19 +357,23 @@ class Parts:
     """Accumulates loose pieces (rocks, cards) into one object per category."""
 
     def __init__(self):
-        self.v = []; self.f = []; self.m = []; self.uv = []
+        self.v = []; self.f = []; self.m = []; self.uv = []; self.sm = []
 
-    def add(self, verts, faces, mat=0, uvs=None):
+    def add(self, verts, faces, mat=0, uvs=None, smooth=None):
         o = len(self.v); self.v += [tuple(p) for p in verts]
         for k, face in enumerate(faces):
-            self.f.append(tuple(o + i for i in face)); self.m.append(mat)
+            self.f.append(tuple(o + i for i in face)); self.m.append(mat); self.sm.append(smooth)
             self.uv.append(uvs[k] if uvs else None)
 
-    def build(self, name, mats, coll, parent, smooth=False, uv_mode='box'):
+    def build(self, name, mats, coll, parent, smooth=False, uv_mode='box', sharp_angle=None):
+        """sharp_angle (degrees): shade smooth but keep edges sharper than this crisp (natural stones)."""
         if not self.f: return None
         me = bpy.data.meshes.new(name); me.from_pydata(self.v, [], self.f); me.update()
         for mt in mats: me.materials.append(mt)
-        for poly, mi in zip(me.polygons, self.m): poly.material_index = mi; poly.use_smooth = smooth
+        for poly, mi, fs in zip(me.polygons, self.m, self.sm): poly.material_index = mi; poly.use_smooth = smooth if fs is None else fs
+        if sharp_angle is not None:
+            for poly in me.polygons: poly.use_smooth = True
+            me.set_sharp_from_angle(angle=math.radians(sharp_angle))
         if uv_mode == 'box': box_uv(me)
         else:
             uvl = me.uv_layers.new(name='UVMap')
@@ -369,8 +382,8 @@ class Parts:
         return link_obj(name, me, coll, parent)
 
 
-def rock(parts, rng, loc, size, yaw=None, tilt=(0.0, 0.0), subdiv=1, flatten=0.45, moss_mat=None, base_mat=0, normal_up=None):
-    """Low-poly displaced icosphere (subdiv 1 = 80 triangles; 0 = 20)."""
+def rock(parts, rng, loc, size, yaw=None, tilt=(0.0, 0.0), subdiv=1, flatten=0.45, moss_mat=None, base_mat=0, normal_up=None, moss_cut=0.25, facets=0):
+    """Low-poly displaced icosphere (Blender subdivisions: 1 = icosahedron, 20 triangles; 2 = 80 triangles)."""
     import bmesh
     from mathutils import Euler, Matrix
     bm = bmesh.new(); bmesh.ops.create_icosphere(bm, subdivisions=subdiv, radius=1.0)
@@ -378,6 +391,8 @@ def rock(parts, rng, loc, size, yaw=None, tilt=(0.0, 0.0), subdiv=1, flatten=0.4
     for v in bm.verts:
         d = 1 + 0.26 * noise.noise(v.co * 1.3 + Vector((o, o, o))) + 0.07 * noise.noise(v.co * 3.7 + Vector((-o, o, o)))
         v.co *= d; v.co.z = max(v.co.z, -flatten)
+    planes = fracture_planes(rng, facets) if facets else []
+    for v in bm.verts: v.co = cleave(v.co, planes)
     rot = Euler((tilt[0], tilt[1], rng.uniform(0, math.tau) if yaw is None else yaw)).to_matrix()
     if normal_up is not None:
         rot = Vector((0, 0, 1)).rotation_difference(Vector(normal_up)).to_matrix() @ rot
@@ -386,8 +401,8 @@ def rock(parts, rng, loc, size, yaw=None, tilt=(0.0, 0.0), subdiv=1, flatten=0.4
     o = len(parts.v); parts.v += [tuple(p) for p in verts]
     for f in faces:
         pts = [verts[i] for i in f]; n = (pts[1] - pts[0]).cross(pts[2] - pts[0])
-        top = n.length > 0 and n.normalized().z > 0.6 and moss_mat is not None and noise.noise(pts[0] * 2.1) > -0.1
-        parts.f.append(tuple(o + i for i in f)); parts.m.append(moss_mat if top else base_mat); parts.uv.append(None)
+        top = n.length > 0 and n.normalized().z > 0.7 and moss_mat is not None and noise.noise(pts[0] * 2.1) > moss_cut
+        parts.f.append(tuple(o + i for i in f)); parts.m.append(moss_mat if top else base_mat); parts.uv.append(None); parts.sm.append(True)
 
 
 def pebble(parts, rng, loc, r, mat=0):
@@ -417,7 +432,86 @@ def block(parts, center, size, yaw=0.0, rng=None, jitter=0.012, mat=0, tilt=None
         v = Vector((px * cs - py * sn, px * sn + py * cs, pz))
         if tilt is not None: v = Vector((0, 0, 1)).rotation_difference(Vector(tilt)).to_matrix() @ v
         pts.append((x + v.x, y + v.y, z + v.z))
-    parts.add(pts, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat)
+    parts.add(pts, [(0, 3, 2, 1), (4, 5, 6, 7), (0, 1, 5, 4), (1, 2, 6, 5), (2, 3, 7, 6), (3, 0, 4, 7)], mat, smooth=False)
+
+
+def dressed_stone(parts, rng, center, size, bevel=0.03, wobble=0.006, mat=0, moss_mat=None):
+    """Cut stone block with chamfered edges (bmesh bevel, 1 segment = 44 triangles), flat shaded.
+
+    Vertices are displaced by smooth noise (not per-vertex random) so the chamfers stay coherent;
+    the displacement never pushes a face outside the nominal box, so seats and front faces keep their planes."""
+    import bmesh
+    bm = bmesh.new(); bmesh.ops.create_cube(bm, size=1.0)
+    for v in bm.verts: v.co = Vector((v.co.x * size[0], v.co.y * size[1], v.co.z * size[2]))
+    bmesh.ops.bevel(bm, geom=bm.verts[:] + bm.edges[:], offset=bevel, segments=1, affect='EDGES', profile=0.5)
+    o = Vector([rng.uniform(0, 100) for _ in range(3)]); half = Vector(size) / 2
+    for v in bm.verts:
+        d = noise.noise_vector(v.co * 4.0 + o) * wobble
+        v.co = Vector([max(-half[i], min(half[i], v.co[i] + d[i])) for i in range(3)])
+    verts = [v.co + Vector(center) for v in bm.verts]
+    faces = [tuple(v.index for v in f.verts) for f in bm.faces]; bm.free()
+    base = len(parts.v); parts.v += [tuple(p) for p in verts]
+    for f in faces:
+        pts = [verts[i] for i in f]; n = (pts[1] - pts[0]).cross(pts[2] - pts[0])
+        top = moss_mat is not None and n.length > 0 and n.normalized().z > 0.45 and noise.noise(pts[0] * 3.1 + o) > 0.15
+        parts.f.append(tuple(base + i for i in f)); parts.m.append(moss_mat if top else mat); parts.uv.append(None); parts.sm.append(False)
+
+
+def decimated_copy(name, src, ratio, coll, parent):
+    """Real reduced LOD: evaluate a Decimate (collapse) modifier on a temporary object and keep the result."""
+    tmp = link_obj(name + '__tmp', src.data, coll, parent)
+    mod = tmp.modifiers.new('KIT_Decimate', 'DECIMATE'); mod.ratio = ratio; mod.use_collapse_triangulate = True
+    bpy.context.view_layer.update()
+    me = bpy.data.meshes.new_from_object(tmp.evaluated_get(bpy.context.evaluated_depsgraph_get()))
+    bpy.data.objects.remove(tmp); me.name = name
+    return link_obj(name, me, coll, parent)
+
+
+def cleave(co, planes):
+    """Project a vertex onto every fracture plane it lies beyond: flat broken faces with crisp edges."""
+    for n, d in planes:
+        t = co.dot(n) - d
+        if t > 0: co = co - n * t
+    return co
+
+
+def fracture_planes(rng, count):
+    out = []
+    for _ in range(count):
+        a = rng.uniform(0, math.tau); z = rng.uniform(-0.25, 0.85); r = math.sqrt(max(0.0, 1 - z * z))
+        out.append((Vector((r * math.cos(a), r * math.sin(a), z)), rng.uniform(0.62, 0.86)))
+    return out
+
+
+def chunk(parts, rng, loc, size, normal_up=(0, 0, 1), yaw=0.0, mat=0, moss_mat=None, moss_cut=0.3, roundness=(0.3, 0.55), rough=0.16, tilt=0.0, dome=0.0,
+          facets=(2, 4), cuts=1):
+    """Blocky natural stone: once-subdivided cube pulled towards a sphere and roughened (48 triangles).
+
+    roundness: range of the pull towards a sphere; rough: noise displacement (two octaves); facets: range
+    of random fracture planes; cuts: 1 = 48 triangles, 2 = 108; tilt: max random tilt (radians)
+    about a horizontal axis, so laid stones do not all lie parallel to the slope like paving; dome: extra
+    rise of the upper face centre (in half-heights) so stones read as boulders rather than slabs."""
+    import bmesh
+    bm = bmesh.new(); bmesh.ops.create_cube(bm, size=2.0)
+    bmesh.ops.subdivide_edges(bm, edges=bm.edges[:], cuts=cuts, use_grid_fill=True)
+    o = rng.uniform(0, 100); k = rng.uniform(*roundness); planes = fracture_planes(rng, rng.randint(*facets))
+    for v in bm.verts:
+        sph = v.co.normalized() * 1.2; v.co = v.co.lerp(sph, k)
+        v.co *= 1 + rough * (noise.noise(v.co * 1.6 + Vector((o, o, o))) + 0.45 * noise.noise(v.co * 3.7 + Vector((-o, o, 0.5 * o))))
+        v.co = cleave(v.co, planes)
+        if v.co.z > 0: v.co.z += dome * max(0.0, 1.0 - 0.5 * (v.co.x ** 2 + v.co.y ** 2))
+        v.co.z = max(v.co.z, -0.75)
+    from mathutils import Matrix
+    ax = rng.uniform(0, math.tau)
+    rot = (Vector((0, 0, 1)).rotation_difference(Vector(normal_up)).to_matrix() @ Matrix.Rotation(yaw, 3, 'Z')
+           @ Matrix.Rotation(rng.uniform(-tilt, tilt), 3, Vector((math.cos(ax), math.sin(ax), 0.0))))
+    verts = [rot @ Vector((v.co.x * size[0] / 2, v.co.y * size[1] / 2, v.co.z * size[2] / 2)) + Vector(loc) for v in bm.verts]
+    faces = [tuple(v.index for v in f.verts) for f in bm.faces]; bm.free()
+    base = len(parts.v); parts.v += [tuple(p) for p in verts]
+    for f in faces:
+        pts = [verts[i] for i in f]; n = (pts[1] - pts[0]).cross(pts[2] - pts[0])
+        top = moss_mat is not None and n.length > 0 and n.normalized().dot(Vector(normal_up)) > 0.8 and noise.noise(pts[0] * 2.3) > moss_cut
+        parts.f.append(tuple(base + i for i in f)); parts.m.append(moss_mat if top else mat); parts.uv.append(None); parts.sm.append(False)
 
 
 # ---- lighting / rendering ------------------------------------------------------------------------
@@ -429,6 +523,7 @@ def studio(scene, coll, samples=32, transparent=True, exposure=0.0):
     w = bpy.data.worlds.new('KIT_Sky'); w.use_nodes = True; bg = w.node_tree.nodes['Background']
     bg.inputs[0].default_value = (0.55, 0.60, 0.66, 1.0); bg.inputs[1].default_value = 0.55; scene.world = w
     scene.render.engine = 'CYCLES'; scene.cycles.device = 'CPU'; scene.cycles.samples = samples; scene.cycles.use_denoising = True
+    scene.cycles.max_bounces = 6; scene.cycles.diffuse_bounces = 3; scene.cycles.glossy_bounces = 3; scene.cycles.transparent_max_bounces = 12
     scene.render.film_transparent = transparent
     scene.render.resolution_x = 1024; scene.render.resolution_y = 1024; scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format = 'PNG'; scene.render.image_settings.color_mode = 'RGBA' if transparent else 'RGB'

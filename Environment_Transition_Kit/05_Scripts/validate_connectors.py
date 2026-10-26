@@ -14,7 +14,8 @@ Checks (tolerance kit_spec.TOL = 1 mm):
      and normals compared in world space;
   3. pairs: A01 + TEST_RoadCore_3m + A02, C01 exit on the test deck, B01 on both C02 bank connectors,
      bridgehead internal seams;
-  4. per module: triangle count, UVs, Mask attribute, object naming, identity child transforms.
+  4. per module: triangle count, UVs, Mask attribute, object naming, identity child transforms;
+  5. details (stones, grass, sod, masonry) never cross an entry/exit connector plane.
 """
 import sys, math, json
 from pathlib import Path
@@ -169,9 +170,27 @@ def module_stats(mod):
         if not o.name.startswith(mod.id + '_'): issues.append('naming: ' + o.name)
         if o.name.startswith('TEST_'): issues.append('test object inside module: ' + o.name)
     if mod.terrain and 'Mask' not in mod.terrain.data.color_attributes: issues.append('terrain has no Mask attribute')
-    lo, hi = K.TRI_BUDGET[mod.spec['group']]
+    lo, hi = K.tri_budget(mod.spec)
     return {'objects': len(mod.objs), 'lod0_tris': lod0, 'budget': [lo, hi], 'within_budget_max': lod0 <= hi,
             'tris_by_object': tris, 'issues': issues}
+
+
+DETAIL_TAGS = ('_DET_', '_Rocks_LOD0', '_SodLip_LOD0', '_Masonry_LOD0')
+
+
+def detail_containment(mod):
+    """Details (stones, grass cards, sod lips, masonry) must stay behind every entry/exit connector plane,
+    so a neighbouring module's terrain and details are never intruded upon.  Returns the worst protrusion (m)."""
+    out = []
+    planes = [(c['name'], Vector(c['location']), Vector((math.cos(math.radians(c['heading_deg'])), math.sin(math.radians(c['heading_deg'])), 0.0)),
+               1.0 if c['role'] == 'exit' else -1.0) for c in K.connectors(mod.spec) if c['role'] in ('entry', 'exit')]
+    for o in mod.objs:
+        if not any(t in o.name for t in DETAIL_TAGS): continue
+        for name, loc, d, sgn in planes:
+            worst = max(sgn * (v.co - loc).dot(d) for v in o.data.vertices)
+            out.append({'object': o.name, 'connector': name, 'protrusion_m': max(0.0, worst)})
+    worst = max([r['protrusion_m'] for r in out] or [0.0])
+    return {'max_protrusion_m': worst, 'pass': worst <= K.TOL, 'worst': sorted(out, key=lambda r: -r['protrusion_m'])[:3]}
 
 
 # ---- assembly scenes (rendered) ------------------------------------------------------------------------
@@ -226,10 +245,10 @@ def main():
     # 1. connectors per module
     for mid, mod in sorted(mods.items(), key=lambda kv: kv[1].spec['code']):
         cons = [check_connector(mod, c) for c in K.connectors(mod.spec)]
-        R['modules'][mid] = {'code': mod.spec['code'], 'connectors': [c for c in cons if c], 'stats': module_stats(mod)}
-        ok = all(c['pass'] for c in cons if c) and not R['modules'][mid]['stats']['issues']
+        R['modules'][mid] = {'code': mod.spec['code'], 'connectors': [c for c in cons if c], 'stats': module_stats(mod), 'details': detail_containment(mod)}
+        ok = all(c['pass'] for c in cons if c) and not R['modules'][mid]['stats']['issues'] and R['modules'][mid]['details']['pass']
         R['modules'][mid]['pass'] = ok
-        print('MODULE', mod.spec['code'], 'PASS' if ok else 'FAIL', max([c['max_position_error_m'] for c in cons if c] or [0]), flush=True)
+        print('MODULE', mod.spec['code'], 'PASS' if ok else 'FAIL', max([c['max_position_error_m'] for c in cons if c] or [0]), 'details', '%.4f' % R['modules'][mid]['details']['max_protrusion_m'], R['modules'][mid]['stats']['lod0_tris'], flush=True)
     # 2. chains
     for title, chain in K.CHAIN_TESTS:
         if not all(c in mods for c in chain): continue

@@ -648,7 +648,7 @@ def info_block(cv, mod, cons, s):
     parts = parts_of(mod)
     if parts:
         tris = sum((len(p.us) - 1) * (len(p.vs) - 1) * 2 for p in parts)
-        cv.text((x, y), '地表格點：%s　LOD0 地表約 %d 三角面（細節另計）　預算 %d–%d' % (' + '.join('%d×%d' % (len(p.us), len(p.vs)) for p in parts), tris, *K.TRI_BUDGET[mod['group']]), 14, INK, 'lt'); y += 26
+        cv.text((x, y), '地表格點：%s　LOD0 地表約 %d 三角面（細節另計）　預算 %d–%d' % (' + '.join('%d×%d' % (len(p.us), len(p.vs)) for p in parts), tris, *K.tri_budget(mod)), 14, INK, 'lt'); y += 26
     else:
         cv.text((x, y), '石基：兩層砌石塊，預估 600–1,400 三角面', 14, INK, 'lt'); y += 26
     y += 6

@@ -33,16 +33,18 @@ def fbm(x, y, s, sc=0.9, octaves=4):
 
 # ---- final-stage variation (always multiplied by the boundary window, so connectors never change) ----
 def amp_of(sf, u, v):
+    """Relief amplitude.  Varies smoothly; a jump here would make a step in the surface (and dark shading)."""
     k = sf.kind
     if k in ('road_strip', 'road_full', 'road_end'):
-        return 0.010 if abs(v) <= K.ROAD_HALF else 0.028
+        a = K.end_distance(u, v) if k == 'road_end' else abs(v)
+        return 0.010 + 0.018 * K.S((a - 1.35) / 0.35)
     if k in ('bank', 'bank_end'):
-        return 0.035 if v >= 0 else 0.06
+        return 0.035 + 0.025 * K.S(-v / 0.4)
     if k == 'c06':
         return 0.006
-    if sf.zone == 'approach' and abs(v) <= K.ROAD_HALF:
-        return 0.008
-    return 0.03 if K.c_H(u, v) > -0.05 else 0.05
+    a = abs(v); walk = (1.0 - K.S((a - 1.35) / 0.35)) if sf.zone == 'approach' else 0.0
+    slope = K.S((-0.02 - K.c_H(u, v)) / 0.12)
+    return (0.03 + 0.02 * slope) * (1.0 - walk) + 0.008 * walk
 
 
 def make_fns(mod, stage):
@@ -65,6 +67,8 @@ def make_fns(mod, stage):
             grass += w * 0.28 * fbm(x, y, s + 23, 1.3)
             gravel += w * 0.22 * fbm(x, y, s + 37, 1.6) * (1.0 if sf.walkable(u, v) else 0.4)
             wet += w * 0.15 * fbm(x, y, s + 11, 1.1) * K.S((-0.3 - z) / 0.3)
+            if mod.get('variant') == 'riprap':
+                gravel = max(gravel, w * K.S((v + 1.55) / 0.12) * K.S((0.02 - v) / 0.1))
             slope_or_verge = (sf.kind.startswith('bank') and v < 0.2) or (sf.kind.startswith('road') and abs(v) > 1.6) or (sf.kind == 'c_grid' and z < -0.05)
             if slope_or_verge:
                 moss += w * moss_gain * max(0.0, 0.9 * fbm(x, y, s + 51, 1.4) - 0.12)
@@ -101,13 +105,48 @@ class Detail:
         self.stones = KB.Parts(); self.grass = KB.Parts(); self.rocks = KB.Parts(); self.extra = {}
 
 
-def hanging_card(parts, rng, loc, size=1.0, mat=0):
+class Guard:
+    """Keeps every detail piece behind the module's entry/exit connector planes.
+
+    A piece (one stone, one grass card) whose vertices cross a plane is removed again, so details never
+    intrude into the neighbouring module.  Seam connectors (e.g. the road core edge) are not guarded."""
+    planes = []; dropped = 0
+
+    @classmethod
+    def arm(cls, mod):
+        cls.planes = [(Vector(c['location']), Vector((math.cos(math.radians(c['heading_deg'])), math.sin(math.radians(c['heading_deg'])), 0.0)),
+                       1.0 if c['role'] == 'exit' else -1.0) for c in K.connectors(mod) if c['role'] in ('entry', 'exit')]
+        cls.dropped = 0
+
+    @classmethod
+    def ok(cls, verts):
+        return all(sgn * (Vector(p) - loc).dot(d) <= 1e-6 for p in verts for loc, d, sgn in cls.planes)
+
+
+def guarded(fn):
+    def place(parts, *a, **k):
+        nv, nf = len(parts.v), len(parts.f)
+        fn(parts, *a, **k)
+        if Guard.ok(parts.v[nv:]): return True
+        del parts.v[nv:]; del parts.f[nf:]; del parts.m[nf:]; del parts.uv[nf:]; del parts.sm[nf:]
+        Guard.dropped += 1
+        return False
+    return place
+
+
+pebble, grass_card, chunk, rock, dressed_stone = (guarded(f) for f in (KB.pebble, KB.grass_card, KB.chunk, KB.rock, KB.dressed_stone))
+
+
+def _hanging_card(parts, rng, loc, size=1.0, mat=0):
     w = rng.uniform(0.25, 0.4) * size; hgt = rng.uniform(0.12, 0.22) * size; a0 = rng.uniform(-0.4, 0.4)
     for k in range(2):
         a = a0 + k * 0.9; dx, dy = math.cos(a) * w / 2, math.sin(a) * w / 2
         x, y, z = loc
         quad = [(x - dx, y - dy, z + 0.02), (x + dx, y + dy, z + 0.02), (x + dx, y + dy - 0.04, z - hgt), (x - dx, y - dy - 0.04, z - hgt)]
         parts.add(quad, [(0, 1, 2, 3)], mat, uvs=[[(0, 1), (1, 1), (1, 0), (0, 0)]])
+
+
+hanging_card = guarded(_hanging_card)
 
 
 def road_details(mod, sf, zf, mf, rng, D):
@@ -118,29 +157,29 @@ def road_details(mod, sf, zf, mf, rng, D):
         return k != 'road_end' or K.end_distance(u, v) <= K.ROAD_OUTER + 0.15
     for sg in sides:
         for u, v in scatter(rng, 9, (ulo, uhi), (1.55, 1.95), lambda u, v: on_road(u, sg * v), 0.25):
-            KB.pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.055), rng.randint(0, 1))
+            pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.055), rng.randint(0, 1))
         for u, v in scatter(rng, 2, (ulo + 0.2, uhi - 0.2), (1.8, 2.12), lambda u, v: on_road(u, sg * v), 0.8):
-            sz = rng.uniform(0.07, 0.12)
-            KB.rock(D.stones, rng, surf_pt(sf, zf, u, sg * v) - Vector((0, 0, sz * 0.3)), (sz * 1.3, sz, sz * 0.7), subdiv=0, moss_mat=2, base_mat=0)
+            sz = rng.uniform(0.09, 0.15); p = surf_pt(sf, zf, u, sg * v); n = surf_n(sf, zf, u, sg * v)
+            chunk(D.stones, rng, p - n * sz * 0.25, (sz * 1.3, sz, sz * 0.8), n, rng.uniform(0, 6.3), mat=0, roundness=(0.45, 0.7), tilt=0.4)
         for u, v in scatter(rng, 7, (ulo, uhi), (1.85, 2.3), lambda u, v: on_road(u, sg * v) and mf(u, sg * min(v, 2.25))[1] > 0.35, 0.35):
-            KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * min(v, 2.25)), rng.uniform(0.75, 1.15))
+            grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * min(v, 2.25)), rng.uniform(0.75, 1.15))
     if k == 'road_full':
         for u, v in scatter(rng, 6, (ulo, uhi), (-1.1, 1.1), lambda u, v: abs(abs(v) - 0.75) < 0.3, 0.3):
-            KB.pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.018, 0.035), 1)
+            pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.018, 0.035), 1)
     if var == 'grass':
         for u, v in scatter(rng, 16, (1.0, L - 0.3), (-1.4, 1.4), lambda u, v: rng.random() < K.S((u - 0.8) / 3.0), 0.35):
-            KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, v), rng.uniform(0.55, 0.9))
+            grass_card(D.grass, rng, surf_pt(sf, zf, u, v), rng.uniform(0.55, 0.9))
     if var == 'gravel':
         for u, v in scatter(rng, 48, (0.5, L - 0.2), (-1.45, 1.45), lambda u, v: rng.random() < K.S((u - 0.6) / 3.0), 0.12):
-            KB.pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.015, 0.035), rng.randint(0, 1))
+            pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.015, 0.035), rng.randint(0, 1))
     if var == 'damaged':
         for cs, cv, r in K.CHIPS:
             for u, v in scatter(rng, 4, (cs - r * 0.8, cs + r * 0.8), (abs(cv) - 0.3, min(2.2, abs(cv) + 0.3)), lambda u, v: True, 0.12):
-                KB.pebble(D.stones, rng, surf_pt(sf, zf, u, math.copysign(v, cv)), rng.uniform(0.03, 0.06), 0)
+                pebble(D.stones, rng, surf_pt(sf, zf, u, math.copysign(v, cv)), rng.uniform(0.03, 0.06), 0)
         for ps, pv, r, d in K.POTHOLES:
             for t in range(5):
                 a = rng.uniform(0, math.tau); rr = r * rng.uniform(0.85, 1.05)
-                KB.pebble(D.stones, rng, surf_pt(sf, zf, ps + rr * math.cos(a), pv + rr * math.sin(a)), rng.uniform(0.015, 0.03), 1)
+                pebble(D.stones, rng, surf_pt(sf, zf, ps + rr * math.cos(a), pv + rr * math.sin(a)), rng.uniform(0.015, 0.03), 1)
         cracks = KB.Parts()
         for c in range(6):
             u = rng.uniform(0.9, 3.1); v = rng.uniform(-1.1, 1.1); ang = rng.uniform(0, math.tau); pts = []
@@ -154,7 +193,7 @@ def road_details(mod, sf, zf, mf, rng, D):
         D.extra['DET_Cracks'] = (cracks, ['WetSoil'])
     if k == 'road_end':
         for u, v in scatter(rng, 12, (1.0, L - 0.3), (-2.4, 2.4), lambda u, v: 1.75 < K.end_distance(u, v) < 2.4, 0.3):
-            KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, max(-2.25, min(2.25, v))), rng.uniform(0.75, 1.1))
+            grass_card(D.grass, rng, surf_pt(sf, zf, u, max(-2.25, min(2.25, v))), rng.uniform(0.75, 1.1))
 
 
 def bank_details(mod, sf, zf, mf, rng, D):
@@ -162,32 +201,39 @@ def bank_details(mod, sf, zf, mf, rng, D):
     n_grass = 40 if var == 'grassy' else 10
     vlo = -1.0 if var == 'grassy' else 0.2
     for u, v in scatter(rng, n_grass, (0.25, L - 0.25), (vlo, 0.95), lambda u, v: mf(u, v)[1] > 0.3 or var == 'grassy', 0.28 if var != 'grassy' else 0.2):
-        KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, v), rng.uniform(0.75, 1.2) * (1.15 if var == 'grassy' else 1.0))
-    for u, v in scatter(rng, 10 if var != 'stones' else 20, (0.25, L - 0.25), (-1.65, -1.2), lambda u, v: True, 0.18):
-        KB.pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.025, 0.06), rng.randint(0, 1))
+        grass_card(D.grass, rng, surf_pt(sf, zf, u, v), rng.uniform(0.75, 1.2) * (1.15 if var == 'grassy' else 1.0))
+    for u, v in scatter(rng, {'stones': 20, 'riprap': 4}.get(var, 10), (0.25, L - 0.25), (-1.65, -1.2), lambda u, v: True, 0.18):
+        pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.025, 0.06), rng.randint(0, 1))
     if var == 'stones':
         for u, v in scatter(rng, 9, (0.4, L - 0.4), (-1.4, 0.2), lambda u, v: True, 0.4):
-            sz = rng.uniform(0.07, 0.16); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
-            KB.rock(D.stones, rng, p - n * sz * 0.35, (sz * 1.25, sz, sz * 0.75), subdiv=1, moss_mat=2, base_mat=0, normal_up=n)
+            sz = rng.uniform(0.08, 0.17); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
+            chunk(D.stones, rng, p - n * sz * 0.3, (sz * 1.3, sz, sz * 0.55), n, rng.uniform(0, 6.3), mat=0,
+                     roundness=(0.45, 0.7), rough=0.2, tilt=0.2, dome=0.1)
     elif k == 'bank':
-        for u, v in scatter(rng, 2, (0.6, L - 0.6), (-1.2, -0.3), lambda u, v: True, 0.8):
-            sz = rng.uniform(0.08, 0.13); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
-            KB.rock(D.stones, rng, p - n * sz * 0.35, (sz * 1.3, sz, sz * 0.7), subdiv=0, moss_mat=2, base_mat=0, normal_up=n)
+        for i, (u, v) in enumerate(scatter(rng, 4, (0.6, L - 0.6), (-1.55, -0.45), lambda u, v: True, 0.7)):
+            sz = rng.uniform(0.10, 0.17); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
+            chunk(D.stones, rng, p - n * sz * 0.3, (sz * 1.35, sz, sz * 0.55), n, rng.uniform(0, 6.3), mat=0,
+                     roundness=(0.45, 0.7), tilt=0.2, dome=0.1)
     if var == 'gentle':
         for i, (u, v) in enumerate([(1.55, 0.35), (1.85, -0.2), (2.2, -0.7), (2.5, -1.15)]):
             p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
-            KB.rock(D.rocks, rng, p - n * 0.02, (0.24, 0.19, 0.05), subdiv=1, flatten=0.2, moss_mat=1, base_mat=0, normal_up=n)
+            rock(D.rocks, rng, p - n * 0.02, (0.24, 0.19, 0.05), subdiv=2, flatten=0.2, base_mat=0, normal_up=n)
     if var == 'steep':
         for u, v in scatter(rng, 8, (0.95, 3.05), (-0.95, -0.25), lambda u, v: True, 0.45):
             sz = rng.uniform(0.22, 0.4); p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
-            KB.rock(D.rocks, rng, p - n * sz * 0.4, (sz * 1.3, sz, sz * 0.8), subdiv=1, moss_mat=1, base_mat=0, normal_up=n)
-    if var == 'riprap':
-        for row, vc in enumerate((-0.075, -0.575, -1.125)):
-            for i in range(9):
-                u = 0.45 + i * 0.39 + (0.19 if row % 2 else 0)
-                if u + 0.17 > 3.75: continue
-                p = surf_pt(sf, zf, u, vc); n = surf_n(sf, zf, u, vc)
-                KB.block(D.rocks, tuple(p + n * 0.05), (0.33, 0.32, 0.18), yaw=sf.path.heading(u) + rng.uniform(-0.08, 0.08), rng=rng, jitter=0.02, mat=0, tilt=tuple(n))
+            chunk(D.rocks, rng, p - n * sz * 0.35, (sz * 1.3, sz, sz * 0.8), n, rng.uniform(0, 6.3), mat=0, moss_mat=1, moss_cut=0.55,
+                     roundness=(0.4, 0.6), rough=0.22, tilt=0.35, dome=0.2, cuts=2)
+    if var == 'riprap':   # dry-laid stone revetment: stones packed edge to edge over the slope, sunk into a gravel bed
+        for row, vc in enumerate((-0.08, -0.39, -0.70, -1.01, -1.32)):
+            u = 0.10 + (0.15 if row % 2 else 0.0)
+            while u < L - 0.08:
+                lx = rng.uniform(0.31, 0.40); v = vc + rng.uniform(-0.03, 0.03)
+                p = surf_pt(sf, zf, u, v); n = surf_n(sf, zf, u, v)
+                for shrink in (1.0, 0.8, 0.62):   # next to a connector face the stone shrinks until it stays inside
+                    sz = (lx * shrink, rng.uniform(0.27, 0.33) * shrink, rng.uniform(0.18, 0.22))
+                    if chunk(D.rocks, rng, p - n * sz[2] * 0.28, sz, n, sf.path.heading(u) + rng.uniform(-0.15, 0.15), mat=0,
+                             roundness=(0.35, 0.55), rough=0.22, tilt=0.12, dome=0.15, facets=(1, 3)): break
+                u += lx * 0.95
     if var == 'grassy':
         sod = KB.Parts(); us = [0.5 + 0.25 * i for i in range(13)]
         for ua, ub in zip(us, us[1:]):
@@ -202,67 +248,77 @@ def bank_details(mod, sf, zf, mf, rng, D):
     if var == 'eroded':
         for sc, hw, d in K.RILLS:
             for t in range(5):
-                KB.pebble(D.stones, rng, surf_pt(sf, zf, sc + rng.uniform(-hw, hw) * 0.5, rng.uniform(-1.35, -0.2)), rng.uniform(0.02, 0.04), 0)
+                pebble(D.stones, rng, surf_pt(sf, zf, sc + rng.uniform(-hw, hw) * 0.5, rng.uniform(-1.35, -0.2)), rng.uniform(0.02, 0.04), 0)
 
 
 def c_details(mod, surfs, zfs, mfs, rng, D):
     mid = mod['id']
     for sf, zf, mf in zip(surfs, zfs, mfs):
-        x0, x1, y0, y1 = sf.rect
+        x0, x1, y0, y1 = getattr(sf, 'rect', (0.0, 1.5, -K.DECK_HALF, K.DECK_HALF))   # C06 has its own frame, no rect
         if mid == 'SM_Bridgehead_RoadTransition_A':
             for sg in (1, -1):
                 for u, v in scatter(rng, 5, (0.2, 1.8), (1.55, 1.95), lambda u, v: True, 0.25):
-                    KB.pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.05), rng.randint(0, 1))
+                    pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.05), rng.randint(0, 1))
                 for u, v in scatter(rng, 5, (0.2, 1.8), (1.9, 2.22), lambda u, v: True, 0.3):
-                    KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.75, 1.0))
+                    grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.75, 1.0))
         elif mid in ('SM_Bridgehead_SideTrim_L_A', 'SM_Bridgehead_SideTrim_R_A'):
             sg = 1 if y0 > 0 else -1
             for u, v in scatter(rng, 10, (0.2, 1.8), (2.32, 2.98), lambda u, v: True, 0.25):
-                KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.8, 1.2))
+                grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.8, 1.2))
             for u, v in scatter(rng, 5, (0.25, 1.75), (2.4, 2.9), lambda u, v: True, 0.35):
-                sz = rng.uniform(0.06, 0.11)
-                KB.rock(D.stones, rng, surf_pt(sf, zf, u, sg * v) - Vector((0, 0, sz * 0.3)), (sz * 1.3, sz, sz * 0.75), subdiv=0, moss_mat=2, base_mat=0)
+                sz = rng.uniform(0.07, 0.12); p = surf_pt(sf, zf, u, sg * v); n = surf_n(sf, zf, u, sg * v)
+                chunk(D.stones, rng, p - n * sz * 0.25, (sz * 1.3, sz, sz * 0.8), n, rng.uniform(0, 6.3), mat=0, roundness=(0.45, 0.7), tilt=0.4)
         elif mid == 'SM_Bridgehead_BankTransition_A':
             sg = 1 if y0 > 0 else -1; a0, a1 = sorted((abs(y0), abs(y1)))
-            for u, v in scatter(rng, 9, (2.1, 2.95), (a0 + 0.1, a1 - 0.1), lambda u, v: True, 0.28):
-                KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.8, 1.15))
+            for u, v in scatter(rng, 9, (2.1, 2.95), (a0 + 0.1, a1 - 0.35), lambda u, v: True, 0.28):
+                grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.8, 1.15))
             for u, v in scatter(rng, 7, (4.2, 4.6), (a0 + 0.1, a1 - 0.1), lambda u, v: True, 0.2):
-                KB.pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.055), rng.randint(0, 1))
-            u, v = 3.6, sg * (a0 + a1) / 2; sz = 0.12; n = surf_n(sf, zf, u, v)
-            KB.rock(D.stones, rng, surf_pt(sf, zf, u, v) - n * sz * 0.35, (sz * 1.3, sz, sz * 0.75), subdiv=0, moss_mat=2, base_mat=0, normal_up=n)
+                pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.025, 0.055), rng.randint(0, 1))
+            u, v = 3.6, sg * (a0 + a1) / 2; sz = 0.14; n = surf_n(sf, zf, u, v)
+            chunk(D.stones, rng, surf_pt(sf, zf, u, v) - n * sz * 0.3, (sz * 1.3, sz, sz * 0.8), n, rng.uniform(0, 6.3), mat=0,
+                     roundness=(0.45, 0.7), tilt=0.35, dome=0.25)
         elif mid == 'SM_Bridgehead_WaterEdge_A':
             for u, v in scatter(rng, 40, (3.35, 4.9), (-2.15, 2.15), lambda u, v: mf(u, v)[2] > 0.3 or rng.random() < 0.3, 0.16):
-                KB.pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.02, 0.05), rng.randint(0, 1))
-            for y in (-1.0, 0.1, 1.05):
-                sz = rng.uniform(0.2, 0.28); u = 3.45 + rng.uniform(0, 0.08); n = surf_n(sf, zf, u, y)
-                KB.rock(D.rocks, rng, surf_pt(sf, zf, u, y) - n * sz * 0.35, (sz * 1.3, sz, sz * 0.8), subdiv=1, moss_mat=1, base_mat=0, normal_up=n)
+                pebble(D.stones, rng, surf_pt(sf, zf, u, v), rng.uniform(0.02, 0.05), rng.randint(0, 1))
+            for y in (-1.0, 0.1, 1.05):      # scour boulders as close to the stone base as the X=3.25 plane allows
+                sz = rng.uniform(0.2, 0.28)
+                for step in range(20):
+                    u = 3.45 + 0.04 * step; n = surf_n(sf, zf, u, y)
+                    if rock(D.rocks, rng, surf_pt(sf, zf, u, y) - n * sz * 0.35, (sz * 1.3, sz, sz * 0.8), subdiv=2, moss_mat=1, base_mat=0, normal_up=n, facets=3): break
         elif mid == 'SM_Bridgehead_CornerCap_A':
             sg = 1 if y0 > 0 else -1
             for i in range(5):
                 x = K.RAMP_L + 0.08 + i * 0.235; zt = max(K.c_H(x + 0.11, sg * 1.6), K.DECK_BOTTOM) + 0.03
-                KB.block(D.rocks, (x + 0.11, sg * 1.6, (zt + (-0.12)) / 2), (0.22, 0.19, zt + 0.12), rng=rng, jitter=0.008, mat=0)
+                dressed_stone(D.rocks, rng, (x + 0.11, sg * 1.6, (zt + (-0.12)) / 2), (0.22, 0.19, zt + 0.12), bevel=0.018, mat=0)
             zq = max(K.c_H(K.BASE_FACE_X, sg * 1.6), K.DECK_BOTTOM) + 0.06
-            KB.block(D.rocks, (K.BASE_FACE_X - 0.1, sg * 1.62, (zq - 0.55) / 2), (0.24, 0.26, zq + 0.55), rng=rng, jitter=0.006, mat=0)
-            for u, v in scatter(rng, 4, (2.1, 2.9), (1.85, 2.2), lambda u, v: True, 0.25):
-                KB.grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.7, 1.0))
+            dressed_stone(D.rocks, rng, (K.BASE_FACE_X - 0.125, sg * 1.62, (zq - 0.55) / 2), (0.24, 0.26, zq + 0.55), bevel=0.022, mat=0, moss_mat=1)
+            for u, v in scatter(rng, 4, (2.35, 2.9), (1.85, 2.2), lambda u, v: True, 0.25):
+                grass_card(D.grass, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.7, 1.0))
         elif mid == 'SM_Bridgehead_SlopeFix_A':
             for sg in (1, -1):
                 for u, v in scatter(rng, 3, (0.2, 1.3), (1.3, 1.45), lambda u, v: True, 0.25):
-                    KB.pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.02, 0.04), 0)
+                    pebble(D.stones, rng, surf_pt(sf, zf, u, sg * v), rng.uniform(0.02, 0.04), 0)
 
 
 def masonry(rng, final):
-    """C05 stone base: two courses under the test deck, top Z=-0.05, front face X=3.25."""
+    """C05 stone base: two courses under the test deck, top Z=-0.05, front face X=3.25.
+
+    Final stage returns (LOD0 chamfered cut stones over a recessed mortar core, LOD1 plain blocks)."""
     P = KB.Parts()
     if not final:
         KB.block(P, ((K.RAMP_L + K.BASE_FACE_X) / 2, 0.0, -0.30), (K.BASE_FACE_X - K.RAMP_L, 2 * K.DECK_HALF, 0.5), mat=0)
-        return P
-    for course, (zc, hgt, widths) in enumerate(((-0.175, 0.25, (0.62, 0.55, 0.70, 0.48, 0.65)), (-0.425, 0.25, (0.45, 0.66, 0.58, 0.72, 0.59)))):
+        return P, None
+    L1 = KB.Parts(); x0, x1 = K.RAMP_L, K.BASE_FACE_X; depth = x1 - x0
+    KB.block(P, ((x0 + x1) / 2 - 0.02, 0.0, -0.30), (depth - 0.04, 2 * K.DECK_HALF - 0.04, 0.49), mat=0)   # mortar core seen in the joints
+    for zc, hgt, widths in ((-0.175, 0.25, (0.62, 0.55, 0.70, 0.48, 0.65)), (-0.425, 0.25, (0.45, 0.66, 0.58, 0.72, 0.59))):
         y = -K.DECK_HALF
         for w in widths:
-            KB.block(P, ((K.RAMP_L + K.BASE_FACE_X) / 2, y + w / 2, zc), (K.BASE_FACE_X - K.RAMP_L - 0.01, w - 0.012, hgt - 0.01), rng=rng, jitter=0.01, mat=0)
+            inset = rng.uniform(0.0, 0.014)       # hand-laid faces, never proud of the X=3.25 plane
+            KB.dressed_stone(P, rng, (x0 + (depth - inset) / 2, y + w / 2, zc), (depth - inset, w - 0.014, hgt - 0.012),
+                             bevel=rng.uniform(0.022, 0.034), mat=0)
+            KB.block(L1, ((x0 + x1) / 2, y + w / 2, zc), (depth - 0.01, w - 0.012, hgt - 0.01), mat=0)
             y += w
-    return P
+    return P, L1
 
 
 # ---- module assembly -------------------------------------------------------------------------------
@@ -286,7 +342,7 @@ def tri_count(obj):
 
 
 def build_module(mod, stage, parent_coll, loc, M, report):
-    mid = mod['id']; final = stage == 'final'; rng = random.Random(seed_of(mid))
+    mid = mod['id']; final = stage == 'final'; rng = random.Random(seed_of(mid)); Guard.arm(mod)
     coll = bpy.data.collections.new(mid); parent_coll.children.link(coll)
     root = bpy.data.objects.new(mid, None); coll.objects.link(root); root.location = loc
     root.empty_display_type = 'ARROWS'; root.empty_display_size = 0.6
@@ -296,10 +352,10 @@ def build_module(mod, stage, parent_coll, loc, M, report):
     root['kit_connectors'] = json.dumps([{k: c[k] for k in ('name', 'role', 'type', 'location', 'heading_deg')} for c in cons])
     made = []
     if mod['kind'] == 'c_base':
-        P = masonry(rng, final)
+        P, L1 = masonry(rng, final)
         made.append(P.build(mid + '_Masonry_LOD0', [M['Rock'], M['Moss']], coll, root))
         if final:
-            lod1 = KB.link_obj(mid + '_Masonry_LOD1', made[-1].data, coll, root); made.append(lod1)
+            made.append(L1.build(mid + '_Masonry_LOD1', [M['Rock']], coll, root))
             box = KB.Parts(); KB.block(box, ((K.RAMP_L + K.BASE_FACE_X) / 2, 0.0, -0.30), (K.BASE_FACE_X - K.RAMP_L, 2 * K.DECK_HALF, 0.5))
             made.append(box.build(mid + '_Masonry_LOD2', [M['Rock']], coll, root))
             col = box.build(mid + '_COL', [], coll, root); col.hide_render = True; col.display_type = 'WIRE'; made.append(col)
@@ -319,16 +375,21 @@ def build_module(mod, stage, parent_coll, loc, M, report):
             for name, parts, mats in (('DET_Stones_LOD0', D.stones, [M['Rock'], M['PathGravel'], M['Moss']]),
                                       ('DET_Grass_LOD0', D.grass, [M['GrassCard']]),
                                       ('Rocks_LOD0', D.rocks, [M['Rock'], M['Moss']])):
-                ob = parts.build('%s_%s' % (mid, name), mats, coll, root, smooth=(name != 'DET_Grass_LOD0'), uv_mode='given' if 'Grass' in name else 'box')
+                ob = parts.build('%s_%s' % (mid, name), mats, coll, root, smooth=(name != 'DET_Grass_LOD0'), uv_mode='given' if 'Grass' in name else 'box',
+                                 sharp_angle=None if 'Grass' in name else 40.0)
                 if ob: made.append(ob)
                 if ob and name == 'Rocks_LOD0':
-                    made.append(KB.link_obj('%s_Rocks_LOD1' % mid, ob.data, coll, root))
+                    made.append(KB.decimated_copy('%s_Rocks_LOD1' % mid, ob, 0.5, coll, root))
             for name, (parts, layers) in D.extra.items():
                 tag = name if name.endswith('_LOD0') else name + '_LOD0'
                 ob = parts.build('%s_%s' % (mid, tag), [M[x] for x in layers], coll, root)
                 if ob: made.append(ob)
+    for o in made:   # only LOD0 parts are visible/rendered in the kit file; LOD1/LOD2/COL stay exportable
+        if o.name.endswith(('_LOD1', '_LOD2', '_COL')):
+            o.hide_render = True; o.hide_set(True)
     report[mid] = {'objects': [o.name for o in made], 'tris': {o.name: tri_count(o) for o in made if o.type == 'MESH'},
-                   'lod0_tris': sum(tri_count(o) for o in made if o.type == 'MESH' and o.name.endswith('_LOD0'))}
+                   'lod0_tris': sum(tri_count(o) for o in made if o.type == 'MESH' and o.name.endswith('_LOD0')),
+                   'details_dropped_at_connectors': Guard.dropped if final else 0}
     return root
 
 
@@ -371,7 +432,10 @@ def main():
     test_objects(scene, M, slots)
     scene['kit_stage'] = stage; scene['kit_version'] = K.KIT_VERSION; scene['kit_report'] = json.dumps(report)
     bpy.context.preferences.filepaths.save_version = 0
+    bpy.context.view_layer.update()             # store correct world matrices for the parented parts
     bpy.ops.wm.save_as_mainfile(filepath=str(out_path))
+    bpy.ops.file.make_paths_relative()          # textures referenced as //../03_Textures/... so the kit folder can move
+    bpy.ops.wm.save_mainfile()
     (out_path.with_suffix('.build.json')).write_text(json.dumps({'stage': stage, 'blender': bpy.app.version_string, 'modules': report, 'slots': slots}, indent=2))
     print('SAVED', out_path, flush=True)
 

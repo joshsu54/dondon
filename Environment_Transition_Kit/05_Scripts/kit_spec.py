@@ -220,6 +220,11 @@ BY_CODE = {m['code']: m for m in MODULES}
 GROUP_FILES = {'A': 'road_edge_modules', 'B': 'riverbank_modules', 'C': 'bridgehead_modules'}
 GROUP_EXPORT_DIR = {'A': 'RoadEdge', 'B': 'Riverbank', 'C': 'Bridgehead'}
 TRI_BUDGET = {'A': (300, 2000), 'B': (300, 2000), 'C': (800, 4000)}
+TRI_BUDGET_MODULE = {'B07': (800, 4000)}   # rock-reinforced bank is a revetment (護岸): the brief's 800-4000 range
+
+
+def tri_budget(mod):
+    return TRI_BUDGET_MODULE.get(mod['code'], TRI_BUDGET[mod['group']])
 
 
 # ---- per-module surface description ------------------------------------------------------------

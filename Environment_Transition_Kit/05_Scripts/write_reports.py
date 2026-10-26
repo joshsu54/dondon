@@ -72,7 +72,7 @@ def main():
             exit_transform=tf(ex),
             entry_compatible=' '.join(compatible(m, ent)) if ent else '', exit_compatible=' '.join(compatible(m, ex)) if ex else '',
             seams=' '.join('%s→%s' % (c['name'], c.get('partner', '')) for c in cons if c['role'] == 'seam'),
-            lod0_terrain_tris_est=tris(m) or '600–1400（砌石）', tri_budget='%d–%d' % K.TRI_BUDGET[m['group']],
+            lod0_terrain_tris_est=tris(m) or '600–1400（砌石）', tri_budget='%d–%d' % K.tri_budget(m),
             fbx='02_Exports/%s/%s.fbx' % (K.GROUP_EXPORT_DIR[m['group']], m['id']),
             three_view='00_References/ThreeViews/%s_%s_3view.png' % (m['code'], m['id']),
             status='設計三視圖完成；尚未建模'))
