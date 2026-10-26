@@ -41,6 +41,8 @@ def start_session():
     for coll in (bpy.data.meshes, bpy.data.cameras, bpy.data.lights, bpy.data.materials):
         for d in list(coll):
             if d.users == 0: coll.remove(d)
+    for c in list(bpy.data.collections):                 # empty startup 'Collection'
+        if not c.all_objects and not c.children: bpy.data.collections.remove(c)
     scene = bpy.context.scene
     scene.unit_settings.system = 'METRIC'; scene.unit_settings.scale_length = 1.0
     print('SESSION filepath=%r blender=%s kit=%s' % (bpy.data.filepath, bpy.app.version_string, KIT_DIR), flush=True)
@@ -232,6 +234,58 @@ def flat_material(name, color, rough=0.8):
 
 def test_material(name='M_TEST_Only', color=(0.35, 0.36, 0.38)):
     m = flat_material(name, color, 0.6); m['test_only'] = True; return m
+
+
+def blockout_material():
+    """Blockout preview: flat layer colours selected by the same Mask attribute (no textures)."""
+    name = 'M_Blockout_Layers'
+    if name in bpy.data.materials: return bpy.data.materials[name]
+    m = bpy.data.materials.new(name); m.use_nodes = True; nb = NB(m); p = nb.n['Principled BSDF']
+    attr = nb.node('ShaderNodeAttribute', attribute_type='GEOMETRY', attribute_name='Mask')
+    sep = nb.node('ShaderNodeSeparateColor'); nb.link(attr.outputs['Color'], sep.inputs['Color'])
+    chan = [sep.outputs['Red'], sep.outputs['Green'], sep.outputs['Blue'], attr.outputs['Alpha']]
+    col = (0.30, 0.24, 0.17)
+    for layer, ch in MASK_ORDER:
+        f = nb.maprange(chan[ch], 0.35, 0.75, smooth=True)
+        c = {'PathGravel': (0.40, 0.36, 0.30), 'WetSoil': (0.13, 0.10, 0.075), 'Grass': (0.16, 0.24, 0.09), 'Moss': (0.10, 0.20, 0.07)}[layer]
+        col = nb.mix_rgb(f, col, c)
+    nb.link(col, p.inputs['Base Color']); p.inputs['Roughness'].default_value = 0.85
+    m.diffuse_color = (0.30, 0.24, 0.17, 1.0); m['kit_material'] = 'Blockout preview (flat layer colours)'
+    return m
+
+
+def lattice_multi(name, surfs, zfun_of, maskfun_of, coll, parent, mats, ku=1, kv=1, h=1e-4):
+    """One mesh from several lattice parts (e.g. the left and right pieces of C02).
+
+    zfun_of(sf) / maskfun_of(sf) return the (u, v) -> value functions of a part.  Normals are the
+    analytic normals of the height function, written as custom normals so seams shade identically.
+    """
+    verts, normals, masks, uvs, faces = [], [], [], [], []
+    for sf in surfs:
+        zf, mf = zfun_of(sf), maskfun_of(sf)
+        us = subsample(sf.us, ku); vs = subsample(sf.vs, kv); nu, nv = len(us), len(vs); base = len(verts)
+        def P(u, v):
+            x, y = sf.xy(u, v); return Vector((x, y, zf(u, v)))
+        for u in us:
+            for v in vs:
+                verts.append(P(u, v)); masks.append(mf(u, v)); uvs.append(sf.uv(u, v))
+                n = (P(u + h, v) - P(u - h, v)).cross(P(u, v + h) - P(u, v - h))
+                normals.append(n.normalized() if n.length > 0 else Vector((0, 0, 1)))
+        for i in range(nu - 1):
+            for j in range(nv - 1):
+                a = base + i * nv + j; faces.append((a, a + nv, a + nv + 1, a + 1))
+    me = bpy.data.meshes.new(name); me.from_pydata([tuple(p) for p in verts], [], faces); me.update()
+    uvl = me.uv_layers.new(name='UVMap')
+    for poly in me.polygons:
+        for li in poly.loop_indices:
+            uvl.data[li].uv = uvs[me.loops[li].vertex_index]
+    ca = me.color_attributes.new('Mask', 'FLOAT_COLOR', 'POINT')
+    for d, mk in zip(ca.data, masks): d.color = tuple(min(1.0, max(0.0, c)) for c in mk)
+    me.color_attributes.active_color = ca
+    for m in mats: me.materials.append(m)
+    me.shade_smooth()
+    me.normals_split_custom_set_from_vertices([tuple(n) for n in normals])
+    return link_obj(name, me, coll, parent)
 
 
 SWATCH = {'DrySoil': (0.155, 0.125, 0.092), 'WetSoil': (0.07, 0.054, 0.038), 'Grass': (0.09, 0.125, 0.045),
